@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+    \tikzset{every tree node/.style={align=center,anchor=north}}
+    \tikzset{level distance=80pt, sibling distance=18pt}
+    \Tree 
+    [.{Machine translation} 
+        [.{Rational approach} 
+            [.{Rule-based methods} 
+                {Direct} 
+                {Transfer} 
+                {Interlingua} 
+            ] 
+        ] 
+        [.{Empirical approach} 
+            [.{Statistical methods} 
+                {Phrase-based} 
+                {Hierarchical\\phrase-based} 
+                {Syntax-based} 
+            ] 
+            [.{Neural methods} 
+                {Shallow} 
+                {SMT+NLM} 
+                {DNMT} 
+                {Attention} 
+            ] 
+        ] 
+    ]
+\end{tikzpicture}

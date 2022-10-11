@@ -1,0 +1,50 @@
+{
+    "latex-workshop.latex.autoBuild.run": "onSave",   
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "compile",
+            "command": "latexmk",
+            "args": [
+                "-pdf",
+                "main.tex"
+            ],
+            "env": {}
+        },
+        {
+            "name": "clean",
+            "command": "latexmk",
+            "args": [
+                "-c",
+                "main.tex"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "main"
+            ]
+        }
+    ],
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "build",
+            "tools": [
+                "compile",
+                "biber",
+                "compile",
+                "clean"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "build",
+    "cSpell.words": [
+        "EXPTIME",
+        "NEXPTIME",
+        "NTIME",
+        "preorder",
+        "satisfiability"
+    ]
+}
