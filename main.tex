@@ -113,6 +113,10 @@
 
 \def\asydir{assets/asymptote}
 
+
+\makeglossaries
+\input{acronyms}
+
 % !TEX root = main.tex
 \begin{document}
     \include{titlepage}
@@ -124,6 +128,7 @@
 		\listoffigures
 		\addcontentsline{toc}{chapter}{Table des figures}
 		% \listofalgorithms
+		\printglossary[title=Abréviations, toctitle=Abréviations, type=\acronymtype]
 		\restoregeometry
 	}
 	\include{state-of-the-art/state-of-the-art}

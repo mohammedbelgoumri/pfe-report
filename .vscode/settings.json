@@ -12,6 +12,11 @@
             "env": {}
         },
         {
+            "name": "makeglossaries",
+            "command": "makeglossaries",
+            "args": ["main"]
+        },
+        {
             "name": "clean",
             "command": "latexmk",
             "args": [
@@ -34,6 +39,8 @@
             "tools": [
                 "compile",
                 "biber",
+                "makeglossaries",
+                "compile",
                 "compile",
                 "clean"
             ]
@@ -46,5 +53,11 @@
         "NTIME",
         "preorder",
         "satisfiability"
+    ],
+    "grammarly.selectors": [
+        {
+            "language": "latex",
+            "scheme": "file"
+        }
     ]
 }
