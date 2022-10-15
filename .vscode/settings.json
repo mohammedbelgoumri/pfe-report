@@ -59,5 +59,6 @@
             "language": "latex",
             "scheme": "file"
         }
-    ]
+    ],
+    "latex-workshop.intellisense.citation.label": "title"
 }
