@@ -62,7 +62,7 @@ ipython_config.py
 *.xdv
 *-converted-to.*
 # these rules might exclude image files for figures etc.
-# *.ps
+*.ps
 # *.eps
 # *.pdf
 
@@ -161,7 +161,7 @@ acs-*.bib
 *.sls
 
 # uncomment this for glossaries-extra (will ignore makeindex's style files!)
-# *.ist
+*.ist
 
 # gnuplot
 *.gnuplot
