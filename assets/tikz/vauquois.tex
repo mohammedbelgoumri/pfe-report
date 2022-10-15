@@ -1,0 +1,13 @@
+\begin{tikzpicture}[every edge quotes/.style = {auto, font=\footnotesize, sloped}]
+   \node (LS) at (0, 0) {\acrshort{ls}};
+   \node (IS) at (1, 1.5) {};
+   \node (LC) at (4, 0) {\acrshort{lc}};
+   \node (IC) at (3, 1.5) {};
+   \node (IL) at (2, 3) {\acrshort{il}};
+   \graph {
+      (LS) ->["Directe"'] (LC),
+      (LS) ->["Analyse"] (IL),
+      (IL) ->["Géneration"] (LC),
+      (IS) ->["Transfert"'] (IC)
+   };
+\end{tikzpicture}
