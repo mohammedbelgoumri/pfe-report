@@ -12,33 +12,33 @@
             node {Comprend?} 
             child {
                 node {Peut répéter?}
-                child {node[bag] {Aphasie\\globale} edge from parent node[left] {Oui }} 
-                child {node[bag] {Aphasie\\transcorticale\\mixte} edge from parent node[right] {Non }} 
-                edge from parent node[left] {Oui}   
+                child {node[bag] {Aphasie\\globale} edge from parent node[left] {Non }} 
+                child {node[bag] {Aphasie\\transcorticale\\mixte} edge from parent node[right] {Oui }} 
+                edge from parent node[left] {Non}   
             }
             child {
                 node {Peut répéter?}
-                child {node[bag] {Aphasie\\de Broca} edge from parent node[left] {Oui }} 
-                child {node[bag] {Aphasie\\transcorticale\\motrice} edge from parent node[right] {Non }} 
-                edge from parent node[right] {Non}   
+                child {node[bag] {Aphasie\\de Broca} edge from parent node[left] {Non }} 
+                child {node[bag] {Aphasie\\transcorticale\\motrice} edge from parent node[right] {Oui }} 
+                edge from parent node[right] {Oui}   
             } 
-            edge from parent node[left] {Oui} 
+            edge from parent node[left] {Non} 
         }
         child {
             node {Comprend?} 
             child {
                 node {Peut répéter?}
-                child {node[bag] {Aphasie\\de Wernicke} edge from parent node[left] {Oui }} 
-                child {node[bag] {Aphasie\\transcorticale\\sensorielle} edge from parent node[right] {Non }} 
-                edge from parent node[left] {Oui}   
+                child {node[bag] {Aphasie\\de Wernicke} edge from parent node[left] {Non }} 
+                child {node[bag] {Aphasie\\transcorticale\\sensorielle} edge from parent node[right] {Oui }} 
+                edge from parent node[left] {Non}   
             }
             child {
                 node {Peut répéter?}
-                child {node[bag] {Aphasie\\de conduction} edge from parent node[left] {Oui }} 
-                child {node[bag] {Aphasie\\anomique} edge from parent node[right] {Non }} 
-                edge from parent node[right] {Non}   
+                child {node[bag] {Aphasie\\de conduction} edge from parent node[left] {Non }} 
+                child {node[bag] {Aphasie\\anomique} edge from parent node[right] {Oui }} 
+                edge from parent node[right] {Oui}   
             } 
-            edge from parent node[right] {Non} 
+            edge from parent node[right] {Oui} 
         };
     
     \end{tikzpicture}
