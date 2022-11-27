@@ -1,0 +1,44 @@
+\begin{tikzpicture}
+    [level distance=3cm,
+    level 1/.style={sibling distance=12cm},
+    level 2/.style={sibling distance=6cm},
+    level 3/.style={sibling distance=3cm}
+    ]
+    \tikzstyle{bag} = [align=center]
+    \tikzset{every tree node/.style={align=center,anchor=north}}
+    % \tikzset{level distance=2cm, sibling distance=5cm}
+    \node (Root)  {Parle couramment?}
+        child {
+            node {Comprend?} 
+            child {
+                node {Peut répéter?}
+                child {node[bag] {Aphasie\\globale} edge from parent node[left] {Oui }} 
+                child {node[bag] {Aphasie\\transcorticale\\mixte} edge from parent node[right] {Non }} 
+                edge from parent node[left] {Oui}   
+            }
+            child {
+                node {Peut répéter?}
+                child {node[bag] {Aphasie\\de Broca} edge from parent node[left] {Oui }} 
+                child {node[bag] {Aphasie\\transcorticale\\motrice} edge from parent node[right] {Non }} 
+                edge from parent node[right] {Non}   
+            } 
+            edge from parent node[left] {Oui} 
+        }
+        child {
+            node {Comprend?} 
+            child {
+                node {Peut répéter?}
+                child {node[bag] {Aphasie\\de Wernicke} edge from parent node[left] {Oui }} 
+                child {node[bag] {Aphasie\\transcorticale\\sensorielle} edge from parent node[right] {Non }} 
+                edge from parent node[left] {Oui}   
+            }
+            child {
+                node {Peut répéter?}
+                child {node[bag] {Aphasie\\de conduction} edge from parent node[left] {Oui }} 
+                child {node[bag] {Aphasie\\anomique} edge from parent node[right] {Non }} 
+                edge from parent node[right] {Non}   
+            } 
+            edge from parent node[right] {Non} 
+        };
+    
+    \end{tikzpicture}
