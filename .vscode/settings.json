@@ -60,5 +60,10 @@
             "scheme": "file"
         }
     ],
-    "latex-workshop.intellisense.citation.label": "title"
+    "latex-workshop.intellisense.citation.label": "title",
+    "triggerTaskOnSave.tasks": {
+        "sync bib": [
+            "references.bib"
+        ]
+    }
 }

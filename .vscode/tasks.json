@@ -1,0 +1,14 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "sync bib",
+            "command": "unison",
+            "type": "shell",
+            "args": [
+                "~/Work/PFE/article/references.bib", 
+                "~/Work/PFE/report/references.bib"
+            ],
+        }
+    ]
+}
