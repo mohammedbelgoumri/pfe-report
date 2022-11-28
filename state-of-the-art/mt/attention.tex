@@ -1,5 +1,34 @@
-\section{Traduction automatique à base de mécanismes d'attention}
+\section{Traduction automatique à base de transformeurs}
 \label{sec:nmt-attention}
+
+Le transformeur (ou modèle auto-attentif) est un modèle de séquence proposé en 2017~\cite{attention}.
+Il vise à remédier aux lacunes des autres architectures utilisées en modélisation de séquences, 
+notamment celles basées sur les \acrshortpl{rnn} et les \acrshortpl{cnn}.
+
+En effet, les \acrshortpl{rnn} souffrent de deux problèmes fondamentaux. 
+Le premier est celui du mémoire à court terme, 
+c.--à--d., la tendance à négliger les dépendances entre unités lexicales éloignés dans la séquence.
+Des variantes comme les \acrshortpl{lstm} et surtout les \acrshortpl{gru} 
+ont réussi à éliminer ce problème au prix d'une augmentation dans la complexité des calculs.
+Cependant, ces variantes, ainsi que les \Acrshortpl{rnn} eux-mêmes, souffrent d'un deuxième défaut,
+celui du calcul séquentiel.
+Par conséquent, il n'est pas possible de paralléliser leurs calculs, 
+ce qui les rends très lents~\cite{attention,deep-nmt-survey}.
+
+Les \Acrshortpl{cnn} permet de contourner les inconvénients posés par les \Acrshortpl{rnn}.
+Ils sont entièrement parallélisables, ce qui les rends extrêmement rapides à dérouler sur GPU.
+De plus, ils peuvent calculer la dépendance entre deux positions arbitrairement éloignées.
+Or, le nombre d'opérations qu'ils utilisent pour ce faire 
+augmente avec la distance entre les deux positions en question.
+De ce fait, ils sont également inadéquats pour la modélisation des corrélations à grande échelle~\cite{deep-nmt-survey}.
+
+Le transformeur est une architecture à base à base de mécanisme d'attention 
+qui offre une solution aux défis rencontrés par les autres architectures que nous avons introduites.
+Il ne souffre du mémoire à court terme 
+et peut calculer les dépendances globales de la séquence en temps constant~\cite{attention}.
+
+
+
 
 \begin{figure}
     \begin{center}
@@ -8,10 +37,4 @@
     \caption[L'architecture du transformeur]
     {L'architecture du transformeur~\cite[Fig 1]{attention}}
     \label{fig:transformer}
-\end{figure}
-
-\begin{figure}
-    \begin{center}
-        \include{assets/tikz/multi-headed-attention}
-    \end{center}
 \end{figure}
