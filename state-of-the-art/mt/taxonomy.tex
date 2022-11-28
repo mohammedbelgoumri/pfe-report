@@ -29,15 +29,20 @@ Cela nous donne la structure suivante
 
 \begin{itemize}
     \item \nameref{sec:rbmt}
-    % \item \nameref{sec:smt}
-    % \item \nameref{sec:nmt-classic}
+    \item \nameref{sec:smt}
+    \item \nameref{sec:nmt-classic}
     % \item \nameref{sec:dnmt}
     \item \nameref{sec:nmt-attention}
 \end{itemize}
 
 \subimport{}{rbmt}
-% \section{Traduction automatique statistique}
-% \label{sec:smt}
-% \subimport{}{nmt-classic}
+\section{Traduction automatique statistique}
+
+Elle cherche à trouver des corrélations entre source est cible à partir de données parallèles.
+Elle requiert des pré-traîtements comme alignement des mots et donne des Résultats meilleurs que TABR.
+
+
+\label{sec:smt}
+\subimport{}{nmt-classic}
 % \section{Traduction automatique neuronale profonde}
 % \label{sec:dnmt}
