@@ -7,7 +7,7 @@ notamment celles basées sur les \acrshortpl{rnn} et les \acrshortpl{cnn}.
 
 En effet, les \acrshortpl{rnn} souffrent de deux problèmes fondamentaux. 
 Le premier est celui du mémoire à court terme, 
-c.--à--d., la tendance à négliger les dépendances entre unités lexicales éloignés dans la séquence.
+c--à--d, la tendance à négliger les dépendances entre unités lexicales éloignés dans la séquence.
 Des variantes comme les \acrshortpl{lstm} et surtout les \acrshortpl{gru} 
 ont réussi à éliminer ce problème au prix d'une augmentation dans la complexité des calculs.
 Cependant, ces variantes, ainsi que les \Acrshortpl{rnn} eux-mêmes, souffrent d'un deuxième défaut,
@@ -24,17 +24,32 @@ De ce fait, ils sont également inadéquats pour la modélisation des corrélati
 
 Le transformeur est une architecture à base à base de mécanisme d'attention 
 qui offre une solution aux défis rencontrés par les autres architectures que nous avons introduites.
-Il ne souffre du mémoire à court terme 
+Il ne souffre pas du mémoire à court terme 
 et peut calculer les dépendances globales de la séquence en temps constant~\cite{attention}.
-
-
-
+La Figure~\ref{fig:transformer} illustre l'architecture d'un transformeur.
+Il s'agit d'une architecture encodeur--décodeur.
 
 \begin{figure}
     \begin{center}
-        \include{assets/tikz/transformer}
+        \input{assets/tikz/transformer}
     \end{center}
     \caption[L'architecture du transformeur]
     {L'architecture du transformeur~\cite[Fig 1]{attention}}
     \label{fig:transformer}
 \end{figure}
+
+L'encodeur prend une séquence \((x_1, x_2, \cdots, x_n)\) de plongement de mots dans la \Acrshort{ls} 
+et produit une suite \((z_1, z_2, \cdots, z_n)\) de représentations vectorielles (vecteurs de pensée).
+Cela est fait par le biais de l'Algorithme~\ref{algo:trans-encode} ou.
+
+\[
+    \operatorname{Attention}(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^T}{\sqrt{d_k}}\right) V
+\]
+    
+    
+
+\input{assets/algorithms/trans-encode}
+
+Le décodeur prend cette suite de représentations est produit une troisième séquence 
+\((y_1, y_2, \cdots, y_n)\)
+de mots dans \acrshort{lc}.

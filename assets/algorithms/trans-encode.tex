@@ -1,0 +1,15 @@
+\begin{algorithm}
+    \SetKwFunction{mha}{multi\_headed\_attention}
+    \caption{Encoder une séquence}
+    \label{algo:trans-encode}
+    % \DontPrintSemicolon
+    \(x = (x_1, x_2, \cdots, x_n)\in\reals^n\) \comment{Plongement de la phrase d'entrée.}
+    \(N\) \comment{Nombre d'itérations de l'encodeur.}
+    \Deb{
+        \(z \gets x\)
+        \Pour{\(i = 1\cdots N\)}{
+            \(z \gets \mha{z} + z\)
+        }
+    }
+    \KwOut{\(z\in\reals^{n\times d}\) \comment{Thought vectors}}
+\end{algorithm}
