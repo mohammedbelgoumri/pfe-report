@@ -74,7 +74,7 @@
 \usepackage{float}
 \usepackage{subfig}
 
-\usepackage{glossaries}
+\usepackage[acronym]{glossaries}
 % \usepackage{nomencl}
 % \makeglossaries
 
@@ -133,7 +133,7 @@
 		\listoffigures
 		\addcontentsline{toc}{chapter}{Table des figures}
 		% \listofalgorithms
-		\printglossary[title=Abréviations, toctitle=Abréviations, type=\acronymtype]
+		\printglossary[title=Abréviations, toctitle=Abréviations, type=\acronymtype, style=long,nonumberlist]
 		\restoregeometry
 	}
 	\import{state-of-the-art/}{state-of-the-art}
