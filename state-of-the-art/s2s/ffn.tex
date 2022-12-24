@@ -1,0 +1,27 @@
+\section{\Acrfullpl{ffn}}
+
+Les réseaux de neurones profonds sont parmi les modèles les plus expressifs en \acrshort{ml}.
+Leur succès pratique est incomparable aux modèles qui les ont précédés, 
+que se soit en termes de qualité des résultats ou de variétés de domaines d'application.
+De plus, grâce aux théorèmes dits d'approximation universelle, ce succès empirique est formellement assuré.
+
+Les \acrshort{ffn} sont l'architecture neuronale la plus simple et la plus utilisée.
+Mathématiquement, un réseau de neurones feed-forward de profondeur \(\ell\) 
+peut être vu comme une fonction \(f\) telle que :
+
+\begin{equation}
+    \label{eq:ffn}
+    f = h_1 \circ \varphi_1 \circ h_2 \circ \varphi_2 \circ \cdots \circ h_\ell \circ \varphi_\ell
+\end{equation}
+où les \(h_i\) sont des applications affines et les \(\varphi_i\) sont des applications non linéaires.
+
+Le réseau de neurones défini par l'équation~\ref{eq:ffn} 
+est souvent représenté par un graphe orienté acyclique (voire Figure~\ref{fig:ffn}).
+
+\begin{figure}[hbt]
+    \begin{center}
+        \input{assets/tikz/ffn}
+    \end{center}
+    \caption{Un réseau de neurone \acrshort{ffn} de profondeur 3.}
+    \label{fig:ffn}
+\end{figure}
