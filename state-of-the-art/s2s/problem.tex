@@ -1,1 +1,15 @@
-\section{Position du problème}
+\section{Ennoncé du problème}
+
+Formellement, le problème de modélisation séquence à séquence est celui de calculer une fonction partielle
+\(f: X^\ast \to Y^\ast\), où :
+\begin{itemize}
+    \item  \(X\) est un ensemble dit d'entrées. 
+    \item \(Y\) est un ensemble dit de sorties.
+    \item Pour un ensemble \(A\), \(A^\ast = \bigcup\limits_{n\in\naturals}A^n\)
+    est l'ensemble de suites de longueur finie d'éléments de \(A\).
+\end{itemize}
+\(f\) prend donc un \(x = (x_1, x_2,\cdots, x_n)\in X^n\) 
+et renvoie un \(y = (y_1, y_2,\cdots, y_m)\in Y^m\).
+Dans le cas général, \(n\neq m\) et aucune hypothèse d'alignement n'est supposée.
+Il est souvent de prendre \(X = \reals^{d_e}\) et \(Y = \reals^{d_s}\) avec \(d_e, d_s\in\naturals\).
+Dans ce cas, \(x\in \reals^{d_e\times n}\) et \(y\in \reals^{d_s\times m}\).
