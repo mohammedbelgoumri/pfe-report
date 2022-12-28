@@ -1,27 +1,47 @@
-\section{\Acrlongpl{ffn}}
+\section{\Glsxtrlongpl{ffn}}
 
 Les réseaux de neurones profonds sont parmi les modèles les plus expressifs en \acrshort{ml}.
 Leur succès pratique est incomparable aux modèles qui les ont précédés, 
 que se soit en termes de qualité des résultats ou de variétés de domaines d'application.
 De plus, grâce aux théorèmes dits d'approximation universelle, ce succès empirique est formellement assuré.
 
-Les \acrshort{ffn} sont l'architecture neuronale la plus simple et la plus utilisée.
-Mathématiquement, un réseau de neurones feed-forward de profondeur \(\ell\) 
-peut être vu comme une fonction \(f\) telle que :
+Dans cette section, nous introduisant les \glspl{ffn}.
+% Les \acrshort{ffn} sont l'architecture neuronale la plus simple et la plus utilisée.
+% Mathématiquement, un réseau de neurones feed-forward de profondeur \(\ell\) 
+% peut être vu comme une fonction \(f\) telle que :
 
-\begin{equation}
-    \label{eq:ffn}
-    f = h_1 \circ \varphi_1 \circ h_2 \circ \varphi_2 \circ \cdots \circ h_\ell \circ \varphi_\ell
-\end{equation}
-où les \(h_i\) sont des applications affines et les \(\varphi_i\) sont des applications non linéaires.
+
+% Où les \(A_i\) sont des applications affines et les \(\phi_i\) sont des applications non linéaires.
 
 Le réseau de neurones défini par l'équation~\ref{eq:ffn} 
 est souvent représenté par un graphe orienté acyclique (voire Figure~\ref{fig:ffn}).
 
+
+\begin{definition}[\Gls{ffn}]\ \\
+    \label{def:ffn}
+    Soient \(k, w_0, w_1, \cdots, w_{k+1}\in\naturals\), 
+    un réseau de neurones feed-forward de profondeur \(k+1\), à \(w_0\) entrées et \(w_{k+1}\) sorties, 
+    est défini par une fonction :
+    \begin{equation}
+        \label{eq:ffn}
+        \left\{
+        \begin{array}{l}
+            \reals^{w_0} \to \reals^{w_{k+1}}\\
+            x\mapsto
+            A_{k+1} \circ \phi_{k+1} \circ A_k \circ \phi_k \circ \cdots \circ A_1 \circ \phi_1(x)
+        \end{array}
+        \right.
+    \end{equation}
+    Où les \(A_i\) sont des fonctions affines \(\reals^{w_{i-1}}\to\reals^{w_i}\) 
+    et les \(\phi\) sont des fonctions non-affines \(\reals^{w_i}\to\reals^{w_i}\) dites \emph{d'activations}.
+    La fonction \(A_i\circ\phi_i\) est appelée la \(i^{\mathrm{e}}\) couche du réseau.
+
+
+\end{definition}
 \begin{figure}[hbt]
     \begin{center}
         \input{assets/tikz/ffn}
     \end{center}
-    \caption{Un réseau de neurone \acrshort{ffn} de profondeur 3.}
+    \caption{Un \glsxtrlong{ffn} de profondeur 3.}
     \label{fig:ffn}
 \end{figure}

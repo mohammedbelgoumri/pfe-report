@@ -1,7 +1,7 @@
 \documentclass[12pt, a4paper]{report}
 
 \usepackage[utf8]{inputenc} 
-\usepackage[english, greek, french]{babel}
+\usepackage[english, greek, arabic, french]{babel}
 \usepackage{csquotes}
 \usepackage[T1]{fontenc}
 \usepackage{array}
@@ -76,7 +76,12 @@
 \usepackage{float}
 \usepackage{subfig}
 
-\usepackage[acronym]{glossaries}
+\usepackage[abbreviations]{glossaries-extra}
+\setabbreviationstyle{short-long-desc}
+\glssetcategoryattribute{abbreviation}{markwords}{true}
+\glssetcategoryattribute{abbreviation}{noshortplural}{true}
+% \GlsXtrEnableInitialTagging{abbreviation}{}
+
 % \usepackage{nomencl}
 % \makeglossaries
 
@@ -117,6 +122,13 @@
 \newcommand{\classNP}{\textsf{NP}}
 \newcommand{\classNPO}{\textsf{NPO}}
 
+% default greeks
+\let\uglyepsioln\epsilon
+\let\epsilon\varepsilon
+
+\let\roundphi\phi
+\let\phi\varphi
+
 \def\asydir{assets/asymptote}
 
 
@@ -136,7 +148,14 @@
 		% \listofalgorithms
 		\restoregeometry
 		}
-	\printglossary[title=Abréviations, toctitle=Abréviations, type=\acronymtype, style=long,nonumberlist]
+
+	% \printabbreviations
+	\printglossary[
+		title=Sigles et abréviations, 
+		toctitle=Sigles et abréviations, 
+		type=abbreviations,
+		style=long,nonumberlist
+	]
 	\import{state-of-the-art/}{state-of-the-art}
     
 	\printbibliography
