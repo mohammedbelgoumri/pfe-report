@@ -39,8 +39,6 @@
             "tools": [
                 "compile",
                 "biber",
-                "makeglossaries",
-                "compile",
                 "compile",
                 "clean"
             ]

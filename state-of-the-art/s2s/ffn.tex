@@ -1,3 +1,4 @@
+
 \section{\Glsxtrlongpl{ffn}}
 
 Les réseaux de neurones profonds sont parmi les modèles les plus expressifs en \acrshort{ml}.
@@ -5,13 +6,14 @@ Leur succès pratique est incomparable aux modèles qui les ont précédés,
 que se soit en termes de qualité des résultats ou de variétés de domaines d'application.
 De plus, grâce aux théorèmes dits d'approximation universelle, ce succès empirique est formellement assuré.
 
-Dans cette section, nous introduisant les \glspl{ffn}.
+Dans cette section, nous introduisant les \Glspl{ffn}.
+
 % Les \acrshort{ffn} sont l'architecture neuronale la plus simple et la plus utilisée.
 % Mathématiquement, un réseau de neurones feed-forward de profondeur \(\ell\) 
 % peut être vu comme une fonction \(f\) telle que :
 
 
-% Où les \(A_i\) sont des applications affines et les \(\phi_i\) sont des applications non linéaires.
+% Où les \(A_i\) sont des applications affines et les \(A_i\) sont des applications non linéaires.
 
 Le réseau de neurones défini par l'équation~\ref{eq:ffn} 
 est souvent représenté par un graphe orienté acyclique (voire Figure~\ref{fig:ffn}).
@@ -28,13 +30,14 @@ est souvent représenté par un graphe orienté acyclique (voire Figure~\ref{fig
         \begin{array}{l}
             \reals^{w_0} \to \reals^{w_{k+1}}\\
             x\mapsto
-            A_{k+1} \circ \phi_{k+1} \circ A_k \circ \phi_k \circ \cdots \circ A_1 \circ \phi_1(x)
+            \phi_{k+1} \circ A_{k+1} \circ \phi_k \circ A_k \circ \cdots \circ \phi_1 \circ A_1(x)
         \end{array}
         \right.
     \end{equation}
     Où les \(A_i\) sont des fonctions affines \(\reals^{w_{i-1}}\to\reals^{w_i}\) 
-    et les \(\phi\) sont des fonctions non-affines \(\reals^{w_i}\to\reals^{w_i}\) dites \emph{d'activations}.
-    La fonction \(A_i\circ\phi_i\) est appelée la \(i^{\mathrm{e}}\) couche du réseau.
+    et les \(\phi\) sont des fonctions quelconques, typiquement non affines
+    \(\reals^{w_i}\to\reals^{w_i}\), dites \emph{d'activations}.
+    La fonction \(\phi_i\circ A_i\) est appelée la \(i^{\mathrm{e}}\) couche du réseau.
 
 
 \end{definition}
