@@ -35,7 +35,93 @@ Scanning input file main.glo-abr....
    -- Illegal space within numerals in second argument.
 !! Input index error (file = main.glo-abr, line = 18):
    -- Illegal space within numerals in second argument.
-done (1 entries accepted, 17 rejected).
+!! Input index error (file = main.glo-abr, line = 19):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 20):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 21):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 22):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 23):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 24):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 25):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 26):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 27):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 28):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 29):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 30):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 31):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 32):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 33):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 34):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 35):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 36):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 37):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 38):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 39):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 40):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 41):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 42):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 43):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 44):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 45):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 46):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 47):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 48):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 49):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 50):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 51):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 52):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 53):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 54):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 55):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 56):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 57):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 58):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 59):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 60):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 61):
+   -- Illegal space within numerals in second argument.
+done (1 entries accepted, 60 rejected).
 Sorting entries...done (0 comparisons).
 Generating output file main.gls-abr....done (6 lines written, 0 warnings).
 Output written in main.gls-abr.
