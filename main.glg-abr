@@ -1,6 +1,8 @@
 This is makeindex, version 2.16 [TeX Live 2022] (kpathsea + Thai support).
 Scanning style file ./main.ist.............................done (29 attributes redefined, 0 ignored).
 Scanning input file main.glo-abr....
+!! Input index error (file = main.glo-abr, line = 2):
+   -- Illegal space within numerals in second argument.
 !! Input index error (file = main.glo-abr, line = 3):
    -- Illegal space within numerals in second argument.
 !! Input index error (file = main.glo-abr, line = 4):
@@ -29,8 +31,12 @@ Scanning input file main.glo-abr....
    -- Illegal space within numerals in second argument.
 !! Input index error (file = main.glo-abr, line = 16):
    -- Illegal space within numerals in second argument.
-done (2 entries accepted, 14 rejected).
-Sorting entries....done (2 comparisons).
-Generating output file main.gls-abr....done (9 lines written, 0 warnings).
+!! Input index error (file = main.glo-abr, line = 17):
+   -- Illegal space within numerals in second argument.
+!! Input index error (file = main.glo-abr, line = 18):
+   -- Illegal space within numerals in second argument.
+done (1 entries accepted, 17 rejected).
+Sorting entries...done (0 comparisons).
+Generating output file main.gls-abr....done (6 lines written, 0 warnings).
 Output written in main.gls-abr.
 Transcript written in main.glg-abr.
