@@ -1,6 +1,6 @@
 \subsection{Généralités}
 
-Dans cette section, nous introduisant les \Glspl{ffn},
+Dans cette section, nous introduisant les \glspl{ffn},
 l'architecture neuronale la plus simple et la plus utilisée.
 Il s'agit d'une simple composition de couches affines avec des activations non affines 
 (voire Définition~\ref{def:ffn}).
@@ -24,7 +24,7 @@ Il s'agit d'une simple composition de couches affines avec des activations non a
     Où les \(A_i\) sont des fonctions affines \(\reals^{w_{i-1}}\to\reals^{w_i}\) 
     et les \(\phi_i\) sont des fonctions quelconques, typiquement non affines
     \(\reals^{w_i}\to\reals^{w_i}\), dites \emph{d'activations}.
-    La fonction \(\phi_i\circ A_i\) est appelée la \(i^{\mathrm{e}}\) couche du réseau.
+    La fonction \(\phi_i\circ A_i\) est appelée la \(i^{\, \mathrm{eme}}\) couche du réseau.
 \end{definition}
 
 Un tel réseau de neurones est souvent représenté par 
@@ -37,7 +37,7 @@ avec \((w_0, w_1, w_2, w_3) = (4, 5, 5, 3)\).
     \begin{center}
         \input{assets/tikz/ffn}
     \end{center}
-    \caption{Architecture sous-jacente d'un \gls{ffn} de profondeur 3.}
+    \caption{Architecture sous-jacente d'un \glsfmtshort{ffn} de profondeur 3.}
     \label{fig:ffn}
 \end{figure}
 

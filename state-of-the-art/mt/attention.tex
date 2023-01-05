@@ -3,19 +3,19 @@
 
 Le transformeur (ou modèle auto-attentif) est un modèle de séquence proposé en 2017~\cite{attention}.
 Il vise à remédier aux lacunes des autres architectures utilisées en modélisation de séquences, 
-notamment celles basées sur les \acrshortpl{rnn} et les \acrshortpl{cnn}.
+notamment celles basées sur les \glsxtrshortpl{rnn} et les \glsxtrshortpl{cnn}.
 
-En effet, les \acrshortpl{rnn} souffrent de deux problèmes fondamentaux. 
+En effet, les \glsxtrshortpl{rnn} souffrent de deux problèmes fondamentaux. 
 Le premier est celui du mémoire à court terme, 
 c--à--d, la tendance à négliger les dépendances entre unités lexicales éloignés dans la séquence.
-Des variantes comme les \acrshortpl{lstm} et surtout les \acrshortpl{gru} 
+Des variantes comme les \glsxtrshortpl{lstm} et surtout les \glsxtrshortpl{gru} 
 ont réussi à éliminer ce problème au prix d'une augmentation dans la complexité des calculs.
-Cependant, ces variantes, ainsi que les \Acrshortpl{rnn} eux-mêmes, souffrent d'un deuxième défaut,
+Cependant, ces variantes, ainsi que les \Glsxtrshortpl{rnn} eux-mêmes, souffrent d'un deuxième défaut,
 celui du calcul séquentiel.
 Par conséquent, il n'est pas possible de paralléliser leurs calculs, 
 ce qui les rends très lents~\cite{attention,deep-nmt-survey}.
 
-Les \Acrshortpl{cnn} permet de contourner les inconvénients posés par les \Acrshortpl{rnn}.
+Les \Glsxtrshortpl{cnn} permet de contourner les inconvénients posés par les \Glsxtrshortpl{rnn}.
 Ils sont entièrement parallélisables, ce qui les rends extrêmement rapides à dérouler sur GPU.
 De plus, ils peuvent calculer la dépendance entre deux positions arbitrairement éloignées.
 Or, le nombre d'opérations qu'ils utilisent pour ce faire 
@@ -38,7 +38,7 @@ Il s'agit d'une architecture encodeur--décodeur.
     \label{fig:transformer}
 \end{figure}
 
-L'encodeur prend une séquence \((x_1, x_2, \cdots, x_n)\) de plongement de mots dans la \Acrshort{ls} 
+L'encodeur prend une séquence \((x_1, x_2, \cdots, x_n)\) de plongement de mots dans la \Glsxtrshort{ls} 
 et produit une suite \((z_1, z_2, \cdots, z_n)\) de représentations vectorielles (vecteurs de pensée).
 Cela est fait par le biais de l'Algorithme~\ref{algo:trans-encode} ou.
 
@@ -52,4 +52,4 @@ Cela est fait par le biais de l'Algorithme~\ref{algo:trans-encode} ou.
 
 Le décodeur prend cette suite de représentations est produit une troisième séquence 
 \((y_1, y_2, \cdots, y_n)\)
-de mots dans \acrshort{lc}.
+de mots dans \glsxtrshort{lc}.

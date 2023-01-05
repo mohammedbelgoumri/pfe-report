@@ -1,7 +1,7 @@
 \documentclass[12pt, a4paper]{report}
 
 \usepackage[utf8]{inputenc} 
-\usepackage[english, greek, arabic, french]{babel}
+\usepackage[english, greek, french]{babel}
 \usepackage{csquotes}
 \usepackage[T1]{fontenc}
 \usepackage{array}
@@ -77,15 +77,11 @@
 \usepackage{subcaption}
 
 \usepackage[abbreviations, automake]{glossaries-extra}
-\setabbreviationstyle{short-long-desc}
+\setabbreviationstyle{long-short-user}
 \glssetcategoryattribute{abbreviation}{markwords}{true}
 \glssetcategoryattribute{abbreviation}{noshortplural}{true}
 % \GlsXtrEnableInitialTagging{abbreviation}{}
 
-% \usepackage{nomencl}
-% \makeglossaries
-
-% \usepackage[chapter]{algorithm}
 \usepackage[linesnumbered,ruled,lined,algochapter,french,frenchkw]{algorithm2e}
 \input{algo-style}
 
@@ -147,7 +143,7 @@
 		\addcontentsline{toc}{chapter}{Table des figures}
 		% \listofalgorithms
 		\restoregeometry
-		}
+	}
 
 	% \printabbreviations
 	\printglossary[
