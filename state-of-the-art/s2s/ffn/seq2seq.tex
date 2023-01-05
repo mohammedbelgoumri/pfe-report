@@ -1,0 +1,31 @@
+\subsection{Application à la modélisation de séquence}
+
+Les réseaux de neurones opèrent sur des vecteurs.
+À fin de les utiliser dans le contexte de la modélisation séquence-à-séquence, 
+il faut donc utiliser une représentation vectorielle des entrées.
+Une telle représentation s'appelle un \emph{plongement} (\foreignlanguage{english}{embedding} en anglais).
+Le plongement peut-être apprit ou prédéfini.
+
+Dans le cas des \glspl{ffn}, la séquence d'entrée est d'abord décomposée en sous-séquences.
+En suite, les plongements de ces sous-séquences sont traités un par un par le réseau de neurones,
+ce qui produit une séquence de vecteurs en sortie.
+(Voire l'Algorithme~\ref{algo:ffn-pass}).
+
+\RestyleAlgo{ruled}
+\begin{algorithm}[htb]
+    \caption{Passe d'un \glsfmtshort{ffn}}
+    \label{algo:ffn-pass}
+    \SetKwFunction{embedding}{embedding}
+    \SetKwFunction{sub}{sub\_sequences}
+    \SetKwFunction{ffn}{FFN}
+    % \DontPrintSemicolon
+    \KwIn{input\_sequence \comment{Séquence d'entrée}}
+    \Begin{
+        \(y \gets \emptyset\)\;
+        \ForEach{\(x\in\sub{input\_sequence}\)}{
+            \(\tilde{x} \gets \embedding{x}\)\;
+            \(y \gets y \cup \ffn{x}\)\;
+        }
+    }
+    \KwOut{\(y\) \comment{Séquence de sortie}}
+\end{algorithm}
