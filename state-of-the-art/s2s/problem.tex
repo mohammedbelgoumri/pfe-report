@@ -1,6 +1,6 @@
 \section{Énoncé du problème}
 
-Formellement, le problème de modélisation séquence à séquence est celui de calculer une fonction partielle
+Formellement, le problème de modélisation \gls{s2s} est celui de calculer une fonction partielle
 \(f: X^\ast \to Y^\ast\), où :
 \begin{itemize}
     \item  \(X\) est un ensemble dit d'entrées. 
@@ -14,8 +14,8 @@ Dans le cas général, \(n\neq m\) et aucune hypothèse d'alignement n'est suppo
 Il est souvent de prendre \(X = \reals^{d_e}\) et \(Y = \reals^{d_s}\) avec \(d_e, d_s\in\naturals\).
 Dans ce cas, 
 \(x\in \reals^{d_e \times n}\) et \(y\in \reals^{d_s \times m}\).
-Les indices peuvent représenter une succession temporelle ou un ordre plus abstrait 
-(comme celui des mots dans une phrase).
+Les indices peuvent représenter une succession temporelle 
+ou un ordre plus abstrait comme celui des mots dans une phrase~\cite{Martins_2018}.
 
 La majorité des outils mathématiques historiquement utilisées pour ce problème 
 viennent de la théorie du traitement de signal numérique.
