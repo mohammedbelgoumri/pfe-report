@@ -1,0 +1,15 @@
+\subsection{Avantages et inconvénients}
+
+Les \glspl{ffn} présentent deux avantages par rapport aux architectures discutées dans le reste de ce chapitre.
+Le premier est leur simplicité. 
+Elle les rend plus simples à comprendre et à implémenter.
+Le deuxième est le fait qu'ils traitent indépendamment les sous-séquences.
+Cela rend très facile la tâche de les paralléliser, 
+et par conséquent, il accélère considérablement leur entraînement.
+
+Cependant, ce dernier point pose un grand problème.
+Comme ils traitent indépendamment les bloques de la séquence, 
+les \glspl{ffn} ne peuvent pas modéliser les dépendances inter-bloc.
+Par conséquent, leur performance sur les séquences composées de plusieurs blocs est très médiocre.
+La seule solution pour y remédier est d'augmenter la taille du bloc (est donc aussi la dimension d'entrée).
+Ce problème est aussi grave que les \glspl{ffn} ne sont jamais utilisées pour la modélisation de séquence.

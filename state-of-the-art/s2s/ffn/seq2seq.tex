@@ -24,7 +24,7 @@ ce qui produit une séquence de vecteurs en sortie.
         \(y \gets \emptyset\)\;
         \ForEach{\(x\in\sub{input\_sequence}\)}{
             \(\tilde{x} \gets \embedding{x}\)\;
-            \(y \gets y \cup \ffn{x}\)\;
+            \(y \gets y \cup\)\ffn{\(\tilde{x}\)}\;
         }
     }
     \KwOut{\(y\) \comment{Séquence de sortie}}
