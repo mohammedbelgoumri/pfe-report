@@ -52,17 +52,16 @@ Nous pouvons donc les écrire comme combinaisons de produits matriciels et de tr
 Le problème se réduit donc à régler \footnote{En \gls{ml}, le terme ``entraîner'' est plutôt utilisé.}
 les paramètres des matrices en question. 
 Cela nécessite une façon de quantifier la qualité d'approximation d'une fonction \(f\) par une autre \(\hat{f}\).
-L'analyse fonctionnelle nous en donne plusieurs, 
-les équations~\ref{eq:l1-norm} et~\ref{eq:l2-norm} 
+L'analyse fonctionnelle nous en donne plusieurs, les~\cref{eq-l1-norm,eq-l2-norm}
 sont deux exemples récurrents de fonctions dites \emph{de perte}.
 
 \begin{equation}
-    \label{eq:l1-norm}
+    \label{eq-l1-norm}
     L_1(f, \hat{f}) = \int \left\|f - \hat{f}\right\|
 \end{equation}
 
 \begin{equation}
-    \label{eq:l2-norm}
+    \label{eq-l2-norm}
     L_2(f, \hat{f}) = \int \left\|f - \hat{f}\right\|^2
 \end{equation}
 
