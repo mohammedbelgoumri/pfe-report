@@ -29,13 +29,13 @@ Il s'agit d'une simple composition de couches affines avec des activations non a
 
 Un tel réseau de neurones est souvent représenté par 
 un graphe orienté acyclique \((k+1)-\)partie  appelé son ``architecture sous-jacente''~\parencite{Kearns_Vazirani_1994}. 
-La Figure~\ref{fig:ffn} illustre l'architecture d'un \gls{ffn} de profondeur 3
-avec \((w_0, w_1, w_2, w_3) = (4, 5, 5, 3)\).
+La Figure~\ref{fig:ffn} illustre l'architecture d'un \gls{ffn} de profondeur 4
+avec \((w_0, w_1, w_2, w_3, w_4) = (4, 5, 7, 5, 4)\).
 
 
 \begin{figure}[hbt]
     \begin{center}
-        \input{assets/tikz/ffn}
+        \includegraphics[width=10cm]{ffn.png}
     \end{center}
     \caption{Architecture sous-jacente d'un \glsfmtshort{ffn} de profondeur 3.}
     \label{fig:ffn}
