@@ -3,16 +3,16 @@
 Dans cette section, nous introduisant les \glspl{ffn},
 l'architecture neuronale la plus simple et la plus utilisée.
 Il s'agit d'une simple composition de couches affines avec des activations non affines 
-(voire Définition~\ref{def:ffn}).
+(voire Définition~\ref{def. ffn}).
 
 
 \begin{definition}[\Gls{ffn}~\cite{Mukherjee_2021}]\ \\
-    \label{def:ffn}
+    \label{def. ffn}
     Soient \(k, w_0, w_1, \cdots, w_{k+1}\in\naturals\), 
     un réseau de neurones feed-forward de profondeur \(k+1\), à \(w_0\) entrées et \(w_{k+1}\) sorties, 
     est défini par une fonction :
     \begin{equation}
-        \label{eq:ffn}
+        \label{eq. ffn}
         \left\{
         \begin{array}{l}
             \reals^{w_0} \to \reals^{w_{k+1}}\\
@@ -29,7 +29,7 @@ Il s'agit d'une simple composition de couches affines avec des activations non a
 
 Un tel réseau de neurones est souvent représenté par 
 un graphe orienté acyclique \((k+1)-\)partie  appelé son ``architecture sous-jacente''~\parencite{Kearns_Vazirani_1994}. 
-La Figure~\ref{fig:ffn} illustre l'architecture d'un \gls{ffn} de profondeur 4
+La Figure~\ref{fig. ffn} illustre l'architecture d'un \gls{ffn} de profondeur 4
 avec \((w_0, w_1, w_2, w_3, w_4) = (4, 5, 7, 5, 4)\).
 
 
@@ -38,7 +38,7 @@ avec \((w_0, w_1, w_2, w_3, w_4) = (4, 5, 7, 5, 4)\).
         \includegraphics[width=10cm]{ffn.png}
     \end{center}
     \caption{Architecture sous-jacente d'un \glsfmtshort{ffn} de profondeur 3.}
-    \label{fig:ffn}
+    \label{fig. ffn}
 \end{figure}
 
 Deux \glspl{ffn} peuvent avoir la même architecture sous-jacente,
@@ -52,16 +52,16 @@ Nous pouvons donc les écrire comme combinaisons de produits matriciels et de tr
 Le problème se réduit donc à régler \footnote{En \gls{ml}, le terme ``entraîner'' est plutôt utilisé.}
 les paramètres des matrices en question. 
 Cela nécessite une façon de quantifier la qualité d'approximation d'une fonction \(f\) par une autre \(\hat{f}\).
-L'analyse fonctionnelle nous en donne plusieurs, les~\cref{eq-l1-norm,eq-l2-norm}
+L'analyse fonctionnelle nous en donne plusieurs, les~\cref{eq. l1-norm,eq. l2-norm}
 sont deux exemples récurrents de fonctions dites \emph{de perte}.
 
 \begin{equation}
-    \label{eq-l1-norm}
+    \label{eq. l1-norm}
     L_1(f, \hat{f}) = \int \left\|f - \hat{f}\right\|
 \end{equation}
 
 \begin{equation}
-    \label{eq-l2-norm}
+    \label{eq. l2-norm}
     L_2(f, \hat{f}) = \int \left\|f - \hat{f}\right\|^2
 \end{equation}
 
