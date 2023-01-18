@@ -1,18 +1,18 @@
 \subsection{Généralités}
 
-Dans cette section, nous introduisant les \glspl{ffn},
+Dans cette section, nous introduisant les \glspl{mlp},
 l'architecture neuronale la plus simple et la plus utilisée.
 Il s'agit d'une simple composition de couches affines avec des activations non affines 
-(voire Définition~\ref{def. ffn}).
+(voire Définition~\ref{def. mlp}).
 
 
-\begin{definition}[\Gls{ffn}~\cite{Mukherjee_2021}]\ \\
-    \label{def. ffn}
+\begin{definition}[\Gls{mlp}~\cite{Mukherjee_2021}]\ \\
+    \label{def. mlp}
     Soient \(k, w_0, w_1, \cdots, w_{k+1}\in\naturals\), 
     un réseau de neurones feed-forward de profondeur \(k+1\), à \(w_0\) entrées et \(w_{k+1}\) sorties, 
     est défini par une fonction :
     \begin{equation}
-        \label{eq. ffn}
+        \label{eq. mlp}
         \left\{
         \begin{array}{l}
             \reals^{w_0} \to \reals^{w_{k+1}}\\
@@ -29,22 +29,22 @@ Il s'agit d'une simple composition de couches affines avec des activations non a
 
 Un tel réseau de neurones est souvent représenté par 
 un graphe orienté acyclique \((k+1)-\)partie  appelé son ``architecture sous-jacente''~\parencite{Kearns_Vazirani_1994}. 
-La Figure~\ref{fig. ffn} illustre l'architecture d'un \gls{ffn} de profondeur 4
+La Figure~\ref{fig. mlp} illustre l'architecture d'un \gls{mlp} de profondeur 4
 avec \((w_0, w_1, w_2, w_3, w_4) = (4, 5, 7, 5, 4)\).
 
 
 \begin{figure}[hbt]
     \begin{center}
-        \includegraphics[width=10cm]{ffn.png}
+        \includegraphics[width=10cm]{mlp.png}
     \end{center}
-    \caption{Architecture sous-jacente d'un \glsfmtshort{ffn} de profondeur 3.}
-    \label{fig. ffn}
+    \caption{Architecture sous-jacente d'un \glsfmtshort{mlp} de profondeur 3.}
+    \label{fig. mlp}
 \end{figure}
 
-Deux \glspl{ffn} peuvent avoir la même architecture sous-jacente,
+Deux \glspl{mlp} peuvent avoir la même architecture sous-jacente,
 en effet, cette dernière ne dépend que des dimensions de leurs couches respectives.
 De ce fait, une méthode de trouver pour une architecture et une fonction cible données 
-le meilleur \gls{ffn} est nécessaire.
+le meilleur \gls{mlp} est nécessaire.
 
 Pour ce faire, nous exploitons le fait que 
 les \(A_i\) soient des applications affines sur des espaces de dimensions finies.

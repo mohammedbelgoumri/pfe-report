@@ -1,12 +1,12 @@
 \section{Architecture encodeur--décodeur}
 
-Les lacunes des \glspl{ffn} sont en large partie due au traitement séparé des parties des séquences.
+Les lacunes des \glspl{mlp} sont en large partie due au traitement séparé des parties des séquences.
 Dans la production de l'élément (ou bloc) courant de la sortie,
-un \gls{ffn} se base uniquement sur l'élément (ou bloc) correspondant de l'entrée.
-L'équation~\ref{eq.ffn-seq-prod} l'illustre pour une entrée \(x = (x_1, x_2, \cdots, x_n)\)
+un \gls{mlp} se base uniquement sur l'élément (ou bloc) correspondant de l'entrée.
+L'équation~\ref{eq.mlp-seq-prod} l'illustre pour une entrée \(x = (x_1, x_2, \cdots, x_n)\)
 et une sortie \(y = (y_1, y_2, \cdots, y_m)\).
 \begin{equation}
-    \label{eq.ffn-seq-prod}
+    \label{eq.mlp-seq-prod}
     y_j = f(x_i, x_{i+1}, \cdots, x_{i+\ell}) \qquad 1 \le j \le m
 \end{equation}
 En plus de l'hypothèse implicite de l'existence d'une telle correspondance,
