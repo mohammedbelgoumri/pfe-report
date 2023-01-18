@@ -64,5 +64,7 @@
             "references.bib"
         ]
     },
-    "FSharp.suggestGitignore": false
+    "FSharp.suggestGitignore": false,
+    "latex-workshop.view.pdf.invert": 0.9,
+    "latex-workshop.view.pdf.zoom": "page-width"
 }
