@@ -1,0 +1,19 @@
+\subsection{\Glsfmtlongpl{rnn} simples}
+
+Mathématiquement, une couche d'un \gls{rnn} prend la forme suivante
+\begin{equation}
+    \label{eq.rnn}
+    h^{(t)} = \phi\left(Uh^{(t-1)} + Wx^{(t)} + b\right) \qquad 1 \le t \le n
+\end{equation}
+où \(t\) est le temps\footnote{Il peut être continu ou discret, réel ou abstrait.},
+\(x^{(t)}, h^{(t)}\) sont respectivement l'entrée et la sortie à l'instant \(t\), 
+\(n\) est la longueur de la séquence et \(\phi\) est la fonction d'activation~\cite{Fathi_2021}.
+Dans le cas où \(\phi\) est l'identité,  
+la transformée en \(z\) de l'équation~\ref{eq.rnn} est donnée par
+\begin{equation}
+    \label{eq.rnn-tz}
+    H(z) = z\left(zI - U\right)^{-1} \left(WX(Z) + b\right)
+\end{equation}
+il s'agit donc d'un système à réponse impulsionnelle infinie~\cite{Fathi_2021}.
+
+
