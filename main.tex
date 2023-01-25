@@ -139,7 +139,7 @@
 
 % !TEX root = main.tex
 \begin{document}
-    \include{titlepage}
+	\include{titlepage}
     \addcontentsline{toc}{chapter}{Page de garde}
 	\afterpage{
 		\newgeometry{bottom=3cm}
@@ -148,16 +148,16 @@
 		\listoffigures
 		\addcontentsline{toc}{chapter}{Table des figures}
 		% \listofalgorithms
+		
+		% \printabbreviations
+		\printglossary[
+			title=Sigles et abréviations, 
+			toctitle=Sigles et abréviations, 
+			type=abbreviations,
+			style=long,nonumberlist
+		]
 		\restoregeometry
 	}
-
-	% \printabbreviations
-	\printglossary[
-		title=Sigles et abréviations, 
-		toctitle=Sigles et abréviations, 
-		type=abbreviations,
-		style=long,nonumberlist
-	]
 	\import{state-of-the-art/}{state-of-the-art}
     
 	\printbibliography
