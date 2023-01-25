@@ -15,5 +15,6 @@ la transformée en \(z\) de l'équation~\ref{eq.rnn} est donnée par
     H(z) = z\left(zI - U\right)^{-1} \left(WX(Z) + b\right)
 \end{equation}
 il s'agit donc d'un système à réponse impulsionnelle infinie~\cite{Fathi_2021}.
-
-
+Par conséquent, un \gls{rnn} possède une \emph{mémoire}.
+Elle émerge du fait qu'il aie ce qu'on appelle \emph{un état interne}.
+Dans ce cas, le rôle d'état est joué par les sorties \(h^{(t)}\), qu'on appelle donc états cachés.
