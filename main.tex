@@ -141,24 +141,25 @@
 \begin{document}
 	\include{titlepage}
     \addcontentsline{toc}{chapter}{Page de garde}
+	\pagenumbering{roman}
 	\afterpage{
 		\newgeometry{bottom=3cm}
 		\tableofcontents
 		\addcontentsline{toc}{chapter}{Table des matières}
 		\listoffigures
 		\addcontentsline{toc}{chapter}{Table des figures}
-		% \listofalgorithms
-		
-		% \printabbreviations
-		\printglossary[
-			title=Sigles et abréviations, 
-			toctitle=Sigles et abréviations, 
-			type=abbreviations,
-			style=long,nonumberlist
-		]
-		\restoregeometry
+		% \listofalgorithms	
 	}
+	% \printabbreviations
 	\cleardoublepage
+	\printglossary[
+		title=Sigles et abréviations, 
+		toctitle=Sigles et abréviations, 
+		type=abbreviations,
+		style=long,nonumberlist
+	]
+	\restoregeometry
+	\pagenumbering{arabic}
 	\import{state-of-the-art/}{state-of-the-art}
     
 	\printbibliography
