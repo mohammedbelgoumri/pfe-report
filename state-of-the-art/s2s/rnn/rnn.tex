@@ -8,4 +8,20 @@ est leur incapacité de représenter la dépendance entres les éléments d'une 
 Les \glspl{rnn} tentent à résoudre ce problème en introduisant une boucle de rétro-action~\cite{Fathi_2021}.
 Cela veut dire que la sortie d'un \gls{rnn} dépend des sorties précédentes aussi bien que de l'entrée.
 
+\begin{figure}[hbt]
+    \begin{center}
+        \begin{subfigure}{.4\linewidth}
+            \includegraphics[width=\linewidth]{rnn-loop}
+            \caption{Couche récurrente}
+            \label{fig.rnn-loop}
+        \end{subfigure}
+        \begin{subfigure}{.4\linewidth}
+            \includegraphics[width=\linewidth]{ffn-layers}
+            \caption{Couche feed-forward}
+            \label{ffn-layer}
+        \end{subfigure}
+    \end{center}
+    \caption{\glsfmtshort{rnn} v.s FFN}
+\end{figure}
+
 \subimport{}{simple}
