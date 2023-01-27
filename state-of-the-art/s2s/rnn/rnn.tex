@@ -10,17 +10,7 @@ Les \glspl{rnn} tentent à résoudre ce problème en utilisant un état interne 
 Chaque élément de la séquence modifie cet état lors de son traitement.
 Cela permet aux premiers éléments d'affecter le traitement des éléments qui les suivent, 
 ainsi permettant à l'information de se propager vers le futur,
-ce qui donne lieu à une \emph{mémoire}~\cite{Fathi_2021}.
-
-Pour implémenter ce type de comportement, 
-l'état d'un \gls{rnn} est décalé d'une unité est réinjecté dans l'entrée (Voire Figure~\ref{fig.rnn-loop}).
-Cela est très différent des \glspl{mlp} qui n'ont pas de boucle de rétroaction,
-il s'agit de \glspl{ffn} (Voire Figure~\ref{fig.ffn-layer}).
-Par conséquent, ils n'ont pas d'état ni de mémoire.
-
-
-% Cela veut dire que la sortie d'un \gls{rnn} dépend des sorties précédentes aussi bien que de l'entrée.
-
+ce qui donne lieu à une \emph{mémoire}.
 \begin{figure}[hbt]
     \begin{center}
         \begin{subfigure}{.4\linewidth}
@@ -37,5 +27,11 @@ Par conséquent, ils n'ont pas d'état ni de mémoire.
     \caption{\glsfmtshort{rnn} v.s \glsfmtshort{ffn}}
     \label{fig.rnn-vs-ffn}
 \end{figure}
+Pour implémenter ce type de comportement, 
+l'état d'un \gls{rnn} est décalé d'une unité est réinjecté dans l'entrée (Voire Figure~\ref{fig.rnn-loop}).
+Cela est très différent des \glspl{mlp} qui n'ont pas de boucle de rétroaction,
+il s'agit de \glspl{ffn} (Voire Figure~\ref{fig.ffn-layer}).
+Par conséquent, ils n'ont pas d'état ni de mémoire~\cite{Fathi_2021}.
+
 
 \subimport{}{simple}
