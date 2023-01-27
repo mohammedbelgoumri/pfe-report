@@ -57,15 +57,20 @@ sont deux exemples récurrents de fonctions dites \emph{de perte}.
 
 \begin{equation}
     \label{eq. l1-norm}
-    L_1(f, \hat{f}) = \int \left\|f - \hat{f}\right\|
+    L_1(f, \hat{f}) = \left\|f - \hat{f}\right\|_1 = \int \left|f - \hat{f}\right|
 \end{equation}
 
 \begin{equation}
     \label{eq. l2-norm}
-    L_2(f, \hat{f}) = \int \left\|f - \hat{f}\right\|^2
+    L_2(f, \hat{f}) = \left\|f - \hat{f}\right\|_2^2 = \int \left|f - \hat{f}\right|^2
 \end{equation}
 
-Ayant fixé une fonction de perte \(L\), l'entraînement revient à un problème d'optimisation.
+Ayant fixé une fonction de perte \(L\), 
+l'entraînement revient à un problème d'optimisation comme représenté par l'équation~\ref{eq.learn-opt}.
+\begin{equation}
+    \label{eq.learn-opt}
+    f^\ast = \argmin_{\hat{f}}{L(f, \hat{f})}
+\end{equation}
 Dans le cas particulier où \(L\) est différentiable, 
 l'algorithme du gradient peut être utilisé pour trouver un minimum local.
 Les gradients sont calculés en utilisant une méthode de dérivation automatique comme la rétro-propagation.
