@@ -17,15 +17,15 @@ la transformée en \(z\) de l'équation~\ref{eq.rnn} est donnée par
 \end{equation}
 il s'agit donc d'un système à réponse impulsionnelle infinie~\cite{Fathi_2021}.
 
-Le traitement d'une séquence par l'\gls{rnn} de la Figure~\ref{fig.rnn-loop}, 
-est équivalent à son traitement par un \gls{ffn} dont la profondeur est égale à la longueur de la séquence.
-On appelle cet \gls{ffn} le \emph{dépliement temporel} du \gls{rnn} en question 
+Le traitement d'une séquence \(x\) par un \gls{rnn} \(\mathcal{R}\), 
+est équivalent à son traitement par un \gls{ffn} \(\mathcal{F}\) dont la profondeur est égale à la longueur de \(x\).
+\(\mathcal{F}\) est donc appelé \emph{dépliement temporel} de \(\mathcal{R}\) pour \(x\)
 (Voire Figure~\ref{fig.rnn-unfold}).
 
 \begin{figure}[hbt]
     \centering
-    % \includegraphics[options]{name}
-    \caption{Dépliement temporel d'un \glsfmtshort{rnn}.}
+    \includegraphics[width=15cm]{rnn-unfolding.png}
+    \caption{Dépliement temporel d'un \glsfmtshort{rnn} sur une entrée de longueur 4.}
     \label{fig.rnn-unfold}
 \end{figure}
 
