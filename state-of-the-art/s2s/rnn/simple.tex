@@ -39,15 +39,16 @@ L'entraînement d'un \gls{rnn} sur un exemple se fait en le dépliant,
 puis en entraînant le \gls{ffn} qui résulte par rétro-propagation.
 L'algorithme résultant s'appel la \gls{bptt}.
 Cela est problématique, car la taille de l'entrée n'est théoriquement pas bornées.
-Par conséquent, la profondeur effective d'un \gls{rnn} ne l'est pas non plus.
+Par conséquent, la profondeur effective d'un \gls{rnn} ne l'est pas non plus~\cite{Fathi_2021}.
 
 Or, dans l'entraînement d'un réseau de neurones trop profond,
 les modules des gradients peuvent atteindre des valeurs trop grandes ou trop petites.
 Il s'agit respectivement des problèmes de ``l'explosion du gradient'' 
-et de ``la disparition du gradient''~\cite{Bengio_Simard_Frasconi_1994}.
+et de ``la disparition du gradient''~\cite{Basodi_Ji_Zhang_Pan_2020}
 Une conséquence de ce phénomène est que 
 les \glspl{rnn} simples ont du mal avec les entrées pour lesquelles le dépliement temporel est profond,
 (i.e les longues entrées).
-Cette incapacité à modéliser les corrélations à long terme est appelée ``mémoire à court terme''.
+Cette incapacité à modéliser les corrélations à long terme est appelée 
+``mémoire à court terme''~\cite{Bengio_Simard_Frasconi_1994}.
 
 
