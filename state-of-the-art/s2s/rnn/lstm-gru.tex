@@ -1,0 +1,21 @@
+\subsection{Portes, \glsfmtlong{gru} et \glsfmtlong{lstm}}
+
+Pour une grande partie des problèmes d'apprentissage \gls{s2s}, les séquences peuvent être très longues.
+Le mémoire à court terme constitue donc un grand obstacle pour l'utilisation des \glspl{rnn} simples en pratique.
+Une approche de le contourner qui a eu un énorme succès expérimental 
+et l'introduction d'un mécanisme de contrôle sur la boucle de rétroaction (Voire Figure~\ref{fig.rnn-gate}).
+Les unités de ce mécanisme sont appelées des \emph{portes}.
+On parle don d'un \emph{\gls{rnn} à portes}.
+Dans cette section, nous explorons les deux \gls{rnn} à portes les plus utilisés :
+le \gls{gru} et le \gls{lstm}. 
+
+
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=8cm]{gated-feedback.png}
+    \end{center}
+    \caption{Forme générale d'un \glsfmtshort{rnn} à portes.}
+    \label{fig.rnn-gate}
+\end{figure}
+
+\subsubsection{\Glsfmtlong{gru}}
