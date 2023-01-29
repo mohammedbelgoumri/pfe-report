@@ -18,7 +18,7 @@ la transformée en \(z\) de l'équation~\ref{eq.rnn} est donnée par
 \end{equation}
 il s'agit donc d'un système à réponse impulsionnelle infinie~\cite{Fathi_2021}.
 
-\subsubsection{Dépliement temporel et mémoire à court terme}
+\subsubsection{Dépliement temporel et encodeur--décodeur récurrent}
 
 Le traitement d'une séquence \(x\) par un \gls{rnn} \((\mathcal{R})\), 
 est équivalent à son traitement par un \gls{ffn} \((\mathcal{F})\) dont la profondeur est égale à la longueur de \(x\).
@@ -33,6 +33,7 @@ pour une séquence de longueur 4~\cite{LeCun_Bengio_Hinton_2015}.
     \label{fig.rnn-unfold}
 \end{figure}
 
+\subsubsection{\Glsfmtlong{bptt} et mémoire à court terme}
 
 L'entraînement d'un \gls{rnn} sur un exemple se fait en le dépliant, 
 puis en entraînant le \gls{ffn} qui résulte par rétro-propagation.
