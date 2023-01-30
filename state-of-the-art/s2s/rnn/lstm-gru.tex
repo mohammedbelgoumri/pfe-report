@@ -6,7 +6,7 @@ Une approche de le contourner qui a eu un énorme succès expérimental,
 est l'introduction d'un mécanisme de contrôle sur la boucle de rétroaction (Voire Figure~\ref{fig.rnn-gate}).
 Ce mécanisme est généralement implémenté avec des \emph{portes},
 des unités entraînables qui peuvent réguler le flux d'information dans la couche récurrente.
-On parle alors d'un \emph{\gls{rnn} à portes}.
+On parle alors d'\emph{\gls{rnn} à portes}.
 Dans cette section, nous explorons les deux variants les plus utilisés d'\glspl{rnn} à portes :
 le \gls{gru} et le \gls{lstm}. 
 
@@ -20,3 +20,47 @@ le \gls{gru} et le \gls{lstm}.
 \end{figure}
 
 \subsubsection{\Glsfmtlong{gru}}
+
+Le \gls{gru}, introduit par~\cite{Cho_van_Merrienboer_Bahdanau_Bengio_2014}, 
+est une architecture récurrente à portes très simple (Voir Figure~\ref{fig.gru-circuit}).
+Elle utilise deux portes.
+La première est la porte de réinitialisation ((\(r\) dans la figure~\ref{fig.gru-circuit})).
+Elle détermine le point auquel l'information sur le passé peut se propager
+(quand \(r=0\), pas de propagation et quand \(r=1\), propagation totale).
+Sa sortie s'appelle \emph{l'état candidat} (\(\tilde{h}\) dans la figure).
+La deuxième est la porte de mise à jour (\(z\) dans la figure).
+Elle détermine les contributions respectives de l'état candidat et l'état passé
+(si \(z=0\), seul l'état candidat contribue et si \(z=1\), seule l'état courant contribue).
+Sa sortie est la sortie globale du \gls{gru}~\cite{Cho_van_Merrienboer_Bahdanau_Bengio_2014}.
+
+
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=8cm]{gru-circuit.png}
+    \end{center}
+    \caption{Les portes d'un \glsfmtshort{gru}~\cite[Fig. 1b]{Chung_Gulcehre_Cho_Bengio_2014}}
+    \label{fig.gru-circuit}
+\end{figure}
+
+Le fonctionnement des portes d'un \gls{gru} est simple.
+Leurs valeurs sont calculées à partir de l'entrée et de l'état courants par
+les équations~\ref{eq.gru-update} et \ref{eq.gru-reset}, 
+où \(\sigma\) est la fonction \emph{sigmoïde}%
+\footnote{\(\sigma:\reals\to\reals, x\mapsto\frac{1}{1+e^{-x}}\)}.
+\begin{eqnarray}
+    \label{eq.gru-update}
+    z^{(t)}  &=&\sigma\left(W_z x^{(t)}+U_z h^{(t-1)}+b_z\right) \\
+    \label{eq.gru-reset}
+    r^{(t)}  &=&\sigma\left(W_r x^{(t)}+U_r h^{(t-1)}+b_r\right) \\
+    \label{eq.gru-candidate}
+    \tilde{h}^{(t)}  &=&\phi\left(W_h x^{(t)}+U_h\left(r^{(t)} \odot h^{(t-1)}\right)+b_h\right) \\
+    \label{eq.gru-out}
+    h^{(t)}  &=&z^{(t)} \odot h^{(t-1)}+\left(1-z^{(t)}\right) \odot \tilde{h}^{(t)}
+\end{eqnarray}
+L'état candidat est calculé à partir de l'entrée et l'état pondéré par la porte de réinitialisation
+par l'équation~\ref{eq.gru-candidate}, où \(\phi\) est la fonction d'activation.
+Finalement, l'état futur (la sortie) est la moyenne pondérée par \(z\) 
+de l'état courant et l'état candidat~\cite{Cho_van_Merrienboer_Bahdanau_Bengio_2014}.
+Notons que le \gls{gru} devient un \gls{rnn} simple 
+si les portes de réinitialisation et de mise à jour sont respectivement fixés à \(1\) et \(0\)%
+~\cite{Fathi_2021}.
