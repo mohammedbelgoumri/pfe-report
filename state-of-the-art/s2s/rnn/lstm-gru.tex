@@ -38,7 +38,7 @@ Sa sortie est la sortie globale du \gls{gru}~\cite{Cho_van_Merrienboer_Bahdanau_
     \begin{center}
         \includegraphics[width=8cm]{gru-circuit.png}
     \end{center}
-    \caption{Les portes d'un \glsfmtshort{gru}~\cite[Fig. 1b]{Chung_Gulcehre_Cho_Bengio_2014}}
+    \caption{Architecture interne d'un \glsfmtshort{gru}~\cite[Fig. 1b]{Chung_Gulcehre_Cho_Bengio_2014}}
     \label{fig.gru-circuit}
 \end{figure}
 
@@ -64,3 +64,48 @@ de l'état courant et l'état candidat~\cite{Cho_van_Merrienboer_Bahdanau_Bengio
 Notons que le \gls{gru} devient un \gls{rnn} simple 
 si les portes de réinitialisation et de mise à jour sont respectivement fixés à \(1\) et \(0\)%
 ~\cite{Fathi_2021}.
+
+\subsubsection{\Glsfmtlong{lstm}}
+
+Il s'agit de l'une des premières architectures récurrentes à protes%
+~\cite{Chung_Gulcehre_Cho_Bengio_2014}.
+Elle a été introduite par~\cite{Hochreiter_Schmidhuber_1997}.
+Un \gls{lstm} implémente trois portes : 
+une porte d'entrés (\(i\)), une porte d'oublie (\(f\)) et une porte de sortie (\(o\))%
+(Voir Figure~\ref{fig.lstm-circuit}).
+
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=8cm]{lstm-circuit.png}
+    \end{center}
+    \caption{Architecture interne d'un \glsfmtshort{lstm}~\cite[Fig. 1a]{Chung_Gulcehre_Cho_Bengio_2014}}
+    \label{fig.lstm-circuit}
+\end{figure}
+
+Le fonctionnement des portes est similaire à celui du \gls{gru}.
+Les équations~\ref{eq.lstm-forget}--\ref{eq.lstm-h} le montrent en détails%
+~\cite{Hochreiter_Schmidhuber_1997}.
+
+\begin{eqnarray}
+    \label{eq.lstm-forget}
+    f^{(t)} &=&\sigma\left(W_f x^{(t)}+U_f h^{(t-1)}+b_f\right) \\
+    \label{eq.lstm-input}
+    i^{(t)} &=&\sigma\left(W_i x^{(t)}+U_i h^{(t-1)}+b_i\right) \\
+    \label{eq.lstm-out}
+    o^{(t)} &=&\sigma\left(W_o x^{(t)}+U_o h^{(t-1)}+b_o\right) \\
+    \label{eq.lstm-ctilde}
+    \tilde{c}^{(t)} &=&\tanh\left(W_c x^{(t)}+U_c h^{(t-1)}+b_c\right) \\
+    \label{eq.lstm-c}
+    c^{(t)} &=&f^{(t)} \odot c^{(t-1)}+i^{(t)} \odot \tilde{c}^{(t)} \\
+    \label{eq.lstm-h}
+    h^{(t)} &=&o^{(t)} \odot \phi\left(c^{(t)}\right)
+\end{eqnarray}
+
+\subsubsection{Évaluation des \glsfmtlongpl{rnn}}
+
+Nous avons établi que les \glspl{rnn} simples souffrent du mémoire à court terme%
+~\cite{Bengio_Simard_Frasconi_1994,Pascanu_Mikolov_Bengio}.
+En utilisant les portes pour contrôler le flux d'information,
+les \glspl{gru} et \glspl{lstm} résolvent le problème au coût d'une architecture plus complexe.
+Ils ont des performances similaires est largement meilleures que celle des \glspl{rnn}%
+~\cite{Chung_Gulcehre_Cho_Bengio_2014}.
