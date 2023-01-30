@@ -109,3 +109,9 @@ En utilisant les portes pour contrôler le flux d'information,
 les \glspl{gru} et \glspl{lstm} résolvent le problème au coût d'une architecture plus complexe.
 Ils ont des performances similaires est largement meilleures que celle des \glspl{rnn}%
 ~\cite{Chung_Gulcehre_Cho_Bengio_2014}.
+
+Cependant, toutes les architectures récurrentes présentent un problème fondamental : 
+elles fonctionnent séquentiellement.
+Bien que cela les rend naturellement mieux adaptées à la modélisation de séquences,
+il les rend aussi quasi impossibles à paralléliser pour exploiter des architectures parallèles (GPU).
+Par conséquent, l'entraînement des \glspl{rnn} est extrêmement lent~\cite{Stahlberg_2020}.
