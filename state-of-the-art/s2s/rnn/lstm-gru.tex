@@ -46,7 +46,9 @@ Le fonctionnement des portes d'un \gls{gru} est simple.
 Leurs valeurs sont calculées à partir de l'entrée et de l'état courants par
 les équations~\ref{eq.gru-update} et \ref{eq.gru-reset}, 
 où \(\sigma\) est la fonction \emph{sigmoïde}%
-\footnote{\(\sigma:\reals\to\reals, x\mapsto\frac{1}{1+e^{-x}}\)}.
+\footnote{\(\sigma:\reals\to\reals, x\mapsto\frac{1}{1+e^{-x}}\)}
+et \(\odot\) et le produit d'Hadamard%
+\footnote{Pour \(u, v\in\reals^n\), \(u\odot v\in\reals^n\) et \((u\odot v)_i = u_i v_i\)}.
 \begin{eqnarray}
     \label{eq.gru-update}
     z^{(t)}  &=&\sigma\left(W_z x^{(t)}+U_z h^{(t-1)}+b_z\right) \\
@@ -84,6 +86,7 @@ une porte d'entrés (\(i\)), une porte d'oublie (\(f\)) et une porte de sortie (
 
 Le fonctionnement des portes est similaire à celui du \gls{gru}.
 Les équations~\ref{eq.lstm-forget}--\ref{eq.lstm-h} le montrent en détails%
+\footnote{\(\tanh:\reals\to\reals, x\mapsto \frac{e^x - e^{-x}}{e^x - e^{-x}}\)}
 ~\cite{Hochreiter_Schmidhuber_1997}.
 
 \begin{eqnarray}
