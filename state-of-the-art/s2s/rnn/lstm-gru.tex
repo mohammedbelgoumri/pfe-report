@@ -86,7 +86,7 @@ une porte d'entrés (\(i\)), une porte d'oublie (\(f\)) et une porte de sortie (
 
 Le fonctionnement des portes est similaire à celui du \gls{gru}.
 Les équations~\ref{eq.lstm-forget}--\ref{eq.lstm-h} le montrent en détails%
-\footnote{\(\tanh:\reals\to\reals, x\mapsto \frac{e^x - e^{-x}}{e^x - e^{-x}}\)}
+\footnote{\(\tanh:\reals\to\reals, x\mapsto \frac{e^x - e^{-x}}{e^x + e^{-x}}\)}
 ~\cite{Hochreiter_Schmidhuber_1997}.
 
 \begin{eqnarray}
