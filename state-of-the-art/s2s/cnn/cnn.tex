@@ -14,6 +14,8 @@ Les \glspl{cnn} atteignent des performances comparables à celles des \glspl{rnn
 Ils y parviennent en exploitant un outil mathématique appelé produit de \emph{convolution}%
 ~\cite{Calin_2020}.
 
+\subsubsection{Principes mathématiques de fonctionnement}
+
 Le produit de convolution de deux signaux \(f\) et \(g\) est le signal \(f \ast g\) donné par
 \begin{equation}
     \label{eq.convolution}
@@ -34,10 +36,15 @@ Les \glspl{cnn} utilisent l'inter-corrélation à la place des applications lin�
 Une couche de convolution unidimensionnelle calcul donc la fonction suivante
 \begin{equation}
     \label{eq.layer-conv1d}
-    x \mapsto \phi\left(x\star w + b\right)
+    x \mapsto \phi\left(b + \sum_{i=1}^n x\star w_i\right)
 \end{equation}
-ou \(x\) est l'entrée et \(w\) est le paramètre entraînable de la couche, aussi appelé son \emp{noyau}
+ou \(x\) est l'entrée et les vecteurs \(w_i\) sont les paramètres entraînables de la couche, 
+aussi appelés ses \emph{noyaux} ou \emph{masques}
 (Voire Figure~\ref{fig.layer-conv1d}).
+La sortie de cette couche est une combinaison de tous les éléments de la séquence d'entrée.
+En composant suffisamment de telles couches,
+un \gls{cnn} apprend une représentation de l'entrée beaucoup plus structurée qu'un \gls{mlp}.
+On parle par fois de représentation \emph{hiérarchique}.
 
 \begin{figure}[hbt]
     \begin{center}
@@ -46,3 +53,59 @@ ou \(x\) est l'entrée et \(w\) est le paramètre entraînable de la couche, aus
     \caption{Une couche convolutive unidimensionnelle.}
     \label{fig.layer-conv1d}
 \end{figure}
+
+
+\subsubsection{Application à l'apprentissage \glsfmtshort{s2s}}
+
+Leur tendance naturelle à produire des représentations synthétiques des entrées,
+fait des \glspl{cnn} des encodeurs très puissants pour une grande variété de tâches,
+y compris des tâches de transduction de séquences.
+Plusieurs travaux ont combiné un encodeur convolutif avec un décodeur récurrent%
+(Voire~Figure~\ref{fig.rctm}, \barecite[Fig. 3]{Kalchbrenner_Blunsom_2013})%
+~\cite{deep-nmt-survey}.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=8cm]{assets/images/ctrm.png}
+    \caption{Recurrent Continuous Translation Model}
+    \label{fig.rctm}
+\end{figure}
+
+Cependant, des architectures totalement convolutives pour l'apprentissage \gls{s2s} existent également.
+ByteNet (Voire Figure~\ref{fig.bytenet}
+\barecite{Kalchbrenner_Espeholt_Simonyan_Oord_Graves_Kavukcuoglu_2017})
+et ConvS2S (Voire Figure~\ref{fig.convs2s}
+\barecite{Kameoka_Tanaka_Kwaśny_Kaneko_Hojo_2020})
+sont deux exemples de telles architectures.
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=.6\textwidth]{assets/images/bytenet.png}
+    \caption{L'architecture de ByteNet.}
+    \label{fig.bytenet}
+\end{figure}
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=.6\textwidth]{assets/images/convs2s.png}
+    \caption{L'architecture de ConvS2S.}
+    \label{fig.convs2s}
+\end{figure}
+
+\subsubsection{Avantages et inconvénients}
+
+Le produit de convolution (et par conséquent, inter-corrélation) 
+est une opération très facile à paralléliser.
+Il est donc possible d'exploiter des architectures matérielles parallèles (GPU) 
+pour accélérer l'entraînement des \glspl{cnn}.
+À cet effet, les \glspl{cnn} sont beaucoup plus efficaces que les \glspl{rnn} pour les entrées longues. 
+Ils peuvent être employés dans des cas pratiques de tailles raisonnables%
+~\cite{Li_Zhang_Huang_Wang_Zheng_2016}.
+
+Or, la nature locale du produit de convolution
+rend difficile aux \glspl{cnn} d'apprendre les corrélations globales%
+\footnote{Dépendances entre des couples d'éléments éloignés dans la séquence}.
+En effet, pour représenter toutes les relations dans une séquence de longueur \(n\),
+un \gls{cnn} dont les masques sont de taille \(k < n\) doit avoir \(\log_k n\) couche%
+~\cite{attention}.
+Le traitement de séquences très longues nécessite alors des \glspl{cnn} trop profonds.
