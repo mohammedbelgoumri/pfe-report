@@ -1,1 +1,17 @@
 \section{Transformeurs}
+
+Les architectures discutées dans les \crefrange{sec. mlp}{sec.cnn}
+(notamment les encodeurs-décodeurs à base de \glspl{cnn} et \glspl{rnn}) 
+forment la colonent vertébrale des modèles classiques d'apprentissage \gls{s2s}~\cite{deep-nmt-survey}.
+Cependant, leur mise en place est inhibée par des problèmes de performance 
+(Voire \cref{sec.rnn,sec.cnn}).
+
+Le transformeur (aussi appelé réseau de neurones auto-attentif) est une architecture performante pour le traitement de séquences~\cite{Shim_Sung_2022}.
+Introduite par~\cite{attention}, elle est basée sur le mécanisme d'attention%
+~\cite{Bahdanau_Cho_Bengio_2016}.
+Une operation mathématique parallelisable à l'instar du produit de convolution, 
+mais dont la complexité ne dépend pas de la distances dans la séquences.
+
+
+
+\subimport{}{general}
