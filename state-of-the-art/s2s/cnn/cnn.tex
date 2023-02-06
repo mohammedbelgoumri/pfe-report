@@ -78,19 +78,20 @@ et ConvS2S (Voire Figure~\ref{fig.convs2s}
 \barecite{Kameoka_Tanaka_Kwaśny_Kaneko_Hojo_2020})
 sont deux exemples de telles architectures.
 
-\begin{figure}[hbt]
-    \centering
-    \includegraphics[width=.6\textwidth]{assets/images/bytenet.png}
-    \caption{L'architecture de ByteNet.}
-    \label{fig.bytenet}
-\end{figure}
 
-\begin{figure}[hbt]
+\begin{minipage}{.5\textwidth}
     \centering
-    \includegraphics[width=.6\textwidth]{assets/images/convs2s.png}
-    \caption{L'architecture de ConvS2S.}
+    \includegraphics[width=6cm]{assets/images/bytenet.png}
+    \captionof{figure}{L'architecture de ByteNet.}
+    \label{fig.bytenet}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=6cm]{assets/images/convs2s.png}
+    \captionof{figure}{L'architecture de ConvS2S.}
     \label{fig.convs2s}
-\end{figure}
+\end{minipage}
+
 
 \subsubsection{Avantages et inconvénients}
 
@@ -108,4 +109,5 @@ rend difficile aux \glspl{cnn} d'apprendre les corrélations globales%
 En effet, pour représenter toutes les relations dans une séquence de longueur \(n\),
 un \gls{cnn} dont les masques sont de taille \(k < n\) doit avoir \(\log_k n\) couche%
 ~\cite{attention}.
-Le traitement de séquences très longues nécessite alors des \glspl{cnn} trop profonds.
+Le traitement de séquences très longues nécessite alors des \glspl{cnn} trop profonds,
+cequi donne lieu au problèmes de dispartion et d'exploision des gradients.
