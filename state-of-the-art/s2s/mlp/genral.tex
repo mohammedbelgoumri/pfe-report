@@ -6,7 +6,7 @@ Il s'agit d'une simple composition de couches affines avec des activations non a
 (voire Définition~\ref{def. mlp}).
 
 
-\begin{definition}[\Gls{mlp}~\cite{Mukherjee_2021}]\ \\
+\begin{definition}[\gls{mlp}, \barecite{Mukherjee_2021}]\ \\
     \label{def. mlp}
     Soient \(k, w_0, w_1, \cdots, w_{k+1}\in\naturals\), 
     un réseau de neurones feed-forward de profondeur \(k+1\), à \(w_0\) entrées et \(w_{k+1}\) sorties, 
@@ -27,11 +27,10 @@ Il s'agit d'une simple composition de couches affines avec des activations non a
     La fonction \(\phi_i\circ A_i\) est appelée la \(i^{\, \mathrm{eme}}\) couche du réseau.
 \end{definition}
 
-Un tel réseau de neurones est souvent représenté par 
-un graphe orienté acyclique \((k+1)-\)partie  appelé son ``architecture sous-jacente''~\parencite{Kearns_Vazirani_1994}. 
+À un tel réseau de neurones, on peut associer un graphe orienté acyclique 
+qu'on appelle son ``architecture sous-jacente''~\parencite{Kearns_Vazirani_1994}. 
 La Figure~\ref{fig. mlp} illustre l'architecture d'un \gls{mlp} de profondeur 4
-avec \((w_0, w_1, w_2, w_3, w_4) = (4, 5, 7, 5, 4)\).
-
+avec \({(w_0, w_1, w_2, w_3, w_4) = (4, 5, 7, 5, 4)}\).
 
 \begin{figure}[hbt]
     \begin{center}
