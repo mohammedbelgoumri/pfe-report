@@ -29,13 +29,13 @@ Les auteurs~\cite{attention} proposent l'encodage suivant pour la position \(i\)
     \end{cases} \qquad 1 \le k \le d
 \end{equation}
 où \(d\) est la dimension de plongement et \(A\) est un hyperparamètre fixé à \(10^4\) par les auteurs.
-La figure~\ref{fig.positional-encoding} montre la matrice d'encodage de la position 
-pour une séquence de longueur \(100\) avec \(A=10^4\) et \(d=256\).
+La figure~\ref{fig.positional-encoding} montre la matrice d'encodage des \(256\) premières positions
+avec \(A=10^4\) et \(d=512\).
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=8cm]{assets/python/positional_embedding.pdf}
-    \caption{La matrice d'encodage de la position pour \(A=10^4\) et \(d=256\).}
+    \includegraphics[width=12cm]{assets/python/positional_embedding.pdf}
+    \caption{La matrice d'encodage de la position pour \(A=10^4\) et \(d=512\).}
     \label{fig.positional-encoding}
     
 \end{figure}
