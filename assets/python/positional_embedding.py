@@ -1,24 +1,27 @@
 from matplotlib import pyplot as plt
-from numpy import arange, cos, sin
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+from numpy import arange, cos, sin, zeros
 from pathlib import Path
 
-root = Path("./assets/matplotlib")
+root = Path("./assets/python/")
 
 
 A = 10 ** 4
-d = 256
-max_len = 100
+d = 512
+max_len = 300
 
 x = arange(0, d, 2)
 div_term = A ** (x / d)
 pos = arange(0, max_len).reshape(-1, 1)
-pe = pos / div_term
-
-pe[:, 0::2] = sin(pe[:, 0::2])
-pe[:, 1::2] = cos(pe[:, 1::2])
+pe = zeros((max_len, d))
+pe[:, 0::2] = sin(pos / div_term)
+pe[:, 1::2] = cos(pos / div_term)
 
 fig, ax = plt.subplots()
-cax = ax.matshow(pe, cmap="RdBu")
-fig.colorbar(cax)
-fig.tight_layout()
-plt.savefig(root / "positional_embedding.pdf")
+im = ax.imshow(pe, cmap="RdBu")
+
+# colorbar height
+divider = make_axes_locatable(ax)
+cax = divider.append_axes("right", size="5%", pad=0.25)
+fig.colorbar(im, cax, ax=ax)
+plt.savefig(root / "positional_embedding.pdf", bbox_inches="tight")
