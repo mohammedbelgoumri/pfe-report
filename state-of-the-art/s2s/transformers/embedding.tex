@@ -4,7 +4,8 @@ La première couche de l'encodeur aussi bien que du décodeur est une couche d'e
 Elle permet de calculer une représentation vectorielle de la séquence en question.
 Elle est composée d'une couche de plongement et d'une couche d'encodage de la position.
 
-La couche de plongement mappe chaque élément de la séquence à un vecteur de dimension fixe.
+La couche de plongement mappe chaque élément de la séquence à un vecteur de dimension fixe \(d\),
+ainsi transformant une séquence de longueur \(n\) en une matrice de \(\reals^{n \times d}\).
 Elle peut avoir une architecture quelconque en fonction de la nature des données.
 Il peut s'agir d'une couche de plongement lexical dans le cas d'un texte, 
 d'une couche de convolution dans le cas de l'audio 
