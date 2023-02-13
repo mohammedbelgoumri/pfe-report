@@ -1,1 +1,23 @@
 \subsection{Autres éléments de l'architecture}
+
+L'encodage positionnel et l'auto-attention sont les deux innovations clés du transformeur.
+Les autres éléments de l'architecture existent comme portes d'entrée et de sortie pour elles.
+Ces éléments sont les suivants :
+\begin{itemize}
+    \item Les couches \foreignlanguage{english}{feed forward} :
+          Il s'agit d' \glspl{mlp} qui exploitent la représentation calculée par le mécanisme d'attention.
+    \item Les couches de normalisation :
+          Introduites par~\cite{Ba_Kiros_Hinton_2016}, elles sont appliquées après chaque module.
+          Elles assurent que leur sortie est centrée et réduite.
+          Cela permet de stabiliser l'apprentissage.
+    \item Les connexions résiduelles~\cite{He_Zhang_Ren_Sun_2016} :
+          Appliquées à chaque couche de normalisation, elles ont la forme 
+          \(\mathrm{LayerNorm}\left(x + \mathrm{Module}(x)\right)\).
+          Elles permettent aux gradients de se propager plus facilement.
+    \item La couche de sortie :
+          Dans le cas où les éléments de la sortie sont des variables continues 
+          (par exemple pour amplitudes d'un signal audio),
+          une couche linéaire est appliquée à la sortie du dernier module.
+          Dans le cas opposé (par exemple pour les mots d'une phrase),
+          la fonction \(\mathrm{softmax}\) est aussi appliquée pour donner la loi de probabilité de la sortie.
+\end{itemize}
