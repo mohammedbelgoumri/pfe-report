@@ -24,19 +24,19 @@ Les auteurs~\cite{attention} proposent l'encodage suivant pour la position \(i\)
     \label{eq.sine-positional-encoding}
     \mathrm{PE}_{k}(i) = 
     \begin{cases}
-        \sin\left(\frac{i}{A^{2k/d}}\right) & \text{si } k \text{ est pair} \\
-        \cos\left(\frac{i}{A^{2k/d}}\right) & \text{si } k \text{ est impair}
+        \sin\left(\frac{i}{r^{2k/d}}\right) & \text{si } k \text{ est pair} \\
+        \cos\left(\frac{i}{r^{2k/d}}\right) & \text{si } k \text{ est impair}
     \end{cases} \qquad 1 \le k \le d
 \end{equation}
-où \(d\) est la dimension de plongement et \(A\) est un hyperparamètre fixé à \(10^4\) par les auteurs.
+où \(d\) est la dimension de plongement et \(r\) est un hyperparamètre fixé à \(10^4\) par les auteurs.
 La figure~\ref{fig.positional-encoding} montre la matrice d'encodage des \(256\) premières positions
-avec \(A=10^4\) et \(d=512\).
+avec \(r=10^4\) et \(d=512\).
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=12cm]{assets/python/positional_embedding.pdf}
-    \caption{Matrice d'encodage de la position pour \(A=10^4\) et \(d=512\).}
-    \label{fig.positional-encoding}    
+    \caption{Matrice d'encodage de la position pour \(r=10^4\) et \(d=512\).}
+    \label{fig.positional-encoding}
 \end{figure}
 
 La représentation finale de la séquence est la somme de la sortie de la couche de plongement 
