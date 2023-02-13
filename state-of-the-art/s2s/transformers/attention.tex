@@ -61,6 +61,33 @@ Les sorties des têtes sont concaténées et passées à une couche linéaire qu
 Les projections sont réalisées par des couches linéaires entraînables et le nombre \(h\) de têtes est un hyperparamètre fixé à \(8\) par les auteurs%
 (Voire la Figure~\ref{fig.multihead-attention}).
 
+\subsection{Auto-attention et attention croisée}
 
+La couche attention de l'encodeur et la première couche attention du décodeur sont des couches
+d'\emph{auto-attention} i.e leurs requêtes, clés et valeurs sont les mêmes.
+L'auto-attention du décodeur se distingue de celle de l'encodeur par la présence du \emph{masque}.
+En produisant un élément de la séquence de sortie, le décodeur ne doit faire attention qu'aux éléments
+qui le précèdent.
+Toutes les autres valeurs doivent avoir un poids nul.
+Pour ce faire, la matrice \(M\) 
+\begin{equation}
+    M_{ij} = \begin{cases}
+        0 & \text{si } j > i \\
+        -\infty & \text{sinon}
+    \end{cases} 
+    = \begin{bmatrix}
+        -\infty & -\infty & \cdots & -\infty \\
+        0       & -\infty & \cdots & -\infty \\
+        \vdots  & \vdots  & \ddots & \vdots \\
+        0       & 0       & \cdots & -\infty
+    \end{bmatrix}
+\end{equation}
+est ajoutée à l'entrée de la fonction \(\text{softmax}\).
+
+La deuxième couche attention du décodeur est une couche d'\emph{attention croisée}.
+Les requêtes viennent de la sortie et les clés et valeurs viennent de l'entrée.
+Cette couche calcul les dépendances entre l'entrée et la sortie,
+tandis que les deux autres couches calculent les dépendances à l'intérieur de l'entrée et de la sortie.
+C'est cette couche qui permet au décodeur de conditionner sa sortie sur l'entrée.
 
 
