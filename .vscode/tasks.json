@@ -6,8 +6,8 @@
             "command": "unison",
             "type": "shell",
             "args": [
-                "~/Work/PFE/article/references.bib", 
-                "~/Work/PFE/report/references.bib"
+                "../article/references.bib", 
+                "../report/references.bib",
             ],
         }
     ]
