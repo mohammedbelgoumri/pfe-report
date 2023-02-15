@@ -1,5 +1,9 @@
 \glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
 \begin{theglossary}\glossaryheader
+\glsgroupheading{A}\relax \glsresetentrylist %
+\glossentry{asr}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{1}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{17}}}\glsgroupskip
 \glsgroupheading{B}\relax \glsresetentrylist %
 \glossentry{bptt}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{7}}}\glsgroupskip
@@ -19,13 +23,15 @@
 		\setentrycounter[]{page}\glsnumberformat{9\delimN 10}}}\glsgroupskip
 \glsgroupheading{M}\relax \glsresetentrylist %
 \glossentry{ml}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{1\delimR 3}}}%
+		\setentrycounter[]{page}\glsnumberformat{1\delimN 2}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{17}}}%
 \glossentry{mlp}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{2\delimR 5}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{11\delimR 13}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{16\delimN 17}}}%
 \glossentry{mt}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{1}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{1}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{17}}}\glsgroupskip
 \glsgroupheading{N}\relax \glsresetentrylist %
 \glossentry{nlp}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{1}}}\glsgroupskip
