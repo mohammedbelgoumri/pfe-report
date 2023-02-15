@@ -1,0 +1,25 @@
+\subsection{Analyse comparative de la performance}
+
+\begin{table}[htb]
+    \centering
+    \begin{tabular}{lccc}
+        \toprule
+        Type du module  
+        & Complexité       
+        & \stackanchor{Nombre d'Opérations}{Séquentielles} 
+        & \stackanchor{Longueur du Chemin}{Emprunté par le Gradient}  \\
+        \hline
+        Auto-Attention & \(O(n^2 \cdot d)\)         & \(O(1)\) & \(O(1)\)        \\
+        Recurrent      & \(O(n \cdot d^2)\)         & \(O(n)\) & \(O(n)\)        \\
+        Convolutif     & \(O(k \cdot n \cdot d^2)\) & \(O(1)\) & \(O(log_k(n))\) \\
+        \gls{mlp}      & \(O(n \cdot d^2)\)         & \(O(1)\) & \(+\infty\)     \\
+        \bottomrule
+    \end{tabular}
+    \caption[Analyse comparative de la performance]{
+      Analyse comparative de la performance des différents types de modèles présentés dans ce chapitre. 
+      \(n\) est la longueur de la séquence, 
+      \(d\) est la dimension de la représentation vectorielle des éléments 
+      et \(k\) est la taille du noyau des convolutions~\cite[Tab. 1]{attention}.
+    }
+    \label{tab.op_complexities}
+\end{table}
