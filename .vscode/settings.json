@@ -64,4 +64,6 @@
             "references.bib"
         ]
     },
+    "latex-utilities.zotero.latexCommand": "cite",
+    "latex-workshop.view.pdf.invertMode.sepia": 0.9,
 }
