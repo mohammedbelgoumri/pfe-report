@@ -34,7 +34,6 @@
 \usetikzlibrary{calc, backgrounds, decorations.pathreplacing}
 \usepackage{tikz-qtree}
 
-\graphicspath{{assets/figures/}, {assets/images/}}
 \newlength\figureheight
 \newlength\figurewidth
 
@@ -79,6 +78,7 @@
 \usepackage{subcaption}
 
 \usepackage[abbreviations, automake]{glossaries-extra}
+\input{abbreviationstyle}
 \setabbreviationstyle{long-short-user}
 \glssetcategoryattribute{abbreviation}{markwords}{true}
 \glssetcategoryattribute{abbreviation}{noshortplural}{true}
@@ -89,6 +89,8 @@
 
 \usepackage{stmaryrd}
 \usepackage{bookmark}
+\usepackage{booktabs}
+\usepackage{stackengine}
 
 
 \setlength{\parskip}{.4cm}
@@ -105,27 +107,7 @@
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
 
-% Definition of number sets
-\newcommand{\complexes}{\mathbb{C}}
-\newcommand{\reals}{\mathbb{R}}
-\newcommand{\rationals}{\mathbb{Q}}
-\newcommand{\integers}{\mathbb{Z}}
-\newcommand{\naturals}{\mathbb{N}}
-\newcommand{\field}{\mathbb{K}}
-
-
-% Notation for problems/classes
-\newcommand{\TSP}{\textsf{TSP}}
-\newcommand{\classP}{\textsf{P}}
-\newcommand{\classNP}{\textsf{NP}}
-\newcommand{\classNPO}{\textsf{NPO}}
-
-% default greeks
-\let\uglyepsioln\epsilon
-\let\epsilon\varepsilon
-
-\let\roundphi\phi
-\let\phi\varphi
+\input{notations}
 
 %citation style
 \let\barecite\cite
@@ -139,25 +121,27 @@
 
 % !TEX root = main.tex
 \begin{document}
-    \include{titlepage}
+	\include{titlepage}
     \addcontentsline{toc}{chapter}{Page de garde}
+	\pagenumbering{roman}
 	\afterpage{
 		\newgeometry{bottom=3cm}
 		\tableofcontents
 		\addcontentsline{toc}{chapter}{Table des matières}
 		\listoffigures
 		\addcontentsline{toc}{chapter}{Table des figures}
-		% \listofalgorithms
-		\restoregeometry
+		% \listofalgorithms	
 	}
-
 	% \printabbreviations
+	\cleardoublepage
 	\printglossary[
 		title=Sigles et abréviations, 
 		toctitle=Sigles et abréviations, 
 		type=abbreviations,
 		style=long,nonumberlist
 	]
+	\restoregeometry
+	\pagenumbering{arabic}
 	\import{state-of-the-art/}{state-of-the-art}
     
 	\printbibliography

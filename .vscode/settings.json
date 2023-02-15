@@ -64,7 +64,8 @@
             "references.bib"
         ]
     },
-    "FSharp.suggestGitignore": false,
+    "latex-utilities.zotero.latexCommand": "cite",
+    "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%|\\\\)\\s*($TAGS)\\{*|^\\s*- \\[ \\])",
+    "todo-tree.regex.regexCaseSensitive": false,
     "latex-workshop.view.pdf.invert": 0.9,
-    "latex-workshop.view.pdf.zoom": "page-width"
 }
