@@ -28,7 +28,7 @@ Cependant, le transformeur toujours de meilleurs résultats pour ces séquences~
         \hline
         Auto-Attention & \(O(n^2 \cdot d)\)         & \(O(1)\) & \(O(1)\)        \\
         Recurrent      & \(O(n \cdot d^2)\)         & \(O(n)\) & \(O(n)\)        \\
-        Convolutif     & \(O(k \cdot n \cdot d^2)\) & \(O(1)\) & \(O(log_k(n))\) \\
+        Convolutif     & \(O(k \cdot n \cdot d^2)\) & \(O(1)\) & \(O(\log_k(n))\) \\
         \gls{mlp}      & \(O(n \cdot d^2)\)         & \(O(1)\) & \(+\infty\)     \\
         \bottomrule
     \end{tabular}
@@ -38,5 +38,5 @@ Cependant, le transformeur toujours de meilleurs résultats pour ces séquences~
       \(d\) est la dimension de la représentation vectorielle des éléments 
       et \(k\) est la taille du noyau des convolutions~\cite[Tab. 1]{attention}.
     }
-    \label{tab.performance}
+  \label{tab.performance}
 \end{table}
