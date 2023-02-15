@@ -1,6 +1,21 @@
 \subsection{Analyse comparative de la performance}
 \label{subsec.performance}
 
+Dans le début de cette section, nous affirmons la supériorité du transformeur aux autres architectures~\gls{s2s}.
+Ce constat repose sur la comparaison du Tableau~\ref{tab.performance}~\cite{attention}.
+On y voit que le transformeur est le seul à avoir une longueur de chemin constante,
+c'est-à-dire qu'elle possède un majorant indépendant de la taille de l'entrée.
+
+On note également que le transformeur exige un nombre d'opérations séquentielles constant,
+ce qui est le cas pour les autres architectures à l'exception des \glspl{rnn}.
+En effet, tous les réseaux \foreignlanguage{english}{feed-forward} ont cette propriété.
+
+Pour la complexité par couches, l'auto-attention est la plus efficace pour les séquences courtes
+(pour lesquelles \(n \ll d\)).
+Ces séquences sont les plus fréquentes en pratique pour les dimensions de représentation usuelles.
+Dans le cas de très longues séquences, elle est moins efficace que les autres architectures.
+Cependant, le transformeur toujours de meilleurs résultats pour ces séquences~\cite{Shim_Sung_2022}.
+
 
 \begin{table}[htb]
     \centering
@@ -23,5 +38,5 @@
       \(d\) est la dimension de la représentation vectorielle des éléments 
       et \(k\) est la taille du noyau des convolutions~\cite[Tab. 1]{attention}.
     }
-    \label{tab.op_complexities}
+    \label{tab.performance}
 \end{table}
