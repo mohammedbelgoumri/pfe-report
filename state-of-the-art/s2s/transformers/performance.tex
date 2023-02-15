@@ -26,10 +26,10 @@ Cependant, le transformeur toujours de meilleurs résultats pour ces séquences~
         & \stackanchor{Nombre d'Opérations}{Séquentielles} 
         & \stackanchor{Longueur du Chemin}{Emprunté par le Gradient}  \\
         \hline
-        Auto-Attention & \(O(n^2 \cdot d)\)         & \(O(1)\) & \(O(1)\)        \\
-        Recurrent      & \(O(n \cdot d^2)\)         & \(O(n)\) & \(O(n)\)        \\
-        Convolutif     & \(O(k \cdot n \cdot d^2)\) & \(O(1)\) & \(O(\log_k(n))\) \\
-        \gls{mlp}      & \(O(n \cdot d^2)\)         & \(O(1)\) & \(+\infty\)     \\
+        Auto-Attention & \(\bigO{n^2 \cdot d}\)         & \(\bigO{1}\) & \(\bigO{1}\)        \\
+        Recurrent      & \(\bigO{n \cdot d^2}\)         & \(\bigO{n}\) & \(\bigO{n}\)        \\
+        Convolutif     & \(\bigO{k \cdot n \cdot d^2}\) & \(\bigO{1}\) & \(\bigO{\log_k n}\) \\
+        \gls{mlp}      & \(\bigO{n \cdot d^2}\)         & \(\bigO{1}\) & \(+\infty\)     \\
         \bottomrule
     \end{tabular}
     \caption[Analyse comparative de la performance]{
