@@ -66,4 +66,6 @@
     },
     "latex-utilities.zotero.latexCommand": "cite",
     "latex-workshop.view.pdf.invertMode.sepia": 0.9,
+    "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%|\\\\)\\s*($TAGS)\\{*|^\\s*- \\[ \\])",
+    "todo-tree.regex.regexCaseSensitive": false,
 }
