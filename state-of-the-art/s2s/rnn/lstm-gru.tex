@@ -3,7 +3,7 @@
 Pour une grande partie des problèmes d'apprentissage \gls{s2s}, les séquences peuvent être très longues.
 Le mémoire à court terme constitue donc un véritable obstacle pour l'utilisation des \glspl{rnn} simples en pratique.
 Une approche de le contourner qui a eu un énorme succès expérimental, 
-est l'introduction d'un mécanisme de contrôle sur la boucle de rétroaction (Voire Figure~\ref{fig.rnn-gate}).
+est l'introduction d'un mécanisme de contrôle sur la boucle de rétroaction (voir Figure~\ref{fig.rnn-gate}).
 Ce mécanisme est généralement implémenté avec des \emph{portes},
 des unités entraînables qui peuvent réguler le flux d'information dans la couche récurrente.
 On parle alors d'\emph{\gls{rnn} à portes}.
@@ -22,7 +22,7 @@ le \gls{gru} et le \gls{lstm}.
 \subsubsection{\Glsfmtlong{gru}}
 
 Le \gls{gru}, introduit par~\cite{Cho_van_Merrienboer_Bahdanau_Bengio_2014}, 
-est une architecture récurrente à portes très simple (Voir Figure~\ref{fig.gru-circuit}).
+est une architecture récurrente à portes très simple (voir Figure~\ref{fig.gru-circuit}).
 Elle utilise deux portes.
 La première est la porte de réinitialisation ((\(r\) dans la figure~\ref{fig.gru-circuit})).
 Elle détermine le point auquel l'information sur le passé peut se propager
@@ -75,7 +75,7 @@ Il s'agit de l'une des premières architectures récurrentes à protes%
 Elle a été introduite par~\cite{Hochreiter_Schmidhuber_1997}.
 Un \gls{lstm} implémente trois portes : 
 une porte d'entrés (\(i\)), une porte d'oublie (\(f\)) et une porte de sortie (\(o\))%
-(Voir Figure~\ref{fig.lstm-circuit}).
+(voir Figure~\ref{fig.lstm-circuit}).
 
 \begin{figure}[htb]
     \begin{center}

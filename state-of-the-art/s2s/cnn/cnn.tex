@@ -4,7 +4,7 @@
 En dépit d'être une architecture naturelle pour le traitement des séquences,
 les \glspl{rnn} sont trop lents pour la majorité des cas d'utilisation pratiques.
 Cela est dû à leur nature séquentielle qui à son tour, 
-est due à leur utilisation de boucles de rétroaction (Voire Section~\ref{sec.rnn}).
+est due à leur utilisation de boucles de rétroaction (voir Section~\ref{sec.rnn}).
 Une architecture sans telles boucles (i.e une architecture d'\gls{ffn}) est donc préférable.
 
 Les \glspl{cnn} sont une famille d'\glspl{ffn} typiquement utilisés en traitement d'images.
@@ -40,7 +40,7 @@ Une couche de convolution unidimensionnelle calcul donc la fonction suivante
 \end{equation}
 ou \(x\) est l'entrée et les vecteurs \(w_i\) sont les paramètres entraînables de la couche, 
 aussi appelés ses \emph{noyaux} ou \emph{masques}
-(Voire Figure~\ref{fig.layer-conv1d}).
+(voir Figure~\ref{fig.layer-conv1d}).
 La sortie de cette couche est une combinaison de tous les éléments de la séquence d'entrée.
 En composant suffisamment de telles couches,
 un \gls{cnn} apprend une représentation de l'entrée beaucoup plus structurée qu'un \gls{mlp}.
@@ -61,7 +61,7 @@ Leur tendance naturelle à produire des représentations synthétiques des entr�
 fait des \glspl{cnn} des encodeurs très puissants pour une grande variété de tâches,
 y compris des tâches de transduction de séquences.
 Plusieurs travaux ont combiné un encodeur convolutif avec un décodeur récurrent%
-(Voire~Figure~\ref{fig.rctm}, \barecite[Fig.3]{Kalchbrenner_Blunsom_2013})%
+(voir~Figure~\ref{fig.rctm}, \barecite[Fig.3]{Kalchbrenner_Blunsom_2013})%
 ~\cite{deep-nmt-survey}.
 
 \begin{figure}[hbt]
@@ -72,9 +72,9 @@ Plusieurs travaux ont combiné un encodeur convolutif avec un décodeur récurre
 \end{figure}
 
 Cependant, des architectures totalement convolutives pour l'apprentissage \gls{s2s} existent également.
-ByteNet (Voire Figure~\ref{fig.bytenet}
+ByteNet (voir Figure~\ref{fig.bytenet}
 \barecite{Kalchbrenner_Espeholt_Simonyan_Oord_Graves_Kavukcuoglu_2017})
-et ConvS2S (Voire Figure~\ref{fig.convs2s}
+et ConvS2S (voir Figure~\ref{fig.convs2s}
 \barecite{Kameoka_Tanaka_Kwaśny_Kaneko_Hojo_2020})
 sont deux exemples de telles architectures.
 
