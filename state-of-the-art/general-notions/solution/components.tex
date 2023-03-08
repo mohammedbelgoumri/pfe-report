@@ -22,3 +22,10 @@ Nous nous concentrerons donc sur les deux premières étapes.
 La première partie de notre système réalise une transcription automatique de l'audio.
 C'est une tâche de \gls{asr}, 
 avec la complexité supplémentaire que la parole en question ne suit pas les lois usuelles du langage.
+
+La seconde partie est sans doute la plus complexe.
+C'est la partie centrale de notre système qui réalise directement la correction.
+Pour ce projet, nous avons choisi de traiter le problème comme un problème de \gls{mt}.
+Autrement dit, le texte erroné et le texte corrigé 
+sont considérés comme s'ils appartiennent à deux langues différentes,
+entre lesquelles nous voulons réaliser une correspondance.
