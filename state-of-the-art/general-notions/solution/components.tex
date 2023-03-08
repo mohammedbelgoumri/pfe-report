@@ -1,0 +1,14 @@
+\subsection{Structure proposée pour la solution}
+
+Au lieu de mapper l'audio erroné directement à l'audio corriger,
+nous proposons un système qui enchaîne trois transformations.
+La première transforme \(S_A\) en une représentation textuelle \(T_A\)
+La deuxième produit un texte corrigé \(T_C\) à partir de \(T_A\).
+La dernière étape est de produire \(S_C\) à partir de \(T_C\) (voir la Figure~\ref{fig.detail-system}).
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=\linewidth]{assets/images/detail.png}
+    \caption{Étapes intermédiaires du système proposé.}
+    \label{fig.detail-system}
+\end{figure}
