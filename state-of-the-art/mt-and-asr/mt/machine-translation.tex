@@ -1,4 +1,34 @@
-\section{Traduction automatique}
+\section{\Glsfmtlong{mt}}
+
+Étant donné un langage source \(L_S\) sur un vocabulaire \(\Sigma_S\),
+un langage cible \(L_C\) sur un vocabulaire \(\Sigma_C\),
+et une relation \emph{d'équivalence}%
+\footnote{Dans le sens mathématique du terme, c--à--d. une relation réflexive, symétrique et transitive.} %
+\(\sim\) sur \(L_S \cup L_C\) % 
+la \gls{mt} de \(L_S\) en \(L_C\) consiste à trouver une fonction calculable \(f : L_S \rightarrow L_C\)
+qui vérifie 
+\begin{equation}
+    \label{eq:mt-equivalence}
+    \forall x \in L_S, \quad f(x) \sim x
+\end{equation}
+la relation \(\sim\) donne un sens d'identité entre les phrases.
+Sa définition peut varier dans sa rigueur et sa précision,
+elle est par exemple mathématiquement définie dans le contexte de compilation%
+\footnote{Qui est bien un exemple de \gls{mt} où \(L_S\) et \(L_C\) sont des langages de programmation
+et \(\sim\) est la relation d'équivalence sémantique.}%
+~\cite{Hadj_2015},
+comme elle peut avoir une définition floue dans le contexte de la \gls{mt} du langage naturel~\cite{routledge}.
+
+Ce flou dans la définition empêche l'application efficace de la \gls{rmbt} dans ce contexte.
+La plupart des succès ont été eus par la \gls{nmt}~\cite{deep-nmt-survey}.
+Ces méthodes s'inscrivent facilement dans le cadre de l'apprentissage \gls{s2s} 
+tel que nous l'avons défini dans section~\ref{sec.statement}.
+Il est donc naturel de considérer les modèles étudiés dans le chapitre~\ref{chap.s2s} 
+comme des candidats pour la \gls{mt}.
+Plus précisément, l'architecture de transformeur est la plus prometteuse en vue de l'analyse comparative
+effectuée dans le chapitre~\ref{chap.s2s} (voir Table~\ref{tab.performance}).
+De ce constat, nous consacrons cette section à l'étude de l'utilisation des transformeurs pour la \gls{nmt}.
+
 
 
 % La \glsxtrfull{mt} est une branche du \glsxtrfull{nlp}.
