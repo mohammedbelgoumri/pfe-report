@@ -1,0 +1,16 @@
+\subsubsection{Plongement lexical}
+
+Le transformeur --- comme tout réseau de neurones --- n'opère que sur des vecteurs.
+Pour lui faire passer des phrases, il faut donc les transformer en vecteurs.
+La première étape consiste à transformer les mots en vecteurs.
+C'est ce qu'on appelle un \emph{plongement lexical}~\cite{Almeida_Xexéo_2019}.
+
+La première étape dans le calcul des plongements lexicaux est de diviser le texte en unités lexicales (tokens).
+Il peut s'agir de mots, d'ensembles de mots ou d'unités plus petites qu'un mot.
+La sortie de cette étape est appelée un \emph{vocabulaire}.
+Plusieurs techniques existent pour effectuer ce découpage. 
+La plus simple et d'assimiler chaque mot à un token,
+mais d'autres techniques comme le \gls{bpe} proposent la ségrégation des mots en sous-éléments.
+Le choix des sous-mots à garder dans le vocabulaire est le plus souvent une fonction de la fréquence dans le corpus%
+~\cite{Rai_Borah_2021}.
+
