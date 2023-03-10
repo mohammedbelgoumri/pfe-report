@@ -14,9 +14,13 @@ mais d'autres techniques comme le \gls{bpe} proposent la segmentation des mots e
 Le choix des sous-mots à garder dans le vocabulaire est le plus souvent une fonction de la fréquence dans le corpus%
 ~\cite{Rai_Borah_2021}.
 
-Une fois le vocabulaire construit, il lui faut associer un plongement.
+
+Après l'avoir construit, un plongement doit être associé au vocabulaire.
 L'application qui mappe les tokens sur les vecteurs peut avoir une implémentation arbitraire.
 Il peut s'agir d'un simple tableau de vecteurs~\cite{Paszke_et_al_2019},
 comme il peut s'agir d'un réseau de neurones~\cite{Church_2017}.
+L'objectif est d'associer aux tokens similaires des vecteurs similaires%
+\footnote{Qui ont des grands produits scalaires.}, %
+on ramène ainsi, la relation mal définie de similarité entre les mots à une relation bien définie sur les vecteurs.
 Une fois qu'on a mis la phrase sous forme vectorielle,
 le transformeur peut la traiter (voir Section~\ref{sec.transformer}).
