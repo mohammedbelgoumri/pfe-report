@@ -20,11 +20,20 @@ on parle alors de décodage glouton, décodage \(\argmax\) ou décodage par maxi
 \end{figure}
 
 Cependant, cette méthode est suboptimale.
-L'alternative la plus courante est ce qu'on appelle le décodage \emph{\foreignlanguage{english}{beam search}}%
+L'alternative la plus courante est ce qu'on appelle le décodage par \emph{\foreignlanguage{english}{beam search}}%
 ~\cite{Meister_Vieira_Cotterell_2021}.
+Le principe est de garder les \(k\) meilleurs mots à chaque étape.
+À partir de ces mots, \(k\) phrases candidates sont générées.
+Ces phrases sont ensuite évaluées et les \(k\) meilleures sont gardées.
+Ce processus est répété jusqu'à ce que le symbole de fin de phrase soit généré 
+(voir Algorithme~\ref{algo.bs-decode}).
 
 \lstinputlisting[
+    float={htb},
     language=Python, 
-    caption={Passe d'un \glsfmtshort{mlp}}, 
+    caption={%
+        [Décodage par \foreignlanguage{english}{beam search}.]%
+        Décodage par \foreignlanguage{english}{beam search}~\cite{Meister_Vieira_Cotterell_2021}.
+    }, 
     label={algo.bs-decode},
 ]{assets/code/bs-decode.py}
