@@ -1,0 +1,64 @@
+\section{\Glsfmtlong{mt}}
+
+Nous avons établi que les difficultés d'accès aux traitements pour l'aphasie de Broca 
+constituent un risque inadmissible en vue de ses effets potentiellement catastrophiques.
+Il est donc urgent de trouver des solutions pour y remédier.
+Une solution automatique à base de \gls{mt} semble être une piste intéressante à explorer.
+
+La \gls{mt} est une branche du \gls{nlp}.
+Elle étudie l'utilisation des systèmes informatiques pour traduire le texte ou la parole 
+d'une langue (appelée source) vers une autre (appelée cible)~\cite{routledge}.
+Dans cette section, nous introduisons la \gls{mt} du texte 
+pour donner un point de références aux discussions des chapitres suivants.
+
+Plusieurs méthodes de \gls{mt} sont présentées dans la littérature.
+Ces méthodes peuvent être classées selon les outils mathématiques qu'elles utilisent.
+On distingue ainsi trois grandes familles de méthodes de \gls{mt}~\cite{deep-nmt-survey} :
+\begin{enumerate}
+    \item Des méthodes basées sur des connaissances linguistiques (règles de traduction).
+    \item Des méthodes basées sur les statistiques.
+    \item Des méthodes basées sur les réseaux de neurones.
+\end{enumerate}
+On les appelle respectivement \gls{rmbt}, \gls{smt}, \gls{nmt}.
+
+À l'intérieur de ces familles, les méthodes peuvent être distinguées en sous-familles.
+Ceci donne lieu à la hiérarchie représentée par la Figure~\ref{fig.mt-taxonomy-tree}
+\begin{figure}[hbt]
+    \centering
+    \resizebox{\textwidth}{!}{\input{assets/tikz/taxonomy-tree.tex} }
+    \caption[Taxonomie des méthodes de traduction automatique.]
+    {Taxonomie des méthodes de traduction automatique~\cite{deep-nmt-survey,hybrid-mt}.}
+    \label{fig.mt-taxonomy-tree}
+\end{figure}
+
+Une autre classification récurrente dans la littérature 
+est celle du triangle de Vauquois (voir Figure~\ref{fig.vauquois-triangle}).
+\begin{figure}[hbt]
+    \begin{center}
+        \input{assets/tikz/vauquois}
+    \end{center}
+    \caption[Triangle de Vauquois.]
+    {Triangle de Vauquois~\cite{hybrid-mt}.}
+    \label{fig.vauquois-triangle}
+\end{figure}
+Elle se base sur l'utilisation ou non de représentations intermédiaires des langues.
+Si la phrase traduite est construite directement à partir de la phrase à traduire,
+il s'agit de traduction \emph{directe}.
+Ce paradigme présente deux majeurs inconvénients.
+Le premier --- et le plus évident --- est la difficulté de passer directement d'une langue à une autre.
+Le deuxième est la scalabilité : pour maintenir la traduction entre \(n\) langues,
+\(\frac{n(n - 1)}{2}\) couples de fonctions de traduction sont nécessaires~\cite{routledge}.
+
+Les méthodes indirectes se distinguent en méthodes ``par transfert'', 
+qui utilisent une représentation intermédiaire dépendant de la langue (par exemple, arbre de syntaxe)
+et en méthodes ``par interlingue'',
+qui utilisent la même représentation intermédiaire pour toutes les langues.
+Ce dernier paradigme résout le problème de scalabilité 
+(seulement \(n\) couples de traductions sont nécessaires)
+au coût de construire une interlingue assez riche à représenter toute phrase dans toute langue~\cite{routledge}.
+
+Dans ce travail, 
+nous nous intéressons principalement aux sous arbre droit de la Figure~\ref{fig.mt-taxonomy-tree}.
+En effet, la majorité de notre investigation porte sur son dernier élément (la \gls{nmt} profonde).
+Ceci est motivé par l'énorme succès 
+dont le \gls{dl} a fait preuve dans la dernière décennie~\cite{Raschka_Mirjalili_2017}.
