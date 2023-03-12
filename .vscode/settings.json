@@ -1,5 +1,5 @@
 {
-    "latex-workshop.latex.autoBuild.run": "onSave",   
+    "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.latex.autoClean.run": "onBuilt",
     "latex-workshop.latex.tools": [
         {
@@ -14,7 +14,9 @@
         {
             "name": "makeglossaries",
             "command": "makeglossaries",
-            "args": ["main"]
+            "args": [
+                "main"
+            ]
         },
         {
             "name": "clean",
@@ -32,7 +34,6 @@
             ]
         }
     ],
-
     "latex-workshop.latex.recipes": [
         {
             "name": "build",

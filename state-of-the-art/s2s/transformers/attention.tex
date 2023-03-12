@@ -30,7 +30,12 @@ Intuitivement, la \foreignlanguage{english}{scaled dot-product attention} peut �
 une forme de recherche floue dans une base de données.
 Le terme \(QK^T\) est un produit scalaire entre les lignes de la requête \(Q\) et la clé \(K\).
 Il représente la similarité entre les deux.
-La fonction \(\text{softmax}\) le normalise pour obtenir des poids positifs de somme \(1\).
+La fonction \(\text{softmax}\)%
+\footnote{%
+    \(\text{softmax} : \reals^p \to \reals^p, x = (x_1, x_2, \ldots, x_p) \mapsto
+    \frac{ e^x}{\sum\limits_{i=1}^p e^{x_i}}\)
+} %
+le normalise pour obtenir des poids positifs de somme \(1\).
 Enfin, le résultat et une somme des valeurs \(V\) pondérées par ces poids.
 C'est dans ce sens-là qu'il s'agit d'une recherche floue :
 les valeurs correspondantes aux clés qui répondent le mieux à la requête sont sélectionnées,
