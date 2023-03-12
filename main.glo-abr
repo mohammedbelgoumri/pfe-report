@@ -1,4 +1,5 @@
 \glossaryentry{ASR?\glossentry{asr}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  iii}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  iv}
 \glossaryentry{MT?\glossentry{mt}|setentrycounter[]{page}"\glsnumberformat}{1}
 \glossaryentry{ASR?\glossentry{asr}|setentrycounter[]{page}"\glsnumberformat}{1}
 \glossaryentry{AVC?\glossentry{avc}|setentrycounter[]{page}"\glsnumberformat}{1}
@@ -146,6 +147,19 @@
 \glossaryentry{MT?\glossentry{mt}|setentrycounter[]{page}"\glsnumberformat}{30}
 \glossaryentry{MT?\glossentry{mt}|setentrycounter[]{page}"\glsnumberformat}{30}
 \glossaryentry{BPE?\glossentry{bpe}|setentrycounter[]{page}"\glsnumberformat}{30}
-\glossaryentry{BERT?\glossentry{bert}|setentrycounter[]{page}"\glsnumberformat}{31}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{31}
 \glossaryentry{LLM?\glossentry{llm}|setentrycounter[]{page}"\glsnumberformat}{31}
-\glossaryentry{BERT?\glossentry{bert}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{CLM?\glossentry{clm}|setentrycounter[]{page}"\glsnumberformat}{32}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{33}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{33}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{33}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{33}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{33}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{33}
+\glossaryentry{GPT?\glossentry{gpt}|setentrycounter[]{page}"\glsnumberformat}{33}
+\glossaryentry{BERT?\glossentry{bert}|setentrycounter[]{page}"\glsnumberformat}{33}
+\glossaryentry{LLM?\glossentry{llm}|setentrycounter[]{page}"\glsnumberformat}{33}
+\glossaryentry{BERT?\glossentry{bert}|setentrycounter[]{page}"\glsnumberformat}{33}
