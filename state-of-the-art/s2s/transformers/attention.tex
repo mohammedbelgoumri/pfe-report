@@ -24,15 +24,15 @@ qui représentent chacune l'encodage d'une séquence%
 Le résultat est donné par l'équation~\eqref{eq.scaled-dp-attention}.
 \begin{eqnarray}
     \label{eq.scaled-dp-attention}
-    \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_K}}\right)V 
+    \text{Attention}(Q, K, V) = \softmax\left(\frac{QK^T}{\sqrt{d_K}}\right)V 
 \end{eqnarray}
 Intuitivement, la \foreignlanguage{english}{scaled dot-product attention} peut être vue comme 
 une forme de recherche floue dans une base de données.
 Le terme \(QK^T\) est un produit scalaire entre les lignes de la requête \(Q\) et la clé \(K\).
 Il représente la similarité entre les deux.
-La fonction \(\text{softmax}\)%
+La fonction \(\softmax\)%
 \footnote{%
-    \(\text{softmax} : \reals^p \to \reals^p, x = (x_1, x_2, \ldots, x_p) \mapsto
+    \(\softmax : \reals^p \to \reals^p, x = (x_1, x_2, \ldots, x_p) \mapsto
     \frac{ e^x}{\sum\limits_{i=1}^p e^{x_i}}\)
 } %
 le normalise pour obtenir des poids positifs de somme \(1\).
@@ -42,7 +42,7 @@ les valeurs correspondantes aux clés qui répondent le mieux à la requête son
 mais au lieu de renvoyer discrètement la meilleure valeur, 
 toutes les valeurs contribuent dans la mesure de leur pertinence~\cite{CS480/680Lecture19_2019}.
 La division par \(\sqrt{d_K}\) est une forme de régularisation. 
-Elle permet d'éviter que le module de l'entrée du \(\text{softmax}\) devienne trop grand,
+Elle permet d'éviter que le module de l'entrée du \(\softmax\) devienne trop grand,
 ce qui rend son gradient trop petit ainsi ralentissant l'apprentissage%
 \footnote{%
     Le choix de la valeur de \(\sqrt{d_K}\) n'est pas arbitraire.
@@ -85,7 +85,7 @@ Pour ce faire, la matrice \(M\)
         0       & 0       & \cdots & -\infty
     \end{bmatrix}
 \end{equation}
-est ajoutée à l'entrée de la fonction \(\text{softmax}\).
+est ajoutée à l'entrée de la fonction \(\softmax\).
 
 La deuxième couche attention du décodeur est une couche d'\emph{attention croisée}.
 Les requêtes viennent de la sortie et les clés et valeurs viennent de l'entrée.
