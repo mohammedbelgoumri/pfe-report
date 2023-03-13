@@ -1,8 +1,7 @@
 \documentclass[12pt, a4paper]{report}
 
 \usepackage[utf8]{inputenc} 
-\usepackage[english, greek, french, bidi=default]{babel}
-\babelprovide[import]{arabic-dz}
+\usepackage[english, greek, main=french]{babel}
 \usepackage{csquotes}
 \usepackage[T1]{fontenc}
 \usepackage{array}
@@ -133,6 +132,7 @@
 	\include{titlepage}
     \addcontentsline{toc}{chapter}{Page de garde}
 	\pagenumbering{roman}
+	% \include{abstract}
 	\afterpage{
 		\newgeometry{bottom=3cm}
 		\tableofcontents
