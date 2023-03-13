@@ -1,14 +1,11 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "sync bib",
-            "command": "unison",
-            "type": "shell",
-            "args": [
-                "../article/references.bib", 
-                "../report/references.bib",
-            ],
-        }
-    ]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "sync bib",
+      "command": "unison",
+      "type": "shell",
+      "args": ["../article/references.bib", "../report/references.bib"]
+    }
+  ]
 }
