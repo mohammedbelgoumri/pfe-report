@@ -1,74 +1,58 @@
 {
-    "latex-workshop.latex.autoBuild.run": "onSave",
-    "latex-workshop.latex.autoClean.run": "onBuilt",
-    "latex-workshop.latex.tools": [
-        {
-            "name": "compile",
-            "command": "latexmk",
-            "args": [
-                "-pdf",
-                "main.tex"
-            ],
-            "env": {}
-        },
-        {
-            "name": "makeglossaries",
-            "command": "makeglossaries",
-            "args": [
-                "main"
-            ]
-        },
-        {
-            "name": "clean",
-            "command": "latexmk",
-            "args": [
-                "-c",
-                "main.tex"
-            ]
-        },
-        {
-            "name": "biber",
-            "command": "biber",
-            "args": [
-                "main"
-            ]
-        }
-    ],
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "build",
-            "tools": [
-                "compile",
-                "biber",
-                "compile",
-                "clean"
-            ]
-        }
-    ],
-    "latex-workshop.latex.recipe.default": "build",
-    "cSpell.words": [
-        "EXPTIME",
-        "NEXPTIME",
-        "NTIME",
-        "preorder",
-        "satisfiability"
-    ],
-    "grammarly.selectors": [
-        {
-            "language": "latex",
-            "scheme": "file"
-        }
-    ],
-    "latex-workshop.intellisense.citation.label": "title",
-    "triggerTaskOnSave.tasks": {
-        "sync bib": [
-            "references.bib"
-        ]
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+  "latex-workshop.latex.tools": [
+    {
+      "name": "compile",
+      "command": "latexmk",
+      "args": ["-pdf", "main.tex"],
+      "env": {}
     },
-    "latex-utilities.zotero.latexCommand": "cite",
-    "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%|\\\\)\\s*($TAGS)\\{*|^\\s*- \\[ \\])",
-    "todo-tree.regex.regexCaseSensitive": false,
-    "latex-workshop.view.pdf.invert": 0.9,
-    "python.defaultInterpreterPath": "/home/mohammed/.anaconda3/envs/pfe/bin/python",
-    "python.terminal.activateEnvInCurrentTerminal": true,
+    {
+      "name": "makeglossaries",
+      "command": "makeglossaries",
+      "args": ["main"]
+    },
+    {
+      "name": "clean",
+      "command": "latexmk",
+      "args": ["-c", "main.tex"]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": ["main"]
+    }
+  ],
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "build",
+      "tools": ["compile", "biber", "compile", "clean"]
+    }
+  ],
+  "latex-workshop.latex.recipe.default": "build",
+  "cSpell.words": [
+    "EXPTIME",
+    "NEXPTIME",
+    "NTIME",
+    "preorder",
+    "satisfiability"
+  ],
+  "grammarly.selectors": [
+    {
+      "language": "latex",
+      "scheme": "file"
+    }
+  ],
+  "latex-workshop.intellisense.citation.label": "title",
+  "triggerTaskOnSave.tasks": {
+    "sync bib": ["references.bib"]
+  },
+  "latex-utilities.zotero.latexCommand": "cite",
+  "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%|\\\\)\\s*($TAGS)\\{*|^\\s*- \\[ \\])",
+  "todo-tree.regex.regexCaseSensitive": false,
+  "latex-workshop.view.pdf.invert": 0.9,
+  "python.defaultInterpreterPath": "/home/mohammed/.anaconda3/envs/pfe/bin/python",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.languageServer": "Pylance"
 }
