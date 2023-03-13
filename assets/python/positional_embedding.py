@@ -19,6 +19,8 @@ pe[:, 1::2] = cos(pos / div_term)
 
 fig, ax = plt.subplots()
 im = ax.imshow(pe, cmap="RdBu")
+ax.set_xlabel("Dimension")
+ax.set_ylabel("Position")
 
 # colorbar height
 divider = make_axes_locatable(ax)
