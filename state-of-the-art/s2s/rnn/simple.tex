@@ -41,7 +41,7 @@ De sa part, un décodeur récurrent peut conditionner sur l'encodage
 et passer ses états cachés à une couche supplémentaire 
 qui les interprète comme plongements des éléments de la sortie \(y\)~\cite{Fathi_2021}.
 Un tel décodeur n'a pas besoin d'entrée séquentielle 
-(voir~Figure~\ref{fig.rnn-enc-dec})
+(voir~Figure~\ref{fig.rnn-enc-dec} et Algorithme~\ref{lst.rnn-enc-dec}).
 
 \begin{figure}[hbt]
     \begin{center}
@@ -54,6 +54,15 @@ Un tel décodeur n'a pas besoin d'entrée séquentielle
     \label{fig.rnn-enc-dec}
 \end{figure}
 
+\lstinputlisting[
+    language=python, 
+    caption={Encodeur--décodeur récurrent.}, 
+    label=lst.rnn-enc-dec,
+    float=htb,
+    firstnumber=1,
+    firstline=12,
+]
+{assets/code/rnn_s2s.py}
 
 \subsubsection{\Glsfmtlong{bptt} et mémoire à court terme}
 
