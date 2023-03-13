@@ -43,11 +43,14 @@
 
 \newabbreviation{il}{IL}{interlingue}
 
-\newabbreviation{avc}{AVC}{accident vasculaire cérébrale}
+\newabbreviation[
+    longplural={accidents vasculaires cérébraux}
+]
+{avc}{AVC}{accident vasculaire cérébrale}
 
 \newabbreviation[
     user1={convolutional neural network},
-    longplural={réseaus de neurones à convolutions}
+    longplural={réseaux de neurones à convolutions}
 ]
 {cnn}{CNN}{réseau de neurones à convolutions}
 
@@ -74,7 +77,7 @@
     user1={de l'anglais~:~deep learning}
 ]{dl}{DL}{apprentissage profond}
 
-\newabbreviation[]{s2s}{S2S}{séquence-à-séquence}
+\newabbreviation{s2s}{S2S}{séquence-à-séquence}
 
 \newabbreviation[
     user1={de l'anglais~:~back-propagation throught time}
@@ -85,7 +88,8 @@
 \newabbreviation{bert}{BERT}{bidirectional encoder representations from transformers}
 
 \newabbreviation[
-    user1={de l'anglais~:~large language model}
+    user1={de l'anglais~:~large language model},
+    longplural={grands modèles de langage}
 ]{llm}{LLM}{grand modèle de langage}
 
 \newabbreviation{gpt}{GPT}{generative pre-trained transformer}
