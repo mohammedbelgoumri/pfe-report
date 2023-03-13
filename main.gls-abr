@@ -9,6 +9,8 @@
 		\setentrycounter[]{page}\glsnumberformat{1}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{5}}}\glsgroupskip
 \glsgroupheading{B}\relax \glsresetentrylist %
+\glossentry{bart}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{34}}}%
 \glossentry{bert}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{33\delimN 34}}}%
 \glossentry{bpe}{\glossaryentrynumbers{\relax 
@@ -40,7 +42,7 @@
 		\setentrycounter[]{page}\glsnumberformat{8}}}%
 \glossentry{llm}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{31}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{33}}}%
+		\setentrycounter[]{page}\glsnumberformat{33\delimN 34}}}%
 \glossentry{ls}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{8}}}%
 \glossentry{lstm}{\glossaryentrynumbers{\relax 
