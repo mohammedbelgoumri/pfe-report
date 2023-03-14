@@ -22,11 +22,19 @@ on parle alors de décodage glouton, décodage \(\argmax\) ou décodage par maxi
 Cependant, cette méthode est suboptimale.
 L'alternative la plus courante est ce qu'on appelle le décodage par \emph{\foreignlanguage{english}{beam search}}%
 ~\cite{Meister_Vieira_Cotterell_2021}.
-Le principe est de garder les \(k\) meilleurs mots à chaque étape.
-À partir de ces mots, \(k\) phrases candidates sont générées.
-Ces phrases sont ensuite évaluées et les \(k\) meilleures sont gardées.
-Ce processus est répété jusqu'à ce que le symbole de fin de phrase soit généré 
-(voir Algorithme~\ref{algo.bs-decode}).
+Le principe est de garder les \(b\) meilleurs candidats à chaque étape.
+À l'étape suivante, \(b\) nouveaux candidats sont générés à partir de chacun des \(b\) candidats gardés
+(ce qui donne \(b^2\) candidats).
+Les \(b\) meilleurs candidats sont gardés et le processus est répété jusqu'à ce que le symbole de fin de phrase soit généré.
+(voir Algorithme~\ref{algo.bs-decode} et Figure~\ref{fig.bs-decode}).
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=8cm]{assets/images/bs-decode.png}
+    \caption[Exemple de décodage par \foreignlanguage{english}{beam search}.]
+    {Exemple de décodage par \foreignlanguage{english}{beam search}~\cite{Meister_Vieira_Cotterell_2021}.}
+    \label{fig.bs-decode}
+\end{figure}
 
 \lstinputlisting[
     float={hbt},
