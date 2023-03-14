@@ -46,6 +46,8 @@
 \usepackage{utf8}
 \setcode{utf8}
 
+\usepackage{caption}
+
 \usepackage{listings}
 \renewcommand\lstlistingname{Algorithme}
 \renewcommand\lstlistlistingname{Liste des algorithmes}
@@ -56,7 +58,7 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 \lstdefinestyle{mystyle}{
-	backgroundcolor   = \color{backcolour},
+	% backgroundcolor   = \color{backcolour},
 	commentstyle      = \color{codegreen},
 	keywordstyle      = \color{magenta},
 	numberstyle       = \tiny\color{codegray},
@@ -76,7 +78,8 @@
 	captionpos        = t
 }
 \lstset{style=mystyle}
-
+\DeclareCaptionFormat{listing}{\rule{\dimexpr\linewidth\relax}{0.4pt}\par#1#2#3}
+\captionsetup[lstlisting]{format=listing,justification=centering,singlelinecheck=false,margin=0pt,labelsep=space,labelfont=bf}
 \usepackage{afterpage}
 \usepackage{float}
 \usepackage{subcaption}
