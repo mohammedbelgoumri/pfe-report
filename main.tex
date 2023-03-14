@@ -79,7 +79,14 @@
 }
 \lstset{style=mystyle}
 \DeclareCaptionFormat{listing}{\rule{\dimexpr\linewidth\relax}{0.4pt}\par#1#2#3}
-\captionsetup[lstlisting]{format=listing,justification=centering,singlelinecheck=false,margin=0pt,labelsep=space,labelfont=bf}
+\captionsetup[lstlisting]{
+	format          = listing,
+	justification   = centering,
+	singlelinecheck = false,
+	margin          = 0pt,
+	labelsep        = space,
+	labelfont       = bf
+}
 \usepackage{afterpage}
 \usepackage{float}
 \usepackage{subcaption}

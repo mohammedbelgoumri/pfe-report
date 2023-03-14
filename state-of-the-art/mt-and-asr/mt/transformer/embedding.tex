@@ -6,14 +6,37 @@ La première étape consiste à transformer les mots en vecteurs.
 C'est ce qu'on appelle un \emph{plongement lexical}~\cite{Almeida_Xexéo_2019}.
 
 La première étape dans le calcul des plongements lexicaux est de diviser le texte en unités lexicales (tokens).
-Il peut s'agir de mots, d'ensembles de mots ou d'unités plus petites qu'un mot.
+Il peut s'agir de mots, de suites de mots ou d'unités plus petites qu'un mot.
 La sortie de cette étape est appelée un \emph{vocabulaire}.
 Plusieurs techniques existent pour effectuer ce découpage. 
-La plus simple et d'assimiler chaque mot à un token,
-mais d'autres techniques comme le \gls{bpe} proposent la segmentation des mots en sous-éléments.
-Le choix des sous-mots à garder dans le vocabulaire est le plus souvent une fonction de la fréquence dans le corpus%
+La plus simple et d'assimiler chaque mot à un token.
+Cette technique présente l'inconvénient de produire des vocabulaires très grands.
+Il est possible de limiter la taille du vocabulaire en ne gardant que les mots les plus fréquents,
+remplaçant les autres par un token spécial \texttt{[UNK]]},
+mais cela a pour conséquence de perdre l'information sur les mots rares.
+Dans un contexte correction d'erreurs, où les erreurs intrinsèquement rares, cela est inacceptable%
 ~\cite{Rai_Borah_2021}.
 
+D'autres techniques tentent de réduire la taille du vocabulaire en utilisant des tokens plus petits qu'un mot.
+On parle de techniques de tokenisation en sous-mots.
+L'une des plus connues est le \gls{bpe}~\cite{Sennrich_Haddow_Birch_2016}.
+Pour construire le vocabulaire, \gls{bpe} commence par découper les mots en caractères (les bytes initiaux).
+Ensuite, il regroupe le couple de bytes les plus fréquents en un seul byte, 
+remplaçant toutes leurs occurrences par ce dernier.
+Cette opération est répétée jusqu'à ce que le nombre de bytes soit égal au nombre de tokens désiré
+ou pour un nombre maximal d'itérations (voir Algorithme~\ref{algo.bpe}).
+
+\lstinputlisting[
+    float={hbt},
+    firstnumber=1,
+    firstline=5,
+    language=python,
+    caption={%
+        [\Glsfmtlong{bpe}.]%
+        \Glsfmtlong{bpe}~\cite{Sennrich_Haddow_Birch_2016}.
+    },
+    label={algo.bpe},
+]{assets/code/bpe.py}
 
 Après l'avoir construit, un plongement doit être associé au vocabulaire.
 L'application qui mappe les tokens sur les vecteurs peut avoir une implémentation arbitraire.
