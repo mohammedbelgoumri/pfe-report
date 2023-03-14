@@ -1,10 +1,7 @@
 This is makeindex, version 2.16 [TeX Live 2022] (kpathsea + Thai support).
 Scanning style file ./main.ist.............................done (29 attributes redefined, 0 ignored).
-Scanning input file main.glo-abr...
-!! Input index error (file = main.glo-abr, line = 1):
-   -- Illegal space within numerals in second argument.
-.done (206 entries accepted, 1 rejected).
-Sorting entries.....done (1642 comparisons).
-Generating output file main.gls-abr....done (102 lines written, 0 warnings).
+Scanning input file main.glo-abr....done (210 entries accepted, 0 rejected).
+Sorting entries.....done (1890 comparisons).
+Generating output file main.gls-abr....done (103 lines written, 0 warnings).
 Output written in main.gls-abr.
 Transcript written in main.glg-abr.
