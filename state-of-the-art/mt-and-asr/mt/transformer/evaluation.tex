@@ -28,4 +28,13 @@ Il est donné par la formule suivante%
     {\sum\limits_{g \in G_n\left(\hat{y}\right)} \#(\hat{y}, g)}
 \end{equation}
 \gls{bleu} est obtenu en prenant la moyenne géométrique des \(p_n\) 
-multipliée par une pénalité exponentielle pour les phrases trop courtes.
+multipliée par une pénalité exponentielle pour les phrases trop courtes (voir Algorithme~\ref{algo.bleu}).
+
+\lstinputlisting[
+    float={hbt},
+    language=Python,
+    firstnumber=1,
+    firstline=4,
+    label={algo.bleu},
+    caption={Score \glsfmtshort{bleu}.},
+]{assets/code/bleu.py}
