@@ -11,9 +11,9 @@
 		\setentrycounter[]{page}\glsnumberformat{7}}}\glsgroupskip
 \glsgroupheading{B}\relax \glsresetentrylist %
 \glossentry{bart}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{37}}}%
+		\setentrycounter[]{page}\glsnumberformat{37\delimN 38}}}%
 \glossentry{bert}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{36\delimN 37}}}%
+		\setentrycounter[]{page}\glsnumberformat{36\delimR 38}}}%
 \glossentry{bleu}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{33\delimN 34}}}%
 \glossentry{bpe}{\glossaryentrynumbers{\relax 
@@ -35,7 +35,7 @@
 		\setentrycounter[]{page}\glsnumberformat{23}}}\glsgroupskip
 \glsgroupheading{G}\relax \glsresetentrylist %
 \glossentry{gpt}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{35\delimR 37}}}%
+		\setentrycounter[]{page}\glsnumberformat{35\delimR 38}}}%
 \glossentry{gru}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{20\delimR 22}}}\glsgroupskip
 \glsgroupheading{I}\relax \glsresetentrylist %
@@ -56,7 +56,7 @@
 		\setentrycounter[]{page}\glsnumberformat{13\delimR 15}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{30}}}%
 \glossentry{mlm}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{37}}}%
+		\setentrycounter[]{page}\glsnumberformat{37\delimN 38}}}%
 \glossentry{mlp}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{14\delimR 17}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{23}\delimN 
@@ -93,7 +93,8 @@
 		\setentrycounter[]{page}\glsnumberformat{15\delimN 16}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{20}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{24\delimN 25}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{29\delimR 32}}}%
+		\setentrycounter[]{page}\glsnumberformat{29\delimR 32}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{37}}}%
 \glossentry{smt}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{9}}}%
 \end{theglossary}\glossarypostamble
