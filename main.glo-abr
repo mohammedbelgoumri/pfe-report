@@ -48,7 +48,7 @@
 \glossaryentry{DL?\glossentry{dl}|setentrycounter[]{page}"\glsnumberformat}{11}
 \glossaryentry{NMT?\glossentry{nmt}|setentrycounter[]{page}"\glsnumberformat}{11}
 \glossaryentry{ASR?\glossentry{asr}|setentrycounter[]{page}"\glsnumberformat}{11}
-\glossaryentry{S2S?\glossentry{s2s}|setentrycounter[]{page}"\glsnumberformat}{11}
+\glossaryentry{S2S?\glossentry{s2s}|setentrycounter[]{page}"\glsnumberformat}{12}
 \glossaryentry{NMT?\glossentry{nmt}|setentrycounter[]{page}"\glsnumberformat}{12}
 \glossaryentry{ASR?\glossentry{asr}|setentrycounter[]{page}"\glsnumberformat}{12}
 \glossaryentry{S2S?\glossentry{s2s}|setentrycounter[]{page}"\glsnumberformat}{13}
@@ -209,5 +209,7 @@
 \glossaryentry{S2S?\glossentry{s2s}|setentrycounter[]{page}"\glsnumberformat}{39}
 \glossaryentry{ASR?\glossentry{asr}|setentrycounter[]{page}"\glsnumberformat}{39}
 \glossaryentry{ASR?\glossentry{asr}|setentrycounter[]{page}"\glsnumberformat}{39}
+\glossaryentry{ASR?\glossentry{asr}|setentrycounter[]{page}"\glsnumberformat}{39}
+\glossaryentry{CNN?\glossentry{cnn}|setentrycounter[]{page}"\glsnumberformat}{39}
 \glossaryentry{ASR?\glossentry{asr}|setentrycounter[]{page}"\glsnumberformat}{39}
 \glossaryentry{CNN?\glossentry{cnn}|setentrycounter[]{page}"\glsnumberformat}{39}
