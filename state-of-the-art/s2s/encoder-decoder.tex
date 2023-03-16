@@ -1,7 +1,7 @@
 % todo: add citations
 \section{Architecture encodeur--décodeur}
 
-Les lacunes des \glspl{mlp} sont en large partie due au traitement séparé des parties des séquences.
+Les lacunes des \glspl{mlp} sont en large partie le résultat du traitement séparé des parties des séquences.
 Dans la production de l'élément (ou bloc) courant de la sortie,
 un \gls{mlp} se base uniquement sur l'élément (ou bloc) correspondant de l'entrée.
 L'équation~\ref{eq.mlp-seq-prod} l'illustre pour une entrée \(x = (x_1, x_2, \cdots, x_n)\)
@@ -13,12 +13,12 @@ et une sortie \(y = (y_1, y_2, \cdots, y_m)\).
 \end{equation}
 %%
 En plus de l'hypothèse implicite de l'existence d'une telle correspondance,
-cela suppose que les éléments d'une séquence sont complétement indépendants l'un de l'autre.
+cela suppose que les éléments d'une séquence sont complétement indépendants les uns des autres.
 Cette dernière hypothèse n'est presque jamais vérifiée. 
 
 Une façon naturelle de combler ces lacunes est d'abandonner le traitement par bloc de l'entrée.
 Tout élément de la séquence de sortie est considéré comme fonction de la séquence d'entrée toute entière.
-L'équation~\ref{eq.yj-of-x} montre cette approche sur l'exemple précédent.  
+L'équation~\ref{eq.yj-of-x} montre cette approche sur l'exemple précédent~\cite{Stahlberg_2020}.
 %%
 \begin{equation}
     \label{eq.yj-of-x}
@@ -26,8 +26,8 @@ L'équation~\ref{eq.yj-of-x} montre cette approche sur l'exemple précédent.
 \end{equation}
 %%
 L'architecture encodeur--décodeur y parvient en combinant deux modules : un encodeur et un décodeur.
-L'encodeur consomme la suite d'entrée et produit un vecteur de dimension fixe qui la représente.
-\footnote{Ce vecteur est appelé un vecteur de contexte, vecteur de pensée ou encore un encodage.}
+L'encodeur consomme la suite donnée en entrée et produit un vecteur de dimension fixe qui la représente%
+~\footnote{Ce vecteur est appelé un vecteur de contexte, vecteur de pensée ou encore un encodage.}.
 Le décodeur consomme ce vecteur et produit la sortie (voir Figure~\ref{fig.encoder-decoder}).
 %%
 \begin{figure}[hbt]
@@ -48,7 +48,7 @@ L'équation~\ref{eq.enc-dec} le montre sur le même exemple.
 \end{equation}
 %%
 
-L'équation~\ref{eq.enc-dec} ne dépend pas du fonctionnement interne de l'encodeur et du décodeur.
+L'équation~\ref{eq.enc-dec} ne dépend ni du fonctionnement interne de l'encodeur ni de celui du décodeur.
 Les deux modules peuvent avoir deux architectures quelconques, qui peuvent ou non être les mêmes~\cite{deep-nmt-survey}.
 Dans le reste de ce chapitre, nous examinons les architectures communes en apprentissage \gls{s2s}.
 
