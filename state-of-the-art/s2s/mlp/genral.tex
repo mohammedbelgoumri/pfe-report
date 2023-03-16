@@ -6,7 +6,7 @@ Il s'agit d'une simple composition de couches affines avec des activations non a
 (voir Définition~\ref{def.mlp}).
 
 
-\begin{definition}[\gls{mlp}, \barecite{Mukherjee_2021}]\ \\
+\begin{definition}[\gls{mlp}]\ \\
     \label{def.mlp}
     Soient \(k, w_0, w_1, \cdots, w_{k+1}\in\naturals\), 
     un réseau de neurones feed-forward de profondeur \(k+1\), à \(w_0\) entrées et \(w_{k+1}\) sorties, 
@@ -21,14 +21,15 @@ Il s'agit d'une simple composition de couches affines avec des activations non a
         \end{array}
         \right.
     \end{equation}
-    Où les \(A_i\) sont des fonctions affines \(\reals^{w_{i-1}}\to\reals^{w_i}\) 
+    où les \(A_i\) sont des fonctions affines \(\reals^{w_{i-1}}\to\reals^{w_i}\) 
     et les \(\phi_i\) sont des fonctions quelconques, typiquement non affines
     \(\reals^{w_i}\to\reals^{w_i}\), dites \emph{d'activations}.
-    La fonction \(\phi_i\circ A_i\) est appelée la \(i^{\, \mathrm{eme}}\) couche du réseau.
+    La fonction \(\phi_i\circ A_i\) est appelée la \(i^{\, \mathrm{eme}}\) couche du réseau%
+    ~\cite{Mukherjee_2021}.
 \end{definition}
 
 À un tel réseau de neurones, on peut associer un graphe orienté acyclique 
-qu'on appelle son ``architecture sous-jacente''~\parencite{Kearns_Vazirani_1994}. 
+qu'on appelle son ``architecture sous-jacente''~\cite{Kearns_Vazirani_1994}. 
 La Figure~\ref{fig.mlp} illustre l'architecture d'un \gls{mlp} de profondeur 4
 avec \({(w_0, w_1, w_2, w_3, w_4) = (4, 5, 7, 5, 4)}\).
 
@@ -42,17 +43,17 @@ avec \({(w_0, w_1, w_2, w_3, w_4) = (4, 5, 7, 5, 4)}\).
 
 Deux \glspl{mlp} peuvent avoir la même architecture sous-jacente,
 en effet, cette dernière ne dépend que des dimensions de leurs couches respectives.
-De ce fait, une méthode de trouver pour une architecture et une fonction cible données 
-le meilleur \gls{mlp} est nécessaire.
+De ce fait, une méthode de trouver, pour une architecture et une fonction cible données,
+le meilleur \gls{mlp} est nécessaire~\cite{Mukherjee_2021}.
 
 Pour ce faire, nous exploitons le fait que 
-les \(A_i\) soient des applications affines sur des espaces de dimensions finies.
+les \(A_i\) sont des applications affines sur des espaces de dimensions finies.
 Nous pouvons donc les écrire comme combinaisons de produits matriciels et de translations.
 Le problème se réduit donc à régler \footnote{En \gls{ml}, le terme ``entraîner'' est plutôt utilisé.}
 les paramètres des matrices en question. 
 Cela nécessite une façon de quantifier la qualité d'approximation d'une fonction \(f\) par une autre \(\hat{f}\).
-L'analyse fonctionnelle nous en donne plusieurs, les~\cref{eq.l1-norm,eq.l2-norm}
-sont deux exemples récurrents de fonctions dites \emph{de perte}.
+L'analyse fonctionnelle nous en donne plusieurs. 
+Les~\cref{eq.l1-norm,eq.l2-norm} sont deux exemples récurrents de fonctions dites \emph{de perte}.
 
 \begin{equation}
     \label{eq.l1-norm}
