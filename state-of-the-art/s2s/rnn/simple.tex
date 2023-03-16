@@ -1,8 +1,8 @@
 \subsection{\Glsfmtlongpl{rnn} simples}
 
-L'\gls{rnn} le plus simple à imaginer se réduit à une combinaison affine de l'état passé et de l'entrée.
-Il permet de l'information sur le passé de se propager sans contrôle particulier.
-Mathématiquement, une couche d'un tel \gls{rnn} prend la forme suivante
+Le \gls{rnn} le plus simple à imaginer se réduit à une combinaison affine de l'état passé et de l'entrée.
+Il permet à l'information sur le passé de se propager sans contrôle particulier.
+Mathématiquement, une couche d'un tel \gls{rnn} prend la forme suivante 
 \begin{equation}
     \label{eq.rnn}
     h^{(t)} = \phi\left(Uh^{(t-1)} + Wx^{(t)} + b\right) \qquad 1 \le t \le n
@@ -21,7 +21,8 @@ il s'agit donc d'un système à réponse impulsionnelle infinie~\cite{Fathi_2021
 \subsubsection{Dépliement temporel et encodeur--décodeur récurrent}
 
 Le traitement d'une séquence \(x\) par un \gls{rnn} \((\mathcal{R})\), 
-est équivalent à son traitement par un \gls{ffn} \((\mathcal{F})\) dont la profondeur est égale à la longueur de \(x\).
+est équivalent à son traitement par un \gls{ffn} \((\mathcal{F})\) dont la profondeur est égale à la longueur de \(x\)%
+\footnote{Et dont toutes les couches sont identiques à \(\mathcal{R}\).}.
 \(\mathcal{F}\) est donc appelé \emph{dépliement temporel} de \(\mathcal{R}\) pour \(x\).
 La Figure~\ref{fig.rnn-unfold} montre le dépliement temporel de la Figure~\ref{fig.rnn-loop} 
 pour une séquence de longueur 4~\cite{LeCun_Bengio_Hinton_2015}.
@@ -68,8 +69,8 @@ Un tel décodeur n'a pas besoin d'entrée séquentielle
 
 L'entraînement d'un \gls{rnn} sur un exemple se fait en le dépliant, 
 puis en entraînant le \gls{ffn} qui résulte par rétro-propagation.
-L'algorithme résultant s'appel la \gls{bptt}.
-Cela est problématique, car la taille de l'entrée n'est théoriquement pas bornées.
+L'algorithme résultant s'appelle la \gls{bptt}.
+Cela est problématique, car la taille de l'entrée n'est théoriquement pas bornée.
 Par conséquent, la profondeur effective d'un \gls{rnn} ne l'est pas non plus~\cite{Fathi_2021}.
 
 Or, dans l'entraînement d'un réseau de neurones trop profond,
@@ -77,7 +78,7 @@ les modules des gradients peuvent atteindre des valeurs trop grandes ou trop pet
 Il s'agit respectivement des problèmes de ``l'explosion du gradient'' 
 et de ``la disparition du gradient''~\cite{Basodi_Ji_Zhang_Pan_2020}
 Une conséquence de ce phénomène est que 
-les \glspl{rnn} simples ont du mal avec les entrées pour lesquelles le dépliement temporel est profond,
+les \glspl{rnn} simples ont du mal à traiter les entrées pour lesquelles le dépliement temporel est profond,
 (i.e les longues entrées).
 Cette incapacité à modéliser les corrélations à long terme est appelée 
 ``mémoire à court terme''~\cite{Bengio_Simard_Frasconi_1994,Informatik_Bengio_Frasconi_Schmidhuber_2003}.
