@@ -4,13 +4,13 @@ Les \glspl{mlp} présentent deux avantages par rapport aux architectures discut�
 Le premier est leur simplicité. 
 Elle les rend plus simples à comprendre et à implémenter.
 Le deuxième est le fait qu'ils traitent indépendamment les sous-séquences.
-Cela rend très facile la tâche de les paralléliser, 
-et par conséquent, il accélère considérablement leur entraînement.
+Cela rend très facile la tâche de les paralléliser,
+ce qui accélère considérablement leur entraînement.
 
 Cependant, ce dernier point pose un grand problème.
-Comme ils traitent indépendamment les bloques de la séquence, 
-les \glspl{mlp} ne peuvent pas modéliser les dépendances inter-bloc.
+Comme ils traitent indépendamment les blocs de la séquence, 
+les \glspl{mlp} ne peuvent pas modéliser les dépendances inter-blocs.
 Par conséquent, leur performance sur les séquences composées de plusieurs blocs est très médiocre.
-La solution de ce problème est d'augmenter la taille du bloc (est donc aussi la dimension d'entrée).
-Or, cela suppose un alignement par blocs entre les deux séquences.
-Une hypothèse invalide selon la Section~\ref{sec.statement}.
+La solution de ce problème est d'augmenter la taille du bloc (et donc aussi la dimension d'entrée).
+Les \gls{mlp} dépendent également d'une hypothèse d'alignement par blocs entre les deux séquences,
+une hypothèse invalide selon la Section~\ref{sec.statement}.
