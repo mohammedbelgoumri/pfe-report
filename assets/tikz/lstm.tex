@@ -1,0 +1,15 @@
+\begin{circuitikz}
+    \node (x) at (0,0) {\(x\)};
+    \node[inner sep=0pt] (add1) at (2,0) {\(\oplus\)};
+    \node[rectangle, draw] (candidate) at (2, 2) {\(\widetilde{C}\)};
+    \node[inner sep=0pt] (add2) at (6,0) {\(\oplus\)};
+    \node[circle, draw] (state) at (8, 0) {\(C\)};
+    \node[circle, draw, fill, inner sep=.5mm] (branch) at (6, -2){};
+
+    \draw[-{Latex}] (x) to (add1);
+    \draw[-{Latex}] (add1) to (candidate);
+    \draw[-{Latex}] (candidate) to[nos, l_=\(i\)] (6, 2) to (add2);
+    \draw[-{Latex}] (add2) to (state);
+    \draw[-{Latex}] (state) to (8, -2) to (branch) to (2, -2) to (add1); 
+    \draw[-{Latex}] (branch) to[nos, l_=\(f\)] (add2);    
+\end{circuitikz}    
