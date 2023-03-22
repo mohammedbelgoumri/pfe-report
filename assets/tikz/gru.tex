@@ -6,18 +6,18 @@
     % nodes
     \node (x) at (-1,0) {\(x\)};
     \node[inner sep=0pt] (add1) at (2,0) {\(\oplus\)};
-    \node[rectangle, draw] (candidate) at (2, 2) {\(\widetilde{C}\)};
-    \node[inner sep=0pt] (add2) at (6,0) {\(\oplus\)};
-    \node[circle, draw] (state) at (8, 0) {\(C\)};
+    \node[rectangle, draw] (candidate) at (2, 2) {\(\widetilde{h}\)};
+    \node[cute spdt down, rotate=180] (add2) at (6.35, 0) {\(z\)};   
+    \node[circle, draw] (state) at (8, 0) {\(h\)};
     \node[circle, draw, fill, inner sep=0mm] (branch) at (6, -2){};
     \node (h) at (13, 0) {\(h\)};
 
     % connections
     \draw[-{Latex}] (x) to (add1);  
     \draw[-{Latex}] (add1) to (candidate);
-    \draw[-{Latex}] (candidate) to[cosw, l_=\(i\)] (6, 2) to (add2);
-    \draw[-{Latex}] (add2) to (state);
-    \draw[-{Latex}] (state) to (8, -2) to (branch) to (2, -2) to (add1); 
-    \draw[-{Latex}] (branch) to[cosw, l_=\(f\)] (add2);
-    \draw[-{Latex}] (state) to[cosw, l_=\(o\)] (h);
-\end{circuitikz}    
+    \draw[-{Latex}] (candidate) to (6, 2) to (add2.out 2);
+    \draw[-{Latex}] (add2.in) to (state);
+    \draw[-{Latex}] (state) to (8, -2) to (branch) to[cosw, l_=\(r\)] (2, -2) to (add1); 
+    \draw[-{Latex}] (branch) to (add2.out 1);
+    \draw[-{Latex}] (state) to (h);
+\end{circuitikz} 
