@@ -1,4 +1,4 @@
-\subsection{Portes, \glsfmtlong{gru} et \glsfmtlong{lstm}}
+\subsection{Réseaux de neurones à portes}
 
 Pour une grande partie des problèmes d'apprentissage \gls{s2s}, les séquences peuvent être très longues.
 Le mémoire à court terme constitue donc un véritable obstacle pour l'utilisation des \glspl{rnn} simples en pratique.
@@ -6,8 +6,8 @@ Une approche de le contourner qui a eu un énorme succès expérimental,
 est l'introduction d'un mécanisme de contrôle sur la boucle de rétroaction (voir Figure~\ref{fig.rnn-gate}).
 Ce mécanisme est généralement implémenté avec des \emph{portes},
 des unités entraînables qui peuvent réguler le flux d'information dans la couche récurrente.
-On parle alors d'\emph{\gls{rnn} à portes}.
-Dans cette section, nous explorons les deux variants les plus utilisés d'\glspl{rnn} à portes :
+On parle alors de \emph{\gls{rnn} à portes}.
+Dans cette section, nous explorons les deux variantes les plus utilisées de \glspl{rnn} à portes :
 le \gls{gru} et le \gls{lstm}. 
 
 
@@ -23,13 +23,13 @@ le \gls{gru} et le \gls{lstm}.
 Le \gls{gru}, introduit par~\cite{Cho_van_Merrienboer_Bahdanau_Bengio_2014}, 
 est une architecture récurrente à portes très simple (voir Figure~\ref{fig.gru-circuit}).
 Elle utilise deux portes.
-La première est la porte de réinitialisation ((\(r\) dans la figure~\ref{fig.gru-circuit})).
+La première est la porte de réinitialisation \((r)\).
 Elle détermine le point auquel l'information sur le passé peut se propager
 (quand \(r=0\), pas de propagation et quand \(r=1\), propagation totale).
-Sa sortie s'appelle \emph{l'état candidat} (\(\tilde{h}\) dans la figure).
-La deuxième est la porte de mise à jour (\(z\) dans la figure).
+Sa sortie s'appelle \emph{l'état candidat} \((\tilde{h})\).
+La deuxième est la porte de mise à jour \((z)\).
 Elle détermine les contributions respectives de l'état candidat et l'état passé
-(si \(z=0\), seul l'état candidat contribue et si \(z=1\), seule l'état courant contribue).
+(si \(z=0\), seul l'état candidat contribue et si \(z=1\), seul l'état courant contribue).
 Sa sortie est la sortie globale du \gls{gru}~\cite{Cho_van_Merrienboer_Bahdanau_Bengio_2014}.
 
 
@@ -42,7 +42,7 @@ Sa sortie est la sortie globale du \gls{gru}~\cite{Cho_van_Merrienboer_Bahdanau_
 \end{figure}
 
 Le fonctionnement des portes d'un \gls{gru} est simple.
-Leurs valeurs sont calculées à partir de l'entrée et de l'état courants par
+Leurs valeurs sont calculées à partir de l'entrée et de l'état courant par
 les équations~\ref{eq.gru-update} et \ref{eq.gru-reset}, 
 où \(\sigma\) est la fonction \emph{sigmoïde}%
 \footnote{\(\sigma:\reals\to\reals, x\mapsto\frac{1}{1+e^{-x}}\)}
@@ -68,11 +68,11 @@ si les portes de réinitialisation et de mise à jour sont respectivement fixés
 
 \subsubsection{\Glsfmtlong{lstm}}
 
-Il s'agit de l'une des premières architectures récurrentes à protes%
+Il s'agit de l'une des premières architectures récurrentes à portes%
 ~\cite{Chung_Gulcehre_Cho_Bengio_2014}.
 Elle a été introduite par~\cite{Hochreiter_Schmidhuber_1997}.
 Un \gls{lstm} implémente trois portes : 
-une porte d'entrés (\(i\)), une porte d'oublie (\(f\)) et une porte de sortie (\(o\))%
+une porte d'entrée (\(i\)), une porte d'oubli (\(f\)) et une porte de sortie (\(o\))%
 (voir Figure~\ref{fig.lstm-circuit}).
 
 \begin{figure}[htb]
@@ -110,11 +110,11 @@ Nous avons établi que les \glspl{rnn} simples souffrent du mémoire à court te
 En utilisant les portes pour contrôler le flux d'information,
 les \glspl{gru} et \glspl{lstm} résolvent le problème au prix d'architectures plus complexes
 et par conséquent plus lourdes à entraîner.
-Ils ont des performances similaires est largement meilleures que celle des \glspl{rnn}%
+Ils ont des performances similaires et largement meilleures que celle des \glspl{rnn}%
 ~\cite{Chung_Gulcehre_Cho_Bengio_2014}.
 
-Cependant, toutes les architectures récurrentes présentent un problème fondamental : 
-elles fonctionnent séquentiellement.
+Cependant, toutes les architectures récurrentes présentent un problème fondamental~:%
+~elles fonctionnent séquentiellement.
 Bien que cela les rend naturellement mieux adaptées à la modélisation de séquences,
 il les rend aussi quasi impossibles à paralléliser pour exploiter des architectures parallèles (GPU).
 Par conséquent, l'entraînement des \glspl{rnn} est extrêmement lent~\cite{Stahlberg_2020}.
