@@ -5,9 +5,9 @@ En dépit d'être une architecture naturelle pour le traitement des séquences,
 les \glspl{rnn} sont trop lents pour la majorité des cas d'utilisation pratiques.
 Cela est dû à leur nature séquentielle qui à son tour, 
 est due à leur utilisation de boucles de rétroaction (voir Section~\ref{sec.rnn}).
-Une architecture sans telles boucles (i.e une architecture d'\gls{ffn}) est donc préférable.
+Une architecture sans de telles boucles (i.e une architecture de \gls{ffn}) est donc préférable.
 
-Les \glspl{cnn} sont une famille d'\glspl{ffn} typiquement utilisés en traitement d'images.
+Les \glspl{cnn} sont une famille de \glspl{ffn} typiquement utilisés en traitement d'images.
 Ils ont été introduits par~\cite{Fukushima_1980} et popularisés par%
 ~\cite{LeCun_Boser_Denker_Henderson_Howard_Hubbard_Jackel_1989,Lecun_Bottou_Bengio_Haffner_1998}.
 Les \glspl{cnn} atteignent des performances comparables à celles des \glspl{rnn} sans mémoire explicite.
@@ -25,32 +25,33 @@ il s'agit d'une opération commune en probabilité, analyse fonctionnelle,
 traitement de signaux et traitement d'images~\cite{Barbe_Ledoux_2012,Oppenheim_Schafer_2013}.
 À partir d'elle, une autre opération appelée \emph{l'inter-corrélation} est définie.
 L'inter-corrélation de \(f\) et \(g\) est notée \(f\star g\).
-Elle est définie par :%
-\footnote{\(g^- : t \mapsto g(-t)\).}
+Elle est définie par%
+\footnote{\(g^- : t \mapsto g(-t)\).} :
 \begin{equation}
     \label{eq.cros-corr}
     u \mapsto \int_\reals f(t)g(t-u)\diff{t} = (f \ast g^-)(u)
 \end{equation}
 Intuitivement, elle mesure la similarité entre les deux signaux en question.
 Les \glspl{cnn} utilisent l'inter-corrélation à la place des applications linéaires quelconques d'un \gls{mlp}.
-Une couche de convolution unidimensionnelle calcul donc la fonction suivante
+Une couche de convolution unidimensionnelle calcule donc la fonction suivante
 \begin{equation}
     \label{eq.layer-conv1d}
     x \mapsto \phi\left(b + \sum_{i=1}^n x\star w_i\right)
 \end{equation}
-ou \(x\) est l'entrée et les vecteurs \(w_i\) sont les paramètres entraînables de la couche, 
+où \(x\) est l'entrée et les vecteurs \(w_i\) sont les paramètres entraînables de la couche, 
 aussi appelés ses \emph{noyaux} ou \emph{masques}
 (voir Figure~\ref{fig.layer-conv1d}).
 La sortie de cette couche est une combinaison de tous les éléments de la séquence d'entrée.
 En composant suffisamment de telles couches,
 un \gls{cnn} apprend une représentation de l'entrée beaucoup plus structurée qu'un \gls{mlp}.
-On parle par fois de représentation \emph{hiérarchique}.
+On parle de représentation \emph{hiérarchique}.
 
 \begin{figure}[hbt]
     \begin{center}
         \includegraphics[width=\textwidth]{assets/images/conv1d.png}
     \end{center}    
-    \caption{Couche convolutive unidimensionnelle.}
+    \caption[Couche convolutive unidimensionnelle.]%
+    {Couche convolutive unidimensionnelle~\cite{Understanding_Convolutions}.}
     \label{fig.layer-conv1d}
 \end{figure}
 
@@ -61,35 +62,34 @@ Leur tendance naturelle à produire des représentations synthétiques des entr�
 fait des \glspl{cnn} des encodeurs très puissants pour une grande variété de tâches,
 y compris des tâches de transduction de séquences.
 Plusieurs travaux ont combiné un encodeur convolutif avec un décodeur récurrent%
-(voir~Figure~\ref{fig.rctm}, \barecite[Fig.3]{Kalchbrenner_Blunsom_2013})%
-~\cite{deep-nmt-survey}.
+(voir~Figure~\ref{fig.rctm})~\cite{deep-nmt-survey}.
 
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=6cm]{assets/images/ctrm.png}
-    \caption{Recurrent Continuous Translation Model}
+    \caption[Recurrent Continuous Translation Model.]%
+    {Recurrent Continuous Translation Model~\cite{Kalchbrenner_Blunsom_2013}.}
     \label{fig.rctm}
 \end{figure}
 
 Cependant, des architectures totalement convolutives pour l'apprentissage \gls{s2s} existent également.
-ByteNet (voir Figure~\ref{fig.bytenet}
-\barecite{Kalchbrenner_Espeholt_Simonyan_Oord_Graves_Kavukcuoglu_2017})
-et ConvS2S (voir Figure~\ref{fig.convs2s}
-\barecite{Kameoka_Tanaka_Kwaśny_Kaneko_Hojo_2020})
-sont deux exemples de telles architectures.
+ByteNet (voir Figure~\ref{fig.bytenet})
+et ConvS2S (voir Figure~\ref{fig.convs2s}) sont deux exemples de telles architectures.
 
 \begin{figure}[H]
     \centering
     \begin{minipage}{.5\linewidth}
         \centering
         \includegraphics[height=5cm]{assets/images/bytenet.png}
-        \captionof{figure}{Architecture de ByteNet.}
+        \captionof{figure}[Architecture de ByteNet.]%
+        {Architecture de ByteNet~\cite{Kalchbrenner_Espeholt_Simonyan_Oord_Graves_Kavukcuoglu_2017}.}
         \label{fig.bytenet}
     \end{minipage}%
     \begin{minipage}{.5\linewidth}
         \centering
         \includegraphics[height=5cm]{assets/images/convs2s.png}
-        \captionof{figure}{Architecture de ConvS2S.}
+        \captionof{figure}[Architecture de ConvS2S]%
+        {Architecture de ConvS2S~\cite{Kameoka_Tanaka_Kwaśny_Kaneko_Hojo_2020}.}
         \label{fig.convs2s}
     \end{minipage}
 \end{figure}
@@ -109,7 +109,7 @@ Or, la nature locale du produit de convolution
 rend difficile aux \glspl{cnn} d'apprendre les corrélations globales%
 \footnote{Dépendances entre des couples d'éléments éloignés dans la séquence}.
 En effet, pour représenter toutes les relations dans une séquence de longueur \(n\),
-un \gls{cnn} dont les masques sont de taille \(k < n\) doit avoir \(\log_k n\) couche%
+un \gls{cnn} dont les masques sont de taille \(k < n\) doit avoir \(\log_k n\) couches%
 ~\cite{attention}.
 Le traitement de séquences très longues nécessite alors des \glspl{cnn} trop profonds,
-cequi donne lieu au problèmes de dispartion et d'exploision des gradients.
+ce qui donne lieu aux problèmes de disparition et d'explosion des gradients.
