@@ -4,22 +4,18 @@ La première couche de l'encodeur aussi bien que du décodeur est une couche d'e
 Elle permet de calculer une représentation vectorielle de la séquence en question.
 Elle est composée d'une couche de plongement et d'une couche d'encodage de la position.
 
-La couche de plongement mappe chaque élément de la séquence à un vecteur de dimension fixe \(d\),
+La couche de plongement transforme chaque élément de la séquence en un vecteur de dimension fixe \(d\),
 ainsi transformant une séquence de longueur \(n\) en une matrice de \(\reals^{n \times d}\).
 Elle peut avoir une architecture quelconque en fonction de la nature des données.
 Il peut s'agir d'une couche de plongement lexical dans le cas d'un texte, 
 d'une couche de convolution dans le cas de l'audio 
 ou d'une couche récurrente dans le cas d'une série chronologique.
 
-Le transformeur est un invariant aux permutations%
-\footnote{%
-    Pour une séquence \(x = (x_1, \ldots, x_n)\) et une permutation \(\pi\in S_n\),
-    \(x\) et \(\left(x_{\pi(i)}\right)_{1 \le i \le n}\) ont deux encodages identiques.
-}.
+Le transformeur est invariant aux permutations.
 La sortie de la couche de plongement est donc insuffisante pour représenter la séquence.
 Il lui faut ajouter une information sur l'ordre des éléments.
 C'est ce que fait la couche d'encodage de la position.
-Les auteurs~\cite{attention} proposent l'encodage suivant pour la position \(i\) :
+Les auteurs de~\cite{attention} proposent l'encodage suivant pour la position \(i\) :
 \begin{equation}
     \label{eq.sine-positional-encoding}
     \mathrm{PE}_{k}(i) = 
