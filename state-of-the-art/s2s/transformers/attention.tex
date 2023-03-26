@@ -26,7 +26,7 @@ Le résultat est donné par l'équation~\eqref{eq.scaled-dp-attention}.
     \label{eq.scaled-dp-attention}
     \text{Attention}(Q, K, V) = \softmax\left(\frac{QK^T}{\sqrt{d_K}}\right)V 
 \end{eqnarray}
-Intuitivement, la \foreignlanguage{english}{scaled dot-product attention} peut être vue comme 
+Intuitivement, la \emph{\foreignlanguage{english}{scaled dot-product attention}} peut être vue comme 
 une forme de recherche floue dans une base de données.
 Le terme \(QK^T\) est un produit scalaire entre les lignes de la requête \(Q\) et la clé \(K\).
 Il représente la similarité entre les deux.
@@ -36,7 +36,7 @@ La fonction \(\softmax\)%
     \frac{ e^x}{\sum\limits_{i=1}^p e^{x_i}}\)
 } %
 le normalise pour obtenir des poids positifs de somme \(1\).
-Enfin, le résultat et une somme des valeurs \(V\) pondérées par ces poids.
+Enfin, le résultat est une somme des valeurs \(V\) pondérées par ces poids.
 C'est dans ce sens-là qu'il s'agit d'une recherche floue :
 les valeurs correspondantes aux clés qui répondent le mieux à la requête sont sélectionnées,
 mais au lieu de renvoyer discrètement la meilleure valeur, 
@@ -60,11 +60,10 @@ ce qui rend son gradient trop petit ainsi ralentissant l'apprentissage%
 \end{figure}
 
 Les auteurs de~\cite{attention} ont observé une amélioration de la performance 
-en utilisant plusieurs modules (ou têtes) de \foreignlanguage{english}{scaled dot-product attention},
+en utilisant plusieurs modules (ou têtes) de \emph{\foreignlanguage{english}{scaled dot-product attention}},
 projetant les entrées différemment avant de les passer à chaque tête.
 Les sorties des têtes sont concaténées et passées à une couche linéaire qui produit la sortie finale.
-Les projections sont réalisées par des couches linéaires entraînables et le nombre \(h\) de têtes est un hyperparamètre fixé à \(8\) par les auteurs%
-(voir la Figure~\ref{fig.multihead-attention}).
+Les projections sont réalisées par des couches linéaires entraînables et le nombre \(h\) de têtes est un hyperparamètre fixé à \(8\) par les auteurs (voir la Figure~\ref{fig.multihead-attention}).
 
 La couche attention de l'encodeur et la première couche attention du décodeur sont des couches
 d'\emph{auto-attention} i.e leurs requêtes, clés et valeurs sont les mêmes.
@@ -89,7 +88,7 @@ est ajoutée à l'entrée de la fonction \(\softmax\).
 
 La deuxième couche attention du décodeur est une couche d'\emph{attention croisée}.
 Les requêtes viennent de la sortie et les clés et valeurs viennent de l'entrée.
-Cette couche calcul les dépendances entre l'entrée et la sortie,
+Cette couche calcule les dépendances entre l'entrée et la sortie,
 tandis que les deux autres couches calculent les dépendances à l'intérieur de l'entrée et de la sortie.
 C'est cette couche qui permet au décodeur de conditionner sa sortie sur l'entrée.
 
