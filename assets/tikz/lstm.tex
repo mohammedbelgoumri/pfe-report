@@ -1,7 +1,7 @@
 \begin{circuitikz}
     \ctikzset{bipoles/cuteswitch/thickness=.5,bipoles/cuteswitch/shape=circ}
     % cell outline
-    \draw[fill=green!10, rounded corners=15pt](1, -3) rectangle (11, 3);
+    \draw[fill=green!10, rounded corners=15pt](1, -3) rectangle (13, 3);
 
     % nodes
     \node (x) at (-1,0) {\(x\)};
@@ -10,7 +10,8 @@
     \node[inner sep=0pt] (add2) at (6,0) {\(\oplus\)};
     \node[circle, draw] (state) at (8, 0) {\(C\)};
     \node[circle, draw, fill, inner sep=0mm] (branch) at (6, -2){};
-    \node (h) at (13, 0) {\(h\)};
+    \node[circle, draw] (activation) at (10, 0) {\(\phi\)};
+    \node (h) at (14, 0) {\(h\)};
 
     % connections
     \draw[-{Latex}] (x) to (add1);  
@@ -19,5 +20,6 @@
     \draw[-{Latex}] (add2) to (state);
     \draw[-{Latex}] (state) to (8, -2) to (branch) to (2, -2) to (add1); 
     \draw[-{Latex}] (branch) to[cosw, l_=\(f\)] (add2);
-    \draw[-{Latex}] (state) to[cosw, l_=\(o\)] (h);
+    \draw[-{Latex}] (state) to (activation);
+    \draw[-{Latex}] (activation) to[cosw, l_=\(o\)] (h);
 \end{circuitikz}    
