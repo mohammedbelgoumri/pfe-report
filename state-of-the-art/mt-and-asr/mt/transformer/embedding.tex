@@ -12,10 +12,10 @@ Plusieurs techniques existent pour effectuer ce découpage.
 La plus simple et d'assimiler chaque mot à un token.
 Cette technique présente l'inconvénient de produire des vocabulaires très grands.
 Il est possible de limiter la taille du vocabulaire en ne gardant que les mots les plus fréquents,
-remplaçant les autres par un token spécial \texttt{[UNK]]},
+remplaçant les autres par un token spécial \texttt{[UNK]},
 mais cela a pour conséquence de perdre l'information sur les mots rares.
-Dans un contexte correction d'erreurs, où les erreurs intrinsèquement rares, cela est inacceptable%
-~\cite{Rai_Borah_2021}.
+Dans un contexte correction d'erreurs les erreurs sont intrinsèquement rares. 
+La tokenisation à base de mots est inacceptable dans ce cas~\cite{Rai_Borah_2021}.
 
 D'autres techniques tentent de réduire la taille du vocabulaire en utilisant des tokens plus petits qu'un mot.
 On parle de techniques de tokenisation en sous-mots.
