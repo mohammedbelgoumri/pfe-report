@@ -4,7 +4,7 @@ La sortie de la dernière couche du transformeur est une loi de probabilité sur
 (voir Figure~\ref{fig.transformer2}).
 À fin d'obtenir une phrase, le décodeur est appelé autorégressivement avec la phrase vide comme grain.
 À chaque étape, il génère un mot en utilisant la loi de probabilité.
-Ce mot est ajouté à la phrase et le décodeur est appelé récursivement avec la phrase ainsi obtenue.
+Ce mot est ajouté à la phrase et le décodeur est appelé autorégressivement sur la phrase ainsi obtenue.
 Ce processus est répété jusqu'à ce que le symbole de fin de phrase soit généré~\cite{attention}.
 
 Plusieurs méthodes existent pour générer un mot à partir de la loi de probabilité.
@@ -19,7 +19,7 @@ on parle alors de décodage glouton, décodage \(\argmax\) ou décodage par maxi
     \label{fig.transformer2}
 \end{figure}
 
-Cependant, cette méthode est suboptimale.
+Cependant, cette méthode n'est pas optimale.
 L'alternative la plus courante est ce qu'on appelle le décodage par \emph{\foreignlanguage{english}{beam search}}%
 ~\cite{Meister_Vieira_Cotterell_2021}.
 Le principe est de garder les \(b\) meilleurs candidats à chaque étape.

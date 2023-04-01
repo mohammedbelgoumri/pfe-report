@@ -1,7 +1,7 @@
 \subsubsection{Plongement lexical}
 
 Le transformeur --- comme tout réseau de neurones --- n'opère que sur des vecteurs.
-Pour lui faire passer des phrases, il faut donc les transformer en vecteurs.
+Pour utiliser des phrases en entrée, il faut donc transformer ces phrases en vecteurs.
 La première étape consiste à transformer les mots en vecteurs.
 C'est ce qu'on appelle un \emph{plongement lexical}~\cite{Almeida_Xexéo_2019}.
 
@@ -39,11 +39,11 @@ ou pour un nombre maximal d'itérations (voir Algorithme~\ref{algo.bpe}).
 ]{assets/code/bpe.py}
 
 Après l'avoir construit, un plongement doit être associé au vocabulaire.
-L'application qui mappe les tokens sur les vecteurs peut avoir une implémentation arbitraire.
+L'application qui mappe un token à un vecteur peut avoir une implémentation arbitraire.
 Il peut s'agir d'un simple tableau de vecteurs~\cite{Paszke_et_al_2019},
 comme il peut s'agir d'un réseau de neurones~\cite{Church_2017}.
 L'objectif est d'associer aux tokens similaires des vecteurs similaires%
-\footnote{Qui ont des grands produits scalaires.}, %
+\footnote{Qui ont un grand produit scalaire.}, %
 on ramène ainsi, la relation mal définie de similarité entre les mots à une relation bien définie sur les vecteurs.
-Une fois qu'on a mis la phrase sous forme vectorielle,
+Une fois qu'on a mis la phrase sous la forme d'une suite de vecteurs lexicaux,
 le transformeur peut la traiter (voir Section~\ref{sec.transformers}).

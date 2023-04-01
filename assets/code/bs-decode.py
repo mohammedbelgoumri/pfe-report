@@ -1,12 +1,18 @@
-def beam_search_decoder(data, k):
-    sequences = [[[], 0.0]]
-    for row in data:
-        all_candidates = []
-        for i in range(len(sequences)):
-            seq, score = sequences[i]
-            for j in range(len(row)):
-                candidate = [seq + [j], score - log(row[j])]
-                all_candidates.append(candidate)
-        ordered = sorted(all_candidates, key=lambda tup: tup[1])
-        sequences = ordered[:k]
-    return sequences
+def beam_search_decode(model, b):
+    # Initialize the beam with a single blank sequence
+    beam = [(tuple(), 0)]
+
+    # Start exploring branches
+    while True:
+        # Generate all possible successors for each sequence in the beam
+        successors = []
+        for seq, score in beam:
+            successors.extend(
+                (seq + (next_word,), score + next_word.prob) for next_word in model(seq)
+            )
+        # Keep only the top b sequences
+        beam = sorted(successors, key=lambda x: x[1], reverse=True)[:b]
+
+        # If all sequences in the beam end in <eos>, return the best one
+        if all(seq[-1] == "<eos>" for seq, score in beam):
+            return beam[0][0]
