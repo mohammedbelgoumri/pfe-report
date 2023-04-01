@@ -3,13 +3,13 @@
 
 L'un des principaux défauts que nous avons observés avec les \glspl{mlp} 
 et qui nous ont poussés à introduire l'architecture encodeur--décodeur,
-est leur incapacité de représenter la dépendance entres les éléments d'une séquence.
+est leur incapacité de représenter la dépendance entre les éléments d'une séquence.
 Une incapacité qui résulte de leur traitement indépendant des éléments.
 
 Les \glspl{rnn} tentent de résoudre ce problème en utilisant un état interne persistant.
 Chaque élément de la séquence modifie cet état lors de son traitement.
 Cela permet aux premiers éléments d'affecter le traitement des éléments qui les suivent, 
-ainsi permettant à l'information de se propager vers le futur,
+permettant ainsi à l'information de se propager vers le futur,
 ce qui donne lieu à une \emph{mémoire}.
 \begin{figure}[hbt]
     \begin{center}

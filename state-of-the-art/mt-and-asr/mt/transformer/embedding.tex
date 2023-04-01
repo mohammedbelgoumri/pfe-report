@@ -9,12 +9,12 @@ La première étape dans le calcul des plongements lexicaux est de diviser le te
 Il peut s'agir de mots, de suites de mots ou d'unités plus petites qu'un mot.
 La sortie de cette étape est appelée un \emph{vocabulaire}.
 Plusieurs techniques existent pour effectuer ce découpage. 
-La plus simple et d'assimiler chaque mot à un token.
+La plus simple est d'assimiler chaque mot à un token.
 Cette technique présente l'inconvénient de produire des vocabulaires très grands.
 Il est possible de limiter la taille du vocabulaire en ne gardant que les mots les plus fréquents,
 remplaçant les autres par un token spécial \texttt{[UNK]},
 mais cela a pour conséquence de perdre l'information sur les mots rares.
-Dans un contexte correction d'erreurs les erreurs sont intrinsèquement rares. 
+Dans un contexte de correction d'erreurs, celles-ci sont intrinsèquement rares. 
 La tokenisation à base de mots est inacceptable dans ce cas~\cite{Rai_Borah_2021}.
 
 D'autres techniques tentent de réduire la taille du vocabulaire en utilisant des tokens plus petits qu'un mot.

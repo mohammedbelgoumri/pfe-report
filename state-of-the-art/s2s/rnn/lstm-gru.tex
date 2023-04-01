@@ -63,7 +63,7 @@ par l'équation~\ref{eq.gru-candidate}, où \(\phi\) est la fonction d'activatio
 Finalement, l'état futur (la sortie) est la moyenne pondérée par \(z\) 
 de l'état courant et l'état candidat~\cite{Cho_van_Merrienboer_Bahdanau_Bengio_2014}.
 Notons que le \gls{gru} devient un \gls{rnn} simple 
-si les portes de réinitialisation et de mise à jour sont respectivement fixés à \(1\) et \(0\)%
+si les portes de réinitialisation et de mise à jour sont respectivement fixées à \(1\) et \(0\)%
 ~\cite{Fathi_2021}.
 
 \subsubsection{\Glsfmtlong{lstm}}
@@ -105,7 +105,7 @@ Les équations~\ref{eq.lstm-forget}--\ref{eq.lstm-h} le montrent en détails%
 
 \subsubsection{Évaluation des \glsfmtlongpl{rnn}}
 
-Nous avons établi que les \glspl{rnn} simples souffrent du mémoire à court terme%
+Nous avons établi que les \glspl{rnn} simples souffrent de la mémoire à court terme%
 ~\cite{Bengio_Simard_Frasconi_1994,Pascanu_Mikolov_Bengio}.
 En utilisant les portes pour contrôler le flux d'information,
 les \glspl{gru} et \glspl{lstm} résolvent le problème au prix d'architectures plus complexes
