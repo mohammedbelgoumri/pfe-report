@@ -96,14 +96,14 @@
 \usepackage{subcaption}
 
 \usepackage[abbreviations, automake]{glossaries-extra}
-\input{abbreviationstyle}
+\input{preambule/abbreviationstyle}
 \setabbreviationstyle{long-short-user}
 \glssetcategoryattribute{abbreviation}{markwords}{true}
 \glssetcategoryattribute{abbreviation}{noshortplural}{true}
 % \GlsXtrEnableInitialTagging{abbreviation}{}
 
 \usepackage[linesnumbered,ruled,lined,algochapter,french,frenchkw]{algorithm2e}
-\input{algo-style}
+\input{preambule/algo-style}
 
 \usepackage{stmaryrd}
 \usepackage{bookmark}
@@ -129,7 +129,7 @@
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
 
-\input{notations}
+\input{preambule/notations}
 
 %citation style
 \let\barecite\cite
@@ -139,7 +139,7 @@
 
 
 \makeglossaries
-\input{acronyms}
+\input{preambule/acronyms}
 
 % !TEX root = main.tex
 \begin{document}
