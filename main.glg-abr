@@ -21,8 +21,8 @@ Scanning input file main.glo-abr...
    -- Illegal space within numerals in second argument.
 !! Input index error (file = main.glo-abr, line = 10):
    -- Illegal space within numerals in second argument.
-.done (25 entries accepted, 10 rejected).
-Sorting entries....done (119 comparisons).
-Generating output file main.gls-abr....done (26 lines written, 0 warnings).
+.done (33 entries accepted, 10 rejected).
+Sorting entries....done (195 comparisons).
+Generating output file main.gls-abr....done (32 lines written, 0 warnings).
 Output written in main.gls-abr.
 Transcript written in main.glg-abr.

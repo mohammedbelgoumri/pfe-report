@@ -54,5 +54,7 @@
   "latex-workshop.view.pdf.invert": 0.9,
   "python.defaultInterpreterPath": "/home/mohammed/.anaconda3/envs/pfe/bin/python",
   "python.terminal.activateEnvInCurrentTerminal": true,
-  "python.languageServer": "Pylance"
+  "python.languageServer": "Pylance",
+  "spellright.language": ["en_US", "fr_FR"],
+  "spellright.documentTypes": ["markdown", "plaintext", "latex"]
 }
