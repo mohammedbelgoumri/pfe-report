@@ -1,9 +1,3 @@
-\section{\Glsfmtlong{nmt}}
-
-La deuxième partie de notre système (et celle qui réalise sa fonction principale) est le modèle de traduction.
-Ce modèle corrige la parole aphasique pour la rendre plus compréhensible.
-Dans cette section, nous allons détailler les étapes de sa construction.
-
 \subsection{Création d'un corpus parallèle}
 
 L'entraînement d'un modèle de traduction nécessite la présence d'un \emph{corpus parallèle}
@@ -17,7 +11,7 @@ Ce chemin donc est infranchissable dans ce moment.
 
 L'alternative proposée dans \cite{Smaili_Langlois_Pribil_2022} --- et celle que nous prenons --- 
 est de créer un corpus synthétique.
-C-À-D, partir d'un corpus de parole normale et le modifier pour introduire 
+c.--à.--d., partir d'un corpus de parole normale et le modifier pour introduire 
 des erreurs similaires à celles trouvées dans la parole aphasique.
 
 \subsubsection{Corpus de parole normale}
@@ -52,3 +46,18 @@ Ces couples sont filtrés manuellement pour supprimer les erreurs trop similaire
 et les erreurs dissimilaire à celle produite par un individu aphasique.
 Cela a donné une moyenne de 5 erreurs retenues par mot.
 
+\subsubsection{Génération des phrases erronées}
+
+Le corpus parallèle est créé à partir du corpus original \(C\) et de l'ensemble des erreurs filtrés \(L\) 
+de la façon suivante:
+
+\begin{enumerate}
+    \item Sélectionner de \(C\) les phrases qui contiennent au moins un mot présent dans \(L\).
+    \item Pour chaque phrase sélectionnée, générer des variantes erronées en remplaçant les mots présent dans \(L\)
+    par les erreurs correspondantes (si plusieurs mots existent, prendre toutes les combinaisons possibles).
+    \item Insérer les phrases générées dans le corpus parallèle avec la phrase de départ comme traduction.
+\end{enumerate}
+
+Le corpus ainsi créé compte 282689 couples de phrases.
+Cela est bien suffisant pour entraîner un réseau de neurones.
+L'étape de modélisation peut donc être entamée.
