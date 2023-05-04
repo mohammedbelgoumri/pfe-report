@@ -148,7 +148,7 @@
 	% \pagenumbering{gobble}
     \addcontentsline{toc}{chapter}{Page de garde}
 	\pagenumbering{roman}
-	\include{abstract}
+	% \include{abstract}
 	\afterpage{
 		\newgeometry{bottom=3cm}
 		\tableofcontents
@@ -169,11 +169,11 @@
 	]
 	\restoregeometry
 	\pagenumbering{arabic}
-	\include{introduction}
+	% \include{introduction}
 	% \import{sota/}{sota}
 	\import{contribution/}{contribution}
     \bookmarksetup{startatroot}
-	\include{conclusion}
+	% \include{conclusion}
 	% \addcontentsline{toc}{chapter}{Bibliographie}
 	\printbibliography[heading=bibintoc]
 \end{document}
