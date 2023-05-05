@@ -13,10 +13,10 @@ Cela peut conduire au phénomène de sur-apprentissage
 Pour détecter ce phénomène, nous utilisons la partie validation pour évaluer le modèle pendant l'entraînement.
 La partie test est réservée pour l'évaluation finale du modèle (après l'entraînement).
 
-\subsubsection{Choix de tokeniseur}
+\subsubsection{Tokenisation}
 
 La création du modèle implique plusieurs choix techniques.
-L'un des plus important parmi eux et le choix de tokeniseur.
+L'un des plus importants parmi ces choix est celui du tokeniseur.
 Dans Section~\ref{subsec.nmt-transformer}, 
 nous avons introduit le tokeniseur \gls{bpe}.
 Nous avons décidé d'utiliser ce tokeniseur basé sur \gls{bpe} qui s'appelle ``\emph{WordPiece}''.
@@ -32,13 +32,30 @@ mais sur celle de la fonction d'évaluation suivante :
 \end{equation}
 où \(x\) et \(y\) sont deux tokens dans le vocabulaire à une itération donnée.
 
-La division de la fréquence par le produit des fréquences des tokens fusionnés
-à pour but de défavoriser la fusion des tokens fréquents (qui sont souvent des mots).
+La division de la fréquence du couple par le produit de celles de ses composants
+a pour but de défavoriser la fusion des tokens fréquents (qui sont souvent des mots).
 Cela empêche la création de tokens plus longs qu'un mot et permet de conserver les tokens
 qui représentent des affixes communs (comme ``im-'' et ``-able'').
 
+Nous avons opté pour une taille de vocabulaire de 5000 tokens pour la source et la cible.
+Des tokens spéciaux sont ajoutés au vocabulaire pour représenter la structure de la phrase.
+Ces tokens sont :
+\begin{itemize}
+    \item \texttt{[BOS]} : début de la phrase ;
+    \item \texttt{[EOS]} : fin de la phrase ;
+    \item \texttt{[UNK]} : token inconnu (qui n'existe pas dans le vocabulaire) ;
+    \item \texttt{[PAD]} : token de remplissage (utilisé pour ramener les phrases à la même longueur 
+    dans le cas de l'entraînement par lots).
+\end{itemize}
 
-% \subsubsection{Représentation vectorielle des mots}
+À la sortie du tokeniseur, une opération de \emph{numérisation} est effectuée.
+Il s'agit d'une application bijective entre les tokens et les entiers (que nous appelons ``indices'').
+Cela permet de représenter les phrases par des suites d'entiers de longueur variable.
+Chose qui facilite leur représentation vectorielle.
+Le fait qu'elle soit bijective permet de reconstruire les phrases 
+à partir de ces suites d'entiers produites par le modèle.
+
+\subsubsection{Représentation vectorielle des mots}
 
 % \subsubsection{Architecture du modèle}
 
