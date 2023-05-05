@@ -111,6 +111,16 @@ Nous avons opté pour le transformeur de base décrit dans~\cite{attention}.
 
 Notre modèle est composé de 3 couches d'encodeurs et de 3 couches de décodeurs.
 Chaque couche a 4 têtes d'attention.
-La dimension de toutes les couches est de 64.
+La dimension de toutes les couches est de 64
+et la fonction \(\relu\) est utilisée comme fonction d'activation%
+\footnote{\(\relu: \reals\to\reals, x\mapsto \max{(0, x)}\).}.
 Pour l'encodage positionnel, nous avons choisi de l'apprendre plutôt que d'utiliser un encodage sinusoïdal
 comme celui décrit dans~\cite{attention}.
+
+% \begin{figure}[hbt]
+%     \begin{center}
+%         \includegraphics[height=\textwidth]{assets/pdf/model.pdf}
+%     \end{center}
+%     \caption{Architecture du modèle.}
+%     \label{fig.model}
+% \end{figure}
