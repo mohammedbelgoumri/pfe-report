@@ -74,7 +74,16 @@ Le premier problème est résolu, car la norme des vecteurs de plongement peut �
 Le deuxième est réglé, car les plongements, étant des vecteurs, présentent une structure vectorielle.
 Il est possible de définir la similarité entre deux plongements en utilisant le produit scalaire.
 Cela permet de capturer les relations sémantiques entre les tokens en s'assurant que les tokens corrélés
-sont représentés par des vecteurs similaires.
+sont représentés par des vecteurs similaires (voir Figure~\ref{fig.embeddings}).
+
+\begin{figure}[htb]
+    \begin{center}
+        \includegraphics[width=8cm]{assets/images/embeddings.png}
+    \end{center}
+    \caption[Les plongements lexicaux de quelques mots de la langue anglaise.]%
+    {Les plongements lexicaux de quelques mots de la langue anglaise \(d=2\).}
+    \label{fig.embeddings}
+\end{figure}
 
 Plusieurs algorithmes existent pour calculer les plongements lexicaux (voir Section~\ref{subsec.nmt-transformer}).
 Dans ce travail, nous utilisons une couche de plongement lexical simple.

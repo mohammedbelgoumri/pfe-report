@@ -27,12 +27,28 @@ sur un sous-ensemble des données d'entraînement qu'on appelle un \emph{lot}.
 La taille du lot peut avoir un grand impact sur la performance du modèle.
 Dans notre cas, nous avons utilisé des tailles de lot allant de 16 à 256.
 
+
+\subsubsection{Contremesures au sur-apprentissage}
+
+Le sur-apprentissage est un problème courant dans l'entraînement des modèles de \gls{dl}.
+Pour mitiger ce risque, nous avons utilisé plusieurs techniques.
+L'une d'entre elles est le \emph{\foreignlanguage{english}{dropout}}.
+Il s'agit d'une technique de régularisation 
+qui consiste à ignorer aléatoirement une fraction \(p_{\mathrm{drop}}\) des valeurs d'une couche.
+
+Une autre méthode de régularisation est la majoration de la norme des vecteurs de plongement.
+Cela permet de contraindre les paramètres des couches de plongement lexical
+et par conséquent, de réduire sa puissance de représentation.
+
+
+
 \subsubsection{Réglage des hyperparamètres}
 
 Les hyperparamètres sont les paramètres du modèle qui ne sont pas appris durant l'entraînement.
 Dans notre cas, ces paramètres incluent les dimensions de plongement, 
 la taille du vocabulaire, le nombre de couches du transformeur, 
-le nombre de têtes d'attention, le dropout et la taille des lots d'entraînement.
+le nombre de têtes d'attention, 
+le \emph{\foreignlanguage{english}{dropout}} et la taille des lots d'entraînement.
 Leurs valeurs sont souvent fixées par l'utilisateur.
 Cependant, elles peuvent avoir un impact significatif sur les performances du modèle.
 Elles sont donc souvent choisies en explorant systématiquement l'espace des possibilités.
@@ -50,7 +66,6 @@ La fonction objectif est généralement calculée à partir du jeu de données d
     \caption{Organigramme de la phase d'entraînement.}
     \label{fig.training}
 \end{figure}
-
 
 Le processus d'entraînement dans sa totalité est illustré par la Figure~\ref{fig.training}.
 On note sur la figure que le réglage des hyperparamètres n'est effectué 
