@@ -57,6 +57,60 @@ Le fait qu'elle soit bijective permet de reconstruire les phrases
 
 \subsubsection{Représentation vectorielle des mots}
 
-% \subsubsection{Architecture du modèle}
+Comme discuté dans la Section~\ref{subsec.nmt-transformer},
+un plongement lexical est appliqué après la tokenisation.
+En effet, les indices retournés par le tokeniseur peuvent en principe être utilisés tels quels.
+Cela présente en outre deux problèmes majeurs.
+Le premier et que la plage des indices est aussi grande que la taille du vocabulaire.
+Cela garantit que les mots de grands indices écrasent les autres lors de l'entraînement.
+Le deuxième problème est que les indices ne sont pas structurés selon une quelconque relation sémantique.
+Bien que d'être le plus souvent basés sur la fréquence des tokens, 
+les indices ne contiennent pas d'information sur leur distribution conjointe.
 
-% Suite à l'étude bibliographique, nous avons décidé d'utiliser transformeur pour la modélisation \gls{s2s}.
+Un plongement lexical est une application \(\Sigma \to \reals^d\) où \(\Sigma\) est le vocabulaire 
+(qui passe le plus souvent par les indices) et \(d\) est la dimension du plongement (que nous avons fixé à 64).
+Cela permet de remédier aux problèmes cités ci-dessus.
+Le premier problème est résolu, car la norme des vecteurs de plongement peut être contrôlée.
+Le deuxième est réglé, car les plongements, étant des vecteurs, présentent une structure vectorielle.
+Il est possible de définir la similarité entre deux plongements en utilisant le produit scalaire.
+Cela permet de capturer les relations sémantiques entre les tokens en s'assurant que les tokens corrélés
+sont représentés par des vecteurs similaires.
+
+Plusieurs algorithmes existent pour calculer les plongements lexicaux (voir Section~\ref{subsec.nmt-transformer}).
+Dans ce travail, nous utilisons une couche de plongement lexical simple.
+Il contient un tableau de \(|\Sigma|\) vecteurs de dimension \(d\).
+Elle est donc paramétrée par les composantes de ces vecteurs.
+Cela donne une matrice de paramètres \(W\) dont les lignes sont les vecteurs de plongement :
+\begin{equation}
+    W = \overbrace{
+    \begin{bmatrix}
+        w_{11} & w_{12} & \cdots & w_{1N}\\
+        w_{21} & w_{22} & \cdots & w_{2N}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        w_{d1} & w_{d2} & \cdots & w_{dN}\\
+    \end{bmatrix}}^{d = 64}
+    \left.\vphantom{
+        \begin{bmatrix}
+            w_{11} & w_{12} & \cdots & w_{1N}\\
+            w_{21} & w_{22} & \cdots & w_{2N}\\
+            \vdots & \vdots & \ddots & \vdots\\
+            w_{d1} & w_{d2} & \cdots & w_{dN}\\
+        \end{bmatrix}}\right\}N = 5000
+\end{equation}
+qui a donc \(|\Sigma| \times d = 5000 \times 64 = 320000\) paramètres.
+Pour calculer le plongement d'un token \(x\) d'indice \(i\), il suffit de prendre la ligne \(i+1\) de \(W\).
+La matrice \(W\) peut être optimisée comme n'importe quelle autre matrice de paramètres.
+Cela permet d'apprendre les plongements lexicaux à partir des données~\cite{Paszke_et_al_2019}.
+
+
+\subsubsection{Architecture du modèle}
+
+Suite à l'étude bibliographique du Chapitre~\ref{chap.mt-and-asr}, 
+nous avons choisi d'utiliser un transformeur comme architecture de base pour notre modèle.
+Nous avons opté pour le transformeur de base décrit dans~\cite{attention}.
+
+Notre modèle est composé de 3 couches d'encodeurs et de 3 couches de décodeurs.
+Chaque couche a 4 têtes d'attention.
+La dimension de toutes les couches est de 64.
+Pour l'encodage positionnel, nous avons choisi de l'apprendre plutôt que d'utiliser un encodage sinusoïdal
+comme celui décrit dans~\cite{attention}.
