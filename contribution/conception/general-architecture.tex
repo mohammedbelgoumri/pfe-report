@@ -98,3 +98,17 @@ Une organisation similaire est adoptée pour la partie \gls{nmt} :
 Dans la suite de ce chapitre, 
 nous reprenons dans le détail les différentes étapes de cette architecture, 
 que nous avons abordées brièvement dans cette section.
+
+Une fois les deux modèles entraînés,
+ils peuvent être enchainés pour former un système ``\foreignlanguage{english}{speech-to-speech}''
+\begin{figure}[hbt]
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/images/detail.png}
+    \end{center}
+    \caption{Système de réhabilitation de la parole aphasique.}
+    \label{fig.sp2sp}
+\end{figure}
+\texttt{SA.mp3} représente le son aphasique,
+la composante \gls{asr} du système permet de le transcrire en texte, produisant un texte aphasique \texttt{TA.txt}.
+Ce texte est ensuite traduit en texte correct \texttt{TC.txt} par la composante \gls{nmt} du système.
+Finalement, le texte correct est transformé en son correct \texttt{SC.mp3} par un outil de synthèse vocale.

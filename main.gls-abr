@@ -3,18 +3,21 @@
 \glsgroupheading{A}\relax \glsresetentrylist %
 \glossentry{asr}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{1\delimR 3}}}\glsgroupskip
+\glsgroupheading{B}\relax \glsresetentrylist %
+\glossentry{bpe}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{7}}}\glsgroupskip
 \glsgroupheading{D}\relax \glsresetentrylist %
 \glossentry{dl}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{5}}}\glsgroupskip
 \glsgroupheading{M}\relax \glsresetentrylist %
 \glossentry{ml}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{3}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{4}}}\glsgroupskip
 \glsgroupheading{N}\relax \glsresetentrylist %
 \glossentry{nlp}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{1}}}%
 \glossentry{nmt}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{1\delimN 2}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{1\delimR 3}}}\glsgroupskip
 \glsgroupheading{S}\relax \glsresetentrylist %
 \glossentry{s2s}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{1}}}%
