@@ -1,7 +1,7 @@
 \subsection{Création d'un corpus parallèle}
 
 L'entraînement d'un modèle de traduction nécessite la présence d'un \emph{corpus parallèle}
-i.e. un corpus contenant les mêmes phrases dans plusieurs langues (dans notre cas, Français et Français aphasique).
+c.-à-d. un corpus contenant les mêmes phrases dans plusieurs langues (dans notre cas, Français et Français aphasique).
 Cependant, un tel corpus n'existe pas. 
 Il est donc nécessaire de le créer.
 La création d'un tel corpus nécessite la collecte d'un corpus de parole aphasique de taille suffisante.
@@ -17,13 +17,13 @@ des erreurs similaires à celles trouvées dans la parole aphasique.
 \subsubsection{Corpus de parole normale}
 
 Nous avons utilisé le corpus \texttt{fra\_mixed100k} de 
-la \emph{\foreignlanguage{english}{Leipzig Corpora Collection}}~\cite{Goldhahn_Eckart_Quasthoff}.
+\emph{\foreignlanguage{english}{Leipzig Corpora Collection}}~\cite{Goldhahn_Eckart_Quasthoff}.
 Il s'agit d'un corpus de 100000 phrases Françaises collectées de plusieurs sites web.
 Ces phrases sont diverses dans leur contenu, longueur, vocabulaire et structure grammaticale.
 
-\subsubsection{Extraction du vocabulaire et selection des mots à modifier}
+\subsubsection{Extraction du vocabulaire et sélection des mots à modifier}
 
-Les erreurs causée par l'aphasie de Broca ne sont pas déterministes.
+Les erreurs causées par l'aphasie de Broca ne sont pas déterministes.
 Un individu qui en souffre ne se trompe pas sur tous les mots, ni de la même manière sur le même mot.
 Cependant, les erreurs ne sont pas uniformément réparties sur le vocabulaire.
 Naturellement, un tel individu à tendance à se tromper plus sur les mots ``\emph{difficiles}''.
@@ -38,22 +38,22 @@ Nous avons considéré ses mots dans l'ordre de leur fréquence dans le corpus (
 \subsubsection{Génération et filtrage des erreurs synthétiques}
 
 Les mots sélectionnés à l'étape précédente sont donnés à chatGPT 
-qui est charger de générer 10 erreurs pour chaque mots dans le style d'un individu souffrant de l'aphasie de Broca.
-Le résultats de cette operation est une liste de 10000 couples (mot, erreur).
+qui est chargé de générer 10 erreurs pour chaque mot dans le style d'un individu souffrant de l'aphasie de Broca.
+Le résultat de cette opération est une liste de 10000 couples (mot, erreur).
 
 Ces couples sont filtrés manuellement pour supprimer les erreurs trop similaires au mot original 
-(par exemple celle qui en different uniquement par la suppression d'une lettre)
-et les erreurs dissimilaire à celle produite par un individu aphasique.
+(par exemple celle qui en différent uniquement par la suppression d'une lettre)
+et les erreurs dissimilaires à celle produite par un individu aphasique.
 Cela a donné une moyenne de 5 erreurs retenues par mot.
 
 \subsubsection{Génération des phrases erronées}
 
 Le corpus parallèle est créé à partir du corpus original \(C\) et de l'ensemble des erreurs filtrés \(L\) 
-de la façon suivante:
+de la façon suivante :
 
 \begin{enumerate}
     \item Sélectionner de \(C\) les phrases qui contiennent au moins un mot présent dans \(L\).
-    \item Pour chaque phrase sélectionnée, générer des variantes erronées en remplaçant les mots présent dans \(L\)
+    \item Pour chaque phrase sélectionnée, générer des variantes erronées en remplaçant les mots présents dans \(L\)
     par les erreurs correspondantes (si plusieurs mots existent, prendre toutes les combinaisons possibles).
     \item Insérer les phrases générées dans le corpus parallèle avec la phrase de départ comme traduction.
 \end{enumerate}

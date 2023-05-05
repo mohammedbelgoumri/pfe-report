@@ -2,10 +2,10 @@
 
 Pour résoudre le problème de la réhabilitation de la parole aphasique,
 nous proposons un système dont l'architecture générale est illustrée dans la \cref{fig.archi}.
-Ce système est composé de deux parties principales 
+Ce système est composé de deux parties principales :
 \begin{enumerate*}[label=(\alph*)]
     \item le sous-système d'\gls{asr} qui permet de transcrire la parole aphasique en texte
-    et dont l'architecture est illustrée dans la Figure~\ref{fig.asr-archi}.
+    et dont l'architecture est illustrée dans la Figure~\ref{fig.asr-archi} et
     \item le sous-système de \gls{nmt} qui permet de traduire le texte transcrit en parole saine
     et dont l'architecture est illustrée dans la Figure~\ref{fig.nmt-archi}.
 \end{enumerate*}
@@ -63,14 +63,14 @@ Une organisation similaire est adoptée pour la partie \gls{nmt} :
     \begin{itemize}
         \item Prendre un corpus du Français.
         \item Extraire le vocabulaire de ce corpus.
-        \item Sélection des mots: 
+        \item Sélection des mots : 
         choisir dans ce vocabulaire les mots qui sont \emph{``fréquents''} \emph{``difficiles''} à prononcer.
         \item Création des erreurs :
         passer ces mots au modèle chatGPT pour générer des variantes erronées.
         \item Filtrage manuel :
         traiter manuellement les erreurs générées pour ne garder que celles qui sont similaires aux erreurs produites dans l'aphasie de Broca.
         \item Création du corpus parallèle :
-        à partir du corpus du original et des erreurs filtrées, créer un corpus parallèle.
+        à partir du corpus de l'original et des erreurs filtrées, créer un corpus parallèle.
     \end{itemize}
     \item Création et entraînement d'un modèle sur ce corpus :
     une fois le corpus parallèle créé, 
