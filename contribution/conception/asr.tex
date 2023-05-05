@@ -21,7 +21,7 @@ Ses vidéos sont accompagnées par des transcriptions textuelles faites par des 
 La qualité des transcriptions est donc excellente.
 
 Cependant, le volume de données sur l'aphasie de Broca est très limité.
-En effet, un seul des 11 exemples disponibles en Français est un exemple de l'aphasie de Broca.
+En effet, un seul des 11 exemples disponibles en français est un exemple de l'aphasie de Broca.
 Il s'agit d'une vidéo de 12 min 03 s, qui contient 3000 mots.
 Il faut noter que la moitié de ces mots sont prononcés par le chercheur.
 La durée effective de la parole aphasique est donc de 6 min.
@@ -32,13 +32,32 @@ Pour ce but, il est nécessaire de collecter des données supplémentaires.
 
 Les données d'AphasiaBank étant insuffisantes, d'autres sources sont nécessaires.
 Plusieurs enregistrements de personnes souffrant de l'aphasie de Broca sont disponibles sur internet 
-(YouTube, Vimeo, \dots ).
+(YouTube, Vimeo, \dots).
 La qualité de ces enregistrements est très variable et largement inférieure à celle d'AphasiaBank.
 Cependant, leur ajout au corpus est nécessaire pour augmenter sa taille.
 
-Notre recherche nous a permit d'obtenir 22 enregistrements de personnes souffrant de l'aphasie de Broca 
+Notre recherche nous a permis d'obtenir 22 enregistrements de personnes souffrant de l'aphasie de Broca 
 d'une durée totale de 48 min 44 s.
-Parmi ses enregistrements, 7 sont des hommes et 13 sont des femmes et 2 sont des enregistrements de groupes.
+Des statistiques sur la répartition démographique de ces enregistrements 
+sont présentées dans le tableau~\ref{tab.asr-data-demographics}.
+\begin{table}[hbt]
+    \begin{center}
+        \begin{tabular}{|l|c|c|}
+            \cline{2-3}
+            \multicolumn{1}{c|}{}& \textbf{Nombre}& \textbf{Durée}\\
+            \hline
+            Hommes               & 7              & 13 min 45 s   \\
+            \hline
+            Femmes               & 31             & 34 min 2 s    \\
+            \hline
+            Groupe               & 2              & 9 min 57 s    \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \caption{Répartition des enregistrements collectés par genre.}
+    \label{tab.asr-data-demographics}
+\end{table}
+On y observe que les enregistrements sont assez diverses en comparaisons l'unique enregistrement trouvé sur AphasiaBank.
 
 \subsubsection{Transcription et filtrage des données}
 
@@ -53,7 +72,7 @@ et de réintroduire les prononciations aphasiques éliminées par Whisper.
 La sortie de cette étape est un corpus (parole/écrit).
 
 Les données d'AphasiaBank sont déjà transcrits, mais cela est fait dans un format particulier.
-Il est donc nécessaire de réécrire les transcriptions en Français standard.
+Il est donc nécessaire de réécrire les transcriptions en français standard.
 L'exemple d'AphasiaBank et donc ajouté au corpus, ce qui fait un total de 1 h 0 min 47 s de parole aphasique.
 Cela est encore insuffisant pour entraîner un modèle profond.
 Cependant, il peut servir aux chercheurs qui souhaitent travailler sur l'aphasie de Broca.
@@ -67,6 +86,6 @@ Nous avons donc décidé de mettre en pause le développement de ce modèle
 jusqu'à ce que des données supplémentaires soient disponibles.
 
 Dans le but de faciliter l'accès à de telles données,
-nous avons mis notre corpus à la dispositions des chercheurs.
+nous avons mis notre corpus à la disposition des chercheurs.
 Pour le reste de ce projet,
 nous nous focalisons sur le modèle de traduction.

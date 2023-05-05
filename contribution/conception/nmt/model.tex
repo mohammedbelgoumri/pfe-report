@@ -1,0 +1,45 @@
+\subsection{Création du modèle}
+
+Après avoir construit le corpus, nous pouvons passer à la création du modèle de traduction.
+Dans cette section, nous allons détailler les étapes de sa construction.
+La procédure d'entraînement est discutée dans la section suivante.
+
+\subsubsection{Division du corpus}
+
+Le corpus est divisé en trois parties : entraînement, validation et test.
+La partie entraînement est utilisées pour optimiser les paramètres du modèle.
+Cela peut conduire au phénomène de sur-apprentissage 
+(où le modèle est bien ajusté aux données d'entraînement, mais ne généralise pas bien).
+Pour détecter ce phénomène, nous utilisons la partie validation pour évaluer le modèle pendant l'entraînement.
+La partie test est réservée pour l'évaluation finale du modèle (après l'entraînement).
+
+\subsubsection{Choix de tokeniseur}
+
+La création du modèle implique plusieurs choix techniques.
+L'un des plus important parmi eux et le choix de tokeniseur.
+Dans Section~\ref{subsec.nmt-transformer}, 
+nous avons introduit le tokeniseur \gls{bpe}.
+Nous avons décidé d'utiliser ce tokeniseur basé sur \gls{bpe} qui s'appelle ``\emph{WordPiece}''.
+Il a été introduit par Google dans~\cite{Devlin_Chang_Lee_Touta11a_2019}.
+
+Comme \gls{bpe}, WordPiece part d'un vocabulaire réduit à l'alphabet du corpus
+puis, il l'élargit en fusionnant itérativement les tokens adjacents.
+Contrairement à \gls{bpe}, la fusion n'est pas faite sur la base de la fréquence,
+mais sur celle de la fonction d'évaluation suivante :
+\begin{equation}
+    \label{eq.wp-score}
+    \mathrm{score}(x, y) = \frac{\prob{(x, y)}}{\prob{(x)} \prob{(y)}}
+\end{equation}
+où \(x\) et \(y\) sont deux tokens dans le vocabulaire à une itération donnée.
+
+La division de la fréquence par le produit des fréquences des tokens fusionnés
+à pour but de défavoriser la fusion des tokens fréquents (qui sont souvent des mots).
+Cela empêche la création de tokens plus longs qu'un mot et permet de conserver les tokens
+qui représentent des affixes communs (comme ``im-'' et ``-able'').
+
+
+% \subsubsection{Représentation vectorielle des mots}
+
+% \subsubsection{Architecture du modèle}
+
+% Suite à l'étude bibliographique, nous avons décidé d'utiliser transformeur pour la modélisation \gls{s2s}.

@@ -49,7 +49,7 @@ Cela a donné une moyenne de 5 erreurs retenues par mot.
 \subsubsection{Génération des phrases erronées}
 
 Le corpus parallèle est créé à partir du corpus original \(C\) et de l'ensemble des erreurs filtrés \(L\) 
-de la façon suivante :
+de la façon suivante (voir Figure~\ref{fig:flow-corpus}) :
 
 \begin{enumerate}
     \item Sélectionner de \(C\) les phrases qui contiennent au moins un mot présent dans \(L\).
@@ -57,7 +57,13 @@ de la façon suivante :
     par les erreurs correspondantes (si plusieurs mots existent, prendre toutes les combinaisons possibles).
     \item Insérer les phrases générées dans le corpus parallèle avec la phrase de départ comme traduction.
 \end{enumerate}
-
+\begin{figure}[hbt]
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/pdf/flow.pdf}
+    \end{center}
+    \caption{Organigramme de la création du corpus parallèle.}
+    \label{fig:flow-corpus}
+\end{figure}
 Le corpus ainsi créé compte 282689 couples de phrases.
 Cela est bien suffisant pour entraîner un réseau de neurones.
 L'étape de modélisation peut donc être entamée.
