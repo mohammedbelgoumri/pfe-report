@@ -6,7 +6,7 @@ le but est de trouver les valeurs des paramètres qui minimisent cette fonction.
 
 \subsubsection{Algorithmes d'optimisation}
 
-Plusieurs algorithmes d'optimisation sont utilisé pour entraîner les modèles de \gls{dl}.
+Plusieurs algorithmes d'optimisation sont utilisés pour entraîner les modèles de \gls{dl}.
 La majorité d'entre eux sont basés sur l'algorithme du gradient.
 C'est le cas de l'algorithme d'optimisation Adam \cite{Kingma_Ba_2017} que nous avons utilisé.
 Il s'agit d'un algorithme itératif qui met à jour les paramètres du modèle à chaque itération.
@@ -28,7 +28,7 @@ La taille du lot peut avoir un grand impact sur la performance du modèle.
 Dans notre cas, nous avons utilisé des tailles de lot allant de 16 à 256.
 
 
-\subsubsection{Contremesures au sur-apprentissage}
+\subsubsection{Contre mesures au sur-apprentissage}
 
 Le sur-apprentissage est un problème courant dans l'entraînement des modèles de \gls{dl}.
 Pour mitiger ce risque, nous avons utilisé plusieurs techniques.
@@ -72,8 +72,8 @@ On note sur la figure que le réglage des hyperparamètres n'est effectué
 que si le modèle entraîné avec la combinaison initiale d'hyperparamètres n'est pas satisfaisant.
 Sinon la condition d'arrêt est atteinte et le modèle est utilisé pour la phase d'évaluation.
 
-Il est important de noté que le corpus de test est particulièrement important 
+Il est important de noter que le corpus de test est particulièrement important 
 dans le cas où le réglage des hyperparamètres est effectué.
 Dans ce cas, il est possible que le sur-apprentissage se produise simultanément 
 sur le corpus d'entraînement et celui de validation.
-Le corpus de test et donc la seule manière d'obtenir une estimation non biaisée de la performance du modèle.
+Le corpus de test est donc la seule manière d'obtenir une estimation non biaisée de la performance du modèle.

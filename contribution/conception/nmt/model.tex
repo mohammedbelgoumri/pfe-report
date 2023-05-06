@@ -7,7 +7,7 @@ La procédure d'entraînement est discutée dans la section suivante.
 \subsubsection{Division du corpus}
 
 Le corpus est divisé en trois parties : entraînement, validation et test.
-La partie entraînement est utilisées pour optimiser les paramètres du modèle.
+La partie entraînement est utilisée pour optimiser les paramètres du modèle.
 Cela peut conduire au phénomène de sur-apprentissage 
 (où le modèle est bien ajusté aux données d'entraînement, mais ne généralise pas bien).
 Pour détecter ce phénomène, nous utilisons la partie validation pour évaluer le modèle pendant l'entraînement.
@@ -61,7 +61,7 @@ Comme discuté dans la Section~\ref{subsec.nmt-transformer},
 un plongement lexical est appliqué après la tokenisation.
 En effet, les indices retournés par le tokeniseur peuvent en principe être utilisés tels quels.
 Cela présente en outre deux problèmes majeurs.
-Le premier et que la plage des indices est aussi grande que la taille du vocabulaire.
+Le premier est que la plage des indices est aussi grande que la taille du vocabulaire.
 Cela garantit que les mots de grands indices écrasent les autres lors de l'entraînement.
 Le deuxième problème est que les indices ne sont pas structurés selon une quelconque relation sémantique.
 Bien que d'être le plus souvent basés sur la fréquence des tokens, 

@@ -72,7 +72,7 @@ C'est pour cette raison que l'entropie croisée est la fonction de perte la plus
 Pour cette même raison, elle est utilisée dans notre système pour l'entraînement du modèle.
 
 Cela étant dit, l'entropie croisée a le défaut de ne pas être interprétable.
-Comme elle prend ses valeurs dans l'interval \([0, +\infty]\), 
+Comme elle prend ses valeurs dans l'intervalle \([0, +\infty]\), 
 elle ne donne aucune information sur la différence relative entre deux modèles.
 Elle permet de déterminer si un modèle \(\mathcal{M}\) est plus performant qu'un autre modèle \(\mathcal{M}^\prime\),
 mais elle ne nous dit rien sur le degré auquel \(\mathcal{M}\) dépasse \(\mathcal{M}^\prime\).
@@ -163,7 +163,7 @@ on parle alors simplement de \(F_1\)-mesure.
 Toutes les métriques discutées jusqu'à présent sont des métriques de classification.
 Elles ne sont pas spécifiques à la tâche de traduction.
 En effet, elles mesurent la performance du modèle sur le niveau des tokens individuels.
-Elles nous apprennent rein sur sa performance au niveau des phrases entières.
+Elles nous apprennent rien sur sa performance au niveau des phrases entières.
 
 Pour combler cette lacune, des métriques comme \gls{bleu} (voir Section~\ref{sec.nmt-transformer}) ont été conçues.
 Dans notre travail, nous avons choisi de l'utiliser comme objectif 
