@@ -54,11 +54,6 @@ Cependant, elles peuvent avoir un impact significatif sur les performances du mo
 Elles sont donc souvent choisies en explorant systématiquement l'espace des possibilités.
 Cette exploration peut se faire d'une manière exhaustive ou aléatoire.
 
-Le problème de réglage des hyperparamètres est aussi un problème d'optimisation.
-Or, il est souvent de nature discrète ou mixte, car les hyperparamètres ne sont pas nécessairement continus.
-Cela rend l'optimisation beaucoup plus difficile.
-La fonction objectif est généralement calculée à partir du jeu de données de validation.
-
 \begin{figure}[htb]
     \begin{center}
         \includegraphics[width=7cm]{assets/pdf/Training.pdf}
@@ -66,6 +61,11 @@ La fonction objectif est généralement calculée à partir du jeu de données d
     \caption{Organigramme de la phase d'entraînement.}
     \label{fig.training}
 \end{figure}
+
+Le problème de réglage des hyperparamètres est aussi un problème d'optimisation.
+Or, il est souvent de nature discrète ou mixte, car les hyperparamètres ne sont pas nécessairement continus.
+Cela rend l'optimisation beaucoup plus difficile.
+La fonction objectif est généralement calculée à partir du jeu de données de validation.
 
 Le processus d'entraînement dans sa totalité est illustré par la Figure~\ref{fig.training}.
 On note sur la figure que le réglage des hyperparamètres n'est effectué 
