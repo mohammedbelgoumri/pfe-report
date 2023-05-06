@@ -51,10 +51,11 @@
   "latex-utilities.zotero.latexCommand": "cite",
   "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%|\\\\)\\s*($TAGS)\\{*|^\\s*- \\[ \\])",
   "todo-tree.regex.regexCaseSensitive": false,
-  "latex-workshop.view.pdf.invert": 0.9,
+  "latex-workshop.view.pdf.invert": 0.88,
   "python.defaultInterpreterPath": "/home/mohammed/.anaconda3/envs/pfe/bin/python",
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python.languageServer": "Pylance",
   "spellright.language": ["en_US", "fr_FR"],
-  "spellright.documentTypes": ["markdown", "plaintext", "latex"]
+  "spellright.documentTypes": ["markdown", "plaintext", "latex"],
+  "latex-workshop.hover.preview.cursor.enabled": false
 }
