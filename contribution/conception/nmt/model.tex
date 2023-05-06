@@ -78,7 +78,7 @@ sont représentés par des vecteurs similaires (voir Figure~\ref{fig.embeddings}
 
 \begin{figure}[htb]
     \begin{center}
-        \includegraphics[width=8cm]{assets/images/embeddings.png}
+        \includegraphics[width=8cm]{assets/python/word-embeddings.pdf}
     \end{center}
     \caption[Les plongements lexicaux de quelques mots de la langue anglaise.]%
     {Les plongements lexicaux de quelques mots de la langue anglaise \(d=2\).}
@@ -104,8 +104,8 @@ Cela donne une matrice de paramètres \(W\) dont les lignes sont les vecteurs de
             w_{21} & w_{22} & \cdots & w_{2N}\\
             \vdots & \vdots & \ddots & \vdots\\
             w_{d1} & w_{d2} & \cdots & w_{dN}\\
-        \end{bmatrix}}\right\}N = 5000
-\end{equation}
+        \end{bmatrix}}\right\}|\Sigma| = 5000
+\end{equation}\\
 qui a donc \(|\Sigma| \times d = 5000 \times 64 = 320000\) paramètres.
 Pour calculer le plongement d'un token \(x\) d'indice \(i\), il suffit de prendre la ligne \(i+1\) de \(W\).
 La matrice \(W\) peut être optimisée comme n'importe quelle autre matrice de paramètres.
