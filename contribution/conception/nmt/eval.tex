@@ -17,7 +17,7 @@ les métriques utilisées sont celles de la classification.
 L'entropie croisée est une mesure de la dissimilarité de deux lois de probabilité%
 ~\cite{Vasilev_Slater_Spacagna_Roelants_Zocca_2019}.
 Pour deux lois de probabilité \(p\) et \(q\) sur le même espace probabilisable \((\Omega, \mathcal{A})\),
-leur entropie croisée \(H(p, q)\) est définie par:
+leur entropie croisée \(H(p, q)\) est définie par :
 \begin{equation}
     \label{eq.cross-entropy}
     H(p, q) = H(p) + D_{KL}(p \parallel q)
@@ -151,10 +151,25 @@ Le score \(F_\beta\) est défini comme la \emph{moyenne harmonique} de la préci
 pondérée par \(\alpha = \frac{1}{1 + \beta^2}\) :
 \begin{equation}
     \label{eq.fbeta}
-    F_\beta = \frac{1}{\frac{\alpha}{P} + \frac{(1 - \alpha)}{R}}
+    F_\beta = \frac{1}{\frac{\alpha}{P} + \frac{1 - \alpha}{R}}
 \end{equation}
 où \(P\) et \(R\) sont respectivement la précision et le rappel du modèle.
 La valeur la plus courante de \(\beta\) est 1,
 on parle alors simplement de \(F_1\)-mesure.
+
+
+\subsubsection{Score \glsfmtshort{bleu}}
+
+Toutes les métriques discutées jusqu'à présent sont des métriques de classification.
+Elles ne sont pas spécifiques à la tâche de traduction.
+En effet, elles mesurent la performance du modèle sur le niveau des tokens individuels.
+Elles nous apprennent rein sur sa performance au niveau des phrases entières.
+
+Pour combler cette lacune, des métriques comme \gls{bleu} (voir Section~\ref{sec.nmt-transformer}) ont été conçues.
+Dans notre travail, nous avons choisi de l'utiliser comme objectif 
+pour le réglage des hyperparamètres pendant la validation.
+Nous l'avons calculé sur les sorties du modèle avec \emph{forçage de l'enseignement}.
+Cela signifie que la sortie est produite à partir de l'entrée et d'une version décalée 
+d'elle-même avec un masque causal (voir Section~\ref{sec.transformers}).
 
 
