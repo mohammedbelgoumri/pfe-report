@@ -69,6 +69,25 @@ de la façon suivante (voir Figure~\ref{fig:flow-corpus}) :
     \caption{Organigramme de la création du corpus parallèle.}
     \label{fig:flow-corpus}
 \end{figure}
+Pour illustrer le processus de modification des phrases, prenons l'exemple suivant de la phrase
+``Maintenant que j'ai suffisamment d'argent, je peux m'acheter cet appareil photo.'' avec 
+\[
+    L = \left\{
+        \begin{array}{lcl}
+            \text{suffisamment} &\to& \text{fussamment}\\
+            \text{suffisamment} &\to& \text{suffimment}\\
+            \text{appareil} &\to& \text{apairel}\\
+            \text{appareil} &\to& \text{paparel}\\ 
+            \text{appareil} &\to& \text{pareil}
+        \end{array}
+        \right.
+\]
+Pour cet exemple, nous obtenons 11 phrases modifiées : 
+2 où uniquement le mot ``suffisamment'' est modifié, 
+3 où uniquement le mot ``appareil'' est modifié et 
+6 où les deux mots sont modifiés.
+
+
 Le corpus ainsi créé compte 282689 couples de phrases.
 Cela est bien suffisant pour entraîner un réseau de neurones.
 L'étape de modélisation peut donc être entamée.
