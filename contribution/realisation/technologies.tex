@@ -215,10 +215,53 @@ Nous avons fait usage de ce package pour calculer ces métriques.
 \subsection{\foreignlanguage{english}{Weights \& Biases}}
 \label{subsec.wandb}
 
-\begin{wrapfigure}{r}[-10pt]{2cm}
-    \vspace*{-\topsep}
+\foreignlanguage{english}{Weights \& Biases} est une plateforme de \gls{abb.mlops}.
+Son but est de faciliter le processus de développement de journalisation des expériences,
+de gestion des versions de jeux de données et de collaboration entre les membres d'une équipe.
+\begin{wrapfigure}{r}[-15pt]{2cm}
+    % \vspace*{-\topsep}
     \begin{flushright}
         \includegraphics[width=2cm]{assets/images/wandb.png}
     \end{flushright}
 \end{wrapfigure}
-\foreignlanguage{english}{Weights \& Biases} est une plateforme
+
+l'\gls{abb.api} de \foreignlanguage{english}{Weights \& Biases} est accessible via un module Python \verb|wandb|
+ou via une interface en ligne de commande du même nom.
+Elle offre la possibilité de journaliser les métriques d'évaluation, les hyperparamètres, les graphes de calcul, etc.
+Elle est intégrée avec \verb|lightning| à travers la classe \verb|lightning.pytorch.loggers.WandbLogger|.
+
+\subsection{\foreignlanguage{english}{Hugging Face}}
+\label{subsec.huggingface}
+
+\foreignlanguage{english}{Hugging Face} est une entreprise qui se spécialise en intelligence artificielle.
+Elle distribue gratuitement plusieurs bibliothèques open-source et des modèles pré-entraînés.
+\begin{wrapfigure}{r}[-15pt]{2cm}
+    \vspace*{-\topsep}
+    \begin{flushright}
+        \includegraphics[width=2cm]{assets/images/huggingface.png}
+    \end{flushright}
+\end{wrapfigure}
+
+Parmi ces bibliothèques, nous avons utilisé \verb|tokenizers| qui permet de créer des tokeniseurs
+et \verb|evaluate| qui implémente plusieurs métriques d'évaluation (dont la perplexité).
+Nous l'avons utilisé plutôt que \verb|torchmetrics|, 
+car elle permet d'utiliser les modèles pré-entraînés dans \foreignlanguage{english}{Hugging Face Hub}.
+
+\subsection{\foreignlanguage{english}{Open AI}}
+\label{subsec.openai}
+
+\foreignlanguage{english}{Open AI} est une entreprise de recherche en intelligence artificielle.
+C'est cette entreprise qui a créé les modèles \gls{gpt} et WHISPER discutés dans le chapitre~\ref{chap.mt-and-asr}.
+
+\begin{wrapfigure}{r}[-20pt]{2cm}
+    \vspace*{-\topsep}
+    \begin{flushright}
+        \includegraphics[width=2cm]{assets/images/openai.png}
+    \end{flushright}
+\end{wrapfigure}
+
+Nous avons fait appel à l'\gls{abb.api} de \foreignlanguage{english}{Open AI} pour utiliser ChatGPT,
+une version de \gls{gpt}-3 qui est entraînée sur des conversations.
+Nous l'avons utilisé pour générer les erreurs synthétiques.
+Nous avons également utilisé WHISPER pour la transcription des vidéos collectées,
+mais nous l'avons utilisé localement, car il est open-source.
