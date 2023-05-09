@@ -71,7 +71,8 @@ Il offre également (et gratuitement) le choix entre les exécuter sur un CPU ou
 La machine virtuelle qui héberge cet environnement est réinitialisée après 12 h.
 Cette limite peut être étendue en utilisant un compte payant.
 
-\begin{wrapfigure}{r}{3cm}
+\begin{wrapfigure}{r}[-10pt]{3cm}
+    \vspace*{-\topsep}
     \begin{flushright}
         \includegraphics[width=3cm]{assets/images/Kaggle_logo.png}
     \end{flushright}
@@ -120,7 +121,7 @@ Un gestionnaire de packages appelé ``\texttt{conda}'' est fourni comme alternat
 \subsection{CUDA}
 \label{subsec.cuda}
 
-\begin{wrapfigure}{r}[-10pt]{2cm}
+\begin{wrapfigure}{r}[-20pt]{2cm}
     \vspace*{-\topsep}
     \begin{flushright}
         \includegraphics[width=2cm]{assets/images/nvidia.png}
@@ -148,20 +149,76 @@ Elle est développée par Facebook AI, mais elle fait rejoint la fondation Linux
 PyTorch possède plusieurs modules.
 Les plus importants sont :
 \begin{itemize}
-    \item \verb+torch.Tensor+ : 
+    \item \verb|torch.Tensor| : 
     ce module fournit une implémentation du tenseur,
     un tableau multidimensionnel qui peut être manipulé mathématiquement 
     d'une façon qui généralise les scalaires, les vecteurs et les matrices.
-    \item \verb+torch.nn+ : 
+    \item \verb|torch.nn| : 
     ce module contient une implémentation des réseaux de neurones.
-    La classe la plus importante dans ce module est \verb+torch.nn.Module+.
+    La classe la plus importante dans ce module est \verb|torch.nn.Module|.
     Il s'agit d'une classe abstraite qui doit être héritée pour créer un réseau de neurones.
     Des implémentations pour les architectures les plus courantes sont fournies dans ce module
     (\gls{cnn}, \gls{rnn}, transformeur, etc.).
-    \item \verb+torch.optim+ : 
+    \item \verb|torch.optim| : 
     ce module offre un ensemble d'algorithmes d'optimisation.
-    \item \verb+torch.autograd+ : 
+    \item \verb|torch.autograd| : 
     ce module fournit une implémentation de la dérivation automatique (\foreignlanguage{english}{backward}).
     Il permet de calculer les gradients des paramètres en construisant un graphe de calcul 
     puis en le traversant pour évaluer les dérivées.
 \end{itemize}
+Toutes les opérations de PyTorch peuvent être exécutées sur un GPU en utilisant CUDA.
+Cela rend très rapide l'entraînement des réseaux de neurones.
+
+L'écosystème de PyTorch est très riche.
+Plusieurs packages sont construits là-dessus par la communauté ainsi que par l'équipe de PyTorch.
+Parmi les packages \verb|torchtext| et \verb|torchdata| nous sont les plus utiles.
+Le premier nous offre des objets utiles pour le traitement de texte en langage naturel
+(tokeniseurs, jeux de données populaires, modèles de langage, etc.).
+Le second implémente les fonctionnalités de manipulation de données.
+Les deux classes les plus importantes dans ce module sont \verb|torchdata.Dataset| et \verb|torchdata.DataLoader|.
+
+\subsection{\foreignlanguage{english}{Lightning}}
+\label{subsec.lightning}
+
+\begin{wrapfigure}{r}[-15pt]{2cm}
+    \vspace*{-\topsep}
+    \begin{flushright}
+        \includegraphics[width=2cm]{assets/images/lightning.png}
+    \end{flushright}
+\end{wrapfigure}
+\foreignlanguage{english}{Lightning.AI} est une plateforme pour créer, entraîner et déployer des modèles de \gls{dl}.
+La bibliothèque \verb|lightning| distribuée contient 3 packages (voir Figure~\ref{fig.lightning-structure}) :
+\begin{itemize}
+    \item \verb|lightning.pytorch| 
+    \item \verb|lightning.fabric|
+    \item \verb|lightning.applications|
+\end{itemize}
+
+\begin{figure}[hbt]
+    \begin{center}
+        \includegraphics[width=\linewidth]{assets/images/lightning-strcture.png}
+    \end{center}
+    \cprotect\caption[Composantes de la bibliothèque \verb|lightning|.]%
+    {Composantes de la bibliothèque \verb|lightning|~\cite{Falcon_PyTorch_Lightning_2019}.}
+    \label{fig.lightning-structure}
+\end{figure}
+
+\verb|lightning.pytorch| (aussi appelé \verb|pytorch-lightning|) est le seul que nous avons utilisé.
+Il permet d'étendre PyTorch pour faciliter la création et l'entraînement des modèles.
+Les fonctionnalités qu'il offre incluent les rappels de fonctions et la journalisation.
+
+\foreignlanguage{english}{Lightning.AI} distribue un quatrième package en dehors de la bibliothèque \verb|lightning| :
+\verb|torchmetrics|.
+Ce dernier implémente plus de 90 métriques d'évaluation, dont l'exactitude et le score \gls{bleu}.
+Nous avons fait usage de ce package pour calculer ces métriques.
+
+\subsection{\foreignlanguage{english}{Weights \& Biases}}
+\label{subsec.wandb}
+
+\begin{wrapfigure}{r}[-10pt]{2cm}
+    \vspace*{-\topsep}
+    \begin{flushright}
+        \includegraphics[width=2cm]{assets/images/wandb.png}
+    \end{flushright}
+\end{wrapfigure}
+\foreignlanguage{english}{Weights \& Biases} est une plateforme

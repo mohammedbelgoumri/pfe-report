@@ -3,3 +3,5 @@
 \glossaryentry{DL?\glossentry{dl}|setentrycounter[]{page}"\glsnumberformat}{3}
 \glossaryentry{CNN?\glossentry{cnn}|setentrycounter[]{page}"\glsnumberformat}{4}
 \glossaryentry{RNN?\glossentry{rnn}|setentrycounter[]{page}"\glsnumberformat}{4}
+\glossaryentry{DL?\glossentry{dl}|setentrycounter[]{page}"\glsnumberformat}{4}
+\glossaryentry{BLEU?\glossentry{bleu}|setentrycounter[]{page}"\glsnumberformat}{5}
