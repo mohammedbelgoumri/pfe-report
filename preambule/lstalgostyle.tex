@@ -1,0 +1,51 @@
+\lstdefinestyle{algostyle}{
+	backgroundcolor   = \color{white},
+	commentstyle      = \color{codegreen},
+	keywordstyle      = \color{magenta},
+	numberstyle       = \tiny\color{codegray},
+	stringstyle       = \color{codepurple},
+	basicstyle        = \ttfamily\footnotesize,
+	breakatwhitespace = false,
+	breaklines        = true,
+	captionpos        = b,
+	keepspaces        = true,
+	numbers           = left,
+	numbersep         = 5pt,
+	showspaces        = false,
+	showstringspaces  = false,
+	showtabs          = false,
+	tabsize           = 2,
+	frame             = lines,
+	captionpos        = t
+}
+
+\DeclareCaptionFormat{algofmt}{\rule{\dimexpr\linewidth\relax}{0.4pt}\par#1#2#3}
+
+\captionsetup[lstlisting]{
+	format          = algofmt,
+	justification   = centering,
+	singlelinecheck = false,
+	margin          = 0pt,
+	labelsep        = space,
+	labelfont       = bf
+}
+
+\lstnewenvironment{algorithm}[1]{
+	\renewcommand{\lstlistingname}{Algorithme}
+	\lstset{
+		style=algostyle,
+		caption=#1
+	}
+}{}
+
+
+\newcommand{\lstinputalgorithm}[3]{
+	\lstinputlisting[
+		style=algostyle,
+		float={hbt},
+		language=Python,
+		
+		caption=#1,
+		label=#2
+	]{#3}
+}
