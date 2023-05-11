@@ -54,18 +54,18 @@
 \usepackage{caption}
 
 \usepackage{listings}
-\renewcommand\lstlistingname{Algorithme}
-\renewcommand\lstlistlistingname{Liste des algorithmes}
+\renewcommand\lstlistingname{Extrait de code}
+\renewcommand\lstlistlistingname{Liste des algorithmes et d'extraits de code}
 %Code zones styling
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{backcolour}{rgb}{0.95, 0.98, 0.92}
 
 \lstdefinestyle{mystyle}{
-	% backgroundcolor   = \color{backcolour},
+	backgroundcolor   = \color{backcolour},
 	commentstyle      = \color{codegreen},
-	keywordstyle      = \color{magenta},
+	keywordstyle      = \color{codegreen},
 	numberstyle       = \tiny\color{codegray},
 	stringstyle       = \color{codepurple},
 	basicstyle        = \ttfamily\footnotesize,
@@ -78,20 +78,17 @@
 	showspaces        = false,
 	showstringspaces  = false,
 	showtabs          = false,
-	tabsize           = 2,
-	frame             = lines,
-	captionpos        = t
 }
 \lstset{style=mystyle}
-\DeclareCaptionFormat{listing}{\rule{\dimexpr\linewidth\relax}{0.4pt}\par#1#2#3}
-\captionsetup[lstlisting]{
-	format          = listing,
-	justification   = centering,
-	singlelinecheck = false,
-	margin          = 0pt,
-	labelsep        = space,
-	labelfont       = bf
-}
+% \DeclareCaptionFormat{listing}{\rule{\dimexpr\linewidth\relax}{0.4pt}\par#1#2#3}
+% \captionsetup[lstlisting]{
+% 	format          = listing,
+% 	justification   = centering,
+% 	singlelinecheck = false,
+% 	margin          = 0pt,
+% 	labelsep        = space,
+% 	labelfont       = bf
+% }
 \usepackage{afterpage}
 \usepackage{float}
 \usepackage{subcaption}
@@ -103,9 +100,6 @@
 \glssetcategoryattribute{abbreviation}{markwords}{true}
 \glssetcategoryattribute{abbreviation}{noshortplural}{true}
 % \GlsXtrEnableInitialTagging{abbreviation}{}
-
-\usepackage[linesnumbered,ruled,lined,algochapter,french,frenchkw]{algorithm2e}
-\input{preambule/algo-style}
 
 \usepackage{stmaryrd}
 \usepackage{bookmark}
@@ -142,6 +136,7 @@
 
 \makeglossaries
 \input{preambule/abbreviations}
+\input{preambule/lstalgostyle}
 
 % !TEX root = main.tex
 \begin{document}
@@ -159,7 +154,7 @@
 		\listoffigures
 		\addcontentsline{toc}{chapter}{Table des figures}
 		\lstlistoflistings
-		\addcontentsline{toc}{chapter}{Liste des algorithmes}
+		\addcontentsline{toc}{chapter}{Liste des algorithmes et d'extraits de code}
 		% \listofalgorithms	
 	}
 	% \printabbreviations
