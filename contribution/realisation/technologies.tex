@@ -250,18 +250,31 @@ car elle permet d'utiliser les modèles pré-entraînés dans \foreignlanguage{e
 \subsection{\foreignlanguage{english}{Open AI}}
 \label{subsec.openai}
 
-\foreignlanguage{english}{Open AI} est une entreprise de recherche en intelligence artificielle.
-C'est cette entreprise qui a créé les modèles \gls{gpt} et WHISPER discutés dans le chapitre~\ref{chap.mt-and-asr}.
-
 \begin{wrapfigure}{r}[-20pt]{2cm}
     \vspace*{-\topsep}
     \begin{flushright}
         \includegraphics[width=2cm]{assets/images/openai.png}
     \end{flushright}
 \end{wrapfigure}
+\foreignlanguage{english}{Open AI} est une entreprise de recherche en intelligence artificielle.
+C'est cette entreprise qui a créé les modèles \gls{gpt} et Whisper discutés dans le chapitre~\ref{chap.mt-and-asr}.
 
-Nous avons fait appel à l'\gls{abb.api} de \foreignlanguage{english}{Open AI} pour utiliser ChatGPT,
+Nous avons fait appel à l'\gls{abb.api} de \foreignlanguage{english}{Open AI} pour utiliser chatGPT,
 une version de \gls{gpt}-3 qui est entraînée sur des conversations.
 Nous l'avons utilisé pour générer les erreurs synthétiques.
-Nous avons également utilisé WHISPER pour la transcription des vidéos collectées,
+Nous avons également utilisé Whisper pour la transcription des vidéos collectées,
 mais nous l'avons utilisé localement, car il est open-source.
+
+\subsection{Pynecone}
+\label{subsec.pynecone}
+
+\begin{wrapfigure}{r}[-15pt]{2cm}
+    \vspace*{-\topsep}
+    \begin{flushright}
+        \includegraphics[width=2cm]{assets/images/pynecone.png}
+    \end{flushright}
+\end{wrapfigure}
+
+Pynecone est une bibliothèque qui permet de développer des sites web entièrement en Python
+(sans besoin d'écrire du code HTML, CSS ou JavaScript).
+Nous l'avons utilisé pour créer une interface web pour le modèle de correction d'erreurs.
