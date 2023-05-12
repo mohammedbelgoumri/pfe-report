@@ -68,6 +68,13 @@ Dans ce cas, nous attrapons l'erreur et nous réessayons après une seconde.
 Dans le cas contraire, nous passons au mot suivant.
 À la fin de la boucle, les erreurs sont enregistrées dans un fichier \verb|errors.yaml|.
 
+\lstinputlisting[
+    language=Python,
+    caption={Génération des erreurs avec chatGPT.},
+    label={code.generate-errors},
+    style=mystyle,
+]{assets/scripts/generate.py}
+
 Le fichier \verb|errors.yaml| est combiné avec le corpus pour produire un corpus parallèle synthétique.
 Cette procédure est illustrée par l'extrait de code~\ref{code.corrupt}.
 Pour chaque phrase, les mots modifiables sont mis dans une liste \verb|corruptable_words|.
@@ -76,23 +83,14 @@ toutes les combinaisons de modifications possibles.
 Ces modifications sont donc appliquées à la phrase d'origine pour produire des phrases corrompues.
 Les phrases corrompues (différentes de la phrase d'origine) sont ajoutées au corpus parallèle qui est retourné.
 
+\lstinputlisting[
+    language=Python,
+    caption={Création du corpus parallèle synthétique.},
+    label={code.corrupt},
+]{assets/scripts/corrupt.py}
+
 Il est important de souligner que les erreurs sont  divisées en 3 parties 
 (entraînement, validation et test) avant d'être combinées avec le corpus.
 Cela a pour but d'éviter le sur-apprentissage à cause de fuites de données,
 c'est-à-dire que les règles de modification soient les mêmes dans les 3 parties
 même si les phrases sont différentes.
-
-\lstinputlisting[
-    float={hbt},
-    language=Python,
-    caption={Génération des erreurs avec chatGPT.},
-    label={code.generate-errors},
-    style=mystyle,
-]{assets/scripts/generate.py}
-
-\lstinputlisting[
-    float={hbt},
-    language=Python,
-    caption={Création du corpus parallèle synthétique.},
-    label={code.corrupt},
-]{assets/scripts/corrupt.py}
