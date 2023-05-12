@@ -5,11 +5,18 @@ def get_corrupted_sentences(corpus, errors):
     result = {}
     for sentence in corpus:
         variants = []
-        corruptable_words = [word for word in errors if word in sentence.split(" ")]
+        corruptable_words = [
+            word
+            for word in errors  # The keys of the errors dictionary
+            if word in sentence.split(" ")  # Only those in the sentence
+        ]
         corruptions = list(
-            product(
+            product(  # Cartesian product of all possible corruptions
                 *[
-                    [(word, word)] + [(word, error) for error in errors[word]]
+                    [(word, word)]  # Identity corruption
+                    + [
+                        (word, error) for error in errors[word]
+                    ]  # Modification corruptions
                     for word in corruptable_words
                 ]
             )

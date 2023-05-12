@@ -57,5 +57,6 @@
   "python.languageServer": "Pylance",
   "spellright.language": ["en_US", "fr_FR"],
   "spellright.documentTypes": ["markdown", "plaintext", "latex"],
-  "latex-workshop.hover.preview.cursor.enabled": false
+  "latex-workshop.hover.preview.cursor.enabled": false,
+  "python.linting.enabled": false
 }

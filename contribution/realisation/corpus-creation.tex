@@ -76,6 +76,12 @@ toutes les combinaisons de modifications possibles.
 Ces modifications sont donc appliquées à la phrase d'origine pour produire des phrases corrompues.
 Les phrases corrompues (différentes de la phrase d'origine) sont ajoutées au corpus parallèle qui est retourné.
 
+Il est important de souligner que les erreurs sont  divisées en 3 parties 
+(entraînement, validation et test) avant d'être combinées avec le corpus.
+Cela a pour but d'éviter le sur-apprentissage à cause de fuites de données,
+c'est-à-dire que les règles de modification soient les mêmes dans les 3 parties
+même si les phrases sont différentes.
+
 \lstinputlisting[
     float={hbt},
     language=Python,
