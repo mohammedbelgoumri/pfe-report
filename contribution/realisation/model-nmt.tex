@@ -91,3 +91,48 @@ nous obtenons un modèle dont la Table~\ref{tab.model-summary} résume les param
     {Graphe de calcul du modèle définit dans la classe \verb|Transformer| \((\text{profondeur} = 2).\)}
     \label{fig.arch}
 \end{figure}
+
+\subsection{Entraînement}
+\label{subsec-mt-training}
+
+Pour entraîner le modèle,
+un objet \emph{entraîneur} de la classe \verb|lightning.pytorch.Trainer| est utilisé.
+Pour configurer sans comportement, plusieurs paramètres sont utilisés (voir Extrait de code~\ref{code.trainer}
+\begin{itemize}
+    \item \verb|max_epochs| : le nombre maximal des passes sur le corpus d'entraînement.
+    \item \verb|deterministic| : un indicateur booléen, s'il est mis à \verb|vrai|, 
+    des algorithmes déterministes sont utilisés pour la reproductibilité.
+    \item \verb|logger| : le journaliseur à utiliser pour garder trace des métriques.
+    \verb|WandbLogger| utilise \emph{\foreignlanguage{english}{Weights \& Biases}} pour la journalisation.
+    \item \verb|callbacks| : une liste de rappels de fonctions à effectuer à la fin de chaque époque.
+    \verb|early_stopping| implémente l'arrêt précoce et \verb|checkpoint| permet de sauvegarder le meilleur modèle.
+    \item \verb|gradient_clip_val| : un majorant sur la norme du vecteur gradient.
+    Son but est d'éviter l'explosion des gradients.
+\end{itemize}
+Pour lancer l'entraînement, il suffit d'appeler la méthode \verb|fit| de l'entraîneur comme suit :
+\lstinline[language=Python]|trainer.fit(model, datamodule=dm)|.
+
+\begin{lstlisting}[
+    float    = {hbt},
+    language = Python,
+    caption  = {Creation de l'entraîneur.},
+    label    = {code.trainer}
+]
+trainer = Trainer(
+    max_epochs=epochs,
+    deterministic=True,
+    logger=WandbLogger(project="unaphasiator")
+    callbacks=[early_stopping, checkpoint],
+    gradient_clip_val=1.0,
+)
+\end{lstlisting}
+
+Le paramètre \verb|datamodule| passé à la méthode \verb|Trainer.fit| est un objet de classe
+\verb|lightning.pytorch.LightningDataModule|.
+Il s'agit d'une classe d'utilité qui implémente des fonctions de chargement de données.
+Ses 3 méthodes \verb|train_dataloader|, \verb|val_dataloader| et \verb|test_dataloader|
+retournent respectivement les chargeurs d'entraînement, de validation et de test.
+L'entraîneur se charge de les appeler au moment opportun.
+
+\subsection{Réglage des hyperparamètres}
+\label{subsec.hparam-tuning}
