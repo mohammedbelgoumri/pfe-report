@@ -47,9 +47,6 @@
 \usepackage[inline]{asymptote}
 
 \usepackage{etoolbox}
-\usepackage{arabtex}
-\usepackage{utf8}
-\setcode{utf8}
 
 \usepackage{caption}
 
@@ -66,7 +63,7 @@
 	basicstyle        = \ttfamily\footnotesize,
 	backgroundcolor   = \color{backcolour},
 	commentstyle      = \color{codegreen},
-	keywordstyle      = \color{magenta},
+	keywordstyle      = \color{blue},
 	numberstyle       = \tiny\color{codegray},
 	stringstyle       = \color{codepurple},
 	breakatwhitespace = false,
@@ -89,6 +86,11 @@
 % 	labelsep        = space,
 % 	labelfont       = bf
 % }
+
+\usepackage{arabtex}
+\usepackage{utf8}
+\setcode{utf8}
+
 \usepackage{afterpage}
 \usepackage{float}
 \usepackage{subcaption}
@@ -146,7 +148,7 @@
 	% \pagenumbering{gobble}
     \addcontentsline{toc}{chapter}{Page de garde}
 	\pagenumbering{roman}
-	% \include{abstract}
+	\include{abstract}
 	\afterpage{
 		\newgeometry{bottom=3cm}
 		\tableofcontents
