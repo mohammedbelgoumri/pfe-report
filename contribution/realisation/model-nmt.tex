@@ -1,10 +1,10 @@
-\section{Création du modèle de \glsfmtlong{mt}}
+\section{Création du modèle de \glsfmtlong{mt}}%
 \label{sec.mt-model-creation}
 
-La section précédente fournie une vue de la procédure de création d'un corpus parallèle pour la \gls{mt}.
+La section précédente fournit une vue de la procédure de création d'un corpus parallèle pour la \gls{mt}.
 Dans cette section, nous exploitons ce corpus pour créer et entraîner un modèle de \gls{nmt}.
 
-\subsection{Création du modèle}
+\subsection{Création du modèle}%
 \label{subsec.mt-model-creation}
 
 Comme discuté dans Section~\ref{sec.tech}, 
@@ -15,7 +15,7 @@ L'Extrait de code~\ref{code.transformer-init} montre la méthode d'initialisatio
 
 \lstinputlisting[
     language=Python,
-    caption={Méthode d'initialsation d'un transformeur.},
+    caption={Méthode d'initialisation d'un transformeur.},
     label={code.transformer-init},
     firstline=12,
     firstnumber=1
@@ -143,7 +143,7 @@ Trois stratégies de recherche sont offertes :
 
 \begin{itemize}
     \item \foreignlanguage{english}{Grid} : une recherche exhaustive sur l'espace des possibilités.
-    Cette méthode garantie l'optimalité du résultat, mais elle est trop coûteuse 
+    Cette méthode garantit l'optimalité du résultat, mais elle est trop coûteuse 
     et ne marche qu'avec un espace de recherche fini.
     \item \foreignlanguage{english}{Random} : une recherche aléatoire sur l'espace de possibilité.
     Cette méthode ne donne pas de garanties sur la qualité des hyperparamètres qu'elle produit.
@@ -177,7 +177,7 @@ L'objet de configuration possède 3 clés obligatoires :
 \end{itemize}
 
 Ci-dessous un exemple de configuration pour une recherche bayésienne.
-La métrique à maximiser est \verb|val/bleu_score| et sa valeur cible et de 99.
+La métrique à maximiser est \verb|val/bleu_score| et sa valeur cible est de 99.
 Les paramètres \verb|lr| et \verb|dropout| sont continus et suivent une loi log-uniforme
 sur les intervalles \([10^{-5}, 10^{-1}]\) et \([0.1, 0.5]\) respectivement.
 Le paramètre \verb|batch_size| est fixé à 256.
