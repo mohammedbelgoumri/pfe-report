@@ -113,7 +113,6 @@ Pour lancer l'entraînement, il suffit d'appeler la méthode \verb|fit| de l'ent
 \lstinline[language=Python]|trainer.fit(model, datamodule=dm)|.
 
 \begin{lstlisting}[
-    float    = {hbt},
     language = Python,
     caption  = {Creation de l'entraîneur.},
     label    = {code.trainer}
@@ -134,5 +133,91 @@ Ses 3 méthodes \verb|train_dataloader|, \verb|val_dataloader| et \verb|test_dat
 retournent respectivement les chargeurs d'entraînement, de validation et de test.
 L'entraîneur se charge de les appeler au moment opportun.
 
-\subsection{Réglage des hyperparamètres}
+\subsection{Réglage des hyperparamètres}%
 \label{subsec.hparam-tuning}
+
+Pour cette tâche, nous avons utilisé \emph{\foreignlanguage{english}{Sweeps}},
+un outil fourni par \foreignlanguage{english}{Weights \& Biases}.
+Pour l'utiliser, il faut créer une configuration qui définit l'espace et la stratégie de recherche pour les hyperparamètres.
+Trois stratégies de recherche sont offertes :
+
+\begin{itemize}
+    \item \foreignlanguage{english}{Grid} : une recherche exhaustive sur l'espace des possibilités.
+    Cette méthode garantie l'optimalité du résultat, mais elle est trop coûteuse 
+    et ne marche qu'avec un espace de recherche fini.
+    \item \foreignlanguage{english}{Random} : une recherche aléatoire sur l'espace de possibilité.
+    Cette méthode ne donne pas de garanties sur la qualité des hyperparamètres qu'elle produit.
+    Cependant, elle est beaucoup plus rapide que la recherche exhaustive 
+    (car il est possible de définir le nombre des combinaisons à explorer)
+    et elle peut être utilisée sur un espace infini.
+    \item \foreignlanguage{english}{Bayesian} : une méthode d'amélioration itérative.
+    Sa première itération est identique à la recherche aléatoire,
+    mais après elle utilise l'information sur le dernier essai pour informer les choix des paramètres du suivant.
+    Elle converge généralement vers la solution optimale.
+\end{itemize}
+
+Pour définir l'espace de recherche, un dictionnaire ou un fichier \verb|yaml| est utilisé.
+L'objet de configuration possède 3 clés obligatoires :
+
+\begin{itemize}
+    \item \verb|methode| : la stratégie de recherche.
+    \item \verb|metric| : la métrique à optimiser. Il faut fournir le nom de la métrique, le mode d'optimisation
+    (\verb|maximize| ou \verb|minimize|) et éventuellement une cible à atteindre.
+    \item \verb|parameters| : un dictionnaire qui contient la définition de l'espace des paramètres.
+    Chaque paramètre est défini par un couple clé-valeur.
+    La clé est le nom du paramètre et la valeur est un dictionnaire qui contient les informations suivantes :
+    \begin{itemize}
+        \item Si la valeur du paramètre est fixée, il suffit de fournir sa valeur pour la clé \verb|value|.
+        \item Si le paramètre a un nombre fini de valeurs possibles, il faut fournir la liste de ces valeurs
+        pour la clé \verb|values| et éventuellement sa loi de probabilité pour la clé \verb|probabilities|.
+        Si cette dernière n'est pas fournie, la loi uniforme est utilisée.
+        \item Si le paramètre est continu, il faut fournir une loi de probabilité pour la clé \verb|distribution|
+        en donnant le nom de la loi et ses paramètres.
+    \end{itemize}
+\end{itemize}
+
+Ci-dessous un exemple de configuration pour une recherche bayésienne.
+La métrique à maximiser est \verb|val/bleu_score| et sa valeur cible et de 99.
+Les paramètres \verb|lr| et \verb|dropout| sont continus et suivent une loi log-uniforme
+sur les intervalles \([10^{-5}, 10^{-1}]\) et \([0.1, 0.5]\) respectivement.
+Le paramètre \verb|batch_size| est fixé à 256.
+
+\begin{verbatim}
+method: bayes
+metric:
+  name: val/bleu_score
+  goal: maximize
+  target: 99
+parameters:
+  lr:
+    distribution: log_uniform_values
+    min: 1.e-5
+    max: 1.e-1
+  dropout:
+    distribution: log_uniform_values
+    min: 0.1
+    max: 0.5
+  batch_size:
+    value: 256
+\end{verbatim}
+
+Une fois la configuration définie, 
+il suffit de créer une \foreignlanguage{english}{Sweep} en appelant la méthode \verb|wandb.sweep|,
+puis de lancer la recherche en appelant la méthode \verb|wandb.agent|.
+Cette méthode prend en paramètre l'identifiant de la \foreignlanguage{english}{Sweep}, 
+une fonction qui définit l'entraînement et le nombre d'essais à effectuer (voir Extrait de code~\ref{code.sweep}).
+
+\begin{lstlisting}[
+    language=Python,
+    caption={Création et lancement d'une \foreignlanguage{english}{Sweep}.},
+    label={code.sweep}
+]
+with open("config/sweep.yaml") as cfg:
+    sweep_cfg = load(cfg, Loader)
+
+sweep_id = wandb.sweep(sweep_cfg, project="unaphasiator")
+wandb.agent(sweep_id, train, count=10)
+\end{lstlisting}
+
+
+

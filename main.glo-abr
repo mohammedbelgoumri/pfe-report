@@ -1,13 +1,3 @@
-\glossaryentry{AVC?\glossentry{avc}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  i}
-\glossaryentry{NLP?\glossentry{nlp}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  i}
-\glossaryentry{MT?\glossentry{mt}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  i}
-\glossaryentry{ASR?\glossentry{asr}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  i}
-\glossaryentry{MT?\glossentry{mt}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  i}
-\glossaryentry{ASR?\glossentry{asr}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  i}
-\glossaryentry{ML?\glossentry{ml}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  i}
-\glossaryentry{NLP?\glossentry{nlp}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  i}
-\glossaryentry{MT?\glossentry{mt}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  i}
-\glossaryentry{ASR?\glossentry{asr}|setentrycounter[]{page}"\glsnumberformat}{\fontencoding  {T1}\selectfont  i}
 \glossaryentry{API?\glossentry{abb.api}|setentrycounter[]{page}"\glsnumberformat}{1}
 \glossaryentry{ML?\glossentry{ml}|setentrycounter[]{page}"\glsnumberformat}{2}
 \glossaryentry{DL?\glossentry{dl}|setentrycounter[]{page}"\glsnumberformat}{3}
@@ -29,4 +19,4 @@
 \glossaryentry{API?\glossentry{abb.api}|setentrycounter[]{page}"\glsnumberformat}{7}
 \glossaryentry{MT?\glossentry{mt}|setentrycounter[]{page}"\glsnumberformat}{9}
 \glossaryentry{NMT?\glossentry{nmt}|setentrycounter[]{page}"\glsnumberformat}{9}
-\glossaryentry{DL?\glossentry{dl}|setentrycounter[]{page}"\glsnumberformat}{9}
+\glossaryentry{DL?\glossentry{dl}|setentrycounter[]{page}"\glsnumberformat}{10}
