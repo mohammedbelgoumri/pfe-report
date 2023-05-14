@@ -13,18 +13,18 @@ Ces erreurs ont été analysées et classées en 4 catégories :
     \item des transpositions : de lettres ou de syllabes.
 \end{itemize}
 
-Les fréquences de ces erreurs (pour les 32 premiers mots qui ont 327 modifications) 
-sont présentées dans la figure \ref{fig.errors-freq}.
-
-\begin{figure}[htp]
+\begin{figure}[hbt]
     \centering
-    \includegraphics[width=6cm]{assets/python/rules-stats.pdf}
+    \includegraphics[width=8cm]{assets/python/rules-stats.pdf}
     \caption{Fréquences des catégories d'erreurs}
     \label{fig.errors-freq}
 \end{figure}
 
+Les fréquences de ces erreurs (pour les 32 premiers mots qui ont 327 modifications) 
+sont présentées dans la Figure~\ref{fig.errors-freq}.
 Sur la base de ces fréquences, nous avons créé une fonction qui génère pour un mot donné,
-des erreurs qui suivent les mêmes fréquences(voir le code \ref{code.errors-generation}).
+des erreurs qui suivent les mêmes fréquences (voir le code~\ref{code.errors-generation}).
+
 \begin{lstlisting}[
     language=Python,
     caption={Génération des erreurs pour un mot},
@@ -73,7 +73,6 @@ def corrupt_word(
     if random() < p_insert:
         idx = randint(0, len(syls) - 1)
         syls.insert(idx, choice(all_syllables))
-
     return "".join(syls)
 \end{lstlisting}
 
