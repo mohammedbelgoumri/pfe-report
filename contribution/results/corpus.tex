@@ -36,6 +36,26 @@ est une mesure de la dissimilarité entre ses phrases et le français courant.
   \caption{Perplexité des phrases du corpus par rapport à différents modèles de langue.}
   \label{fig.perplexity}
 \end{figure}
+\begin{table}[hbt]
+  \begin{center}
+    \begin{tabular}{|l|c|c|}
+      \cline{2-3}
+      \multicolumn{1}{c|}{} &  french &  aphasia \\
+      \hline
+      \verb|gpt-2|              &  392.07 &   566.07 \\
+      \hline
+      \verb|gpt-2-large|        &  182.20 &   417.30 \\
+      \hline
+      \verb|gpt-fr-cased-small| &  147.84 &  1357.31 \\
+      \hline
+      \verb|gpt-fr-cased-base|  &  123.93 &  1023.12 \\
+      \hline
+      \end{tabular}
+  \end{center}
+  \caption{Perplexité des phrases du corpus par rapport à différents modèles de langue.}
+  \label{tab.perplexity}
+\end{table}
+
 
 Pour calculer la perplexité, nous avons utilisé quatre modèles de langage basés sur \glsxtrshort{gpt}-2
 et hébergés sur \foreignlanguage{english}{Hugging Face Hub} :
@@ -52,7 +72,7 @@ et hébergés sur \foreignlanguage{english}{Hugging Face Hub} :
 Le code utilisé pour calculer la perplexité est donné par l'Extrait de code~\ref{code.perplexity}.
 Ce code a été exécuté sur Google Colaboratory avec une instance GPU munie de 16 Go de mémoire vive.
 
-Les résultats sont donnés par la Figure~\ref{fig.perplexity}.
+Les résultats sont donnés par Figure~\ref{fig.perplexity} et Table~\ref{tab.perplexity}.
 On y observe que tous les modèles attribuent une perplexité plus faible 
 aux phrases en français qu'à celles qui simulent l'aphasie de Broca.
 On note également que cette différence est plus prononcée pour les modèles entraînés sur des textes en français.
