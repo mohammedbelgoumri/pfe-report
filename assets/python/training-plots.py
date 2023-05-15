@@ -4,10 +4,10 @@ import pandas as pd
 
 
 def bleu():
-    df = pd.read_csv("assets/data/pre/bleu.csv")
+    df = pd.read_csv("assets/data/tuned/bleu.csv")
     epoch = df["epoch"]
-    val = df["toasty-shape-289 - val/bleu_score"]
-    train = df["toasty-shape-289 - train_epoch/bleu_score"]
+    val = df["fanciful-forest-328 - val/bleu_score"]
+    train = df["fanciful-forest-328 - train_epoch/bleu_score"]
     sns.set(style="whitegrid", palette="colorblind")
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.plot(epoch, val, label="validation")
@@ -16,14 +16,14 @@ def bleu():
     ax.set_ylabel("Score BLEU")
     ax.legend()
     plt.tight_layout()
-    fig.savefig("assets/python/bleu.pdf")
+    fig.savefig("assets/python/tuned-bleu.pdf")
 
 
 def accuracy():
-    df = pd.read_csv("assets/data/pre/accuracy.csv")
+    df = pd.read_csv("assets/data/tuned/accuracy.csv")
     epoch = df["epoch"]
-    val = df["toasty-shape-289 - val/accuracy"]
-    train = df["toasty-shape-289 - train_epoch/accuracy"]
+    val = df["fanciful-forest-328 - val/accuracy"]
+    train = df["fanciful-forest-328 - train_epoch/accuracy"]
     sns.set(style="whitegrid", palette="colorblind")
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.plot(epoch, val, label="validation")
@@ -32,14 +32,14 @@ def accuracy():
     ax.set_ylabel("Exactitude")
     ax.legend()
     plt.tight_layout()
-    fig.savefig("assets/python/accuracy.pdf")
+    fig.savefig("assets/python/tuned-accuracy.pdf")
 
 
 def loss():
-    df = pd.read_csv("assets/data/pre/loss.csv")
+    df = pd.read_csv("assets/data/tuned/loss.csv")
     epoch = df["epoch"]
-    val = df["toasty-shape-289 - val/loss"]
-    train = df["toasty-shape-289 - train_epoch/loss"]
+    val = df["fanciful-forest-328 - val/loss"]
+    train = df["fanciful-forest-328 - train_epoch/loss"]
     sns.set(style="whitegrid", palette="colorblind")
     fig, ax = plt.subplots(figsize=(10, 5))
     ax.plot(epoch, val, label="Perte")
@@ -48,7 +48,7 @@ def loss():
     ax.set_ylabel("Perte")
     ax.legend()
     plt.tight_layout()
-    fig.savefig("assets/python/loss.pdf")
+    fig.savefig("assets/python/tuned-loss.pdf")
 
 
 def main():
