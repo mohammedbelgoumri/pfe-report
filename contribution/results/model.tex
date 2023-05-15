@@ -12,7 +12,7 @@ et celle de CUDA est \verb|11.6.124|.
 \subsection{Choix des hyperparamètres}%
 \label{sub.results.training.hyperparameters}
 
-Pour notre premier test, nous avons entraîné le modèle pour 8 époques.
+Pour notre premier test, nous avons entraîné le modèle pour 8 époques (cela a pris 58~min~25~s).
 Les hyperparamètres ont été choisis comme suit :
 \begin{itemize}
     \item Dimension de plongement : 64
@@ -31,10 +31,6 @@ Les hyperparamètres ont été choisis comme suit :
 
 \subsection{Résultats}%
 \label{sub.results.training.results}
-
-Pour chaque époque, nous avons calculé la moyenne de la fonction de perte, de l'exactitude et du score \gls{bleu} 
-sur le corpus de validation et sur le corpus d'entraînement.
-Les résultats sont présentés dans la Figure~\ref{fig.results.training}.
 \begin{figure}[hbt]
     \begin{subfigure}{.5\textwidth}
         \caption{Exactitude}
@@ -60,6 +56,10 @@ Les résultats sont présentés dans la Figure~\ref{fig.results.training}.
     \caption{Évolution des métriques au cours de l'entraînement.}
     \label{fig.results.training}
 \end{figure}
+
+Pour chaque époque, nous avons calculé la moyenne de la fonction de perte, de l'exactitude et du score \gls{bleu} 
+sur le corpus de validation et sur le corpus d'entraînement.
+Les résultats sont présentés dans la Figure~\ref{fig.results.training}.
 Au bout de 8 époques, la perte sur le corpus d'entraînement est de \(0.09\).
 L'exactitude est de \(98.71\%\) et le score \gls{bleu} est de \(81.41\%\).
 
