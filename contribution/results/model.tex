@@ -4,13 +4,15 @@
 Tous les tests présentés dans le reste de ce chapitre ont été effectués sur un ordinateur portable 
 équipé d'un processeur \verb|Intel Core i9-8950HK| et d'une carte graphique \verb|NVIDIA GeForce GTX 1050 Ti|.
 Cette machine se dispose de 32 Go de mémoire vive et de 4 Go de mémoire vidéo.
-Le système d'exploitation est \verb|Ubuntu 20.04 LTS| et la version de Python utilisée est \verb|3.10.6|.
+Le système d'exploitation est \verb|Ubuntu 20.04 LTS|, 
+la version de Python utilisée est \verb|3.10.6|
+et celle de CUDA est \verb|11.6.124|.
 
 
 \subsection{Choix des hyperparamètres}%
 \label{sub.results.training.hyperparameters}
 
-Pour notre premier test, nous avons entraîné le modèle pour 20 époques.
+Pour notre premier test, nous avons entraîné le modèle pour 8 époques.
 Les hyperparamètres ont été choisis comme suit :
 \begin{itemize}
     \item Dimension de plongement : 64
@@ -19,7 +21,10 @@ Les hyperparamètres ont été choisis comme suit :
     \item Dropout : 0.1
     \item Nombre de couches de l'encodeur/décodeur : 3
     \item Nombre de têtes d'attention : 4
+    \item Norme maximale des plongements : 1
     \item Taille de lot : 256
+    \item Norme maximale du gradient : 1
+    \item Coefficient de régularisation \(L_2\) : \(10^{-4}\)
     \item Nombre de processus pour le chargement des données : 4
 \end{itemize}
 
@@ -32,22 +37,22 @@ sur le corpus de validation et sur le corpus d'entraînement.
 Les résultats sont présentés dans la Figure~\ref{fig.results.training}.
 \begin{figure}[hbt]
     \begin{subfigure}{.5\textwidth}
+        \caption{Exactitude}
         \begin{center}
             \includegraphics[width=\textwidth]{assets/python/accuracy.pdf}
         \end{center}
-        \caption{Exactitude}
         \label{fig.results.training.accuracy}
     \end{subfigure}
     \begin{subfigure}{.5\textwidth}
+        \caption{\glsfmtshort{bleu}}
         \begin{center}
             \includegraphics[width=\textwidth]{assets/python/bleu.pdf}
         \end{center}
-        \caption{\glsfmtshort{bleu}}
         \label{fig.results.training.bleu}
     \end{subfigure}
     \begin{subfigure}{.5\textwidth}
         \begin{center}
-            \includegraphics[width=\textwidth]{assets/python/bleu.pdf}
+            \includegraphics[width=\textwidth]{assets/python/loss.pdf}
         \end{center}
         \caption{Perte}
         \label{fig.results.training.loss}
@@ -55,8 +60,10 @@ Les résultats sont présentés dans la Figure~\ref{fig.results.training}.
     \caption{Évolution des métriques au cours de l'entraînement.}
     \label{fig.results.training}
 \end{figure}
-Ces résultats sont satisfaisants.
-Il n'est donc pas strictement nécessaire d'effectuer un réglage des hyperparamètres.
-Cependant, il est possible en le faisant d'obtenir des résultats comparables 
-en moins d'époques ou avec un modèle plus petit.
-Pour cette raison, nous avons décidé de l'entamer.
+Au bout de 8 époques, la perte sur le corpus d'entraînement est de \(0.09\).
+L'exactitude est de \(98.71\%\) et le score \gls{bleu} est de \(81.41\%\).
+Les résultats sur le corpus de validation sont comparables.
+Les mêmes métriques valent respectivement \(0.16\), \(97.16\%\) et \(77.38\%\).
+Cela suggère que le modèle ne sur-apprenne pas et qu'il est capable de généraliser.
+On note également que les pentes des trois courbes ne sont pas négligeables.
+Il est donc probable que le modèle puisse encore s'améliorer en augmentant le nombre d'époques.

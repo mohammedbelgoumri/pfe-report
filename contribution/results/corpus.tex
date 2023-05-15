@@ -17,12 +17,13 @@ comme la moyenne géométrique des probabilités des phrases du corpus (voir l'�
 \begin{equation}
   \label{eq.perplexity}
   \text{perplexité}(\mathcal{C}, \mathcal{M}) = 
-  \left(\prod_{s\in\mathcal{C}}\frac{1}{\mathcal{M}(s)}\right)^{\frac{1}{|\mathcal{C}|}}
+  \prod_{s\in\mathcal{C}}\mathcal{M}(s)^{-\frac{1}{|\mathcal{C}|}}
 \end{equation}
 
 En prenant le logarithme de la perplexité, 
 on retrouve l'entropie croisée de la loi de probabilité donnée par \(\mathcal{M}\) 
-et celle induite par \(\mathcal{C}\) (à une constante multiplicative près).
+et celle induite par \(\mathcal{C}\)%
+\footnote{À une constante multiplicative dépendante de la base du logarithme près}.
 Elle mesure ainsi la dissimilarité entre ces deux lois (voir Section~\ref{subsec.nmt.eval}).
 La perplexité des phrases générées (pour simuler l'aphasie de Broca) 
 est une mesure de la dissimilarité entre ses phrases et le français courant.
@@ -49,6 +50,8 @@ et hébergés sur \foreignlanguage{english}{Hugging Face Hub} :
   ce modèle compte 1.017 G de paramètres et a été entraîné sur le même corpus que \verb|gpt-fr-cased-small|.
 \end{itemize}
 Le code utilisé pour calculer la perplexité est donné par l'Extrait de code~\ref{code.perplexity}.
+Ce code a été exécuté sur Google Colaboratory avec une instance GPU munie de 16 Go de mémoire vive.
+
 Les résultats sont donnés par la Figure~\ref{fig.perplexity}.
 On y observe que tous les modèles attribuent une perplexité plus faible 
 aux phrases en français qu'à celles qui simulent l'aphasie de Broca.
@@ -121,5 +124,5 @@ french = df.french.tolist()
 
 french = [[s] for s in french]
 score = bleu_score(aphasia, french) * 100
-print(f'{score=:.2f}')
+print(f"{score=:.2f}%")
 \end{lstlisting}
