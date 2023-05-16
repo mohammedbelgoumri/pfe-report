@@ -2,8 +2,8 @@
 \label{sec.results.retrain}
 
 Après le réglage des hyperparamètres, nous avons entraîné le modèle en spécifiant un nombre maximal d'époques de 20.
-L'entraînement s'est fait interrompu par le rappel de fonction \verb|EarlyStopping| après 9 époques.
-Cela est dû au fait que le score \gls{bleu} sur le corpus de validation n'a pas augmenté pendant 3 époques consécutives.
+L'entraînement s'est arrêté après 9 époques à cause du rappel de fonction \verb|EarlyStopping|,
+car le score \gls{bleu} sur le corpus de validation n'a pas augmenté pendant 3 époques consécutives.
 L'exécution a duré 1~h~26~min~27~s.
 
 \begin{figure}[!hbt]
@@ -39,7 +39,7 @@ La meilleure valeur du score \gls{bleu} a été obtenue après 6 époques et ell
 
 Sur le corpus de test, le score \gls{bleu} est de 98.64\%, 
 l'exactitude de 79.61\% et de 98.15\% et la perte de \(8.39\times 10^{-2}\).
-Cela indique que le modèle a bien généralisé et qu'il n'a pas sur-appris sur les corpus d'entraînement et de validation.
+Cela indique que le modèle généralise bien et qu'il n'a pas surappris sur les corpus d'entraînement et de validation.
 Comparé à la valeur de base présentée dans la Section~\ref{sec.results.corpus},
 le score \gls{bleu} a augmenté de 16.89\%.
 Une amélioration de 2.22\% a été obtenue par rapport au modèle entraîné avec les hyperparamètres par défaut.

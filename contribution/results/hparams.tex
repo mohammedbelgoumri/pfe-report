@@ -12,7 +12,7 @@ Pour cette raison, nous avons décidé de l'entamer.
 
 Nous avons fait le choix de restreindre la portée de ce réglage à deux hyperparamètres :
 le taux d'apprentissage (\(\eta\) ou \verb|lr|) et le (\verb|dropout|).
-Nous avons opté pour une recherche Bayésienne avec des lois \(\log\)--uniformes sur les intervalles
+Nous avons opté pour une recherche bayésienne avec des lois \(\log\)--uniformes sur les intervalles
 \(\left[10^{-5}, 10^{-1}\right]\) et \([0.1, 0.5]\) respectivement.
 Les autres hyperparamètres ont été fixés à leurs valeurs données dans Section~\ref{sub.results.training.hyperparameters}.
 
@@ -23,12 +23,12 @@ Nous avons limité le nombre d'essais à 20.
 \subsection{Résultats}%
 \label{sub.results.hparams.results}
 
-Les 20 essais ont été effectués en 2h 17m 13s 11ms.
+Les 20 essais ont été effectués en 2~h~17~min~13~s~11~ms.
 Les résultats sont présentés dans Figure~\ref{fig.results.hparams}.
 \begin{figure}[hbt]
     \centering
     \includegraphics[width=.8\textwidth]{assets/images/sweep.png}
-    \caption{Résultats de la recherche Bayésienne des hyperparamètres.}%
+    \caption{Résultats de la recherche bayésienne des hyperparamètres.}%
     \label{fig.results.hparams}
 \end{figure}
 La figure en question est une visualisation en coordonnées parallèles des résultats.
@@ -70,7 +70,7 @@ Les mêmes informations sont présentes dans Table~\ref{tab.results.hparams} sou
         \end{tabular}
     
     \end{center}
-    \caption{Résultats de la recherche Bayésienne des hyperparamètres.}%
+    \caption{Résultats de la recherche bayésienne des hyperparamètres.}%
     \label{tab.results.hparams}
 \end{table}
 
