@@ -6,7 +6,7 @@
 \glsgroupheading{B}\relax \glsresetentrylist %
 \glossentry{bleu}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{3}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{5\delimR 10}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{5\delimR 11}}}\glsgroupskip
 \glsgroupheading{G}\relax \glsresetentrylist %
 \glossentry{gpt}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{3}}}%
