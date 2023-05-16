@@ -83,9 +83,9 @@ Cela est aussi apparent sur le tableau.
             \cline{2-3}
             \multicolumn{1}{c|}{} & Importance & Corrélation \\
             \hline
-            \verb|dropout|        & 63.9\%     & - 0.899     \\
+            \verb|dropout|        & 63.9\%     & \(- 0.899\)     \\
             \hline
-            \verb|lr|             & 36.1\%     & - 0.647     \\
+            \verb|lr|             & 36.1\%     & \(- 0.647\)     \\
             \hline
         \end{tabular}
     \end{center}
@@ -101,7 +101,7 @@ Cela est aussi apparent sur le tableau.
 \end{figure}
 Une analyse factorielle sur les essais effectués nous permet d'estimer l'importance des hyperparamètres 
 ainsi que leurs corrélations avec le score \gls{bleu}.
-Ils sont tous deux négativement corrélés avec ce dernier.
+Ils sont tous deux négativement corrélés avec ce dernier (\gls{bleu} augmente quand l'un diminue).
 Le \verb|dropout| est le plus important entre les deux 
 (voir Table~\ref{tab.results.hparam.corr} et Figure~\ref{fig.results.hparam.corr}).
 La meilleure valeur du score \gls{bleu} est obtenue 

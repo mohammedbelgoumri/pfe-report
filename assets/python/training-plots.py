@@ -42,8 +42,8 @@ def loss():
     train = df["fanciful-forest-328 - train_epoch/loss"]
     sns.set(style="whitegrid", palette="colorblind")
     fig, ax = plt.subplots(figsize=(10, 5))
-    ax.plot(epoch, val, label="Perte")
-    ax.plot(epoch, train, label="Perte")
+    ax.plot(epoch, val, label="validation")
+    ax.plot(epoch, train, label="Entraînement")
     ax.set_xlabel("Epoch")
     ax.set_ylabel("Perte")
     ax.legend()
