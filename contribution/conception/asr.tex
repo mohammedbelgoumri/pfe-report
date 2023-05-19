@@ -2,8 +2,18 @@
 
 Le modèle d'\gls{asr} permet de transformer la parole aphasique en texte
 dans le but de l'utiliser comme entrée pour le modèle de traduction.
-Les étapes de sa construction sont établies dans la section précédente.
+Les étapes de sa construction sont présentées dans la Figure~\ref{fig.asr-archi}.
 Dans cette section, nous allons détailler ces étapes.
+Nous notons que la dernière condition de la Figure~\ref{fig.archi} n'a pas été satisfaite.
+En effet, nous n'avons pas pu entraîner un modèle \gls{asr} à cause du manque de données.
+
+\begin{figure}[hbt]
+    \begin{center}
+        \includegraphics[width=\textwidth]{assets/pdf/ASR.pdf}
+    \end{center}
+    \caption{Déroulement de la partie \glsfmtshort{asr}.}
+    \label{fig.asr-archi}
+\end{figure}
 
 \subsection{Préparation des données}
 
@@ -14,7 +24,6 @@ Dans ce cas, le jeu de données doit être constitué de couples de morceaux d'a
 
 \begin{wrapfigure}{r}{2cm}
     \includegraphics[width=1.5cm]{assets/images/bank.jpeg}
-    \caption*{\footnotesize AphasiaBank.}
 \end{wrapfigure}
 
 Notre choix s'est porté sur le corpus \textit{AphasiaBank}~\cite{MacWhinney_Fromm_Forbes_Holland_2011}.
@@ -69,14 +78,15 @@ On y observe que les enregistrements sont assez diverses en comparaisons à l'un
 Les 22 enregistrements collectés sont transcrits à l'aide de 
 Whisper~\cite{Radford_Kim_Xu_Brockman_McLeavey_Sutskever_2022}.
 Cela permet d'avoir des transcriptions textuelles de qualité.
-Cependant, les transcriptions obtenues contiennent des erreurs (particulièrement pour les prononciations aphasiques).
+Cependant, les transcriptions obtenues contiennent des erreurs 
+(particulièrement pour les prononciations aphasiques).
 
-L'étape suivante est donc de filtrer à la main les transcriptions obtenues.
+L'étape suivante est de filtrer à la main les transcriptions obtenues.
 Cela permet de corriger les erreurs de transcription 
 et de réintroduire les prononciations aphasiques éliminées par Whisper.
 La sortie de cette étape est un corpus (parole/écrit).
 
-Les données d'AphasiaBank sont déjà transcriets, mais cela est fait dans un format particulier.
+Les données d'AphasiaBank sont déjà transcrites, mais cela est fait dans un format particulier.
 Il est donc nécessaire de réécrire les transcriptions en français standard.
 L'exemple d'AphasiaBank et donc ajouté au corpus, ce qui fait un total de 1 h 0 min 47 s de parole aphasique.
 Cela est encore insuffisant pour entraîner un modèle profond.
@@ -89,7 +99,6 @@ Les données collectées n'étant pas suffisantes,
 il n'est pas possible d'entraîner un modèle de \gls{dl}.
 Nous avons donc décidé de mettre en pause le développement de ce modèle 
 jusqu'à ce que des données supplémentaires soient disponibles.
-
 Dans le but de faciliter l'accès à de telles données,
 nous avons mis notre corpus à la disposition des chercheurs.
 Pour le reste de ce projet,
