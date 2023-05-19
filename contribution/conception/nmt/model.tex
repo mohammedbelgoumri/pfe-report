@@ -68,7 +68,10 @@ Bien que d'être le plus souvent basés sur la fréquence des tokens,
 les indices ne contiennent pas d'information sur leur distribution conjointe.
 
 Un plongement lexical est une application \(\Sigma \to \reals^d\) où \(\Sigma\) est le vocabulaire 
-(qui passe le plus souvent par les indices) et \(d\) est la dimension du plongement (que nous avons fixé à 64).
+(qui passe le plus souvent par les indices) et \(d\) est la dimension du plongement (que nous avons fixé à 64)%
+\footnote{Il est commun dans la littérature de trouver des plongements qui sont des puissances de 2%
+~\cite{attention,Paszke_et_al_2019}. 
+64 nous semble être un bon compromis entre la dimension par défaut de 512 et la taille du vocabulaire.}.
 Cela permet de remédier aux problèmes cités ci-dessus.
 Le premier problème est résolu, car la norme des vecteurs de plongement peut être contrôlée.
 Le deuxième est réglé, car les plongements, étant des vecteurs, présentent une structure vectorielle.

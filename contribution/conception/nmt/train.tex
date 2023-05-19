@@ -19,13 +19,17 @@ Il s'agit d'un algorithme itératif qui met à jour les paramètres du modèle �
 %     w^{(t+1)} &=& w^{(t)}-\eta \frac{\hat{m}_w}{\sqrt{\hat{v}_w}+\epsilon}
 % \end{eqnarray}
 Son comportement est contrôlé par plusieurs hyperparamètres,
-mais le seul que nous avons modifié est le taux d'apprentissage \(\eta\) qui est fixé à \(3\times10^{-4}\).
+mais le seul que nous avons modifié est le taux d'apprentissage \(\eta\) que nous avons initialisé à
+\(3\times10^{-4}\), une valeur récurrente dans la littérature~\cite{islam2022face,lu2023deformable}.
 
 Pour accélérer l'entraînement, il est fait d'une manière \emph{stochastique}.
 Cela signifie que la fonction de perte est estimée 
 sur un sous-ensemble des données d'entraînement qu'on appelle un \emph{lot}.
 La taille du lot peut avoir un grand impact sur la performance du modèle.
-Dans notre cas, nous avons utilisé des tailles de lot allant de 16 à 256.
+Dans notre cas, nous avons utilisé des lots de 256 paires de phrases%
+\footnote{%
+  La plus grande taille de lot compatible avec la mémoire de la carte graphique utilisée.
+}.
 
 
 \subsubsection{Contre-mesures au sur-apprentissage}
