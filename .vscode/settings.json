@@ -58,5 +58,6 @@
   "spellright.language": ["en_US", "fr_FR"],
   "spellright.documentTypes": ["markdown", "plaintext", "latex"],
   "latex-workshop.hover.preview.cursor.enabled": false,
-  "python.linting.enabled": false
+  "python.linting.enabled": false,
+  "ltex.language": "fr"
 }
