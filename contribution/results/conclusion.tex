@@ -10,10 +10,8 @@ Il compte 282 k couple de phrases avec une grande différence de perplexité
 entre les phrases correctes et les phrases erronées.
 Or, le score \gls{bleu} initial est plus élevé que celui atteint par la majorité des modèles de traduction.
 
-L'entraînement d'un modèle de traduction sur ce corpus a donné des résultats satisfaisants.
+L'entraînement d'un modèle de traduction sur ce corpus a montré des signes de sur-apprentissage
+Un deuxième tour d'entraînement masqué a donné des résultats satisfaisants (un score \gls{bleu} de \(77.38\%\)).
 Cependant, nous avons fait une recherche d'hyperparamètres qui a réussi à améliorer encore les résultats.
 Une deuxième phase d'entraînement a été effectuée avec les meilleurs hyperparamètres 
-qui a donné des résultats encore meilleurs.
-
-Enfin, nous avons développé une interface web pour que les utilisateurs puissent utiliser notre modèle.
-Il s'agit d'une simple application de traduction de texte.
+qui a donné des résultats encore meilleurs (un score \gls{bleu} de \(79.61\%\)).

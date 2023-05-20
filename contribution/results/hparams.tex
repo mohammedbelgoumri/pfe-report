@@ -1,7 +1,7 @@
 \section{Réglage des hyper-paramètres}%
 \label{sec.results.hparams}
 
-Les résultats présentés dans Section~\ref{sub.results.training.results} sont satisfaisants.
+Les résultats présentés dans Section~\ref{sub.results.masking} sont satisfaisants.
 Il n'est donc pas strictement nécessaire d'effectuer un réglage des hyperparamètres.
 Cependant, il est possible en le faisant d'obtenir des résultats comparables 
 en moins d'époques ou avec un modèle plus petit.
@@ -27,11 +27,11 @@ Les 20 essais ont été effectués en 2~h~17~min~13~s~11~ms.
 Les résultats sont présentés dans Figure~\ref{fig.results.hparams}.
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=.8\textwidth]{assets/images/sweep.png}
+    \includegraphics[width=\linewidth]{assets/images/sweep.png}
     \caption{Résultats de la recherche bayésienne des hyperparamètres.}%
     \label{fig.results.hparams}
 \end{figure}
-La figure en question est une visualisation en coordonnées parallèles des résultats.
+Il s'agit d'une visualisation en coordonnées parallèles des résultats.
 L'axe de gauche représente la valeur de \verb|dropout| sur une échelle linéaire, 
 celui du milieu la valeur de \verb|lr| sur une échelle logarithmique 
 et celui de droite le score \gls{bleu} sur une échelle de 0 à 100.
@@ -39,6 +39,14 @@ Un essai est représenté par une courbe qui relie les 3 points correspondants s
 La couleur de la courbe indique le score \gls{bleu} associé.
 Elle est interpolée entre le violet (0\%) et l'orange (100\%).
 Les mêmes informations sont présentes dans Table~\ref{tab.results.hparams} sous forme numérique.
+La Figure~\ref{fig.results.hparams.time} représente l'évolution temporelle du score \gls{bleu} de validation.
+\begin{figure}[hbt]
+    \begin{center}
+        \includegraphics[width=.5\linewidth]{assets/python/sweeps.pdf}
+    \end{center}
+    \caption{Évolution du score \glsfmtshort{bleu} au cours du réglage des hyperparamètres.}
+    \label{fig.results.hparams.time}
+\end{figure}
 
 \begin{table}[htb]
     \begin{center}
@@ -68,13 +76,12 @@ Les mêmes informations sont présentes dans Table~\ref{tab.results.hparams} sou
             0.425286       & 0.013681 &        1.264920        \\
             \bottomrule
         \end{tabular}
-    
     \end{center}
     \caption{Résultats de la recherche bayésienne des hyperparamètres.}%
     \label{tab.results.hparams}
 \end{table}
 
-On observe sur la figure un regroupement des lignes oranges (les meilleurs essais) 
+On observe sur la Figure~\ref{fig.results.hparams} un regroupement des lignes oranges (les meilleurs essais) 
 dans la région qui correspond à \verb|dropout| \(\in[0.1, 0.15]\) et \(\eta\approx 10 ^{-3}\).
 Cela est aussi apparent sur le tableau.
 \begin{table}[hbt]

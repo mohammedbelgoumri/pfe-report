@@ -72,11 +72,6 @@ et hébergés sur \foreignlanguage{english}{Hugging Face Hub} :
 Le code utilisé pour calculer la perplexité est donné par l'Extrait de code~\ref{code.perplexity}.
 Ce code a été exécuté sur Google Colaboratory avec une instance GPU munie de 16 Go de mémoire vive.
 
-Les résultats sont donnés par Figure~\ref{fig.perplexity} et Table~\ref{tab.perplexity}.
-On y observe que tous les modèles attribuent une perplexité plus faible 
-aux phrases en français qu'à celles qui simulent l'aphasie de Broca.
-On note également que cette différence est plus prononcée pour les modèles entraînés sur des textes en français.
-
 \begin{lstlisting}[
   language=Python,
   caption=Calcul de la perplexité avec le modèle \texttt{gpt-fr-cased-base}.,
@@ -107,6 +102,11 @@ aph = perplexity.compute(
 
 print(f'{fr["mean_perplexity"]=:.2f}, {aph["mean_perplexity"]=:.2f}')
 \end{lstlisting}
+
+Les résultats sont donnés par Figure~\ref{fig.perplexity} et Table~\ref{tab.perplexity}.
+On y observe que tous les modèles attribuent une perplexité plus faible 
+aux phrases en français qu'à celles qui simulent l'aphasie de Broca.
+On note également que cette différence est plus prononcée pour les modèles entraînés sur des textes en français.
 
 Les différences données par ces derniers sont compatibles avec les résultats obtenus 
 par~\cite{ghumman2021training} avec des transcriptions de patients aphasiques et un groupe de contrôle.

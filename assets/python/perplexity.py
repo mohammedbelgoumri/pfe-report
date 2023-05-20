@@ -25,7 +25,7 @@ def main():
     sns.set(style="whitegrid", palette="colorblind")
     plt.bar(x - 0.2, df["french"], 0.4, label="Français")
     plt.bar(x + 0.2, df["aphasia"], 0.4, label="Aphasie")
-    plt.xticks(x, df.index, rotation=-45)
+    plt.xticks(x, df.index, rotation=90)
     plt.ylabel("Perplexité")
     plt.legend()
     plt.tight_layout()
