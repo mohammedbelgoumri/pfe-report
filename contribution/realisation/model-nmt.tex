@@ -121,7 +121,7 @@ Pour lancer l'entraînement, il suffit d'appeler la méthode \verb|fit| de l'ent
 trainer = Trainer(
     max_epochs=epochs,
     deterministic=True,
-    logger=WandbLogger(project="unaphasiator")
+    logger=WandbLogger(project="project-name")
     callbacks=[early_stopping, checkpoint],
     gradient_clip_val=1.0,
 )
@@ -216,7 +216,7 @@ une fonction qui définit l'entraînement et le nombre d'essais à effectuer (vo
 with open("config/sweep.yaml") as cfg:
     sweep_cfg = load(cfg, Loader)
 
-sweep_id = wandb.sweep(sweep_cfg, project="unaphasiator")
+sweep_id = wandb.sweep(sweep_cfg, project="project-name")
 wandb.agent(sweep_id, train, count=10)
 \end{lstlisting}
 
