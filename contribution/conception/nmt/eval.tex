@@ -86,7 +86,7 @@ Il s'agit d'une matrice carrée \(M\)
 dont les lignes sont indexées par les classes réelles et les colonnes par les classes prédites.
 L'élément à la position \((i, j)\) de la matrice 
 est le nombre d'exemples de la classe \(i\) attribués par le modèle à la classe \(j\).
-Un modèle parfait à donc une matrice diagonale pour matrice de confusion.
+Un modèle parfait à donc une matrice diagonale pour matrice de confusion~\cite{Raschka_Mirjalili_2017}.
 
 Il est moins facile d'interpréter la matrice de confusion d'un modèle imparfait.
 Pour cette raison, il est utile d'en extraire des nombres directement interprétables.
@@ -117,7 +117,7 @@ Dans le cas où les classes sont très déséquilibrées,
 un modèle sans aucune capacité à décerner les classes minoritaires peut avoir une exactitude élevée
 en attribuant simplement toutes les classes à l'une des classes majoritaires.
 Cela suggère un besoin de mesures spécifiques aux classes,
-ce qui est ce que nous obtenons en abordant les questions (2) et (3).
+ce qui est ce que nous obtenons en abordant les questions (2) et (3)~\cite{Raschka_Mirjalili_2017}.
 
 Les réponses des deux questions restantes sont parfaitement symétriques (comme le sont les questions elles-mêmes).
 Elles sont données respectivement par le \emph{rappel} et la \emph{précision} du modèle.
@@ -139,7 +139,7 @@ Une grande précision suggère que le modèle a tendance à ne pas attribuer la 
 (on dit qu'il a peu de \emph{faux positifs} pour cette classe).
 Il est possible d'obtenir à partir de la précision et du rappel des mesures globales comme l'exactitude.
 Il suffit pour cela de prendre la moyenne des précisions ou des rappels sur toutes les classes.
-Cela présente l'avantage de traiter équitablement toutes les classes.
+Cela présente l'avantage de traiter équitablement toutes les classes~\cite{Raschka_Mirjalili_2017}.
 
 La mesure \(F_\beta\) permet d'agréger le rappel et la précision en une seule mesure
 qui contient l'information sur les faux positifs et les faux négatifs.
