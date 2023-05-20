@@ -124,25 +124,7 @@ Elle traite les deux corpus comme étant indépendants.
 En prenant la moyenne des scores \gls{bleu} de chaque couple de phrases dans le corpus parallèle,
 nous obtenons un seul nombre qui mesure la similarité entre les deux parties du corpus.
 
-L'Extrait de code~\ref{code.bleu} donne le code utilisé pour calculer le score \gls{bleu}.
 La fonction \verb|bleu_score| de \verb|torchmetrics| prend en entrée 
 une liste de phrases qui représentent les traductions candidates (dans notre cas, les phrases aphasiques)
 et une liste de listes de phrases qui représentent les traductions de référence (dans notre cas, les phrases en français).
-L'exécution de ce code donne un score \gls{bleu} de \(62.72\%\) sur le corpus de validation.
-\begin{lstlisting}[
-  language=Python,
-  caption=Calcul du score \texttt{BLEU} sur le corpus de validation.,
-  label={code.bleu}
-]
-import pandas as pd
-from torchmetrics.functional import bleu_score
-
-df = pd.read_csv("val.csv")
-
-aphasia = df.aphasia.to_list()
-french = df.french.tolist()
-
-french = [[s] for s in french]
-score = bleu_score(aphasia, french) * 100
-print(f"{score=:.2f}%")
-\end{lstlisting}
+Un score \gls{bleu} de \(62.72\%\) a été obtenu sur le corpus de validation.
