@@ -147,7 +147,7 @@
 	% \pagenumbering{gobble}
     \addcontentsline{toc}{chapter}{Page de garde}
 	\pagenumbering{roman}
-	\include{abstract}
+	% \include{abstract}
 	\afterpage{
 		\newgeometry{bottom=3cm}
 		\tableofcontents
@@ -172,7 +172,7 @@
 	% \import{sota/}{sota}
 	% \import{contribution/}{contribution}
     \bookmarksetup{startatroot}
-	% \include{conclusion}
+	\include{conclusion}
 	\printbibliography[heading=bibintoc]
 	\begin{appendices}
 		\import{appendices}{reqs.tex}
