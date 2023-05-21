@@ -19,7 +19,7 @@ semblent avoir le potentiel de réduire les coûts matériels et humains associ�
 Elles peuvent ainsi faciliter l'accès au traitement de l'aphasie de Broca%
 ~\cite{Smaili_Langlois_Pribil_2022,Qin_Lee_Kong_Lin_2022,Misra_Mishra_Gandhi_2022}.
 
-Dans ce mémoire, nous avons exploré la possibilité d'utiliser la \gls{mt} et l'\gls{asr},
+Dans ce projet de fin d'étude, nous avons exploré la possibilité d'utiliser la \gls{mt} et l'\gls{asr},
 deux techniques de \gls{nlp} basées sur l'apprentissage \gls{s2s} 
 pour aider les personnes atteintes de l'aphasie de Broca.
 
@@ -31,4 +31,24 @@ Le résultat de cette comparaison est une supériorité nette du transformeur su
 Nous avons alors exploré dans le troisième chapitre les différentes publications qui ont étudié
 l'utilisation du transformeur pour la résolution de problèmes de \gls{mt} et d'\gls{asr}.
 
+Ensuite, nous avons présenté la conception d'un système 
+qui combine un modèle de traduction avec un modèle d'\gls{asr} pour corriger la parole aphasique.
+Conformément à cette conception, la réalisation de ce système a été entamée avec Python et PyTorch.
+En conclusion, les résultats de notre travail ont été présentés.
+Il s'agit d'un modèle de correction avec une interface web à base de texte pour la partie \gls{mt},
+et d'un corpus annoté manuellement pour la partie \gls{asr}.
 
+\section*{Perspectives et horizons de recherche futurs}
+
+En dépit d'être encourageants, les résultats de ce projet de fin d'étude sont loin d'être complets.
+Plusieurs pistes de recherche peuvent être explorées pour obtenir de meilleurs résultats.
+
+Parmi les axes d'amélioration les plus prometteurs, nous pouvons citer la taille des corpus d'entraînement.
+La collecte de plus de données peut permettre d'entraîner les modèles sans besoin de données synthétiques.
+Le remplacement de chatGPT par un modèle moins coûteux comme LLAMA pour la synthèse des erreurs
+peut permettre d'utiliser un corpus synthétique de tailles plus importantes.
+
+Une autre piste qui mérite d'être explorée est l'utilisation d'un modèle pré-entraîné comme \gls{bart} ou \gls{gpt}
+pour la traduction et Whisper pour l'\gls{asr}.
+Ces modèles peuvent être utilisés directement 
+ou affinés sur un corpus relativement petit pour avoir de meilleurs résultats. 
