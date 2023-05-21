@@ -106,7 +106,9 @@ Cela est aussi apparent sur le tableau.
     \caption{Importance des hyperparamètres et corrélation avec le score \glsfmtshort{bleu}.}%
     \label{fig.results.hparam.corr}
 \end{figure}
-Une analyse factorielle sur les essais effectués nous permet d'estimer l'importance des hyperparamètres 
+Une analyse statistique sur les essais effectués nous permet d'estimer l'importance des hyperparamètres%
+\footnote{Un foret aléatoire est entraîné pour prédire le score \gls{bleu} en fonction des hyperparamètres. 
+L'importance d'un hyperparamètre est mesurée par rapport à ce foret~\cite{wandb_parameter_importance}.}
 ainsi que leurs corrélations avec le score \gls{bleu}.
 Ils sont tous deux négativement corrélés avec ce dernier (\gls{bleu} augmente quand l'un diminue).
 Le \verb|dropout| est le plus important entre les deux 
