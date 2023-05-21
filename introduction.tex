@@ -2,10 +2,25 @@
 \addcontentsline{toc}{chapter}{Introduction générale}
 \label{chap.intro}
 
-L'aphasie est un trouble de communication qui complique un grand pourcentage d'\glsxtrlongpl{avc},
-une condition médicale qui touche plus de 12.2 millions de personnes par an dans le monde.
-Ce chiffre est susceptible d'augmenter avec l'augmentation de l'espérance de vie%
+L'\gls{avc} est une condition médicale dans laquelle 
+la circulation du sang dans une région du cerveau s'arrête brusquement~\cite{Larousse}.
+La \foreignlanguage{english}{World Stroke Organization} estime que 
+plus 101 millions personnes dans le monde sont les victimes d'un \gls{avc}.
+La même organisation que 12.2 millions \glspl{avc} ont lieu chaque année.
+Ce nombre est susceptible d'augmenter avec le vieillissement de la population mondiale.
+Les complications d'un \gls{avc} peuvent être totales ou partielles, temporaires ou permanentes.
+Elles peuvent inclure la paralysie, l'amnésie et la difficulté à parler ou à comprendre la parole.
+Cette dernière complication est appelée \emph{aphasie}%
 ~\cite{Feigin_Brainin_Norrving_Martins_Sacco_Hacke_Fisher_Pandian_Lindsay_2022}.
+
+
+\section*{Contexte}
+
+L'aphasie est un trouble de communication qui complique près d'un tiers des cas d'\glspl{avc}%
+~\cite{Flowers_Skoretz_Silver_Rochon_Fang_Flamand-Roze_Martino_2016}.
+Il s'agit d'une perte partielle ou totale de la capacité de produire ou de comprendre le langage.
+Les cas d'aphasie sont classés en fonction de leur sévérité et des facultés affectées en \emph{syndromes aphasiques}.
+L'aphasie de Broca est l'un de ces syndromes aphasiques~\cite{Chapey_2008}.
 
 L'aphasie de Broca est une forme d'aphasie qui affecte la capacité de s'exprimer oralement ou par écrit.
 Elle résulte d'une lésion dans l'aire de Broca,
@@ -13,48 +28,115 @@ une région du cerveau qui est responsable de la production de la parole.
 Les personnes qui souffrent d'une aphasie de Broca ont des difficultés à produire des mots,
 mais peuvent comprendre ce qui est dit~\cite{Chapey_2008}.
 
-Ces difficultés peuvent avoir des conséquences néfastes sur plusieurs aspects de la vie quotidienne.
-Ceci peut inclure la communication avec les proches,
-la participation à des activités sociales,
-l'exercice d'un emploi
-ou même la demande d'aide en cas d'urgence~\cite{Hallowell_2017}.
+Il est possible de mitiger les effets de l'aphasie de Broca avec des traitements de réhabilitation.
+La majorité de ces traitements sont basés sur la rééducation de la parole.
+Cela nécessite plusieurs séances (généralement 1--3 par semaine) avec un orthophoniste.
+Le taux de succès de ces traitements après 18 mois est de 24\%%
+~\cite{Liu_Huang_Xu_Wu_Tao_Chen_2021,Laska_Hellblom_Murray_Kahan_Von_Arbin_2001,recover}.
 
-L'utilisation de techniques d'\glsxtrlong{ml} et du \glsxtrlong{nlp} 
-au bénéfice des personnes atteintes de l'aphasie est une piste de recherche  
-qui commence à capturer l'attention de plusieurs chercheurs%
-~\cite{Smaili_Langlois_Pribil_2022,Qin_Lee_Kong_Lin_2022,Misra_Mishra_Gandhi_2022}.
+\section*{Problématique}
 
-Dans ce mémoire, notre objectif est de fournir une revue de l'état de l'art
-sur les travaux qui ont été faits dans cette direction.
-Nous portons une attention particulière à la \glsxtrlong{mt} et à la \glsxtrlong{asr}
-appliquées à l'aphasie de Broca.
+Les difficultés de communication causées par l'aphasie en général 
+et l'aphasie de Broca en particulier peuvent être très handicapantes pour la vie quotidienne.
+Les activités affectées incluent la communication avec les proches, la participation à des activités sociales,
+l'exercice d'un emploi ou même la demande d'aide en cas d'urgence~\cite{Hallowell_2017}.
+Par conséquent, la qualité de vie des personnes atteintes de l'aphasie de Broca 
+est significativement inférieure à celle des personnes en bonne santé~\cite{Pallavi_Perumal_Krupa_2018,Ross_Wertz_2010}.
 
-Pour ce faire, nous avons organisé notre travail en trois chapitres :
+Ces problèmes ont un impact négatif sur la santé mentale des personnes atteintes de l'aphasie de Broca.
+Elles sont plus susceptibles à l'isolation sociale, à la dépression et aux pensées suicidaires,
+des pensées dont la communication est inhibée par l'aphasie et l'isolation sociale%
+~\cite{Costanza_et_al._2021,Morrison_2016}.
+Le résultat est plus un doublement du taux de mortalité des personnes qui souffrent d'aphasie
+par rapport aux cas d'\glspl{avc} sans aphasie (36\% contre 16\% dans les 18 mois suivant l'\gls{avc})%
+~\cite{Laska_Hellblom_Murray_Kahan_Von_Arbin_2001}.
 
-\begin{enumerate}
-    \item \nameref{chap.general-notions}.
+De plus, la rééducation de la parole, le traitement de réhabilitation le plus courant et le plus efficace 
+pour la plupart des syndromes aphasiques --- dont l'aphasie de Broca ---,
+est un processus long et coûteux et fatiguant pour les patients/
+Cela en fait un traitement inaccessible pour les personnes ont des difficultés économiques ou de mobilité,
+ce qui est souvent le cas des personnes âgées~\cite{Jacobs_Ellis_2021,Liu_Huang_Xu_Wu_Tao_Chen_2021}.
+
+Cette inaccessibilité du traitement de réhabilitation pour un groupe de personnes 
+qui inclut une grande partie des personnes qui en ont besoin, 
+est inacceptable vu les conséquences souvent catastrophiques de l'aphasie.
+Il est urgent de trouver et d'implémenter des solutions qui permettent de faciliter l'accès à la réhabilitation
+en réduisant le coût, le besoin du déplacement et la nécessité de supervision professionnelle.
+
+\section*{Objectifs}
+
+L'application des techniques d'\gls{ml} et du \gls{nlp} à cette problématique est une piste de recherche 
+qui commence à capturer l'attention des chercheurs%
+~\cite{Smaili_Langlois_Pribil_2022,Qin_Lee_Kong_Lin_2022,Misra_Mishra_Gandhi_2022,%
+Li_Knopman_Xu_Cohen_Pakhomov_2022,Misra_Mishra_Gandhi_2022}.
+
+L'objectif de ce travail est la création d'un système automatique de réhabilitation de la parole aphasique.
+La fonction de ce système est de corriger la parole de son utilisateur, 
+c'est--à--dire qu'il prend en entrée la parole éventuellement erronée d'une personne aphasique
+et produit en sortie une version corrigé de cette parole 
+(en parle de système \foreignlanguage{english}{speech-to-speech}).
+Pour le réaliser, nous nous intéressons particulièrement à la \gls{mt} et à l'\gls{asr}.
+
+\section*{Organisation de ce mémoire}
+
+Ce document est la synthèse de notre travail de recherche sur la problématique présentée ci--dessus.
+Il est organisé en deux parties.
+La première est une étude bibliographique sur la littérature existante relative aux sujets abordés.
+La deuxième présente la contribution apportée par notre travail.
+
+\subsection*{\Cref{part.sota}~\nameref{part.sota}}
+
+Dans cette partie, nous présentons les travaux qui ont été faits dans la direction que nous explorons.
+Elle est organisée en trois chapitres :
+\begin{itemize}
+    \item \Cref{chap.general-notions}~\nameref{chap.general-notions} :    
+    Dans ce chapitre, nous présentons en général les trois sujets qui sont au cœur de ce travail :
+    l'aphasie de Broca, la \gls{mt} et l'\gls{asr}.
+    Nous commençons par une présentation de l'aphasie de Broca 
+    dans laquelle nous décrivons ses symptômes, ses causes et ses conséquences.
+    Nous passons ensuite à la réhabilitation de la parole où nous présentons son insuffisance actuelle
+    par rapport à l'ampleur et la portée du problème.
+    Nous terminons par introduire la \gls{mt} et l'\gls{asr} 
+    en présentant leurs définitions et une taxonomie des approches existantes.
     
-    Dans ce chapitre, nous présentons en général les domaines de recherche qui nous intéressent.
-    À cette fin, le chapitre est divisé en trois sections :
-    \begin{enumerate}[label=(\arabic*)]
-        \item La première section présente l'aphasie de Broca,
-        \item la deuxième introduit la traduction automatique
-        \item et la troisième présente la reconnaissance automatique de la parole.
-    \end{enumerate}
-
-    \item \nameref{chap.s2s}.
-
-    Ce chapitre sert à familiariser le lecteur avec le cadre d'étude général
-    dans lequel s'inscrivent la \glsxtrlong{mt}, la \glsxtrlong{asr}
-    et la majorité des tâches de \glsxtrlong{nlp}.
-    Il s'agit de la modélisation de séquences.
-    Nous y présentons l'énoncé du problème et les différentes architectures neuronales
-    qui ont été proposées pour le résoudre.
-
-    \item \nameref{chap.mt-and-asr}.
+    \item \Cref{chap.s2s}~\nameref{chap.s2s} :
+    Ce chapitre sert à familiariser le lecteur avec l'apprentissage \gls{s2s},
+    le cadre d'étude général dans lequel s'inscrivent la \gls{mt}, l'\gls{asr} et la majorité des tâches de \gls{nlp}.
+    Nous commençons par énoncer le problème, 
+    puis nous présentons certaines des architectures neuronales qui ont été appliquées dans son cadre.
+    Nous clôturons ce chapitre par une comparaison de ces architectures.
     
-    Ce chapitre part de l'étude générale faite dans le chapitre~\ref{chap.s2s}.
-    Il détaille l'application des meilleures architectures neuronales
-    qui y sont présentées dans le cadre de la \glsxtrlong{mt} et de la \glsxtrlong{asr}.
-\end{enumerate}
+    \item \Cref{chap.mt-and-asr}~\nameref{chap.mt-and-asr} :    
+    Ce chapitre part de l'étude générale du chapitre~\ref{chap.s2s}.
+    Il détaille l'application du transformeur aux problèmes de \gls{mt} et d'\gls{asr}.
+    Nous y présentons les travaux les plus importants dans ces deux domaines.
+\end{itemize}
+
+\subsection*{\Cref{part.contribution}~\nameref{part.contribution}}
+
+Dans cette partie, nous présentons notre contribution à la problématique de la réhabilitation de la parole aphasique.
+Elle est aussi organisée en trois chapitres :
+\begin{itemize}
+    \item \Cref{chap.conception}~\nameref{chap.conception} :
+    Le premier chapitre de cette partie présente la conception de notre système.
+    Nous commençons par présenter l'architecture générale de notre solution.
+    Nous détaillons ensuite la partie \gls{asr} de cette architecture.
+    Après cela, la partie \gls{mt} est discutée.
+    Pour chaque partie, nous décrivons la procédure d'acquisition de données. 
+    Pour la partie \gls{mt}, la création du modèle est aussi présentée.
+    
+    \item \Cref{chap.realisation}~\nameref{chap.realisation} :
+    Ce chapitre est consacré à la discussion des choix techniques que nous avons faites.
+    Nous présentons d'abord les outils, technologies et bibliothèques que nous avons utilisés.
+    Nous détaillons ensuite l'implémentation de la collecte et organisation des données.
+    Après cela, la création et l'entraînement du modèle \gls{mt} sont présentés.
+    Nous terminons par la présentation de l'interface utilisateur.
+    
+    \item \Cref{chap.results}~\nameref{chap.results} :
+    Le dernier chapitre de ce mémoire est une discussion des résultats obtenus 
+    (notamment dans la partie \gls{mt}).
+    D'abord, la qualité et les caractéristiques des données genrées et du corpus créé sont discutées.
+    Ensuite, nous présentons et commentons les résultats de l'entraînement.
+    Finalement, nous terminons avec les résultats du réglage des hyperparamètres.
+\end{itemize}
 
