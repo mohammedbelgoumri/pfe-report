@@ -17,19 +17,25 @@
     Cela la rend indisponible à un grand nombre de personnes souffrant de l'aphasie de Broca.
 
     L'utilisation des techniques basées sur le \glsxtrlong{nlp} pour améliorer la qualité de vie de ses individus
-    est une voie d'exploration  émergente qui a reçu beaucoup d'attention par les chercheurs pendants les années
+    est une voie d'exploration  émergente qui a reçu beaucoup d'attention par les chercheurs pendant les années
     dernières.
 
     Dans ce projet de fin d'études, 
     nous nous intéressons à l'utilisation de la \glsxtrlong{mt} et la \glsxtrlong{asr} pour
     automatiser une partie de la procédure de réhabilitation des personnes touchées par l'aphasie de Broca.
-    Dans ce but, nous introduisons l'aphasie de Broca, ses causes, 
-    ses effets et les problèmes avec les traitements classiques.
-    Ensuite, nous menons une étude bibliographique sur les travaux existant sur 
-    la \glsxtrlong{mt} et la la \glsxtrlong{asr}.
-    Enfin, nous proposons et réalisons un système de \glsxtrlong{mt} de la parole aphasique en Français.
+    
+    Dans ce but, menons une étude bibliographique dans laquelle 
+    nous introduisons l'aphasie de Broca, ses causes, 
+    ses effets, les problèmes avec les traitements classiques 
+    et les travaux existant sur la \glsxtrlong{mt} et la \glsxtrlong{asr}.
+    
+    Ensuite, nous proposons un système qui combine un modèle de \glsxtrlong{mt} avec un de \glsxtrlong{asr}
+    pour corriger la parole aphasique en français et nous réalisons le premier de ses modèles.
+    Enfin, nous présentons les résultats de notre travail sous forme d'un corpus de \glsxtrlong{asr}
+    et d'un modèle de traduction d'un score \glsxtrshort{bleu} de \(79.61\%\).
+
     %%
-    \\[2cm]
+    \ \\[2cm]
     %%
     \rule{\linewidth}{1pt}
 
@@ -60,9 +66,16 @@
         In this graduation project, 
         we are interested in the use of machine translation and automatic speech recognition
         to partially automate the rehabilitation of people with aphasia.
-        To this end, we introduce aphasia, its causes, consequences, and the problems of classical treatment methods.
-        We then undertake a bibliographical study of the existing works pertaining to machine translation and automatic speech recognition.
-        We finish by designing and creating a translation system for french aphasic speech.
+        
+        To this end, we conduct a bibliographical study in which introduce aphasia, its causes, consequences, 
+        the problems of classical treatment methods, and a literature review the existing works 
+        pertaining to machine translation and automatic speech recognition.
+        
+        We then design a system that corrects french aphasic speech 
+        by combining a translation model with a speech recognition model, the former of which we implement.
+        We finish by presenting the results of our work: 
+        a corpus for automatic speech recognition, 
+        and a translation model with a \glsxtrshort{bleu} score of \(79.61\%\).
         %%
         \\ [2cm]
         %%
@@ -74,41 +87,50 @@
 \end{otherlanguage}
 
 \renewcommand{\abstractname}{\RL{ملخص}}
-\begin{abstract}
-    \thispagestyle{plain}
-    \setcounter{page}{3}
-    \begin{RLtext}
-        الـحـبـسـة إضـطـرابٌ لـغـوي نـاتـج عن تـلـف فـي الـدمـاغ، غـالـبـا نـتـيـجـة سـكـتـة دمـاغـيـة.
-        حـبـسـة بـروكـا حـبـسـة تـنـتـج عـن إصـابـة فـي مـنـطـقـة بـروكـا،
-        وهـي مـنـطـقـة فـي الـفـص الجـبـهي الأيـسـر للـدمـاغ تـعـنـى بـإنـتـاج الكـلام.
-        قـد يـجـد الـمـصـاب بـحـبـسـة بـروكـا صـعـوبـة فـي تـكـويـن الـجـمـل والـكـلـمـات،
-        إلا أنـه عـادة يـفـهـم مـا يـقـال.
-        تـرتـبـط هـذه الحـبـسـة بـتـدنـي مـسـوى الـعيـش وارتـفتاع  خـطر الاكـتـئـاب والانـتـحـار.
+\afterpage{
+    \newgeometry{top=-9cm}
+    \begin{abstract}
+        \thispagestyle{plain}
+        \setcounter{page}{3}
+        \begin{RLtext}
+            الـحـبـسـة إضـطـرابٌ لـغـوي نـاتـج عن تـلـف فـي الـدمـاغ، غـالـبـا نـتـيـجـة سـكـتـة دمـاغـيـة.
+            حـبـسـة بـروكـا حـبـسـة تـنـتـج عـن إصـابـة فـي مـنـطـقـة بـروكـا،
+            وهـي مـنـطـقـة فـي الـفـص الجـبـهي الأيـسـر للـدمـاغ تـعـنـى بـإنـتـاج الكـلام.
+            قـد يـجـد الـمـصـاب بـحـبـسـة بـروكـا صـعـوبـة فـي تـكـويـن الـجـمـل والـكـلـمـات،
+            إلا أنـه عـادة يـفـهـم مـا يـقـال.
+            تـرتـبـط هـذه الحـبـسـة بـتـدنـي مـسـوى الـعيـش وارتـفتاع  خـطر الاكـتـئـاب والانـتـحـار.
+    
+            عـلاج الـنـطق هـو أكـثـر الـعـلاجـات وصـفـا للمـصـابـيـن بـحـبـسـة بـروكـا.
+            رغـم نـجـاعـتـه، فـهو يـظـل مـكـلـفـا للـوقـت والـمـال والـجـهـد،
+            مـا يـحـول دون تـوفـره لعـدد كـبـيـر مـمـن يـحـتـاجـونـه.
+    
+            تـوظـيـف تـقـنـيـات مـعـالـجـة اللـغـة الـطـبـيـعـيـة لـتـحـسـيـن حـيـاة الـمـصـابـيـن بـحـبـسـة بـروكـا
+            مـجـال بـحـث حـظي بـاهـتـمـام الـعـديـد مـن الـبـاحـثـيـن فـي الأعـوام الأخـيـرة.
+    
+            فـي مـشـروع الـتـخـرج هـذا، نـهـتـم بـاسـتـعـمـال الـتـرجـمـة الآلـية والـتـعرف الآلـي عـلى الكـلام
+            لتـأديـة جـزء مـن عـلاج الـنـطق لـحـبـسـة بـروكـا أوتـومـاتـيـكـيـا.
+            مـن أجـل ذلك، نـعـرض دراسـة بـيـبـلـيـوغـرافـيـة نـعـرف فـيـهـا
+            نـعـرف فـيـهـا بـحـبـسـة بـروكـا أسـبـابـا ونـتـائـج،
+            ثـم نـتـطرق لـعـيـوب الـعـلاجـات الـمـعـتـادة.
+            وللأعـمـال الـتـي سـبـق إنـجـازهـا فـي مـجـالـي الـتـرجـمـة الآلـية والـتـعرف الآلـي عـلى الكـلام.
+            
+            نـأتـي بـعـدهـا إلـى تـصـمـيـم نـظام لـتـصـحـيـح الـكـلام الـمـحـتـبـس بـاللـغـة الـفـرنـسـيـة
+            يـجـمـع بـيـن نـمـوذجـيـن، أحـدهـمـا للـتـعرف الآلـي عـلى الكـلام والآخـر للـتـرجـمـة الآلـيـة 
+            ونـعـرض إنـجـاز هـذا الأخـيـر.
+            نـخـتـم أخـيـرا بـعـرض نـتـائـج هـذا الـعـمـل مـتـمـثـلـة فـي مـجـمـوعـة بـيـانـات للـتـعرف الآلـي عـلى الكـلام
+            ونـمـوذج للـتـرجـمـة الآلـيـة تـقـيـيـمـه بـمـقـيـاس \LR{\glsxtrshort{bleu}} يـسـاوي \(79.61\%\).
+        \end{RLtext}
+        \rule{\linewidth}{1pt}
+        \begin{RLtext}
+            \textbf{الـكـلـمـات الـمـفـتـاحـيـة ـــ } حـبـسـة بـروكـا،
+            تـعـلم الآلـة،
+            مـعـالـجـة اللـغـة الـطـبـيـعـيـة،
+            تـرجـمـة آلـيـة،
+            تـعرف آلـي عـلى الكـلام،
+            شـبـكـة عـصـبـيـة غـيـر تـرتـيـبـيـة.\\
+        \end{RLtext}
+        \rule{\linewidth}{1pt}
+    \end{abstract}
 
-        عـلاج الـنـطق هـو أكـثـر الـعـلاجـات وصـفـا للمـصـابـيـن بـحـبـسـة بـروكـا.
-        رغـم نـجـاعـتـه، فـهو يـظـل مـكـلـفـا للـوقـت والـمـال والـجـهـد،
-        مـا يـحـول دون تـوفـره لعـدد كـبـيـر مـمـن يـحـتـاجـونـه.
-
-        تـوظـيـف تـقـنـيـات مـعـالـجـة اللـغـة الـطـبـيـعـيـة لـتـحـسـيـن حـيـاة الـمـصـابـيـن بـحـبـسـة بـروكـا
-        مـجـال بـحـث حـظي بـاهـتـمـام الـعـديـد مـن الـبـاحـثـيـن فـي الأعـوام الأخـيـرة.
-
-        فـي مـشـروع الـتـخـرج هـذا، نـهـتـم بـاسـتـعـمـال الـتـرجـمـة الآلـية والـتـعرف الآلـي عـلى الكـلام
-        لتـأديـة جـزء مـن عـلاج الـنـطق لـحـبـسـة بـروكـا أوتـومـاتـيـكـيـا.
-        مـن أجـل ذلك، نـبـدأ بـالـتـعـريـف بـحـبـسـة بـروكـا أسـبـابـا ونـتـائـج،
-        ثـم نـتـطرق لـعـيـوب الـعـلاجـات الـمـعـتـادة.
-        بـعدهـا نـعرض دراسـة بـيـبـلـيـوغـرافـيـة للأعـمـال الـتـي سـبـق إنـجـازهـا فـي مـجـالـي 
-        الـتـرجـمـة الآلـية والـتـعرف الآلـي عـلى الكـلام.
-        نـخـتـم أخـيـرا بـتـصـمـيـم وإنـجـاز نـظام تـرجـمـة آلـيـة لـحـبـسـة بـروكـا فـي اللـغـة الـفـرنـسـيـة.
-    \end{RLtext}
-    \rule{\linewidth}{1pt}
-    \begin{RLtext}
-        \textbf{الـكـلـمـات الـمـفـتـاحـيـة ـــ } حـبـسـة بـروكـا،
-        تـعـلم الآلـة،
-        مـعـالـجـة اللـغـة الـطـبـيـعـيـة،
-        تـرجـمـة آلـيـة،
-        تـعرف آلـي عـلى الكـلام،
-        شـبـكـة عـصـبـيـة غـيـر تـرتـيـبـيـة.\\
-    \end{RLtext}
-    \rule{\linewidth}{1pt}
-\end{abstract}
-
+}    
+\restoregeometry
