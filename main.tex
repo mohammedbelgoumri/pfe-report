@@ -1,9 +1,9 @@
 \documentclass[12pt, a4paper]{report}
 
 \usepackage[utf8]{inputenc} 
-\usepackage[english, greek, main=french]{babel}
+\usepackage[english, arabic, greek, main=french]{babel}
 \usepackage{csquotes}
-\usepackage[T1]{fontenc}
+\usepackage[LAE, T1]{fontenc}
 \usepackage{array}
 \usepackage{amsmath, amssymb, amsfonts, amsthm}
 \usepackage{bbm}
@@ -144,11 +144,12 @@
 	\setcounter{tocdepth}{1}
 	\include{titlepage}
 	% disable page numbering for the title page
-	% \pagenumbering{gobble}
-    \addcontentsline{toc}{chapter}{Page de garde}
-	\pagenumbering{roman}
+	% \pagestyle{fancy}
+	\renewcommand{\headrulewidth}{0pt}
+	\fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage}}
 	\include{abstract}
-    \addcontentsline{toc}{chapter}{Résumé}
+	% \pagenumbering{roman}
+	% \setcounter{page}{4}
 	\afterpage{
 		\newgeometry{bottom=3cm}
 		\tableofcontents

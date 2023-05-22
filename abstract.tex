@@ -1,7 +1,8 @@
 \begin{abstract}
-    \pagestyle{plain}
     \pagenumbering{roman}
     \setcounter{page}{1}
+    \fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage}}
+    \phantomsection\addcontentsline{toc}{chapter}{\abstractname} 
     
     L'aphasie est un trouble de langage qui résulte d'une lésion cérébrale (typiquement suite à un \glsxtrshort{avc}).
     L'aphasie de Broca est une déficience de la production du langage causée par une lésion dans l'aire de Broca,
@@ -46,8 +47,11 @@
 
 \begin{otherlanguage}{english}
     \begin{abstract}
-        \thispagestyle{plain}
+        \pagenumbering{roman}
         \setcounter{page}{2}
+        \fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage}}
+        \phantomsection\addcontentsline{toc}{chapter}{\abstractname} 
+
 
         Aphasia is a language disorder caused by brain damage (most commonly a stroke).
         Broca's aphasia is a form of aphasia that impairs language production.
@@ -88,10 +92,12 @@
 
 \renewcommand{\abstractname}{\RL{ملخص}}
 \afterpage{
-    \newgeometry{top=-9cm}
+    \newgeometry{top=-2cm, bottom=1cm}
     \begin{abstract}
-        \thispagestyle{plain}
+        \pagenumbering{roman}
         \setcounter{page}{3}
+        \fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage}}
+        \phantomsection\addcontentsline{toc}{chapter}{\textRL{ملخص}} 
         \begin{RLtext}
             الـحـبـسـة إضـطـرابٌ لـغـوي نـاتـج عن تـلـف فـي الـدمـاغ، غـالـبـا نـتـيـجـة سـكـتـة دمـاغـيـة.
             حـبـسـة بـروكـا حـبـسـة تـنـتـج عـن إصـابـة فـي مـنـطـقـة بـروكـا،
@@ -119,8 +125,8 @@
             ونـعـرض إنـجـاز هـذا الأخـيـر.
             نـخـتـم أخـيـرا بـعـرض نـتـائـج هـذا الـعـمـل مـتـمـثـلـة فـي مـجـمـوعـة بـيـانـات للـتـعرف الآلـي عـلى الكـلام
             ونـمـوذج للـتـرجـمـة الآلـيـة تـقـيـيـمـه بـمـقـيـاس \LR{\glsxtrshort{bleu}} يـسـاوي \(79.61\%\).
-        \end{RLtext}
-        \rule{\linewidth}{1pt}
+        \end{RLtext}      
+        \hspace*{0mm}\rule{\linewidth}{1pt}
         \begin{RLtext}
             \textbf{الـكـلـمـات الـمـفـتـاحـيـة ـــ } حـبـسـة بـروكـا،
             تـعـلم الآلـة،
@@ -131,6 +137,5 @@
         \end{RLtext}
         \rule{\linewidth}{1pt}
     \end{abstract}
-
+    \restoregeometry
 }    
-\restoregeometry
