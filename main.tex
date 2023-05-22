@@ -144,6 +144,8 @@
 	\include{titlepage}
 	\renewcommand{\headrulewidth}{0pt}
 	\fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage}}
+	\input{dedication}
+	\input{acknowledgement}
 	\include{abstract}
 	\afterpage{
 		\newgeometry{bottom=3cm}
@@ -165,13 +167,13 @@
 	]
 	\restoregeometry
 	\pagenumbering{arabic}
-	\include{introduction}
-	\import{sota/}{sota}
-	\import{contribution/}{contribution}
-    \bookmarksetup{startatroot}
-	\include{conclusion}
-	\printbibliography[heading=bibintoc]
-	\begin{appendices}
-		\import{appendices}{reqs.tex}
-	\end{appendices}
+	% \include{introduction}
+	% \import{sota/}{sota}
+	% \import{contribution/}{contribution}
+    % \bookmarksetup{startatroot}
+	% \include{conclusion}
+	% \printbibliography[heading=bibintoc]
+	% \begin{appendices}
+	% 	\import{appendices}{reqs.tex}
+	% \end{appendices}
 \end{document}
