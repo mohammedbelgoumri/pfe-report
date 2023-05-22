@@ -34,7 +34,7 @@
 		\setentrycounter[]{page}\glsnumberformat{60}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{64}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{78}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{80\delimR 87}}}%
+		\setentrycounter[]{page}\glsnumberformat{80\delimR 88}}}%
 \glossentry{bpe}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{35}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{53}}}%
@@ -99,7 +99,7 @@
 		\setentrycounter[]{page}\glsnumberformat{28}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{32\delimN 33}}}%
 \glossentry{mt}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{2\delimR 4}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{6}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{11\delimR 16}\delimN 
 		\setentrycounter[]{page}\glsnumberformat{32\delimR 36}\delimN 

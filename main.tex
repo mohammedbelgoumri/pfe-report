@@ -97,7 +97,6 @@
 
 \usepackage[abbreviations, automake]{glossaries-extra}
 \input{preambule/abbreviationstyle}
-\GlsXtrEnableInitialTagging{abbreviation}{\itag}
 \setabbreviationstyle{long-short-user}
 \glssetcategoryattribute{abbreviation}{markwords}{true}
 \glssetcategoryattribute{abbreviation}{noshortplural}{true}
@@ -143,13 +142,9 @@
 \begin{document}
 	\setcounter{tocdepth}{1}
 	\include{titlepage}
-	% disable page numbering for the title page
-	% \pagestyle{fancy}
 	\renewcommand{\headrulewidth}{0pt}
 	\fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage}}
 	\include{abstract}
-	% \pagenumbering{roman}
-	% \setcounter{page}{4}
 	\afterpage{
 		\newgeometry{bottom=3cm}
 		\tableofcontents
@@ -170,13 +165,13 @@
 	]
 	\restoregeometry
 	\pagenumbering{arabic}
-	% \include{introduction}
-	% \import{sota/}{sota}
-	% \import{contribution/}{contribution}
-    % \bookmarksetup{startatroot}
-	% \include{conclusion}
-	% \printbibliography[heading=bibintoc]
-	% \begin{appendices}
-	% 	\import{appendices}{reqs.tex}
-	% \end{appendices}
+	\include{introduction}
+	\import{sota/}{sota}
+	\import{contribution/}{contribution}
+    \bookmarksetup{startatroot}
+	\include{conclusion}
+	\printbibliography[heading=bibintoc]
+	\begin{appendices}
+		\import{appendices}{reqs.tex}
+	\end{appendices}
 \end{document}
