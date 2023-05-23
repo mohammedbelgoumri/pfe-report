@@ -84,12 +84,12 @@ Il est organisé en deux parties.
 La première est une étude bibliographique sur la littérature existante relative aux sujets abordés.
 La deuxième présente la contribution apportée par notre travail.
 
-\subsection*{\Cref{part.sota}~\nameref{part.sota}}
+\subsection*{\nameref{part.sota}}
 
 Dans cette partie, nous présentons les travaux qui ont été faits dans la direction que nous explorons.
 Elle est organisée en trois chapitres :
-\begin{itemize}
-    \item \Cref{chap.general-notions}~\nameref{chap.general-notions} :    
+\begin{enumerate}[label={Chapitre \arabic*}]
+    \item \nameref{chap.general-notions} :    
     Dans ce chapitre, nous présentons en général les trois sujets qui sont au cœur de ce travail :
     l'aphasie de Broca, la \gls{mt} et l'\gls{asr}.
     Nous commençons par une présentation de l'aphasie de Broca 
@@ -99,25 +99,25 @@ Elle est organisée en trois chapitres :
     Nous terminons par introduire la \gls{mt} et l'\gls{asr} 
     en présentant leurs définitions et une taxonomie des approches existantes.
     
-    \item \Cref{chap.s2s}~\nameref{chap.s2s} :
+    \item \nameref{chap.s2s} :
     Ce chapitre sert à familiariser le lecteur avec l'apprentissage \gls{s2s},
     le cadre d'étude général dans lequel s'inscrivent la \gls{mt}, l'\gls{asr} et la majorité des tâches de \gls{nlp}.
     Nous commençons par énoncer le problème, 
     puis nous présentons certaines des architectures neuronales qui ont été appliquées dans son cadre.
     Nous clôturons ce chapitre par une comparaison de ces architectures.
     
-    \item \Cref{chap.mt-and-asr}~\nameref{chap.mt-and-asr} :    
+    \item \nameref{chap.mt-and-asr} :    
     Ce chapitre part de l'étude générale du chapitre~\ref{chap.s2s}.
     Il détaille l'application du transformeur aux problèmes de \gls{mt} et d'\gls{asr}.
     Nous y présentons les travaux les plus importants dans ces deux domaines.
-\end{itemize}
+\end{enumerate}
 
-\subsection*{\Cref{part.contribution}~\nameref{part.contribution}}
+\subsection*{\nameref{part.contribution}}
 
 Dans cette partie, nous présentons notre contribution à la problématique de la réhabilitation de la parole aphasique.
 Elle est aussi organisée en trois chapitres :
-\begin{itemize}
-    \item \Cref{chap.conception}~\nameref{chap.conception} :
+\begin{enumerate}[label=Chapitre \arabic*,resume]
+    \item \nameref{chap.conception} :
     Le premier chapitre de cette partie présente la conception de notre système.
     Nous commençons par présenter l'architecture générale de notre solution.
     Nous détaillons ensuite la partie \gls{asr} de cette architecture.
@@ -125,18 +125,18 @@ Elle est aussi organisée en trois chapitres :
     Pour chaque partie, nous décrivons la procédure d'acquisition de données. 
     Pour la partie \gls{mt}, la création du modèle est aussi présentée.
     
-    \item \Cref{chap.realisation}~\nameref{chap.realisation} :
+    \item \nameref{chap.realisation} :
     Ce chapitre est consacré à la discussion des choix techniques que nous avons faites.
-    Nous présentons d'abord les outils, technologies et bibliothèques que nous avons utilisés.
+    Nous présentons d'abord les outils, technologies et bibliothèques que nous avons utilisées.
     Nous détaillons ensuite l'implémentation de la collecte et organisation des données.
     Après cela, la création et l'entraînement du modèle \gls{mt} sont présentés.
     Nous terminons par la présentation de l'interface utilisateur.
     
-    \item \Cref{chap.results}~\nameref{chap.results} :
+    \item \nameref{chap.results} :
     Le dernier chapitre de ce mémoire est une discussion des résultats obtenus 
     (notamment dans la partie \gls{mt}).
     D'abord, la qualité et les caractéristiques des données genrées et du corpus créé sont discutées.
     Ensuite, nous présentons et commentons les résultats de l'entraînement.
     Finalement, nous terminons avec les résultats du réglage des hyperparamètres.
-\end{itemize}
+\end{enumerate}
 
