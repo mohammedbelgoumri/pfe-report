@@ -5,7 +5,7 @@
       "label": "sync bib",
       "command": "unison",
       "type": "shell",
-      "args": ["../article/references.bib", "../report/references.bib"]
+      "args": ["../paper/references.bib", "../report/references.bib"]
     }
   ]
 }
