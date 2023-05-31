@@ -4,10 +4,10 @@ Les réseaux de neurones opèrent sur des vecteurs.
 Afin de les utiliser dans le contexte de la modélisation \gls{s2s}, 
 il faut utiliser une représentation vectorielle des entrées.
 Une telle représentation s'appelle un \emph{plongement} (\foreignlanguage{english}{embedding} en anglais).
-Le plongement peut-être appris ou prédéfini~\cite{Raschka_Mirjalili_2017}.
+Le plongement peut être appris ou prédéfini~\cite{Raschka_Mirjalili_2017}.
 
 Dans le cas des \glspl{mlp}, la séquence d'entrée est d'abord décomposée en sous-séquences.
-Ensuite, les plongements de ces sous-séquences sont traités un par un par le réseau de neurones,
+Ensuite, les plongements de ces sous-séquences sont traités individuellement par le réseau de neurones,
 ce qui produit une séquence de vecteurs en sortie.
 (voir Algorithme~\ref{algo.mlp-pass}).
 
