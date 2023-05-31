@@ -51,8 +51,8 @@
 \usepackage{caption}
 
 \usepackage{listings}
-\renewcommand\lstlistingname{Extrait de code}
-\renewcommand\lstlistlistingname{Extraits de code}
+\renewcommand{\lstlistingname}{Extrait de code}
+\renewcommand{\lstlistlistingname}{Extraits de code}
 %Code zones styling
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -154,7 +154,7 @@
 		\listoffigures
 		\addcontentsline{toc}{chapter}{Table des figures}
 		\lstlistoflistings
-		\addcontentsline{toc}{chapter}{Algorithmes et extraits de code}
+		\addcontentsline{toc}{chapter}{Extraits de code}
 		% \listofalgorithms	
 	}
 	% \printabbreviations
@@ -168,8 +168,8 @@
 	\restoregeometry
 	\pagenumbering{arabic}
 	\include{introduction}
-	\import{sota/}{sota}
-	\import{contribution/}{contribution}
+	% \import{sota/}{sota}
+	% \import{contribution/}{contribution}
     \bookmarksetup{startatroot}
 	\include{conclusion}
 	\printbibliography[heading=bibintoc]
