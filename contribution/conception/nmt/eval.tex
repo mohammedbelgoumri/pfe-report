@@ -7,7 +7,7 @@ Pour ce faire, il faut définir des métriques qui peuvent,
 à partir des prédictions du modèle et des valeurs réelles,
 fournir un nombre (où une liste de nombres) qui représente la qualité du modèle.
 La \gls{mt} étant un exemple de problème de classification en grande dimension%
-\footnote{
+\footnote{%
 Où les classes sont les tokens du vocabulaire de la langue cible.
 }~\cite{deep-nmt-survey},
 les métriques utilisées sont celles de la classification.
@@ -37,7 +37,7 @@ Quand l'entropie croisée est utilisée dans le cadre d'un problème de classifi
 on prend souvent comme \(p\) la loi de probabilité \emph{cible}, c'est-à-dire celle des valeurs réelles.
 Dans notre cas, il s'agit de la loi du prochain token sachant la phrase source et les tokens précédents.
 On prend généralement une \emph{loi de Dirac}%
-\footnote{
+\footnote{%
     Pour un espace probabilisable \((\Omega, \mathcal{A})\) et \(a\in\Omega\),
     la loi de Dirac \(\delta_a: \mathcal{A} \to \{0, 1\}\) est définie par :
     \(
@@ -127,7 +127,7 @@ Le rappel de la classe \(i\) est défini par :
     \text{rappel}_i = \frac{M_{ii}}{\sum\limits_{j=1}^n M_{ij}}
 \end{equation}
 il nous permet de savoir, sachant la classe d'un exemple, la probabilité que le modèle le classe correctement.
-Une valeur élevée de rappel suggère que le modèle a tendance à bien identifier les éléments de la classe \(i\)
+Une valeur élevée de rappel suggère que le modèle tend à bien identifier les éléments de la classe \(i\)
 (on dit qu'il a peu de \emph{faux négatifs} pour cette classe).
 La précision de la classe \(j\) est définie par :
 \begin{equation}
@@ -135,7 +135,7 @@ La précision de la classe \(j\) est définie par :
     \text{précision}_j = \frac{M_{jj}}{\sum\limits_{i=1}^n M_{ij}}
 \end{equation}
 elle nous permet de savoir, sachant la prédiction du modèle, la probabilité qu'elle soit correcte.
-Une grande précision suggère que le modèle a tendance à ne pas attribuer la classe \(j\) à tort
+Une grande précision suggère que le modèle tend à ne pas attribuer la classe \(j\) à tort
 (on dit qu'il a peu de \emph{faux positifs} pour cette classe).
 Il est possible d'obtenir à partir de la précision et du rappel des mesures globales comme l'exactitude.
 Il suffit pour cela de prendre la moyenne des précisions ou des rappels sur toutes les classes.
