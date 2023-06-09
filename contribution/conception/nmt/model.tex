@@ -108,7 +108,7 @@ Cela donne une matrice de paramètres \(W\) dont les lignes sont les vecteurs de
             w_{d1} & w_{d2} & \cdots & w_{dN}\\
         \end{bmatrix}}\right\}|\Sigma| = 5000
 \end{equation}\\
-qui a donc \(|\Sigma| \times d = 5000 \times 64 = 320000\) paramètres.
+qui a donc \(|\Sigma| \cdot d = 5000 \cdot 64 = 320000\) paramètres.
 Pour calculer le plongement d'un token \(x\) d'indice \(i\), il suffit de prendre la ligne \(i+1\) de \(W\).
 La matrice \(W\) peut être optimisée comme n'importe quelle autre matrice de paramètres.
 Cela permet d'apprendre les plongements lexicaux à partir des données~\cite{Paszke_et_al_2019}.
