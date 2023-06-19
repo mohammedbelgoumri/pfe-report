@@ -74,14 +74,15 @@ Toutes les autres valeurs doivent avoir un poids nul.
 Pour ce faire, la matrice \(M\) 
 \begin{equation}
     M_{ij} = \begin{cases}
-        0 & \text{si } j > i \\
-        -\infty & \text{sinon}
+        -\infty & \text{si } i < j \\
+        0       & \text{sinon}
     \end{cases} 
     = \begin{bmatrix}
-        -\infty & -\infty & \cdots & -\infty \\
         0       & -\infty & \cdots & -\infty \\
-        \vdots  & \vdots  & \ddots & \vdots \\
-        0       & 0       & \cdots & -\infty
+        0       & 0       & \cdots & -\infty \\
+        \vdots  & \vdots  & \ddots & \vdots  \\
+        0       & 0       & \cdots & -\infty \\
+        0       & 0       & \cdots & 0
     \end{bmatrix}
 \end{equation}
 est ajoutée à l'entrée de la fonction \(\softmax\).
