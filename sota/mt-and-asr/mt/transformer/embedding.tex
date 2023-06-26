@@ -12,7 +12,7 @@ Plusieurs techniques existent pour effectuer ce découpage.
 La plus simple est d'assimiler chaque mot à un token.
 Cette technique présente l'inconvénient de produire des vocabulaires très grands.
 Il est possible de limiter la taille du vocabulaire en ne gardant que les mots les plus fréquents,
-remplaçant les autres par un token spécial \texttt{[UNK]},
+remplaçant les autres par un token spécial \texttt{[UNK]} (\foreignlanguage{english}{unknown}),
 mais cela a pour conséquence de perdre l'information sur les mots rares.
 Dans un contexte de correction d'erreurs, celles-ci sont intrinsèquement rares. 
 La tokenisation à base de mots est inacceptable dans ce cas~\cite{Rai_Borah_2021}.
@@ -20,10 +20,10 @@ La tokenisation à base de mots est inacceptable dans ce cas~\cite{Rai_Borah_202
 D'autres techniques tentent de réduire la taille du vocabulaire en utilisant des tokens plus petits qu'un mot.
 On parle de techniques de tokenisation en sous-mots.
 L'une des plus connues est le \gls{bpe}~\cite{Sennrich_Haddow_Birch_2016}.
-Pour construire le vocabulaire, \gls{bpe} commence par découper les mots en caractères (les bytes initiaux).
-Ensuite, il regroupe le couple de bytes les plus fréquents en un seul byte, 
+Pour construire le vocabulaire, \gls{bpe} commence par découper les mots en caractères (les tokens initiaux).
+Ensuite, il regroupe le couple de tokens le plus fréquent en un seul token, 
 remplaçant toutes leurs occurrences par ce dernier.
-Cette opération est répétée jusqu'à ce que le nombre de bytes soit égal au nombre de tokens désiré
+Cette opération est répétée jusqu'à ce que le nombre de tokens atteigne la valeur désirée
 ou pour un nombre maximal d'itérations (voir Algorithme~\ref{algo.bpe}).
 
 \lstinputlisting[
