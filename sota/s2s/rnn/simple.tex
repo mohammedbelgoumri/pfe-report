@@ -21,8 +21,8 @@ il s'agit donc d'un système à réponse impulsionnelle infinie~\cite{Fathi_2021
 \subsubsection{Dépliement temporel et encodeur--décodeur récurrent}
 
 Le traitement d'une séquence \(x\) par un \gls{rnn} \((\mathcal{R})\), 
-est équivalent à son traitement par un \gls{ffn} \((\mathcal{F})\) dont la profondeur est égale à la longueur de \(x\)%
-\footnote{Et dont toutes les couches sont identiques à \(\mathcal{R}\).}.
+est équivalent à son traitement par un \gls{ffn} \((\mathcal{F})\) dont la profondeur est égale à la longueur de \(x\)
+et dont toutes les couches sont identiques à \(\mathcal{R}\).
 \(\mathcal{F}\) est donc appelé \emph{dépliement temporel} de \(\mathcal{R}\) pour \(x\).
 La Figure~\ref{fig.rnn-unfold} montre le dépliement temporel de la Figure~\ref{fig.rnn-loop} 
 pour une séquence de longueur 4~\cite{LeCun_Bengio_Hinton_2015}.
