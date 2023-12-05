@@ -1,95 +1,67 @@
+
 \begin{abstract}
     \thispagestyle{plain}
     \pagenumbering{roman}
-    \setcounter{page}{1}
-    \phantomsection\addcontentsline{toc}{chapter}{\abstractname} 
-    
-    L'aphasie est un trouble de langage qui résulte d'une lésion cérébrale (typiquement suite à un \glsxtrshort{avc}).
-    L'aphasie de Broca est une déficience de la production du langage causée par une lésion dans l'aire de Broca,
-    une région du lobe frontal gauche du cerveau, responsable de la production de la parole.
-    Une personne atteinte d'aphasie de Broca peut avoir des difficultés à articuler les mots et les phrases.
-    Cependant, elle peut en général comprendre ce qui est dit.
-    L'aphasie de Broca est associé à une diminution de la qualité de vie 
-    et à une augmentation du risque de dépression et de tentative de suicide.
-   
-    La rééducation de la parole est le traitement le plus couramment prescrit aux personnes atteintes d'aphasie de Broca.
-    En dépit de son efficacité, 
-    la rééducation de la parole est un traitement coûteux en termes de temps, argent et ressources humaines.
-    Cela la rend indisponible à un grand nombre de personnes souffrant de l'aphasie de Broca.
+    \setcounter{page}{2}
+    \phantomsection\addcontentsline{toc}{chapter}{\abstractname}
 
-    L'utilisation des techniques basées sur le \glsxtrlong{nlp} pour améliorer la qualité de vie de ses individus
-    est une voie d'exploration  émergente qui a reçu beaucoup d'attention par les chercheurs pendant les années
-    dernières.
 
-    Dans ce projet de fin d'études, 
-    nous nous intéressons à l'utilisation de la \glsxtrlong{mt} et la \glsxtrlong{asr} pour
-    automatiser une partie de la procédure de réhabilitation des personnes touchées par l'aphasie de Broca.
-    
-    Dans ce but, nous menons une étude bibliographique dans laquelle 
-    nous introduisons l'aphasie de Broca, ses causes, 
-    ses effets, les problèmes avec les traitements classiques 
-    et les travaux existant sur la \glsxtrlong{mt} et la \glsxtrlong{asr}.
-    
-    Ensuite, nous proposons un système qui combine un modèle de \glsxtrlong{mt} avec un de \glsxtrlong{asr}
-    pour corriger la parole aphasique en français et nous réalisons le premier de ses modèles.
-    Enfin, nous présentons les résultats de notre travail sous forme d'un corpus de \glsxtrlong{asr}
-    et d'un modèle de traduction d'un score \glsxtrshort{bleu} de \(79.61\%\).
+    Aphasia is a language disorder caused by brain damage (most commonly a stroke).
+    Broca's aphasia is a form of aphasia that impairs language production.
+    It is caused by an injury to Broca's Area, an area of the frontal lobe of the brain; responsible for language decoding.
+    A person suffering from Broca's aphasia may find it difficult to articulate words and sentences.
+    However, they generally can understand what is said to them.
+    This form of aphasia is associated with a lower quality of life and a higher risk of depression and suicide.
 
+    Speech therapy is the most commonly prescribed remedy to people with Broca's aphasia.
+    Despite its effectiveness, it remains an expensive, time-consuming, and effort-heavy process.
+    This makes it inaccessible to a significant number of people with aphasia.
+
+    The use of natural language processing-based techniques to improve these people's quality of life
+    is an emerging research avenue that has enjoyed the attention of many researchers in recent years.
+
+    In this graduation project,
+    we are interested in the use of machine translation and automatic speech recognition
+    to partially automate the rehabilitation of people with aphasia.
+
+    To this end, we conduct a bibliographic study in which introduce aphasia, its causes, consequences,
+    the problems of classical treatment methods, and a literature review the existing works
+    pertaining to machine translation and automatic speech recognition.
+
+    We then design a system that corrects french aphasic speech
+    by combining a translation model with a speech recognition model, the former of which we implement.
+    We finish by presenting the results of our work:
+    a corpus for automatic speech recognition,
+    and a translation model with a \glsxtrshort{bleu} score of \(79.61\%\).
     %%
-    \ \\[2cm]
+    \\ [2cm]
     %%
     \rule{\linewidth}{1pt}
 
-    \textbf{Mots clés --- } Aphasie de Broca, \Glsxtrlong{ml}, \Glsxtrlong{nlp}, \Glsxtrlong{mt}, \Glsxtrlong{asr},
-    Transformeur.\\
+    \textbf{Keywords --- } Broca aphasia, Machine learning, Natural language processing, Machine translation, Automatic speech recognition, Transformer.\\
     \rule{\linewidth}{1pt}
 \end{abstract}
 
-\begin{otherlanguage}{english}
+
+\begin{otherlanguage}{french}
     \begin{abstract}
         \thispagestyle{plain}
         \pagenumbering{roman}
-        \setcounter{page}{2}
-        \phantomsection\addcontentsline{toc}{chapter}{\abstractname} 
+        \setcounter{page}{1}
+        \phantomsection\addcontentsline{toc}{chapter}{\abstractname}
 
+        Ceci est un résumé en français.
 
-        Aphasia is a language disorder caused by brain damage (most commonly a stroke).
-        Broca's aphasia is a form of aphasia that impairs language production.
-        It is caused by an injury to Broca's Area, an area of the frontal lobe of the brain; responsible for language decoding.
-        A person suffering from Broca's aphasia may find it difficult to articulate words and sentences.
-        However, they generally can understand what is said to them.
-        This form of aphasia is associated with a lower quality of life and a higher risk of depression and suicide.
-
-        Speech therapy is the most commonly prescribed remedy to people with Broca's aphasia.
-        Despite its effectiveness, it remains an expensive, time-consuming, and effort-heavy process.
-        This makes it inaccessible to a significant number of people with aphasia.
-
-        The use of natural language processing-based techniques to improve these people's quality of life
-        is an emerging research avenue that has enjoyed the attention of many researchers in recent years.
-
-        In this graduation project, 
-        we are interested in the use of machine translation and automatic speech recognition
-        to partially automate the rehabilitation of people with aphasia.
-        
-        To this end, we conduct a bibliographic study in which introduce aphasia, its causes, consequences, 
-        the problems of classical treatment methods, and a literature review the existing works 
-        pertaining to machine translation and automatic speech recognition.
-        
-        We then design a system that corrects french aphasic speech 
-        by combining a translation model with a speech recognition model, the former of which we implement.
-        We finish by presenting the results of our work: 
-        a corpus for automatic speech recognition, 
-        and a translation model with a \glsxtrshort{bleu} score of \(79.61\%\).
         %%
-        \\ [2cm]
+        \ \\[2cm]
         %%
         \rule{\linewidth}{1pt}
 
-        \textbf{Keywords --- } Broca aphasia, Machine learning, Natural language processing, Machine translation, Automatic speech recognition, Transformer.\\
+        \textbf{Mots clés --- } Aphasie de Broca, Transformeur.\\
         \rule{\linewidth}{1pt}
     \end{abstract}
-\end{otherlanguage}
 
+\end{otherlanguage}
 \renewcommand{\abstractname}{\RL{مـلـخـص}}
 \afterpage{
     \newgeometry{top=-2cm}
@@ -97,7 +69,7 @@
         \thispagestyle{plain}
         \pagenumbering{roman}
         \setcounter{page}{3}
-        \phantomsection\addcontentsline{toc}{chapter}{\textRL{مـلـخـص}} 
+        \phantomsection\addcontentsline{toc}{chapter}{\textRL{مـلـخـص}}
         \begin{RLtext}
             الـحـبـسـة إضـطـرابٌ لـغـوي نـاتـج عن تـلـف فـي الـدمـاغ، غـالـبـا نـتـيـجـة سـكـتـة دمـاغـيـة.
             حـبـسـة بـروكـا حـبـسـة تـنـتـج عـن إصـابـة فـي مـنـطـقـة بـروكـا،
@@ -105,27 +77,27 @@
             قـد يـجـد الـمـصـاب بـحـبـسـة بـروكـا صـعـوبـة فـي تـكـويـن الـجـمـل والـكـلـمـات،
             إلا أنـه عـادة يـفـهـم مـا يـقـال.
             تـرتـبـط هـذه الحـبـسـة بـتـدنـي مـسـوى الـعيـش وارتـفتاع  خـطر الاكـتـئـاب والانـتـحـار.
-    
+
             عـلاج الـنـطق هـو أكـثـر الـعـلاجـات وصـفـا للمـصـابـيـن بـحـبـسـة بـروكـا.
             رغـم نـجـاعـتـه، فـهو يـظـل مـكـلـفـا للـوقـت والـمـال والـجـهـد،
             مـا يـحـول دون تـوفـره لعـدد كـبـيـر مـمـن يـحـتـاجـونـه.
-    
+
             تـوظـيـف تـقـنـيـات مـعـالـجـة اللـغـة الـطـبـيـعـيـة لـتـحـسـيـن حـيـاة الـمـصـابـيـن بـحـبـسـة بـروكـا
             مـجـال بـحـث حـظي بـاهـتـمـام الـعـديـد مـن الـبـاحـثـيـن فـي الأعـوام الأخـيـرة.
-    
+
             فـي مـشـروع الـتـخـرج هـذا، نـهـتـم بـاسـتـعـمـال الـتـرجـمـة الآلـية والـتـعرف الآلـي عـلى الكـلام
             لتـأديـة جـزء مـن عـلاج الـنـطق لـحـبـسـة بـروكـا أوتـومـاتـيـكـيـا.
-            مـن أجـل ذلك، نـعـرض دراسـة بـيـبـلـيـوغـرافـيـة 
+            مـن أجـل ذلك، نـعـرض دراسـة بـيـبـلـيـوغـرافـيـة
             نـعـرف فـيـهـا بـحـبـسـة بـروكـا أسـبـابـا ونـتـائـج،
             ثـم نـتـطرق لـعـيـوب الـعـلاجـات الـمـعـتـادة.
             وللأعـمـال الـتـي سـبـق إنـجـازهـا فـي مـجـالـي الـتـرجـمـة الآلـية والـتـعرف الآلـي عـلى الكـلام.
-            
+
             نـأتـي بـعـدهـا إلـى تـصـمـيـم نـظام لـتـصـحـيـح الـكـلام الـمـحـتـبـس بـاللـغـة الـفـرنـسـيـة
-            يـجـمـع بـيـن نـمـوذجـيـن، أحـدهـمـا للـتـعرف الآلـي عـلى الكـلام والآخـر للـتـرجـمـة الآلـيـة 
+            يـجـمـع بـيـن نـمـوذجـيـن، أحـدهـمـا للـتـعرف الآلـي عـلى الكـلام والآخـر للـتـرجـمـة الآلـيـة
             ونـعـرض إنـجـاز هـذا الأخـيـر.
             نـخـتـم أخـيـرا بـعـرض نـتـائـج هـذا الـعـمـل مـتـمـثـلـة فـي مـجـمـوعـة بـيـانـات للـتـعرف الآلـي عـلى الكـلام
             ونـمـوذج للـتـرجـمـة الآلـيـة تـقـيـيـمـه بـمـقـيـاس \LR{\glsxtrshort{bleu}} يـسـاوي \(79.61\%\).
-        \end{RLtext}      
+        \end{RLtext}
         \hspace*{0mm}\rule{\linewidth}{1pt}
         \begin{RLtext}
             \textbf{الـكـلـمـات الـمـفـتـاحـيـة ـــ } حـبـسـة بـروكـا،
@@ -138,4 +110,4 @@
         \rule{\linewidth}{1pt}
     \end{abstract}
     \restoregeometry
-}    
+}

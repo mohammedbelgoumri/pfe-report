@@ -1,7 +1,7 @@
 \documentclass[12pt, a4paper]{report}
 
 \usepackage[utf8]{inputenc} 
-\usepackage[english, arabic, greek, main=french]{babel}
+\usepackage[french, arabic, greek, main=english]{babel}
 \usepackage{csquotes}
 \usepackage[LAE, T1]{fontenc}
 \usepackage{array}
@@ -18,7 +18,7 @@
     colorlinks=true,
     linkcolor=black,
 	urlcolor=blue,
-	citecolor=black,
+	citecolor=green,
 	pdfauthor={Mohammed Belgoumri},
 	pdfkeywords={
 		Aphasie de Broca, Apprentissage automatique, Traitement automatique du langage, Traduction automatique, Reconnaissance automatique de la parole.
@@ -43,8 +43,6 @@
 
 \usepackage[backend=biber, style=apa]{biblatex}
 \addbibresource{references.bib}
-
-\usepackage[inline]{asymptote}
 
 \usepackage{etoolbox}
 
@@ -132,9 +130,6 @@
 \let\barecite\cite
 \let\cite\parencite
 
-\def\asydir{assets/asymptote}
-
-
 \makeglossaries
 \input{preambule/abbreviations}
 
@@ -148,26 +143,26 @@
 \input{acknowledgement}
 \include{abstract}
 \afterpage{
-	\newgeometry{bottom=3cm}
-	\tableofcontents
-	\addcontentsline{toc}{chapter}{Table des matières}
-	\listoffigures
-	\addcontentsline{toc}{chapter}{Table des figures}
-	% \listofalgorithms	
+    \newgeometry{bottom=3cm}
+    \tableofcontents
+    \addcontentsline{toc}{chapter}{Contents}
+    \listoffigures
+    \addcontentsline{toc}{chapter}{List of figures}
+    % \listofalgorithms	
 }
 % \printabbreviations
 \cleardoublepage
 \printglossary[
-	title=Sigles et abréviations,
-	toctitle=Sigles et abréviations,
-	type=abbreviations,
-	style=long,nonumberlist
+    title=Sigles et abréviations,
+    toctitle=Sigles et abréviations,
+    type=abbreviations,
+    style=long,nonumberlist
 ]
 \restoregeometry
 \pagenumbering{arabic}
 \include{introduction}
-\import{sota/}{sota}
-\import{contribution/}{contribution}
+% \import{sota/}{sota}
+% \import{contribution/}{contribution}
 \bookmarksetup{startatroot}
 \include{conclusion}
 \printbibliography[heading=bibintoc]
