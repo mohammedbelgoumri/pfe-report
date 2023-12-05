@@ -1,3 +1,3 @@
-# pfe-report
+# PFE/Masters thesis template
 
-This is the source code code for my graduation project/master's thesis.
+A $\LaTeX$ template for writing PFE/Masters' thesises for ESI students.
