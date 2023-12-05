@@ -1,40 +1,11 @@
-%----------------------------------
-% custom style commands
-%----------------------------------
-% variable style command
-\newcommand{\xvar}[1]{\textsf{#1}}
-
-% horizontal alignment command
-\newcommand{\xvbox}[2]{\makebox[#1][l]{#2}}
-
-%----------------------------------
-% set algorithm2e styles
-%----------------------------------
-% change algorithm font size
-% \SetAlFnt{\footnotesize}
-
-% change algorithm caption style
-\newcommand{\xAlCapSty}[1]{\small\sffamily\bfseries\MakeUppercase{#1}}
-\SetAlCapSty{xAlCapSty}
-
-% comment style (algorithms)
-\newcommand{\xCommentSty}[1]{\ttfamily\textcolor{codegreen}{#1}}
-\SetCommentSty{xCommentSty}
-
-% change line number style
-\newcommand\mynlfont[1]{\sffamily{#1}}
-\SetNlSty{mynlfont}{}{} 
-
- % add the line numbers
-\LinesNumbered
-
-% comments right justified
-% \SetSideCommentLeft
-
-\newcommand{\comment}[1]{\tcp*[l]{#1}}
-
-% don't print semicolon
-\DontPrintSemicolon
-
-% ruled algorithm
-\RestyleAlgo{algoruled}
+%% Algorithm style
+\usepackage[ruled,linesnumbered,nosemicolon]{algorithm2e}
+\SetFuncArgSty{}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\newcommand{\mycomntsty}[1]{\texttt{\textcolor{codegreen}{#1}}}
+\newlength{\commentWidth}
+\setlength{\commentWidth}{7cm}
+\SetCommentSty{mycomntsty}
+\newcommand{\atcp}[1]{\tcp*[r]{\makebox[\commentWidth]{#1\hfill}}}
+% no line break version of \atcp
+\newcommand{\atcpl}[1]{\tcp*[f]{\makebox[\commentWidth]{#1\hfill}}}

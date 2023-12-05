@@ -1,0 +1,17 @@
+\section{Deep Learning}\label{sec:ml:deep}
+
+I can reference a figure by number, as~\Cref{fig:ml:deep:neuralnet},
+or by its caption: \nameref{fig:ml:deep:neuralnet}.
+Both are hyperlinks.
+The same is true for Algorithm~\ref{algo:trans-encode} and Code~block~\ref{code:ml:deep:bpe}.
+I can also make a refernce to a paper like~\cite{attention}.
+\begin{figure}[hbt]
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{mlp.png}
+    \end{center}
+    \caption{A neural network}%
+    \label{fig:ml:deep:neuralnet}
+\end{figure}
+\lstinputlisting[language=Python,caption={Byte paire enconding},label={code:ml:deep:bpe}]%
+{assets/code/bpe.py}
+\input{assets/algorithms/trans-encode.tex}

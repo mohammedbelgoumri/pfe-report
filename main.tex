@@ -7,18 +7,19 @@
 \usepackage{array}
 \usepackage{amsmath, amssymb, amsfonts, amsthm}
 \usepackage{bbm}
-\usepackage{xcolor}
+\usepackage[dvipsnames,svgnames]{xcolor}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
+\graphicspath{{assets/images}{assets/pdf}{assets/python}}
 \usepackage[inline]{enumitem}
 \usepackage{import}
 \usepackage{colonequals}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=black,
+    linkcolor=DarkBlue,
 	urlcolor=blue,
-	citecolor=green,
+	citecolor=DarkGreen,
 	pdfauthor={Mohammed Belgoumri},
 	pdfkeywords={
 		Aphasie de Broca, Apprentissage automatique, Traitement automatique du langage, Traduction automatique, Reconnaissance automatique de la parole.
@@ -49,8 +50,8 @@
 \usepackage{caption}
 
 \usepackage{listings}
-\renewcommand{\lstlistingname}{Extrait de code}
-\renewcommand{\lstlistlistingname}{Extraits de code}
+\renewcommand{\lstlistingname}{Code block}
+\renewcommand{\lstlistlistingname}{Code blocks}
 %Code zones styling
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -75,15 +76,7 @@
 	showtabs          = false,
 }
 \lstset{style=mystyle}
-% \DeclareCaptionFormat{listing}{\rule{\dimexpr\linewidth\relax}{0.4pt}\par#1#2#3}
-% \captionsetup[lstlisting]{
-% 	format          = listing,
-% 	justification   = centering,
-% 	singlelinecheck = false,
-% 	margin          = 0pt,
-% 	labelsep        = space,
-% 	labelfont       = bf
-% }
+\input{preambule/algo-style.tex}
 
 \usepackage{arabtex}
 \usepackage{utf8}
@@ -94,11 +87,10 @@
 \usepackage{subcaption}
 
 \usepackage[abbreviations, automake]{glossaries-extra}
-\input{preambule/abbreviationstyle}
-\setabbreviationstyle{long-short-user}
-\glssetcategoryattribute{abbreviation}{markwords}{true}
-\glssetcategoryattribute{abbreviation}{noshortplural}{true}
-% \GlsXtrEnableInitialTagging{abbreviation}{}
+\setabbreviationstyle{long-short}
+\GlsXtrEnableInitialTagging{abbreviation}{\itag}
+\newcommand{\taghighlight}[1]{\uppercase{\textbf{#1}}}
+\renewcommand{\glsxtrtagfont}{\taghighlight}
 
 \usepackage{stmaryrd}
 \usepackage{bookmark}
@@ -119,7 +111,7 @@
 
 \theoremstyle{definition}
 \newtheorem{thedef}[theorem]{Theorem and definition}
-\newtheorem{definition}{Définition}
+\newtheorem{definition}{Definition}
 \newtheorem{example}{Example}[chapter]
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
@@ -143,25 +135,27 @@
 \input{acknowledgement}
 \include{abstract}
 \afterpage{
-    \newgeometry{bottom=3cm}
-    \tableofcontents
-    \addcontentsline{toc}{chapter}{Contents}
-    \listoffigures
-    \addcontentsline{toc}{chapter}{List of figures}
-    % \listofalgorithms	
+	\newgeometry{bottom=3cm}
+	\tableofcontents
+	\addcontentsline{toc}{chapter}{Contents}
+	\listoffigures
+	\addcontentsline{toc}{chapter}{List of figures}
+	\lstlistoflistings
+	\addcontentsline{toc}{chapter}{List of \lstlistlistingname}
+	\listofalgorithms
+	\addcontentsline{toc}{chapter}{List of Algorithms}
 }
 % \printabbreviations
 \cleardoublepage
-\printglossary[
-    title=Sigles et abréviations,
-    toctitle=Sigles et abréviations,
-    type=abbreviations,
-    style=long,nonumberlist
+\printabbreviations[
+	title=Abbreviations,
+	toctitle=Abbreviations,
+	style=long,nonumberlist
 ]
 \restoregeometry
 \pagenumbering{arabic}
 \include{introduction}
-% \import{sota/}{sota}
+\import{sota}{sota}
 % \import{contribution/}{contribution}
 \bookmarksetup{startatroot}
 \include{conclusion}
