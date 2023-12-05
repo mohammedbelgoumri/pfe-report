@@ -1,0 +1,73 @@
+\usepackage[utf8]{inputenc}
+\usepackage[french, arabic, main=english]{babel}
+\usepackage{csquotes}
+\usepackage[LAE, T1]{fontenc}
+\usepackage{array}
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{bbm}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\graphicspath{{assets/images}{assets/pdf}{assets/python}}
+\usepackage[inline]{enumitem}
+\usepackage{import}
+\usepackage{colonequals}
+\usepackage{hyperref}
+\hypersetup{%
+    colorlinks=true,
+    linkcolor=DarkBlue,
+    urlcolor=blue,
+    citecolor=DarkGreen,
+    pdfauthor={Mohammed Belgoumri},
+    pdfkeywords={this is a kw}
+}
+\usepackage{cleveref}
+\usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
+\usepackage{appendix}
+\usepackage{wrapfig}
+\usepackage{cprotect}
+\import{preambule}{tikz}
+
+\newlength\figureheight
+\newlength\figurewidth
+
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage{etoolbox}
+
+\usepackage{caption}
+
+\import{preambule}{codestyle}
+\input{preambule/algo-style.tex}
+
+\usepackage{arabtex}
+\usepackage{utf8}
+\setcode{utf8}
+
+\usepackage{afterpage}
+\usepackage{float}
+\usepackage{subcaption}
+
+
+
+\usepackage{stmaryrd}
+\usepackage{bookmark}
+\usepackage{booktabs}
+\usepackage{stackengine}
+\usepackage{adjustbox}
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+
+
+\setlength{\parskip}{.4cm}
+\import{preambule}{theorems}
+
+\input{preambule/notations}
+
+%citation style
+\let\barecite\cite
+\let\cite\parencite
+
+\input{preambule/abbreviations}

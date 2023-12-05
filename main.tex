@@ -1,129 +1,7 @@
 \documentclass[12pt, a4paper]{report}
 
-\usepackage[utf8]{inputenc} 
-\usepackage[french, arabic, greek, main=english]{babel}
-\usepackage{csquotes}
-\usepackage[LAE, T1]{fontenc}
-\usepackage{array}
-\usepackage{amsmath, amssymb, amsfonts, amsthm}
-\usepackage{bbm}
-\usepackage[dvipsnames,svgnames]{xcolor}
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-\graphicspath{{assets/images}{assets/pdf}{assets/python}}
-\usepackage[inline]{enumitem}
-\usepackage{import}
-\usepackage{colonequals}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=DarkBlue,
-	urlcolor=blue,
-	citecolor=DarkGreen,
-	pdfauthor={Mohammed Belgoumri},
-	pdfkeywords={
-		Aphasie de Broca, Apprentissage automatique, Traitement automatique du langage, Traduction automatique, Reconnaissance automatique de la parole.
-	}
-}
-\usepackage[french]{cleveref}
-\usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
-\usepackage{appendix}
-\usepackage{wrapfig}
-\usepackage{cprotect}
+\input{preambule/preamble}
 
-\usepackage{tikz}
-\usetikzlibrary{trees}
-\usetikzlibrary{graphs, quotes, positioning}
-\usetikzlibrary{calc, backgrounds, decorations.pathreplacing}
-\usetikzlibrary{babel}
-\usepackage{tikz-qtree}
-\usepackage{circuitikz}
-
-\newlength\figureheight
-\newlength\figurewidth
-
-\usepackage[backend=biber, style=apa]{biblatex}
-\addbibresource{references.bib}
-
-\usepackage{etoolbox}
-
-\usepackage{caption}
-
-\usepackage{listings}
-\renewcommand{\lstlistingname}{Code block}
-\renewcommand{\lstlistlistingname}{Code blocks}
-%Code zones styling
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95, 0.95, 0.92}
-
-\lstdefinestyle{mystyle}{
-	basicstyle        = \ttfamily\footnotesize,
-	backgroundcolor   = \color{backcolour},
-	commentstyle      = \color{codegreen},
-	keywordstyle      = \color{blue},
-	numberstyle       = \tiny\color{codegray},
-	stringstyle       = \color{codepurple},
-	breakatwhitespace = false,
-	breaklines        = false,
-	captionpos        = b,
-	keepspaces        = true,
-	numbers           = left,
-	numbersep         = 5pt,
-	showspaces        = false,
-	showstringspaces  = false,
-	showtabs          = false,
-}
-\lstset{style=mystyle}
-\input{preambule/algo-style.tex}
-
-\usepackage{arabtex}
-\usepackage{utf8}
-\setcode{utf8}
-
-\usepackage{afterpage}
-\usepackage{float}
-\usepackage{subcaption}
-
-\usepackage[abbreviations, automake]{glossaries-extra}
-\setabbreviationstyle{long-short}
-\GlsXtrEnableInitialTagging{abbreviation}{\itag}
-\newcommand{\taghighlight}[1]{\uppercase{\textbf{#1}}}
-\renewcommand{\glsxtrtagfont}{\taghighlight}
-
-\usepackage{stmaryrd}
-\usepackage{bookmark}
-\usepackage{booktabs}
-\usepackage{stackengine}
-\usepackage{adjustbox}
-\usepackage{footnote}
-\makesavenoteenv{tabular}
-\makesavenoteenv{table}
-
-
-\setlength{\parskip}{.4cm}
-
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}{Leamma}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{proposition}[theorem]{Proposition}
-
-\theoremstyle{definition}
-\newtheorem{thedef}[theorem]{Theorem and definition}
-\newtheorem{definition}{Definition}
-\newtheorem{example}{Example}[chapter]
-\theoremstyle{remark}
-\newtheorem{remark}{Remark}
-
-\input{preambule/notations}
-
-%citation style
-\let\barecite\cite
-\let\cite\parencite
-
-\makeglossaries
-\input{preambule/abbreviations}
 
 % !TEX root = main.tex
 \begin{document}
@@ -135,22 +13,22 @@
 \input{acknowledgement}
 \include{abstract}
 \afterpage{
-	\newgeometry{bottom=3cm}
-	\tableofcontents
-	\addcontentsline{toc}{chapter}{Contents}
-	\listoffigures
-	\addcontentsline{toc}{chapter}{List of figures}
-	\lstlistoflistings
-	\addcontentsline{toc}{chapter}{List of \lstlistlistingname}
-	\listofalgorithms
-	\addcontentsline{toc}{chapter}{List of Algorithms}
+    \newgeometry{bottom=3cm}
+    \tableofcontents
+    \addcontentsline{toc}{chapter}{Contents}
+    \listoffigures
+    \addcontentsline{toc}{chapter}{List of figures}
+    \lstlistoflistings
+    \addcontentsline{toc}{chapter}{List of \lstlistlistingname}
+    \listofalgorithms
+    \addcontentsline{toc}{chapter}{List of Algorithms}
 }
 % \printabbreviations
 \cleardoublepage
 \printabbreviations[
-	title=Abbreviations,
-	toctitle=Abbreviations,
-	style=long,nonumberlist
+    title=Abbreviations,
+    toctitle=Abbreviations,
+    style=long,nonumberlist
 ]
 \restoregeometry
 \pagenumbering{arabic}
@@ -162,6 +40,6 @@
 \printbibliography[heading=bibintoc]
 
 \begin{appendices}
-	\import{appendices}{reqs}
+    \import{appendices}{reqs}
 \end{appendices}
 \end{document}

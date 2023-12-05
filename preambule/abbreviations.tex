@@ -1,2 +1,11 @@
+\usepackage[abbreviations, automake]{glossaries-extra}
+\setabbreviationstyle{long-short}
+\GlsXtrEnableInitialTagging{abbreviation}{\itag}
+\newcommand{\taghighlight}[1]{\uppercase{\textbf{#1}}}
+\renewcommand{\glsxtrtagfont}{\taghighlight}
+\makeglossaries
+
+
 % ML terms
 \newabbreviation{abb:ml}{ML}{\itag{m}achine \itag{l}earning}
+
