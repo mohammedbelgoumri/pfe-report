@@ -31,33 +31,10 @@
     }
   ],
   "latex-workshop.latex.recipe.default": "build",
-  "cSpell.words": [
-    "EXPTIME",
-    "NEXPTIME",
-    "NTIME",
-    "preorder",
-    "satisfiability"
-  ],
-  "grammarly.selectors": [
-    {
-      "language": "latex",
-      "scheme": "file"
-    }
-  ],
   "latex-workshop.intellisense.citation.label": "title",
-  "triggerTaskOnSave.tasks": {
-    "sync bib": ["references.bib"]
-  },
   "latex-utilities.zotero.latexCommand": "cite",
   "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^|%|\\\\)\\s*($TAGS)\\{*|^\\s*- \\[ \\])",
   "todo-tree.regex.regexCaseSensitive": false,
   "latex-workshop.view.pdf.invert": 0.88,
-  "python.defaultInterpreterPath": "/home/mohammed/.anaconda3/envs/pfe/bin/python",
-  "python.terminal.activateEnvInCurrentTerminal": true,
-  "python.languageServer": "Pylance",
-  "spellright.language": ["en_US", "fr_FR"],
-  "spellright.documentTypes": ["markdown", "plaintext", "latex"],
-  "latex-workshop.hover.preview.cursor.enabled": false,
-  "python.linting.enabled": false,
-  "ltex.language": "fr"
+  "latex-workshop.hover.preview.cursor.enabled": false
 }

@@ -557,3 +557,6 @@ cython_debug/
 assets/data/
 *.pdf
 !assets/**/*.pdf
+*.glg-abr
+*.glo-abr
+*.gls-abr

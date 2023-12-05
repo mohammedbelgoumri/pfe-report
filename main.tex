@@ -140,35 +140,35 @@
 
 % !TEX root = main.tex
 \begin{document}
-	\setcounter{tocdepth}{2}
-	\include{titlepage}
-	\renewcommand{\headrulewidth}{0pt}
-	\fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage}}
-	\input{dedication}
-	\input{acknowledgement}
-	\include{abstract}
-	\afterpage{
-		\newgeometry{bottom=3cm}
-		\tableofcontents
-		\addcontentsline{toc}{chapter}{Table des matières}
-		\listoffigures
-		\addcontentsline{toc}{chapter}{Table des figures}
-		% \listofalgorithms	
-	}
-	% \printabbreviations
-	\cleardoublepage
-	\printglossary[
-		title=Sigles et abréviations, 
-		toctitle=Sigles et abréviations, 
-		type=abbreviations,
-		style=long,nonumberlist
-	]
-	\restoregeometry
-	\pagenumbering{arabic}
-	\include{introduction}
-	\import{sota/}{sota}
-	\import{contribution/}{contribution}
-    \bookmarksetup{startatroot}
-	\include{conclusion}
-	\printbibliography[heading=bibintoc]
+\setcounter{tocdepth}{2}
+\include{titlepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage}}
+\input{dedication}
+\input{acknowledgement}
+\include{abstract}
+\afterpage{
+	\newgeometry{bottom=3cm}
+	\tableofcontents
+	\addcontentsline{toc}{chapter}{Table des matières}
+	\listoffigures
+	\addcontentsline{toc}{chapter}{Table des figures}
+	% \listofalgorithms	
+}
+% \printabbreviations
+\cleardoublepage
+\printglossary[
+	title=Sigles et abréviations,
+	toctitle=Sigles et abréviations,
+	type=abbreviations,
+	style=long,nonumberlist
+]
+\restoregeometry
+\pagenumbering{arabic}
+\include{introduction}
+\import{sota/}{sota}
+\import{contribution/}{contribution}
+\bookmarksetup{startatroot}
+\include{conclusion}
+\printbibliography[heading=bibintoc]
 \end{document}
