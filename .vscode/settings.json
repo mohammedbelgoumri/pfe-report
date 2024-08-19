@@ -5,7 +5,7 @@
     {
       "name": "compile",
       "command": "latexmk",
-      "args": ["-pdf", "main.tex"],
+      "args": ["-pdf", "main.tex", "-synctex=1"],
       "env": {}
     },
     {
