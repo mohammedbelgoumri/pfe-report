@@ -4,44 +4,43 @@
 #show link: set text(blue)
 
 
-#align(center, text("République Algérienne Démocratique et Populaire", lang: "fr"))
-#align(center, text("الجمهورية الجزائرية الديـموقراطية الشعبية", lang: "ar", font: "Amiri"))
-#align(center, text("Ministère de l'Enseignement Supérieur et de la Recherche Scientifique", lang: "fr"))
-#align(center, text("وزارة التعليم العالي والبحث العلمي", lang: "ar", font: "Amiri"))
-
-#align(center, line(length: 100%))
-
+#align(center)[
+  #text("République Algérienne Démocratique et Populaire", lang: "fr", size: 10pt)\
+  #text("الجمهورية الجزائرية الديـموقراطية الشعبية", lang: "ar", font: "Amiri")\
+  #text("Ministère de l'Enseignement Supérieur et de la Recherche Scientifique", lang: "fr", size: 10pt)\
+  #text("وزارة التعليم العالي والبحث العلمي", lang: "ar", font: "Amiri")
+]
+#align(center, line(length: 100%, stroke: 0.3mm))
+#v(4mm)
 #grid(
   align: (left, auto, right),
   columns: (auto, 1fr, auto),
   [#box(image("assets/images/esi_logo.png"), width: 5cm)],
   [],
   [
-    #text("المدرسة الوطنية العليا للاعلام الآلي", lang: "ar", font: "Amiri")
-
-    #text("(المعهد الوطني للتكوين في الاعلام الآلي سابقا)", lang: "ar", font: "Amiri")
-
-    #text("École naationale Supérieure d'informatique", lang: "fr")
-
-    #text("ex. INI (Institut National de formation en Informatiques)")
+    #text("المدرسة الوطنية العليا للاعلام الآلي", lang: "ar", font: "Amiri")\
+    #text("(المعهد الوطني للتكوين في الاعلام الآلي سابقا)", lang: "ar", font: "Amiri")\
+    #text("École naationale Supérieure d'informatique", lang: "fr", size: 10pt)\
+    #text("ex. INI (Institut National de formation en Informatiques)", lang: "fr", size: 10pt)
   ],
 )
 //
 #v(20mm)
 //
 #align(center)[
-  #text("Mémoire de fin d'études", lang: "fr", size: 18pt, weight: "bold")
-  #v(0.5cm)
+  #text("Mémoire de fin d'études", lang: "fr", size: 13pt, weight: "bold")
+  #v(4mm)
   #text(
     "Pour l’obtention du diplôme d’Ingénieur d’État en Informatique",
     lang: "fr",
-    size: 15pt,
+    size: 13pt,
     weight: "bold",
   )
-  #v(0.5cm)
-  #text("Option: Systèmes Informatiques", lang: "fr", size: 18pt, weight: "bold")
+  #v(4mm)
+  #text("Option: Systèmes Informatiques", lang: "fr", size: 13pt, weight: "bold")
+  #v(10mm)
   #line(length: 100%)
-  #text(lang: "fr", size: 20pt, weight: "bold")[
+  #text(lang: "fr", size: 16pt, weight: "bold")[
     Création d’un corpus de l’aphasie de Broca et développement d’un système Speech-to-speech de réhabilitation de la parole
   ]
   #line(length: 100%)
