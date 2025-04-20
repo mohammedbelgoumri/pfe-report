@@ -1,8 +1,10 @@
 #import "titlepage.typ": titelpage
 #let conf(
   title,
+  degree,
+  option,
   doc,
 ) = {
-  titelpage(title)
+  titelpage(title, degree, option)
   doc
 }

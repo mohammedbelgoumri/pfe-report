@@ -1,4 +1,8 @@
-#let titelpage(title) = {
+#let titelpage(
+  title,
+  degree,
+  option,
+) = {
   set page(paper: "a4", margin: (top: 0.6in, bottom: 0.6in, left: 1in, right: 1in))
   set text(size: 12pt, font: "New Computer Modern")
   show link: set text(blue)
@@ -29,13 +33,13 @@
     #text("Mémoire de fin d'études", lang: "fr", size: 13pt, weight: "bold")
     #v(4mm)
     #text(
-      "Pour l’obtention du diplôme d’Ingénieur d’État en Informatique",
+      degree,
       lang: "fr",
       size: 13pt,
       weight: "bold",
     )
     #v(4mm)
-    #text("Option: Systèmes Informatiques", lang: "fr", size: 13pt, weight: "bold")
+    #text(option, lang: "fr", size: 13pt, weight: "bold")
     #v(10mm)
     #line(length: 100%)
     #text(lang: "fr", size: 16pt, weight: "bold")[#title]
