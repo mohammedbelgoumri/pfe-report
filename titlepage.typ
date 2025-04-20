@@ -90,5 +90,12 @@
 ]
 
 #v(1fr)
-
-#align(center)[2022/2023]
+#{
+  let yearpair(date: datetime(day: 1, month: 9, year: 2022)) = {
+    let this = date.year()
+    let next = this + 1
+    return (this, next)
+  }
+  let (this, next) = yearpair()
+  align(center)[#this/#next]
+}
