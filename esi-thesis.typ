@@ -1,5 +1,5 @@
 #import "titlepage.typ": titelpage
-#let conf(
+#let esi-thesis(
   title,
   degree,
   option,
