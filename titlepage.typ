@@ -91,12 +91,18 @@
 
   v(1fr)
   let yearpair(date: datetime(day: 1, month: 9, year: 2022)) = {
-    let this = date.year()
-    let next = this + 1
-    return (this, next)
+    let month = date.month()
+    let start = if month > 8 {
+      date.year()
+    } else {
+      date.year() - 1
+    }
+
+    let end = start + 1
+    return (start, end)
   }
-  let (this, next) = yearpair()
-  align(center)[#this/#next]
+  let (start, end) = yearpair()
+  align(center)[#start/#end]
 }
 
 
