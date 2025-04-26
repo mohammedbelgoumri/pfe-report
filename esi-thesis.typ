@@ -1,8 +1,8 @@
 #import "titlepage.typ": titelpage
 #let esi-thesis(
-  title,
-  degree,
-  option,
+  title: none,
+  degree: none,
+  option: none,
   doc,
 ) = {
   titelpage(title, degree, option)
