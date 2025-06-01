@@ -64,7 +64,7 @@
         _Encadré par:_ \
         Pr. #smallcaps("Smaili") Kamel \
         #link("mailto:smaili@loria.fr") \
-        Dr. #smallcaps("LOnglois") David \
+        Dr. #smallcaps("Langlois") David \
         #link("mailto:david.langlois@loria.fr") \
         Dr. #smallcaps("Zakaria") Chahnez \
         #link("mailto:c_zakaria@esi.dz")
@@ -79,8 +79,8 @@
       #align(left)[
         #text(lang: "fr")[
           _Soutenu le
-        #datetime(day:22, month: 6, year: 2023).display("[day] [month repr:long] [year]")
-        devant le jury composé de:_\
+          #datetime(day: 22, month: 6, year: 2023).display("[day] [month repr:long] [year]")
+          devant le jury composé de:_\
           Dr. #smallcaps("Chebieb") AbdelKrim (ESI): Président\
           Dr. #smallcaps[Hammani] Nacer (ESI): Rapporteur\
           Dr. #smallcaps[Charabi] Leila (ESI): Examinateur
