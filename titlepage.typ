@@ -67,7 +67,6 @@
   ]
 }
 
-
 // Creators block
 #let creators_block(
   lang,
@@ -140,6 +139,55 @@
 }
 
 
+// Defense block
+#let defense_block(
+  lang,
+  defended,
+  date,
+  jury,
+  ftl,
+) = {
+  // Validate inputs
+  assert(lang in ("fr", "en"), message: "Invalid language")
+  assert(defended in (true, false), message: "Invalid defended")
+  assert(ftl in (true, false), message: "Invalid ftl")
+
+  if defended {
+    let defendedon = if lang == "fr" {
+      "Soutenu le"
+    } else {
+      "Defended on"
+    }
+    let date = date.display("[day] [month repr:long] [year]")
+    let forjury = if lang == "fr" {
+      "devant le jury composé de"
+    } else {
+      "in front of a jury composed of"
+    }
+    v(1fr)
+    align(center)[
+      #box[
+        #align(left)[
+          #text(lang: lang)[_#defendedon #date #forjury:_\ ]
+          #for member in jury {
+            let (title, fname, lname, affiliation, role) = member
+            lname = smallcaps(lname)
+            let name = if ftl {
+              fname + " " + lname
+            } else {
+              lname + " " + fname
+            }
+            text(lang: lang)[
+              #title #name (#affiliation): #role\
+            ]
+          }
+        ]
+      ]
+    ]
+    v(1fr)
+  }
+}
+
 #let titelpage(
   lang,
   title,
@@ -150,6 +198,7 @@
   ftl,
   date,
   defended: false,
+  jury: (),
   defense_date,
 ) = {
   set page(paper: "a4", margin: (top: 0.6in, bottom: 0.6in, left: 1in, right: 1in))
@@ -205,26 +254,28 @@
 
   creators_block(lang, authors, supervisors)
 
-  if defended {
-    v(1fr)
+  // if defended {
+  //   v(1fr)
 
-    align(center)[
-      #box[
-        #align(left)[
-          #text(lang: "fr")[
-            _Soutenu le
-            #defense_date.display("[day] [month repr:long] [year]")
-            devant le jury composé de:_\
-            Dr. #smallcaps("Chebieb") AbdelKrim (ESI): Président\
-            Dr. #smallcaps[Hammani] Nacer (ESI): Rapporteur\
-            Dr. #smallcaps[Charabi] Leila (ESI): Examinateur
-          ]
-        ]
-      ]
-    ]
+  //   align(center)[
+  //     #box[
+  //       #align(left)[
+  //         #text(lang: "fr")[
+  //           _Soutenu le
+  //           #defense_date.display("[day] [month repr:long] [year]")
+  //           devant le jury composé de:_\
+  //           Dr. #smallcaps("Chebieb") AbdelKrim (ESI): Président\
+  //           Dr. #smallcaps[Hammani] Nacer (ESI): Rapporteur\
+  //           Dr. #smallcaps[Charabi] Leila (ESI): Examinateur
+  //         ]
+  //       ]
+  //     ]
+  //   ]
 
-    v(1fr)
-  }
+  //   v(1fr)
+  // }
+
+  defense_block(lang, defended, defense_date, jury, ftl)
   let yearpair(date: datetime(day: 1, month: 9, year: 2022)) = {
     let month = date.month()
     let start = if month > 8 {

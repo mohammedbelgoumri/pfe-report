@@ -31,10 +31,35 @@
   ),
 )
 
+#let jury = (
+  (
+    "title": "Dr.",
+    "fname": "Chebieb",
+    "lname": "AbdelKrim",
+    "affiliation": "ESI",
+    "role": "Président",
+  ),
+  (
+    "title": "Dr.",
+    "fname": "Nacer",
+    "lname": "Hammani",
+    "affiliation": "ESI",
+    "role": "Rapporteur",
+  ),
+  (
+    "title": "Dr.",
+    "fname": "Leila",
+    "lname": "Charabi",
+    "affiliation": "ESI",
+    "role": "Examinatrice",
+  ),
+)
+
 #show: esi-thesis.with(
   title: title,
   degree: degree,
   option: option,
   authors: authors,
   supervisors: supervisors,
+  jury: jury,
 )
