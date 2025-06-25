@@ -70,3 +70,33 @@
   defense_date: defense_date,
   jury: jury,
 )
+
+
+#let lang = "fr"
+#let chapter = if lang == "fr" {
+  "Chapitre"
+} else {
+  "Chapter"
+}
+#set heading(numbering: "1.")
+#show heading.where(level: 1): set heading(supplement: chapter, numbering: "1")
+#show heading.where(level: 1): it => {
+  pagebreak()
+  text(
+    size: 25pt,
+    weight: "bold",
+    (
+      it.supplement
+        + " "
+        + context { numbering(it.numbering, counter(heading).get().first()) } + v(1em) + it.body + v(1em)
+    ),
+  )
+}
+
+= Notions générales
+== a
+
+// #counter(page).update(1)
+// #set page(numbering: "i")
+
+

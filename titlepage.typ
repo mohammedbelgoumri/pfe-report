@@ -201,11 +201,6 @@
   jury: (),
   defense_date,
 ) = {
-  set page(paper: "a4", margin: (top: 0.6in, bottom: 0.6in, left: 1in, right: 1in))
-  set text(size: 12pt, font: "New Computer Modern")
-  show link: set text(blue)
-
-
   // Validate inputs
   assert(lang in ("fr", "en"), message: "Invalid language")
   assert(
@@ -281,6 +276,8 @@
   date = if date == none { datetime(day: 1, month: 9, year: 2022) } else { date }
   let (start, end) = yearpair(date: date)
   align(center)[#start/#end]
+  pagebreak()
 }
+
 
 
