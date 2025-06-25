@@ -1,12 +1,5 @@
 #import "titlepage.typ": titelpage
 
-
-
-
-
-
-
-#let date = datetime.today()
 #let esi-thesis(
   lang: "fr",
   title: none,

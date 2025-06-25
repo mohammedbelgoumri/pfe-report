@@ -55,11 +55,18 @@
   ),
 )
 
+#let date = datetime(day: 1, month: 9, year: 2022)
+#let defense_date = datetime(day: 22, month: 6, year: 2023)
+
 #show: esi-thesis.with(
+  lang: "fr",
   title: title,
   degree: degree,
   option: option,
   authors: authors,
+  date: date,
   supervisors: supervisors,
+  defended: true,
+  defense_date: defense_date,
   jury: jury,
 )

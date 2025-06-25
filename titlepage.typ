@@ -184,8 +184,8 @@
         ]
       ]
     ]
-    v(1fr)
   }
+  v(1fr)
 }
 
 #let titelpage(
@@ -213,6 +213,17 @@
     message: "Invalid degree",
   )
   assert(ftl in (true, false, none), message: "Invalid ftl")
+  assert(type(date) in (none, datetime), message: "Invalid date")
+  assert(
+    type(defense_date) in (none, datetime),
+    message: "Invalid defense date",
+  )
+  assert(defended in (true, false), message: "Invalid defended")
+  if defended {
+    assert(date != none, message: "Invalid date")
+  }
+
+
   if ftl == none {
     ftl = if lang == "fr" {
       false
@@ -254,26 +265,6 @@
 
   creators_block(lang, authors, supervisors)
 
-  // if defended {
-  //   v(1fr)
-
-  //   align(center)[
-  //     #box[
-  //       #align(left)[
-  //         #text(lang: "fr")[
-  //           _Soutenu le
-  //           #defense_date.display("[day] [month repr:long] [year]")
-  //           devant le jury composé de:_\
-  //           Dr. #smallcaps("Chebieb") AbdelKrim (ESI): Président\
-  //           Dr. #smallcaps[Hammani] Nacer (ESI): Rapporteur\
-  //           Dr. #smallcaps[Charabi] Leila (ESI): Examinateur
-  //         ]
-  //       ]
-  //     ]
-  //   ]
-
-  //   v(1fr)
-  // }
 
   defense_block(lang, defended, defense_date, jury, ftl)
   let yearpair(date: datetime(day: 1, month: 9, year: 2022)) = {
