@@ -1,42 +1,4 @@
 
-// Language maps
-#let en = (
-  "to obtain": "To obtain the degree of",
-  "master": (
-    "degree": "Master in Computer Science",
-    "doctype": "Master Thesis",
-  ),
-  "engineering": (
-    "degree": "State Engineer in Computer Science",
-    "doctype": "End of Studies Thesis",
-  ),
-  "option": (
-    "siq": "Computer Systems",
-    "sil": "Computer and Software Systems",
-    "sid": "Computer and Data Systems",
-    "sit": "Computer and Information Systems",
-  ),
-)
-
-#let fr = (
-  "to obtain": "Pour l'obtention du diplôme",
-  "master": (
-    "degree": "de Master en Informatique",
-    "doctype": "Mémoire de master",
-  ),
-  "engineering": (
-    "degree": "d'Ingénieur d'État en Informatique",
-    "doctype": "Mémoire de fin d'études",
-  ),
-  "option": (
-    "siq": "Systèmes Informatiques",
-    "sil": "Systèmes Informatiques et Logiciels",
-    "sid": "Systèmes Informatiques et Données",
-    "sit": "Systèmes Informatiques et Systèmes d'Information",
-  ),
-)
-
-
 // Degree block
 #let degree_block(
   lang,
@@ -46,6 +8,44 @@
   // Validate inputs
   assert(lang in ("fr", "en"), message: "Invalid language")
   assert(degree in ("master", "engineering"), message: "Invalid degree")
+
+
+  // Language maps
+  let en = (
+    "to obtain": "To obtain the degree of",
+    "master": (
+      "degree": "Master in Computer Science",
+      "doctype": "Master Thesis",
+    ),
+    "engineering": (
+      "degree": "State Engineer in Computer Science",
+      "doctype": "End of Studies Thesis",
+    ),
+    "option": (
+      "siq": "Computer Systems",
+      "sil": "Computer and Software Systems",
+      "sid": "Computer and Data Systems",
+      "sit": "Computer and Information Systems",
+    ),
+  )
+
+  let fr = (
+    "to obtain": "Pour l'obtention du diplôme",
+    "master": (
+      "degree": "de Master en Informatique",
+      "doctype": "Mémoire de master",
+    ),
+    "engineering": (
+      "degree": "d'Ingénieur d'État en Informatique",
+      "doctype": "Mémoire de fin d'études",
+    ),
+    "option": (
+      "siq": "Systèmes Informatiques",
+      "sil": "Systèmes Informatiques et Logiciels",
+      "sid": "Systèmes Informatiques et Données",
+      "sit": "Systèmes Informatiques et Systèmes d'Information",
+    ),
+  )
 
   let language_map = if lang == "fr" { fr } else { en }
   let tobtain = language_map.at("to obtain")
