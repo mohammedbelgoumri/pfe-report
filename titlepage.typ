@@ -68,12 +68,86 @@
 }
 
 
+// Creators block
+#let creators_block(
+  lang,
+  authors,
+  supervisors,
+  ftl: false,
+) = {
+  // Validate inputs
+  assert(lang in ("fr", "en"), message: "Invalid language")
+
+  let madeby = if lang == "fr" {
+    "Réalisé par"
+  } else {
+    "Made by"
+  }
+
+  let supervisedby = if lang == "fr" {
+    "Encadré par"
+  } else {
+    "Supervised by"
+  }
+
+  let authorblock = text(lang: lang)[
+    _#madeby:_\
+    #for author in authors {
+      let (fname, lname, email) = author.values()
+      lname = smallcaps(lname)
+      email = link("mailto:" + email)
+      let name = if ftl {
+        fname + " " + lname
+      } else {
+        lname + " " + fname
+      }
+      text(lang: lang)[
+        #name\
+        #email\
+      ]
+    }
+  ]
+
+  let supervisorblock = text(lang: lang)[
+    _#supervisedby:_\
+    #for supervisor in supervisors {
+      let (title, fname, lname, email) = supervisor
+      lname = smallcaps(lname)
+      email = link("mailto:" + email)
+      let name = if ftl {
+        fname + " " + lname
+      } else {
+        lname + " " + fname
+      }
+      text(lang: lang)[
+        #title #name\
+        #email\
+      ]
+    }
+  ]
+
+  grid(
+    align: left,
+    columns: (auto, 1fr, auto),
+    [
+      #authorblock
+    ],
+    [],
+    [
+      #supervisorblock
+    ],
+  )
+}
+
 
 #let titelpage(
   lang,
   title,
   degree,
   option,
+  authors,
+  supervisors,
+  ftl,
   date,
   defended: false,
   defense_date,
@@ -81,6 +155,23 @@
   set page(paper: "a4", margin: (top: 0.6in, bottom: 0.6in, left: 1in, right: 1in))
   set text(size: 12pt, font: "New Computer Modern")
   show link: set text(blue)
+
+
+  // Validate inputs
+  assert(lang in ("fr", "en"), message: "Invalid language")
+  assert(
+    degree in ("engineering", "master"),
+    message: "Invalid degree",
+  )
+  assert(ftl in (true, false, none), message: "Invalid ftl")
+  if ftl == none {
+    ftl = if lang == "fr" {
+      false
+    } else {
+      true
+    }
+  }
+
   align(center)[
     #text("République Algérienne Démocratique et Populaire", lang: "fr", size: 10pt)\
     #text("الجمهورية الجزائرية الديـموقراطية الشعبية", lang: "ar", font: "Amiri")\
@@ -103,50 +194,16 @@
   )
   //
   v(20mm)
-  //
-  // align(center)[
-  //   #text("Mémoire de fin d'études", lang: "fr", size: 13pt, weight: "bold")
-  //   #v(4mm)
-  //   #text(
-  //     degree,
-  //     lang: "fr",
-  //     size: 13pt,
-  //     weight: "bold",
-  //   )
-  //   #v(4mm)
-  //   #text(option, lang: "fr", size: 13pt, weight: "bold")
-  //   #v(10mm)
-  //   #line(length: 100%)
-  //   #text(lang: "fr", size: 16pt, weight: "bold")[#title]
-  //   #line(length: 100%)
-  // ]
-
   degree_block(lang, degree, option)
+  v(10mm)
+  align(center)[
+    #line(length: 100%)
+    #text(lang: "fr", size: 16pt, weight: "bold")[#title]
+    #line(length: 100%)
+  ]
   v(1cm)
 
-  grid(
-    align: left,
-    columns: (auto, 1fr, auto),
-    [
-      #text(lang: "fr")[
-        _Réalisé par:_ \
-        #smallcaps("Belgoumri") Mohammed Djameleddine \
-        #link("mailto:im_belgoumri@esi.dz")
-      ]
-    ],
-    [],
-    [
-      #text(lang: "fr")[
-        _Encadré par:_ \
-        Pr. #smallcaps("Smaili") Kamel \
-        #link("mailto:smaili@loria.fr") \
-        Dr. #smallcaps("Langlois") David \
-        #link("mailto:david.langlois@loria.fr") \
-        Dr. #smallcaps("Zakaria") Chahnez \
-        #link("mailto:c_zakaria@esi.dz")
-      ]
-    ],
-  )
+  creators_block(lang, authors, supervisors)
 
   if defended {
     v(1fr)
