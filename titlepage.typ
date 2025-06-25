@@ -2,6 +2,9 @@
   title,
   degree,
   option,
+  date,
+  defended: false,
+  defense_date,
 ) = {
   set page(paper: "a4", margin: (top: 0.6in, bottom: 0.6in, left: 1in, right: 1in))
   set text(size: 12pt, font: "New Computer Modern")
@@ -72,24 +75,26 @@
     ],
   )
 
-  v(1fr)
+  if defended {
+    v(1fr)
 
-  align(center)[
-    #box[
-      #align(left)[
-        #text(lang: "fr")[
-          _Soutenu le
-          #datetime(day: 22, month: 6, year: 2023).display("[day] [month repr:long] [year]")
-          devant le jury composé de:_\
-          Dr. #smallcaps("Chebieb") AbdelKrim (ESI): Président\
-          Dr. #smallcaps[Hammani] Nacer (ESI): Rapporteur\
-          Dr. #smallcaps[Charabi] Leila (ESI): Examinateur
+    align(center)[
+      #box[
+        #align(left)[
+          #text(lang: "fr")[
+            _Soutenu le
+            #defense_date.display("[day] [month repr:long] [year]")
+            devant le jury composé de:_\
+            Dr. #smallcaps("Chebieb") AbdelKrim (ESI): Président\
+            Dr. #smallcaps[Hammani] Nacer (ESI): Rapporteur\
+            Dr. #smallcaps[Charabi] Leila (ESI): Examinateur
+          ]
         ]
       ]
     ]
-  ]
 
-  v(1fr)
+    v(1fr)
+  }
   let yearpair(date: datetime(day: 1, month: 9, year: 2022)) = {
     let month = date.month()
     let start = if month > 8 {
@@ -101,7 +106,8 @@
     let end = start + 1
     return (start, end)
   }
-  let (start, end) = yearpair()
+  date = if date == none { datetime(day: 1, month: 9, year: 2022) } else { date }
+  let (start, end) = yearpair(date: date)
   align(center)[#start/#end]
 }
 
