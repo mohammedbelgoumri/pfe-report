@@ -1,6 +1,10 @@
 #import "esi-thesis.typ": esi-thesis
 
-#let title = "Création d’un corpus de l’aphasie de Broca et développement d’un système Speech-to-speech de réhabilitation de la parole"
+#let title = [
+  Création d’un corpus de l’aphasie de Broca
+  et développement d’un système Speech-to-speech de réhabilitation de la parole
+]
+
 #let degree = "engineering"
 #let option = "siq"
 #let authors = (
@@ -81,20 +85,22 @@
 #set heading(numbering: "1.")
 #show heading.where(level: 1): set heading(supplement: chapter, numbering: "1")
 #show heading.where(level: 1): it => {
-  pagebreak()
+  pagebreak(weak: true)
   text(
     size: 25pt,
     weight: "bold",
     (
       it.supplement
         + " "
-        + context { numbering(it.numbering, counter(heading).get().first()) } + v(1em) + it.body + v(1em)
+        + context { numbering(it.numbering, counter(heading).get().first()) } + v(5mm) + it.body + v(5mm)
     ),
   )
 }
 
 = Notions générales
-== a
+
+
+= a
 
 // #counter(page).update(1)
 // #set page(numbering: "i")
