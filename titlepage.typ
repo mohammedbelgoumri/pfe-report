@@ -1,4 +1,76 @@
+
+// Language maps
+#let en = (
+  "to obtain": "To obtain the degree of",
+  "master": (
+    "degree": "Master in Computer Science",
+    "doctype": "Master Thesis",
+  ),
+  "engineering": (
+    "degree": "State Engineer in Computer Science",
+    "doctype": "End of Studies Thesis",
+  ),
+  "option": (
+    "siq": "Computer Systems",
+    "sil": "Computer and Software Systems",
+    "sid": "Computer and Data Systems",
+    "sit": "Computer and Information Systems",
+  ),
+)
+
+#let fr = (
+  "to obtain": "Pour l'obtention du diplôme",
+  "master": (
+    "degree": "de Master en Informatique",
+    "doctype": "Mémoire de master",
+  ),
+  "engineering": (
+    "degree": "d'Ingénieur d'État en Informatique",
+    "doctype": "Mémoire de fin d'études",
+  ),
+  "option": (
+    "siq": "Systèmes Informatiques",
+    "sil": "Systèmes Informatiques et Logiciels",
+    "sid": "Systèmes Informatiques et Données",
+    "sit": "Systèmes Informatiques et Systèmes d'Information",
+  ),
+)
+
+
+// Degree block
+#let degree_block(
+  lang,
+  degree,
+  option,
+) = {
+  // Validate inputs
+  assert(lang in ("fr", "en"), message: "Invalid language")
+  assert(degree in ("master", "engineering"), message: "Invalid degree")
+
+  let language_map = if lang == "fr" { fr } else { en }
+  let tobtain = language_map.at("to obtain")
+  let degree = language_map.at(degree)
+  let doctype = degree.doctype
+  degree = degree.degree
+  option = if option in language_map.option.keys() {
+    language_map.option.at(option)
+  } else {
+    option
+  }
+
+  align(center)[
+    #text(lang: lang, size: 13pt, weight: "bold")[#doctype]
+    #v(4mm)
+    #text(lang: lang, size: 13pt, weight: "bold")[#tobtain #degree]
+    #v(4mm)
+    #text(lang: lang, size: 13pt, weight: "bold")[Option: #option]
+  ]
+}
+
+
+
 #let titelpage(
+  lang,
   title,
   degree,
   option,
@@ -32,23 +104,24 @@
   //
   v(20mm)
   //
-  align(center)[
-    #text("Mémoire de fin d'études", lang: "fr", size: 13pt, weight: "bold")
-    #v(4mm)
-    #text(
-      degree,
-      lang: "fr",
-      size: 13pt,
-      weight: "bold",
-    )
-    #v(4mm)
-    #text(option, lang: "fr", size: 13pt, weight: "bold")
-    #v(10mm)
-    #line(length: 100%)
-    #text(lang: "fr", size: 16pt, weight: "bold")[#title]
-    #line(length: 100%)
-  ]
+  // align(center)[
+  //   #text("Mémoire de fin d'études", lang: "fr", size: 13pt, weight: "bold")
+  //   #v(4mm)
+  //   #text(
+  //     degree,
+  //     lang: "fr",
+  //     size: 13pt,
+  //     weight: "bold",
+  //   )
+  //   #v(4mm)
+  //   #text(option, lang: "fr", size: 13pt, weight: "bold")
+  //   #v(10mm)
+  //   #line(length: 100%)
+  //   #text(lang: "fr", size: 16pt, weight: "bold")[#title]
+  //   #line(length: 100%)
+  // ]
 
+  degree_block(lang, degree, option)
   v(1cm)
 
   grid(

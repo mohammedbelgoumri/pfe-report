@@ -1,7 +1,14 @@
 #import "titlepage.typ": titelpage
 
+
+
+
+
+
+
 #let date = datetime.today()
 #let esi-thesis(
+  lang: "fr",
   title: none,
   degree: none,
   option: none,
@@ -10,6 +17,6 @@
   defense_date: datetime(day: 22, month: 6, year: 2023),
   doc,
 ) = {
-  titelpage(title, degree, option, date, defended: defended, defense_date)
+  titelpage(lang, title, degree, option, date, defended: defended, defense_date)
   doc
 }
