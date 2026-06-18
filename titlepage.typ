@@ -72,7 +72,7 @@
   lang,
   authors,
   supervisors,
-  ftl: false,
+  ftl,
 ) = {
   // Validate inputs
   assert(lang in ("fr", "en"), message: "Invalid language")
@@ -258,7 +258,7 @@
   ]
   v(1cm)
 
-  creators_block(lang, authors, supervisors)
+  creators_block(lang, authors, supervisors, ftl)
 
 
   defense_block(lang, defended, defense_date, jury, ftl)
