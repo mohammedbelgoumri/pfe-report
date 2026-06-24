@@ -1,0 +1,7 @@
+{ ... }:
+{
+  languages = {
+    typst.enable = true;
+  };
+
+}
